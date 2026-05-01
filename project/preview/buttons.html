@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .card { width: 700px; height: 240px; background: var(--bg); padding: 28px; box-sizing: border-box; }
+  .meta { font-family: var(--font-heading); font-size: 11px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--fg-muted); margin-bottom: 18px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+  .group { display: flex; flex-direction: column; gap: 10px; }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  button {
+    font-family: var(--font-heading); font-size: 13px; font-weight: 700;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    padding: 14px 22px; border: none; cursor: pointer;
+    transition: all var(--dur-base) var(--ease-out);
+  }
+  .primary { background: var(--accent); color: #000; }
+  .primary:hover { background: var(--accent-hover); box-shadow: 0 0 24px rgba(227,168,72,.30); }
+  .secondary { background: transparent; color: var(--fg); border: 1px solid var(--fg); }
+  .secondary:hover { background: var(--fg); color: #000; }
+  .ghost { background: transparent; color: var(--fg-muted); padding: 12px 0; }
+  .ghost:hover { color: var(--accent); }
+  .pill { background: var(--bg-elev); color: var(--fg); padding: 8px 14px; font-size: 11px; border: 1px solid var(--border); border-radius: 999px; }
+</style></head>
+<body>
+<div class="card">
+  <div class="meta">Buttons · uppercase · sharp corners · no gradients</div>
+  <div class="grid">
+    <div class="group"><span class="label">Primary · CTA</span><button class="primary">Add to bag</button></div>
+    <div class="group"><span class="label">Secondary · ghost outline</span><button class="secondary">View details</button></div>
+    <div class="group"><span class="label">Tertiary · text link</span><button class="ghost">Continue shopping →</button></div>
+    <div class="group"><span class="label">Pill · filter / chip</span><button class="pill">UA Spec · 7A</button></div>
+  </div>
+</div>
+</body></html>

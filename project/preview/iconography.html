@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Iconography</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  .card { width: 700px; height: 200px; background: var(--bg); padding: 24px; box-sizing: border-box; }
+  .meta { font-family: var(--font-heading); font-size: 11px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--fg-muted); margin-bottom: 6px; }
+  .sub { font-family: var(--font-body); font-size: 12px; color: var(--fg-subtle); margin-bottom: 18px; }
+  .row { display: flex; gap: 28px; align-items: center; }
+  .icon { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--fg); }
+  .icon i, .icon svg { width: 26px; height: 26px; stroke-width: 1.5; }
+  .icon .n { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  .icon.acc, .icon.acc svg { color: var(--accent); }
+</style></head>
+<body>
+<div class="card">
+  <div class="meta">Iconography · Lucide · 1.5 stroke · square caps</div>
+  <div class="sub">Crown mark used for brand picks · emoji never used in UI</div>
+  <div class="row">
+    <div class="icon"><i data-lucide="shopping-bag"></i><span class="n">bag</span></div>
+    <div class="icon"><i data-lucide="search"></i><span class="n">search</span></div>
+    <div class="icon"><i data-lucide="user"></i><span class="n">account</span></div>
+    <div class="icon"><i data-lucide="heart"></i><span class="n">save</span></div>
+    <div class="icon"><i data-lucide="truck"></i><span class="n">ship</span></div>
+    <div class="icon"><i data-lucide="ruler"></i><span class="n">size</span></div>
+    <div class="icon"><i data-lucide="shield-check"></i><span class="n">verified</span></div>
+    <div class="icon acc"><img src="../assets/logo-crown.png" style="width:32px;height:32px;object-fit:contain"><span class="n" style="color:var(--accent)">crown</span></div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

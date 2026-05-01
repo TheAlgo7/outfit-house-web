@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Logos</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .card { width: 700px; height: 260px; background: var(--bg); padding: 0; box-sizing: border-box; display: grid; grid-template-columns: 2fr 1fr 1fr; }
+  .cell { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 20px; border-right: 1px solid var(--border); position: relative; }
+  .cell:last-child { border-right: 0; }
+  .cell img { max-width: 100%; max-height: 60%; object-fit: contain; }
+  .label { position: absolute; top: 12px; left: 14px; font-family: var(--font-heading); font-size: 9px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--fg-muted); font-weight: 600; }
+  .light { background: var(--bg-light); }
+</style></head>
+<body>
+<div class="card">
+  <div class="cell"><span class="label">Primary lockup</span><img src="../assets/logo-full.png"></div>
+  <div class="cell"><span class="label">Wordmark</span><img src="../assets/logo-text.png"></div>
+  <div class="cell light"><span class="label" style="color:rgba(0,0,0,.55)">Crown · favicon</span><img src="../assets/logo-crown.png" style="max-height:55%"></div>
+</div>
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Glass Spec Panel</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .card { width: 700px; height: 360px; padding: 0; box-sizing: border-box; position: relative; overflow: hidden; background: #000; }
+  .bg { position: absolute; inset: 0; background-image: url('../assets/product-airjordan.jpg'); background-size: cover; background-position: center; filter: brightness(0.85); }
+  .glass {
+    position: absolute; left: 24px; right: 24px; bottom: 24px;
+    background: rgba(20, 20, 20, 0.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(242, 236, 221, 0.10);
+    padding: 18px 22px; color: var(--fg);
+  }
+  .label { font-family: var(--font-heading); font-size: 10px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 10px; }
+  .specs > div { display: flex; flex-direction: column; gap: 2px; }
+  .specs .k { font-family: var(--font-heading); font-size: 9px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--fg-muted); font-weight: 600; }
+  .specs .v { font-family: var(--font-heading); font-size: 14px; color: var(--fg); font-weight: 700; }
+  .meta { position: absolute; top: 18px; left: 24px; font-family: var(--font-heading); font-size: 11px; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--fg); background: rgba(0,0,0,0.35); padding: 6px 10px; backdrop-filter: blur(8px); }
+</style></head>
+<body>
+<div class="card">
+  <div class="bg"></div>
+  <div class="meta">Glass Panel · backdrop-blur 16</div>
+  <div class="glass">
+    <div class="label">7A Quality · Technical Spec</div>
+    <div class="specs">
+      <div><span class="k">Upper</span><span class="v">Genuine Leather</span></div>
+      <div><span class="k">Sole</span><span class="v">Stitched</span></div>
+      <div><span class="k">Box</span><span class="v">Original Tooling</span></div>
+      <div><span class="k">Sizing</span><span class="v">True to Nike US</span></div>
+    </div>
+  </div>
+</div>
+</body></html>
