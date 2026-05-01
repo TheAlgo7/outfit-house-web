@@ -1,11 +1,33 @@
 // Shared catalog + WhatsApp helpers for The Outfit House
 window.WA_NUMBER = '919999999999'; // TODO: replace with real number
-window.IG_URL    = 'https://instagram.com/theoutfithouse';
+window.IG_URL    = 'https://instagram.com/theoutfithouse.in';
 
 window.wa = function(msg) {
   const url = 'https://wa.me/' + window.WA_NUMBER + '?text=' + encodeURIComponent(msg);
   window.open(url, '_blank', 'noopener');
 };
+
+// Mobile nav drawer open/close
+window.openMobNav = function() {
+  var nav = document.getElementById('mob-nav');
+  var bd  = document.getElementById('mob-backdrop');
+  if (!nav || !bd) return;
+  nav.classList.add('open');
+  bd.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+window.closeMobNav = function() {
+  var nav = document.getElementById('mob-nav');
+  var bd  = document.getElementById('mob-backdrop');
+  if (!nav || !bd) return;
+  nav.classList.remove('open');
+  bd.classList.remove('open');
+  document.body.style.overflow = '';
+};
+// Close on ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMobNav();
+});
 
 window.gradeClass = function(g) {
   if (g === 'Entry') return 'entry';
@@ -51,22 +73,23 @@ window.PRODUCTS = [
 ];
 
 // Render product card markup (shared)
+// Stretched-link pattern: pc-name::after covers the card; pc-cta sits above via z-index
 window.renderProductCard = function(p) {
   return `
-    <a class="pc" href="Product.html?slug=${p.slug}">
+    <div class="pc">
       <div class="pc-img">
         <span class="pc-grade ${gradeClass(p.grade)}">${p.grade}</span>
         <img src="${p.img}" alt="${p.name}" loading="lazy"/>
       </div>
       <div class="pc-body">
         <span class="pc-brand">${p.brand}</span>
-        <span class="pc-name">${p.name}</span>
+        <a class="pc-name" href="Product.html?slug=${p.slug}">${p.name}</a>
         <span class="pc-price">${p.price} <s>${p.was}</s></span>
-        <button class="pc-cta" onclick="event.preventDefault(); event.stopPropagation(); wa('Hi! I want to enquire about ${p.name} (${p.grade}). Available sizes?')">
+        <button class="pc-cta" onclick="event.stopPropagation(); wa('Hi! I want to enquire about ${p.name} (${p.grade}). Available sizes?')">
           <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
         </button>
       </div>
-    </a>`;
+    </div>`;
 };
 
 // Shared SVG sprite — inject once
@@ -128,14 +151,17 @@ window.renderHeader = function(active) {
     {h:'Spec Sheet',  href:'SpecSheet.html'},
     {h:'Contact',     href:'Contact.html'},
   ];
+  /* mob-nav and mob-backdrop are siblings of <header>, NOT children.
+     The header's backdrop-filter creates a stacking context that would trap
+     position:fixed children inside the 68px header bounds. */
   return `
   <header class="nav">
     <div class="nav-inner">
-      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mob-nav').classList.add('open')">
+      <button class="nav-toggle" aria-label="Open menu" onclick="openMobNav()">
         <svg><use href="#menu-icon"/></svg>
       </button>
       <a class="brand" href="Homepage.html">
-        <img src="assets/logo-crown.png" alt=""/>
+        <img src="assets/logo-crown.png" alt="The Outfit House crown logo"/>
         <span class="name">The Outfit House</span>
       </a>
       <nav class="nav-links">
@@ -150,14 +176,34 @@ window.renderHeader = function(active) {
         </button>
       </div>
     </div>
-    <div id="mob-nav" class="mob-nav">
-      <button class="mob-close" onclick="document.getElementById('mob-nav').classList.remove('open')" aria-label="Close">
+  </header>
+
+  <div id="mob-backdrop" class="mob-backdrop" onclick="closeMobNav()" aria-hidden="true"></div>
+
+  <div id="mob-nav" class="mob-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mob-nav-head">
+      <span class="mob-nav-label">Navigation</span>
+      <button class="mob-close" onclick="closeMobNav()" aria-label="Close menu">
         <svg><use href="#x-icon"/></svg>
       </button>
-      ${items.map(i => `<a href="${i.href}">${i.h}</a>`).join('')}
-      <a href="${window.IG_URL}" target="_blank" rel="noopener">Instagram ↗</a>
     </div>
-  </header>`;
+    <nav class="mob-nav-links">
+      ${items.map(i => `
+      <a href="${i.href}">
+        ${i.h}
+        <svg><use href="#arrow-right"/></svg>
+      </a>`).join('')}
+      <a href="${window.IG_URL}" target="_blank" rel="noopener">
+        Instagram ↗
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+    </nav>
+    <div class="mob-nav-foot">
+      <button class="btn-wa" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
+        <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+      </button>
+    </div>
+  </div>`;
 };
 
 window.renderFooter = function() {

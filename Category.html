@@ -17,7 +17,7 @@
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--accent); margin-bottom: 24px;
-    padding: 8px 14px; border: 1px solid rgba(227,168,72,0.30);
+    padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   }
   .cat-hero h1 {
     font-family: var(--font-display); font-size: clamp(56px, 9vw, 132px);
@@ -28,7 +28,7 @@
 
   .filter-bar {
     position: sticky; top: 68px; z-index: 40;
-    background: rgba(0,0,0,0.85); backdrop-filter: blur(14px);
+    background: var(--overlay-strong); backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
   }
@@ -38,12 +38,12 @@
   }
   .tabs::-webkit-scrollbar { display: none; }
   .tab {
-    padding: 18px 0; margin-right: 32px;
+    padding: 18px 12px; margin-right: 8px;
     font-family: var(--font-heading); font-size: 11px; font-weight: 700;
     letter-spacing: var(--tracking-wide); text-transform: uppercase;
     color: var(--fg-muted); cursor: pointer; background: transparent; border: none;
     border-bottom: 2px solid transparent; white-space: nowrap;
-    transition: color var(--dur-fast);
+    transition: color var(--dur-fast); min-width: 44px;
   }
   .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
   .tab:hover { color: var(--fg); }
@@ -60,10 +60,17 @@
   }
   .meta-row .count b { color: var(--fg); }
   .meta-row select {
-    background: transparent; color: var(--fg);
-    border: 1px solid var(--border-strong); padding: 8px 12px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpolyline points='1,1 5,5 9,1' fill='none' stroke='%23F2ECDD' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    color: var(--fg);
+    border: 1px solid var(--border-strong); padding: 8px 32px 8px 12px;
     font-family: var(--font-heading); font-size: 11px;
     text-transform: uppercase; letter-spacing: var(--tracking-wide);
+    cursor: pointer;
   }
 
   .grid-wrap { padding: 56px 0 96px; max-width: 1280px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
@@ -82,10 +89,10 @@
 </style>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div id="header-mount"></div>
 
-<section class="cat-hero">
+<section id="main-content" class="cat-hero">
   <div class="eyebrow" id="cat-eyebrow">01 · Category</div>
   <h1 id="cat-title">Category</h1>
   <p id="cat-blurb">Loading…</p>
@@ -95,6 +102,7 @@
   <div class="tabs" id="tabs"></div>
   <div class="meta-row">
     <div class="count">Showing <b id="count">0</b> pieces</div>
+    <label for="sort" class="sr-only">Sort by</label>
     <select id="sort">
       <option value="feat">Featured</option>
       <option value="low">Price: low → high</option>

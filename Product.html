@@ -164,11 +164,18 @@
     .gallery { position: static; padding: 0; }
     .gal-main { aspect-ratio: 1/1; }
     .thumbs { display: none; }
+    .gal-nav { display: none; }
     .gal-dots {
-      display: flex; justify-content: center; gap: 8px; padding: 14px 0 0;
+      display: flex; justify-content: center; gap: 4px; padding: 10px 0 0;
     }
-    .gal-dot { width: 8px; height: 8px; background: var(--border-strong); border: none; padding: 0; cursor: pointer; }
-    .gal-dot.active { background: var(--accent); }
+    /* Visual dot is 8px but tap area is expanded via padding to meet 44px minimum */
+    .gal-dot {
+      width: 8px; height: 8px; background: var(--border-strong); border: none;
+      padding: 18px 10px; cursor: pointer;
+      background-clip: content-box; -webkit-background-clip: content-box;
+      border-radius: 0; box-sizing: content-box;
+    }
+    .gal-dot.active { background: var(--accent); background-clip: content-box; -webkit-background-clip: content-box; }
     .info { padding: 0 20px; gap: 24px; }
     .info h1 { font-size: 30px; }
     .price { font-size: 32px; }
@@ -181,10 +188,10 @@
 </style>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div id="header-mount"></div>
 
-<nav class="crumbs">
+<nav id="main-content" class="crumbs">
   <a href="Homepage.html">Home</a><span class="sep">/</span>
   <a id="crumb-cat" href="Category.html?cat=sneakers">Sneakers</a><span class="sep">/</span>
   <span id="crumb-name">Product</span>

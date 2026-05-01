@@ -14,11 +14,12 @@
     display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px;
     align-items: center; padding: 80px 32px 64px;
     max-width: 1280px; margin: 0 auto;
+    overflow: hidden;
   }
   .hero::before {
     content: ''; position: absolute; top: 50%; right: -120px;
     width: 640px; height: 640px; transform: translateY(-50%);
-    background: radial-gradient(circle, rgba(227,168,72,0.10) 0%, transparent 65%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 10%, transparent) 0%, transparent 65%);
     pointer-events: none; z-index: 0;
   }
   .hero-content { position: relative; z-index: 2; }
@@ -27,7 +28,7 @@
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--accent); margin-bottom: 28px;
-    padding: 8px 14px; border: 1px solid rgba(227,168,72,0.30);
+    padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   }
   .hero .eyebrow .dot {
     width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
@@ -93,7 +94,7 @@
     padding-top: 14px; border-top: 1px solid rgba(242,236,221,0.10);
   }
   .hero-glass .specs > div span {
-    display: block; font-family: var(--font-heading); font-size: 9px;
+    display: block; font-family: var(--font-heading); font-size: clamp(10px, 2.5vw, 11px);
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-muted); margin-bottom: 2px; font-weight: 600;
   }
@@ -111,6 +112,7 @@
     animation: scroll 38s linear infinite;
     font-family: var(--font-heading); font-size: 12px; font-weight: 700;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    will-change: transform;
   }
   @keyframes scroll { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 
@@ -283,21 +285,31 @@
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; min-height: auto;
       padding: 48px 20px 32px; gap: 32px; }
-    .hero-meta { flex-wrap: wrap; gap: 24px; margin-top: 32px; padding-top: 20px; }
-    .hero-meta > div b { font-size: 22px; }
-    .tiers { grid-template-columns: 1fr; }
+    .hero-meta {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 32px; padding-top: 20px;
+    }
+    .hero-meta > div b { font-size: 18px; }
+    .tiers { grid-template-columns: 1fr 1fr; }
     .trust-grid { grid-template-columns: 1fr; gap: 40px; }
     .tiers-block, .products-strip, .trust { padding: 64px 0; }
     .cta-final { padding: 80px 20px; }
   }
+  @media (max-width: 540px) {
+    .tiers { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .trust-row { grid-template-columns: 1fr; gap: 8px; }
+    .trust-row .pct { align-self: auto; }
+  }
 </style>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div id="header-mount"></div>
 
 <!-- HERO -->
-<section class="hero">
+<section id="main-content" class="hero">
   <div class="hero-content">
     <div class="eyebrow"><span class="dot"></span> Now drop · AJ1 Panda · 7A</div>
     <h1>Replica.<br/><span class="accent">Reimagined.</span></h1>
@@ -490,7 +502,7 @@
 <script src="site.js"></script>
 <script>
   injectSprite();
-  document.getElementById('header-mount').innerHTML = renderHeader('Sneakers');
+  document.getElementById('header-mount').innerHTML = renderHeader('');
   document.getElementById('footer-mount').innerHTML = renderFooter();
   // Featured: pick 6
   document.getElementById('featured-grid').innerHTML =

@@ -18,7 +18,7 @@
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--accent); margin-bottom: 24px;
-    padding: 8px 14px; border: 1px solid rgba(227,168,72,0.30);
+    padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   }
   .contact-hero h1 {
     font-family: var(--font-display); font-size: clamp(56px, 9vw, 132px);
@@ -102,6 +102,10 @@
   }
   .q dd { margin: 0; font-size: 14px; color: var(--fg-muted); line-height: 1.6; }
 
+  .info-note {
+    color: var(--fg-muted); font-size: 12px;
+  }
+
   @media (max-width: 900px) {
     .contact-hero { grid-template-columns: 1fr; gap: 24px; padding: 56px 20px 40px; }
     .channels { grid-template-columns: 1fr; padding: 56px 20px; }
@@ -115,10 +119,10 @@
 </style>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div id="header-mount"></div>
 
-<section class="contact-hero">
+<section id="main-content" class="contact-hero">
   <div>
     <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> Get in touch</div>
     <h1>Slide into<br/><span class="accent">our DMs.</span></h1>
@@ -155,7 +159,7 @@
     <div class="info-cell">
       <div class="k">Store · By appointment</div>
       <div class="v">
-        <b>New Delhi</b>
+        <b>Chattarpur, New Delhi</b>
         Visit our private studio in South Delhi to try on pairs in person. Book a slot on WhatsApp first.
       </div>
     </div>
@@ -164,7 +168,7 @@
       <div class="v">
         <b>9am – 11pm</b>
         Mon–Sun · WhatsApp<br/>
-        <span style="color:var(--fg-muted);font-size:12px;">Studio visits 12pm–8pm by booking</span>
+        <span class="info-note">Studio visits 12pm–8pm by booking</span>
       </div>
     </div>
     <div class="info-cell">

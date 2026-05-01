@@ -3,8 +3,38 @@
    Builds on colors_and_type.css */
 
 * { box-sizing: border-box; }
-html, body { margin: 0; background: #000; color: var(--fg); scroll-behavior: smooth; }
+html {
+  margin: 0; background: #000; color: var(--fg); scroll-behavior: smooth;
+  overflow-x: clip; /* prevents any absolutely-positioned child from creating horizontal scroll */
+}
+body { margin: 0; background: #000; color: var(--fg); }
 img { display: block; max-width: 100%; }
+
+/* ============ SKIP LINK (a11y) ============ */
+.skip-link {
+  position: absolute; top: -100%; left: 16px;
+  background: var(--accent); color: #000;
+  padding: 8px 16px; z-index: 999;
+  font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+  letter-spacing: var(--tracking-wide); text-transform: uppercase;
+  text-decoration: none; border-bottom: none;
+  transition: top var(--dur-fast);
+}
+.skip-link:focus { top: 8px; border-bottom: none; }
+
+/* ============ FOCUS VISIBLE (a11y baseline) ============ */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ============ SCREEN-READER ONLY ============ */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
 
 :root {
   --wa: #25D366;
@@ -18,7 +48,7 @@ img { display: block; max-width: 100%; }
 /* ============ NAV ============ */
 header.nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(0,0,0,0.78); backdrop-filter: blur(16px) saturate(1.2);
+  background: var(--overlay-nav); backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--border);
 }
@@ -149,7 +179,8 @@ header.nav {
 .pc {
   background: var(--bg-elev); border: 1px solid transparent;
   transition: all var(--dur-base) var(--ease-out);
-  display: flex; flex-direction: column; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; color: inherit;
+  position: relative;
 }
 .pc:hover { border-color: var(--border-strong); transform: translateY(-3px); }
 .pc-img {
@@ -175,7 +206,10 @@ header.nav {
   letter-spacing: var(--tracking-wider); text-transform: uppercase;
   color: var(--fg-muted); font-weight: 600; }
 .pc-name { font-family: var(--font-display); font-size: 22px;
-  text-transform: uppercase; color: var(--fg); line-height: 1.05; margin-top: 2px; }
+  text-transform: uppercase; color: var(--fg); line-height: 1.05; margin-top: 2px;
+  display: block; border-bottom: none; }
+.pc-name:hover { color: var(--accent); border-bottom: none; }
+.pc-name::after { content: ''; position: absolute; inset: 0; z-index: 1; }
 .pc-price { font-family: var(--font-heading); font-weight: 700;
   color: var(--fg); margin-top: 8px; font-size: 15px; }
 .pc-price s { color: var(--fg-subtle); font-weight: 400; margin-left: 8px; font-size: 13px; }
@@ -186,6 +220,7 @@ header.nav {
   font-family: var(--font-heading); font-size: 11px; font-weight: 700;
   letter-spacing: var(--tracking-wide); text-transform: uppercase;
   cursor: pointer; transition: all var(--dur-base) var(--ease-out);
+  position: relative; z-index: 2;
 }
 .pc-cta:hover { background: var(--wa); color: #000; border-color: var(--wa); }
 .pc-cta svg { width: 13px; height: 13px; }
@@ -212,7 +247,9 @@ footer { border-top: 1px solid var(--border); padding: 56px var(--pad-x) 32px; }
 
 /* ============ STICKY WHATSAPP FAB ============ */
 .wa-fab {
-  position: fixed; bottom: 24px; right: 24px; z-index: 100;
+  position: fixed;
+  bottom: max(24px, calc(env(safe-area-inset-bottom) + 16px));
+  right: 24px; z-index: 100;
   background: var(--wa); color: #000;
   width: 56px; height: 56px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
@@ -232,26 +269,106 @@ footer { border-top: 1px solid var(--border); padding: 56px var(--pad-x) 32px; }
   100% { box-shadow: 0 0 0 22px rgba(37,211,102,0); }
 }
 
-/* ============ MOBILE NAV DRAWER ============ */
-.mob-nav {
-  position: fixed; inset: 0; background: #000; z-index: 200;
-  display: none; flex-direction: column; padding: 24px var(--pad-x);
-  gap: 6px;
+/* ============ REDUCED MOTION ============ */
+/* Only disable continuous looping animations — hover transforms are brief
+   intentional feedback and are retained for all users */
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab .pulse { animation: none; }
+  html { scroll-behavior: auto; }
 }
-.mob-nav.open { display: flex; }
-.mob-nav a {
-  color: var(--fg); border-bottom: none; padding: 18px 0;
-  font-family: var(--font-display); font-size: 32px; text-transform: uppercase;
-  border-top: 1px solid var(--border);
-}
-.mob-nav a:first-of-type { border-top: 1px solid var(--border); margin-top: 48px; }
-.mob-close {
-  position: absolute; top: 20px; right: 20px; background: transparent;
-  border: none; color: var(--fg); cursor: pointer; padding: 10px;
-}
-.mob-close svg { width: 22px; height: 22px; }
 
-/* ============ MOBILE ============ */
+/* ============ MOBILE NAV DRAWER ============ */
+
+/* Backdrop — dims the page behind the panel */
+.mob-backdrop {
+  position: fixed; inset: 0;
+  background: var(--overlay-backdrop);
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  z-index: 199;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.mob-backdrop.open { opacity: 1; pointer-events: auto; }
+
+/* Drawer panel — slides in from the right */
+.mob-nav {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(300px, 84vw);
+  background: #0a0a0a;
+  border-left: 1px solid var(--border);
+  z-index: 200;
+  display: flex; flex-direction: column;
+  visibility: hidden; pointer-events: none;
+  transform: translateX(100%);
+  transition:
+    transform var(--dur-slow) var(--ease-out),
+    visibility 0s var(--dur-slow);
+}
+.mob-nav.open {
+  visibility: visible; pointer-events: auto;
+  transform: translateX(0);
+  transition:
+    transform var(--dur-slow) var(--ease-out),
+    visibility 0s 0s;
+}
+
+/* Drawer header row */
+.mob-nav-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 8px 0 20px; height: 60px;
+  border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.mob-nav-label {
+  font-family: var(--font-heading); font-size: 10px; font-weight: 600;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.mob-close {
+  background: transparent; border: none; color: var(--fg);
+  cursor: pointer; padding: 12px;
+  display: flex; align-items: center; justify-content: center;
+  transition: color var(--dur-fast);
+}
+.mob-close:hover { color: var(--accent); }
+.mob-close svg { width: 20px; height: 20px; }
+
+/* Nav links list */
+.mob-nav-links {
+  flex: 1; overflow-y: auto;
+  display: flex; flex-direction: column;
+}
+.mob-nav-links a {
+  color: var(--fg); border-bottom: none;
+  padding: 18px 20px;
+  font-family: var(--font-display); font-size: 26px; text-transform: uppercase;
+  line-height: 1; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: color var(--dur-fast), background var(--dur-fast);
+}
+.mob-nav-links a:first-child { border-top: none; }
+.mob-nav-links a:hover { color: var(--accent); background: rgba(255,255,255,0.02); }
+.mob-nav-links a svg { width: 14px; height: 14px; opacity: 0.35; flex-shrink: 0; }
+
+/* Footer CTA at the bottom of the drawer */
+.mob-nav-foot {
+  padding: 16px 20px; border-top: 1px solid var(--border); flex-shrink: 0;
+}
+.mob-nav-foot .btn-wa {
+  width: 100%; justify-content: center; padding: 16px 20px; font-size: 12px;
+}
+
+/* ============ TABLET — 1080px (nav-collapse zone) ============ */
+@media (max-width: 1080px) {
+  .ft { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+}
+
+/* ============ TABLET MID — 720px ============ */
+@media (max-width: 720px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .ft { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+
+/* ============ MOBILE — 900px ============ */
 @media (max-width: 900px) {
   :root { --pad-x: 20px; }
   .sec { padding: 72px 0; }
@@ -264,7 +381,6 @@ footer { border-top: 1px solid var(--border); padding: 56px var(--pad-x) 32px; }
   .nav-wa { padding: 0 12px; height: 38px; }
   .icon-link { width: 38px; height: 38px; }
   .nav-toggle { width: 38px; height: 38px; }
-  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .pc-name { font-size: 17px; }
   .pc-body { padding: 14px 14px 16px; gap: 3px; }
   .pc-cta { padding: 12px; font-size: 10px; }

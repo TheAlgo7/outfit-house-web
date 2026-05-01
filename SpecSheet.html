@@ -18,7 +18,7 @@
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--accent); margin-bottom: 24px;
-    padding: 8px 14px; border: 1px solid rgba(227,168,72,0.30);
+    padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   }
   .ss-hero h1 {
     font-family: var(--font-display); font-size: clamp(56px, 8vw, 120px);
@@ -42,7 +42,7 @@
     letter-spacing: var(--tracking-wider);
   }
   .tier-block h2 {
-    font-family: var(--font-display); font-size: clamp(72px, 12vw, 168px);
+    font-family: var(--font-display); font-size: clamp(56px, 12vw, 168px);
     line-height: 0.85; margin: 0 0 20px; text-transform: uppercase;
     letter-spacing: -0.01em;
   }
@@ -83,8 +83,10 @@
   }
 
   .honest {
-    margin-top: 32px; padding: 24px; border-left: 2px solid var(--accent);
-    background: rgba(227,168,72,0.04); display: flex; flex-direction: column; gap: 6px;
+    margin-top: 32px; padding: 24px;
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    background: color-mix(in srgb, var(--accent) 4%, transparent);
+    display: flex; flex-direction: column; gap: 6px;
   }
   .honest .k {
     font-family: var(--font-heading); font-size: 10px; font-weight: 700;
@@ -102,9 +104,11 @@
     font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px);
     text-transform: uppercase; line-height: 0.95; margin: 0 0 48px; max-width: 720px;
   }
+  .compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .compare-table {
     border: 1px solid var(--border); display: grid;
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    min-width: 540px;
   }
   .compare-table > div {
     padding: 18px 24px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
@@ -124,7 +128,7 @@
   }
   .cta-final::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at center, rgba(227,168,72,0.08) 0%, transparent 60%);
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--accent) 8%, transparent) 0%, transparent 60%);
     pointer-events: none;
   }
   .cta-final h2 {
@@ -143,17 +147,16 @@
     .tier-block .row { grid-template-columns: 1fr; gap: 32px; }
     .tier-block .lead { position: static; }
     .compare { padding: 56px 20px; }
-    .compare-table { grid-template-columns: 1fr; }
-    .compare-table > div { border-right: none; }
+    /* compare-table now scrolls horizontally — no single-column collapse */
     .cta-final { padding: 80px 20px; }
   }
 </style>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div id="header-mount"></div>
 
-<section class="ss-hero">
+<section id="main-content" class="ss-hero">
   <div>
     <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> The Spec Sheet</div>
     <h1>What you're<br/><span class="accent">paying for.</span></h1>
@@ -245,6 +248,7 @@
 <!-- COMPARISON -->
 <section class="compare">
   <h2>At a glance.</h2>
+  <div class="compare-scroll">
   <div class="compare-table">
     <div class="h">Spec</div>
     <div class="h">Entry</div>
@@ -276,6 +280,7 @@
     <div>₹3,899</div>
     <div>₹6,499</div>
   </div>
+  </div><!-- /.compare-scroll -->
 </section>
 
 <!-- CTA -->
