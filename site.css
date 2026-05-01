@@ -49,6 +49,8 @@ img { display: block; max-width: 100%; }
 header.nav {
   position: sticky; top: 0; z-index: 50;
 }
+/* CLS guard — reserve nav height before JS mounts header */
+#header-mount { min-height: 68px; }
 /* Homepage: let nav scroll away for editorial feel */
 .page-home header.nav {
   position: relative; top: auto;

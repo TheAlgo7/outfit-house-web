@@ -3,8 +3,18 @@
 <head>
 <meta charset="utf-8"/>
 <title>Category — The Outfit House</title>
+<meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, 7A or UA 1:1 grade. Real photos — ships PAN-India."/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="icon" href="assets/logo-crown.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Category — The Outfit House"/>
+<meta property="og:description" content="Shop premium sneakers, apparel and accessories at The Outfit House across three quality tiers."/>
+<meta property="og:image" content="https://theoutfithouse.in/assets/Sneakers/AJ1%20Mid%20Panda%20(1).png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"/></noscript>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -128,6 +138,15 @@
   const cat = CATEGORIES[catKey] || CATEGORIES.sneakers;
 
   document.title = cat.title + ' — The Outfit House';
+
+  // SEO — update dynamic meta
+  var canonicalEl = document.createElement('link');
+  canonicalEl.rel = 'canonical';
+  canonicalEl.href = 'https://theoutfithouse.in/Category.html?cat=' + catKey;
+  document.head.appendChild(canonicalEl);
+  document.querySelector('meta[name="description"]').content = cat.title + ' — shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, 7A or UA 1:1 grade. Real photos before dispatch.';
+  document.querySelector('meta[property="og:title"]').content = cat.title + ' — The Outfit House';
+  document.querySelector('meta[property="og:description"]').content = cat.title + ' — premium ' + cat.label.toLowerCase() + ' across three quality tiers.';
   document.getElementById('cat-eyebrow').innerHTML = '<span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> ' + cat.tag;
   document.getElementById('cat-title').textContent = cat.title;
   document.getElementById('cat-blurb').textContent = cat.blurb;

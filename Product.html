@@ -3,8 +3,18 @@
 <head>
 <meta charset="utf-8"/>
 <title>Product — The Outfit House</title>
+<meta name="description" content="Shop premium streetwear and sneakers at The Outfit House — Entry, 7A and UA 1:1 grades. Real photos before dispatch. Ships PAN-India."/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="icon" href="assets/logo-crown.png"/>
+<meta property="og:type" content="product"/>
+<meta property="og:title" content="Product — The Outfit House"/>
+<meta property="og:description" content="Premium grade sneakers and streetwear at The Outfit House."/>
+<meta property="og:image" content="https://theoutfithouse.in/assets/Sneakers/AJ1%20Mid%20Panda%20(1).png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"/></noscript>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -202,7 +212,7 @@
   <div class="gallery">
     <div class="gal-main">
       <span class="gal-grade" id="gal-grade">7A</span>
-      <img id="gal-img" src="assets/product-airjordan.jpg" alt=""/>
+      <img id="gal-img" src="assets/product-airjordan.jpg" alt="Product image"/>
       <div class="gal-nav">
         <button onclick="gal(-1)" aria-label="Previous"><svg><use href="#arrow-left"/></svg></button>
         <button onclick="gal(1)" aria-label="Next"><svg><use href="#arrow-right"/></svg></button>
@@ -307,6 +317,31 @@
   document.getElementById('p-price').innerHTML = p.price + ' <s>' + p.was + '</s>';
   document.getElementById('s-grade').textContent = p.grade;
   document.title = p.name + ' — The Outfit House';
+
+  // SEO — update dynamic meta + inject Product schema
+  document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' grade — ' + p.price + '. Real photos before dispatch. Ships PAN-India from The Outfit House.';
+  document.querySelector('meta[property="og:title"]').content = p.name + ' — The Outfit House';
+  document.querySelector('meta[property="og:description"]').content = p.name + ' · ' + p.grade + ' grade at ' + p.price + '.';
+  document.querySelector('meta[property="og:image"]').content = 'https://theoutfithouse.in/' + p.img;
+  document.getElementById('gal-img').alt = p.name;
+  var ldScript = document.createElement('script');
+  ldScript.type = 'application/ld+json';
+  ldScript.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": p.name,
+    "image": ['https://theoutfithouse.in/' + p.img],
+    "description": p.name + ' · ' + p.grade + ' grade at The Outfit House.',
+    "brand": { "@type": "Brand", "name": p.brand },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "price": p.price.replace(/[^0-9]/g, ''),
+      "availability": "https://schema.org/InStock",
+      "url": 'https://theoutfithouse.in/Product.html?slug=' + p.slug
+    }
+  });
+  document.head.appendChild(ldScript);
 
   // Gallery — reuse the single image 4x as placeholders
   const images = [p.img, p.img, p.img, p.img];
