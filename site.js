@@ -155,6 +155,7 @@ window.renderHeader = function(active) {
     { h:'Accessories', href:'/accessories', num:'04' },
   ];
   var topLinks = [
+    { h:'Home',       href:'/' },
     { h:'Spec Sheet', href:'/spec-sheet' },
     { h:'Contact',    href:'/contact' },
   ];

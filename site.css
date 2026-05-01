@@ -54,10 +54,6 @@ header.nav {
 }
 /* Spacer so page content doesn't hide under the fixed nav */
 #header-mount { min-height: 68px; }
-/* Homepage: let nav scroll away for editorial feel */
-.page-home header.nav {
-  position: relative; top: auto; left: auto; right: auto;
-}
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 var(--pad-x); max-width: var(--container); margin: 0 auto;
