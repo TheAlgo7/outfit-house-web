@@ -47,16 +47,16 @@ img { display: block; max-width: 100%; }
 
 /* ============ NAV ============ */
 header.nav {
-  position: sticky; top: 0; z-index: 50;
-}
-/* CLS guard — reserve nav height before JS mounts header */
-#header-mount { min-height: 68px; }
-/* Homepage: let nav scroll away for editorial feel */
-.page-home header.nav {
-  position: relative; top: auto;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   background: var(--overlay-nav); backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--border);
+}
+/* Spacer so page content doesn't hide under the fixed nav */
+#header-mount { min-height: 68px; }
+/* Homepage: let nav scroll away for editorial feel */
+.page-home header.nav {
+  position: relative; top: auto; left: auto; right: auto;
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
