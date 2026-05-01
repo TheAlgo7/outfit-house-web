@@ -1,5 +1,5 @@
 // Shared catalog + WhatsApp helpers for The Outfit House
-window.WA_NUMBER = '919999999999'; // TODO: replace with real number
+window.WA_NUMBER = '918700825707';
 window.IG_URL    = 'https://instagram.com/theoutfithouse.in';
 
 window.wa = function(msg) {
