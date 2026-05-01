@@ -5,7 +5,7 @@
 * { box-sizing: border-box; }
 html {
   margin: 0; background: #000; color: var(--fg); scroll-behavior: smooth;
-  overflow-x: clip; /* prevents any absolutely-positioned child from creating horizontal scroll */
+  overflow-x: hidden;
 }
 body { margin: 0; background: #000; color: var(--fg); }
 img { display: block; max-width: 100%; }
@@ -48,6 +48,10 @@ img { display: block; max-width: 100%; }
 /* ============ NAV ============ */
 header.nav {
   position: sticky; top: 0; z-index: 50;
+}
+/* Homepage: let nav scroll away for editorial feel */
+.page-home header.nav {
+  position: relative; top: auto;
   background: var(--overlay-nav); backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--border);
