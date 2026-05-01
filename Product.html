@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Product — The Outfit House</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" href="assets/logo-crown.png"/>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<link rel="stylesheet" href="site.css"/>
+<style>
+  .crumbs {
+    padding: 24px var(--pad-x); max-width: var(--container); margin: 0 auto;
+    font-family: var(--font-heading); font-size: 11px;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .crumbs a { color: var(--fg-muted); border-bottom: none; }
+  .crumbs a:hover { color: var(--accent); }
+  .crumbs span.sep { margin: 0 10px; color: var(--fg-subtle); }
+
+  .pdp {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 56px; padding: 16px var(--pad-x) 112px;
+    max-width: var(--container); margin: 0 auto;
+  }
+
+  /* ============ GALLERY ============ */
+  .gallery { display: flex; flex-direction: column; gap: 12px; position: sticky; top: 88px; align-self: start; }
+  .gal-main {
+    aspect-ratio: 1/1; background: var(--bg-light); position: relative; overflow: hidden;
+  }
+  .gal-main img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+  .gal-grade {
+    position: absolute; top: 18px; left: 18px;
+    background: var(--accent); color: #000;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    padding: 7px 12px;
+  }
+  .gal-grade.entry  { background: var(--bg-light); color: #000; }
+  .gal-grade.ua     { background: #000; color: var(--accent); border: 1px solid var(--accent); }
+  .gal-nav {
+    position: absolute; inset: auto 0 50% auto;
+    display: flex; justify-content: space-between; width: 100%;
+    transform: translateY(50%); pointer-events: none; padding: 0 16px;
+  }
+  .gal-nav button {
+    pointer-events: auto; width: 44px; height: 44px;
+    background: rgba(0,0,0,0.55); backdrop-filter: blur(8px);
+    border: 1px solid var(--border-strong); color: var(--fg); cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .gal-nav button:hover { background: rgba(0,0,0,0.8); }
+  .gal-nav svg { width: 18px; height: 18px; }
+  .thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .thumb {
+    aspect-ratio: 1/1; background: var(--bg-light); cursor: pointer;
+    border: 1px solid transparent; overflow: hidden;
+    transition: border-color var(--dur-fast);
+  }
+  .thumb.active { border-color: var(--accent); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ============ INFO ============ */
+  .info { display: flex; flex-direction: column; gap: 28px; padding-top: 8px; }
+  .info .brandtag {
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .info h1 {
+    font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px);
+    text-transform: uppercase; line-height: 0.95; margin: 6px 0 0;
+    letter-spacing: -0.01em;
+  }
+  .price-row {
+    display: flex; align-items: baseline; gap: 14px;
+    padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .price { font-family: var(--font-display); font-size: 40px; color: var(--fg); }
+  .price s { font-size: 18px; color: var(--fg-subtle); font-weight: 400; margin-left: 6px; }
+  .save {
+    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--accent); padding: 6px 10px; border: 1px solid var(--accent);
+  }
+
+  /* Size */
+  .size-block h4, .spec-block h4, .policy-block h4 {
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--fg-muted); margin: 0 0 14px;
+  }
+  .sizes { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .size {
+    height: 52px; background: transparent; color: var(--fg);
+    border: 1px solid var(--border-strong); cursor: pointer;
+    font-family: var(--font-heading); font-weight: 600; font-size: 14px;
+    transition: all var(--dur-fast);
+  }
+  .size:hover:not(.oos):not(.sel) { border-color: var(--fg); }
+  .size.sel { background: var(--fg); color: #000; border-color: var(--fg); }
+  .size.oos { color: var(--fg-subtle); cursor: not-allowed;
+    background-image: linear-gradient(to top left, transparent calc(50% - 1px), var(--border) calc(50% - 1px), var(--border) calc(50% + 1px), transparent calc(50% + 1px)); }
+  .size-help {
+    display: flex; justify-content: space-between; margin-top: 12px;
+    font-family: var(--font-heading); font-size: 11px;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .size-help a { color: var(--fg-muted); border-bottom: 1px solid var(--border-strong); }
+  .size-help a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* CTAs */
+  .cta-row { display: flex; flex-direction: column; gap: 10px; }
+  .cta-row .btn-wa { padding: 22px 26px; font-size: 14px; width: 100%; }
+  .cta-row .btn-ghost { padding: 16px; font-size: 12px; width: 100%; }
+
+  /* Spec (glass) */
+  .spec-block {}
+  .specs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+  .spec {
+    background: rgba(26,26,26,0.7); padding: 18px 20px;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+  .spec .k {
+    font-family: var(--font-heading); font-size: 10px; font-weight: 600;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--fg-muted); margin-bottom: 4px;
+  }
+  .spec .v { font-family: var(--font-display); font-size: 18px;
+    color: var(--fg); text-transform: uppercase; letter-spacing: 0; }
+
+  /* Policy */
+  .policy { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+  .policy-item {
+    display: grid; grid-template-columns: 28px 1fr auto;
+    gap: 14px; padding: 18px 0; align-items: center;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-body); font-size: 13px;
+  }
+  .policy-item svg { width: 18px; height: 18px; color: var(--accent); }
+  .policy-item .lab {
+    font-family: var(--font-heading); font-size: 11px;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--fg-muted); font-weight: 600;
+  }
+  .policy-item .val { color: var(--fg); }
+
+  /* Related */
+  .related { padding: 0 0 112px; }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 900px) {
+    .pdp { grid-template-columns: 1fr; gap: 32px; padding: 8px 0 56px; }
+    .gallery { position: static; padding: 0; }
+    .gal-main { aspect-ratio: 1/1; }
+    .thumbs { display: none; }
+    .gal-dots {
+      display: flex; justify-content: center; gap: 8px; padding: 14px 0 0;
+    }
+    .gal-dot { width: 8px; height: 8px; background: var(--border-strong); border: none; padding: 0; cursor: pointer; }
+    .gal-dot.active { background: var(--accent); }
+    .info { padding: 0 20px; gap: 24px; }
+    .info h1 { font-size: 30px; }
+    .price { font-size: 32px; }
+    .sizes { grid-template-columns: repeat(4, 1fr); }
+    .specs { grid-template-columns: 1fr; }
+    .related { padding: 0 0 72px; }
+    .crumbs { padding: 16px 20px; }
+  }
+  @media (min-width: 901px) { .gal-dots { display: none; } }
+</style>
+</head>
+<body>
+
+<div id="header-mount"></div>
+
+<nav class="crumbs">
+  <a href="Homepage.html">Home</a><span class="sep">/</span>
+  <a id="crumb-cat" href="Category.html?cat=sneakers">Sneakers</a><span class="sep">/</span>
+  <span id="crumb-name">Product</span>
+</nav>
+
+<main class="pdp">
+  <!-- GALLERY -->
+  <div class="gallery">
+    <div class="gal-main">
+      <span class="gal-grade" id="gal-grade">7A</span>
+      <img id="gal-img" src="assets/product-airjordan.jpg" alt=""/>
+      <div class="gal-nav">
+        <button onclick="gal(-1)" aria-label="Previous"><svg><use href="#arrow-left"/></svg></button>
+        <button onclick="gal(1)" aria-label="Next"><svg><use href="#arrow-right"/></svg></button>
+      </div>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="gal-dots" id="dots"></div>
+  </div>
+
+  <!-- INFO -->
+  <div class="info">
+    <div>
+      <span class="brandtag" id="p-brand">Air Jordan</span>
+      <h1 id="p-name">AJ1 Mid · Panda</h1>
+    </div>
+    <div class="price-row">
+      <div class="price" id="p-price">₹4,499 <s id="p-was">₹14,995</s></div>
+      <span class="save" id="p-save">Save 70%</span>
+    </div>
+
+    <div class="size-block">
+      <h4>Select size · UK</h4>
+      <div class="sizes" id="sizes"></div>
+      <div class="size-help">
+        <a href="#" onclick="wa('Hi! I need help with sizing for a pair.');return false;">Not sure? Ask on WhatsApp</a>
+        <span>UK sizing</span>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <button class="btn-wa" onclick="enquire()">
+        <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+      </button>
+      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of ' + document.getElementById('p-name').innerText);return false;">Request more photos</a>
+    </div>
+
+    <div class="spec-block">
+      <h4>Spec highlights</h4>
+      <div class="specs">
+        <div class="spec"><div class="k">Upper</div><div class="v" id="s-upper">Premium leather</div></div>
+        <div class="spec"><div class="k">Sole</div><div class="v" id="s-sole">Rubber · air</div></div>
+        <div class="spec"><div class="k">Box</div><div class="v" id="s-box">Branded · OG</div></div>
+        <div class="spec"><div class="k">Grade</div><div class="v" id="s-grade">7A</div></div>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <h4>Shipping & policy</h4>
+      <div class="policy">
+        <div class="policy-item">
+          <svg><use href="#truck"/></svg>
+          <div><div class="lab">Shipping</div><div class="val">PAN-India · 2–5 days · discreet packing</div></div>
+        </div>
+        <div class="policy-item">
+          <svg><use href="#shield"/></svg>
+          <div><div class="lab">Payment</div><div class="val">UPI · Bank transfer · COD (metros)</div></div>
+        </div>
+        <div class="policy-item">
+          <svg><use href="#rotate"/></svg>
+          <div><div class="lab">Exchange</div><div class="val">Size swap within 7 days · unworn pairs</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- RELATED -->
+<section class="sec related">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">You might like</span>
+        <h2>More pairs.</h2>
+      </div>
+    </div>
+    <div class="products-grid" id="related-grid"></div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="site.js"></script>
+<script>
+  injectSprite();
+
+  // Resolve product by slug
+  const params = new URLSearchParams(location.search);
+  const slug = params.get('slug') || PRODUCTS[0].slug;
+  const p = PRODUCTS.find(x => x.slug === slug) || PRODUCTS[0];
+  const cat = CATEGORIES[p.cat] || CATEGORIES.sneakers;
+
+  document.getElementById('header-mount').innerHTML = renderHeader(cat.label);
+  document.getElementById('footer-mount').innerHTML = renderFooter();
+
+  // Inject
+  const crumbCat = document.getElementById('crumb-cat');
+  crumbCat.textContent = cat.label;
+  crumbCat.href = 'Category.html?cat=' + cat.key;
+  document.getElementById('crumb-name').textContent = p.name;
+  document.getElementById('p-brand').textContent = p.brand;
+  document.getElementById('p-name').textContent = p.name;
+  document.getElementById('p-price').innerHTML = p.price + ' <s>' + p.was + '</s>';
+  document.getElementById('s-grade').textContent = p.grade;
+  document.title = p.name + ' — The Outfit House';
+
+  // Gallery — reuse the single image 4x as placeholders
+  const images = [p.img, p.img, p.img, p.img];
+  const grade = document.getElementById('gal-grade');
+  grade.textContent = p.grade;
+  grade.className = 'gal-grade ' + gradeClass(p.grade);
+  const thumbsEl = document.getElementById('thumbs');
+  const dotsEl = document.getElementById('dots');
+  let idx = 0;
+  function renderGallery() {
+    document.getElementById('gal-img').src = images[idx];
+    thumbsEl.innerHTML = images.map((src, i) =>
+      `<button class="thumb ${i===idx?'active':''}" onclick="setImg(${i})"><img src="${src}" alt=""/></button>`).join('');
+    dotsEl.innerHTML = images.map((_, i) =>
+      `<button class="gal-dot ${i===idx?'active':''}" onclick="setImg(${i})" aria-label="Image ${i+1}"></button>`).join('');
+  }
+  window.setImg = function(i) { idx = i; renderGallery(); };
+  window.gal = function(d) { idx = (idx + d + images.length) % images.length; renderGallery(); };
+  renderGallery();
+
+  // Swipe on mobile
+  let sx = 0;
+  const galMain = document.querySelector('.gal-main');
+  galMain.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive: true});
+  galMain.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) gal(dx < 0 ? 1 : -1);
+  });
+
+  // Sizes
+  const UK = [6,7,8,9,10,11];
+  const OOS = new Set([6, 11]); // random placeholder
+  let selSize = null;
+  const sizesEl = document.getElementById('sizes');
+  function renderSizes() {
+    sizesEl.innerHTML = UK.map(s =>
+      `<button class="size ${OOS.has(s)?'oos':''} ${selSize===s?'sel':''}" ${OOS.has(s)?'disabled':''} onclick="selectSize(${s})">UK ${s}</button>`
+    ).join('');
+  }
+  window.selectSize = function(s) { selSize = s; renderSizes(); };
+  renderSizes();
+
+  window.enquire = function() {
+    const sz = selSize ? `size UK ${selSize}` : 'available sizes';
+    wa(`Hi! I want to enquire about ${p.name} (${p.grade}) — ${sz}. Price: ${p.price}.`);
+  };
+
+  // Related = other products from same category
+  let related = PRODUCTS.filter(x => x.slug !== p.slug && x.cat === p.cat).slice(0, 3);
+  if (related.length < 3) {
+    related = related.concat(PRODUCTS.filter(x => x.slug !== p.slug && x.cat !== p.cat).slice(0, 3 - related.length));
+  }
+  document.getElementById('related-grid').innerHTML = related.map(renderProductCard).join('');
+</script>
+</body>
+</html>
