@@ -83,7 +83,7 @@ window.renderProductCard = function(p) {
       </div>
       <div class="pc-body">
         <span class="pc-brand">${p.brand}</span>
-        <a class="pc-name" href="Product.html?slug=${p.slug}">${p.name}</a>
+        <a class="pc-name" href="/product/${p.slug}">${p.name}</a>
         <span class="pc-price">${p.price} <s>${p.was}</s></span>
         <button class="pc-cta" onclick="event.stopPropagation(); wa('Hi! I want to enquire about ${p.name} (${p.grade}). Available sizes?')">
           <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
@@ -137,35 +137,47 @@ window.injectSprite = function() {
       <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
       </symbol>
+      <symbol id="chevron-down" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1,1 5,5 9,1"/>
+      </symbol>
     </svg>`;
   document.body.appendChild(s);
 };
 
 // Shared header markup
 window.renderHeader = function(active) {
-  const items = [
-    {h:'Sneakers',    href:'Category.html?cat=sneakers'},
-    {h:'Apparel',     href:'Category.html?cat=apparel'},
-    {h:'Bottomwear',  href:'Category.html?cat=bottomwear'},
-    {h:'Accessories', href:'Category.html?cat=accessories'},
-    {h:'Spec Sheet',  href:'SpecSheet.html'},
-    {h:'Contact',     href:'Contact.html'},
+  var SHOP_ITEMS = ['Sneakers', 'Apparel', 'Bottomwear', 'Accessories'];
+  var isShop = SHOP_ITEMS.indexOf(active) !== -1;
+  var shopLinks = [
+    { h:'Sneakers',    href:'/sneakers',    num:'01' },
+    { h:'Apparel',     href:'/apparel',     num:'02' },
+    { h:'Bottomwear',  href:'/bottomwear',  num:'03' },
+    { h:'Accessories', href:'/accessories', num:'04' },
   ];
-  /* mob-nav and mob-backdrop are siblings of <header>, NOT children.
-     The header's backdrop-filter creates a stacking context that would trap
-     position:fixed children inside the 68px header bounds. */
+  var topLinks = [
+    { h:'Spec Sheet', href:'/spec-sheet' },
+    { h:'Contact',    href:'/contact' },
+  ];
   return `
   <header class="nav">
     <div class="nav-inner">
       <button class="nav-toggle" aria-label="Open menu" onclick="openMobNav()">
         <svg><use href="#menu-icon"/></svg>
       </button>
-      <a class="brand" href="Homepage.html">
+      <a class="brand" href="/">
         <img src="assets/logo-crown.png" alt="The Outfit House crown logo"/>
         <span class="name">The Outfit House</span>
       </a>
       <nav class="nav-links">
-        ${items.map(i => `<a href="${i.href}" class="${active===i.h?'active':''}">${i.h}</a>`).join('')}
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn ${isShop ? 'active' : ''}" type="button">
+            Shop <svg><use href="#chevron-down"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            ${shopLinks.map(i => `<a href="${i.href}" role="menuitem" class="${active===i.h?'active':''}"><span>${i.h}</span><span class="num">${i.num}</span></a>`).join('')}
+          </div>
+        </div>
+        ${topLinks.map(i => `<a href="${i.href}" class="${active===i.h?'active':''}">${i.h}</a>`).join('')}
       </nav>
       <div class="nav-cta">
         <a class="icon-link" href="${window.IG_URL}" target="_blank" rel="noopener" aria-label="Instagram">
@@ -188,7 +200,12 @@ window.renderHeader = function(active) {
       </button>
     </div>
     <nav class="mob-nav-links">
-      ${items.map(i => `
+      ${shopLinks.map(i => `
+      <a href="${i.href}">
+        ${i.h}
+        <svg><use href="#arrow-right"/></svg>
+      </a>`).join('')}
+      ${topLinks.map(i => `
       <a href="${i.href}">
         ${i.h}
         <svg><use href="#arrow-right"/></svg>
@@ -215,21 +232,21 @@ window.renderFooter = function() {
         <p>Premium 7A and UA-grade streetwear. Hand-checked, shipped from New Delhi.</p>
       </div>
       <div><h5>Shop</h5><ul>
-        <li><a href="Category.html?cat=sneakers">Sneakers</a></li>
-        <li><a href="Category.html?cat=apparel">Apparel</a></li>
-        <li><a href="Category.html?cat=bottomwear">Bottomwear</a></li>
-        <li><a href="Category.html?cat=accessories">Accessories</a></li>
+        <li><a href="/sneakers">Sneakers</a></li>
+        <li><a href="/apparel">Apparel</a></li>
+        <li><a href="/bottomwear">Bottomwear</a></li>
+        <li><a href="/accessories">Accessories</a></li>
       </ul></div>
       <div><h5>Help</h5><ul>
-        <li><a href="SpecSheet.html">Spec Sheet</a></li>
-        <li><a href="Contact.html">Shipping</a></li>
-        <li><a href="Contact.html">Sizing</a></li>
-        <li><a href="Contact.html">Exchange</a></li>
+        <li><a href="/spec-sheet">Spec Sheet</a></li>
+        <li><a href="/contact">Shipping</a></li>
+        <li><a href="/contact">Sizing</a></li>
+        <li><a href="/contact">Exchange</a></li>
       </ul></div>
       <div><h5>Connect</h5><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
         <li><a href="${window.IG_URL}" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul></div>
     </div>
     <div class="ft-bot">
@@ -242,3 +259,19 @@ window.renderFooter = function() {
     <svg><use href="#wa-icon"/></svg>
   </button>`;
 };
+
+// Page-transition interceptor — fade out before navigating to internal pages
+(function() {
+  var leaving = false;
+  document.addEventListener('click', function(e) {
+    if (leaving) return;
+    var a = e.target.closest('a[href]');
+    if (!a || a.target === '_blank') return;
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    var href = a.getAttribute('href');
+    if (!href || /^(#|mailto:|tel:|javascript:|https?:\/\/)/.test(href)) return;
+    leaving = true;
+    document.body.classList.add('leaving');
+    setTimeout(function() { location.href = href; }, 180);
+  });
+}());

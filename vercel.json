@@ -1,18 +1,27 @@
 {
   "redirects": [
-    { "source": "/Homepage.html", "destination": "/", "permanent": true }
+    { "source": "/Homepage.html",  "destination": "/",           "permanent": true },
+    { "source": "/Contact.html",   "destination": "/contact",    "permanent": true },
+    { "source": "/SpecSheet.html", "destination": "/spec-sheet", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/Homepage.html" }
+    { "source": "/sneakers",      "destination": "/Category.html?cat=sneakers" },
+    { "source": "/apparel",       "destination": "/Category.html?cat=apparel" },
+    { "source": "/bottomwear",    "destination": "/Category.html?cat=bottomwear" },
+    { "source": "/accessories",   "destination": "/Category.html?cat=accessories" },
+    { "source": "/contact",       "destination": "/Contact.html" },
+    { "source": "/spec-sheet",    "destination": "/SpecSheet.html" },
+    { "source": "/product/:slug", "destination": "/Product.html?slug=:slug" },
+    { "source": "/",              "destination": "/Homepage.html" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        { "key": "X-Frame-Options",        "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy",        "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",     "value": "camera=(), microphone=(), geolocation=()" }
       ]
     }
   ]

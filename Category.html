@@ -132,9 +132,14 @@
 <script>
   injectSprite();
 
-  // Determine category
+  // Determine category — supports clean URLs (/sneakers) and legacy query params
   const params = new URLSearchParams(location.search);
-  const catKey = params.get('cat') || 'sneakers';
+  let catKey = params.get('cat');
+  if (!catKey) {
+    const seg = location.pathname.replace(/^\//, '').split('/')[0];
+    if (window.CATEGORIES[seg]) catKey = seg;
+  }
+  catKey = catKey || 'sneakers';
   const cat = CATEGORIES[catKey] || CATEGORIES.sneakers;
 
   document.title = cat.title + ' — The Outfit House';
@@ -142,7 +147,7 @@
   // SEO — update dynamic meta
   var canonicalEl = document.createElement('link');
   canonicalEl.rel = 'canonical';
-  canonicalEl.href = 'https://theoutfithouse.in/Category.html?cat=' + catKey;
+  canonicalEl.href = 'https://theoutfithouse.in/' + catKey;
   document.head.appendChild(canonicalEl);
   document.querySelector('meta[name="description"]').content = cat.title + ' — shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, 7A or UA 1:1 grade. Real photos before dispatch.';
   document.querySelector('meta[property="og:title"]').content = cat.title + ' — The Outfit House';

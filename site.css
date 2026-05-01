@@ -5,9 +5,9 @@
 * { box-sizing: border-box; }
 html {
   margin: 0; background: #000; color: var(--fg); scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip (not hidden) — preserves position:sticky on child elements */
 }
-body { margin: 0; background: #000; color: var(--fg); }
+body { margin: 0; background: #000; color: var(--fg); animation: page-in var(--dur-slow) var(--ease-out) both; }
 img { display: block; max-width: 100%; }
 
 /* ============ SKIP LINK (a11y) ============ */
@@ -140,6 +140,48 @@ header.nav {
   .nav-cta { order: 3; }
 }
 
+/* ============ NAV DROPDOWN ============ */
+.nav-dropdown { position: relative; height: 100%; display: flex; align-items: center; }
+.nav-dropdown-btn {
+  display: inline-flex; align-items: center; gap: 6px; height: 100%;
+  font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+  letter-spacing: var(--tracking-wide); text-transform: uppercase;
+  color: var(--fg-muted); background: transparent; border: none;
+  cursor: pointer; padding: 0; position: relative;
+  transition: color var(--dur-fast);
+}
+.nav-dropdown-btn:hover { color: var(--fg); }
+.nav-dropdown-btn.active { color: var(--accent); }
+.nav-dropdown-btn.active::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 2px; background: var(--accent);
+}
+.nav-dropdown-btn svg { width: 10px; height: 10px; transition: transform var(--dur-base) var(--ease-out); }
+.nav-dropdown:hover .nav-dropdown-btn svg { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  position: absolute; top: 100%; left: -12px;
+  background: #0d0d0d; border: 1px solid var(--border);
+  min-width: 180px; z-index: 100;
+  opacity: 0; pointer-events: none; transform: translateY(-6px);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1; pointer-events: auto; transform: translateY(0);
+}
+.nav-dropdown-menu a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 16px; border-bottom: 1px solid var(--border);
+  font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: var(--tracking-wide);
+  color: var(--fg-muted); border-right: none;
+  transition: color var(--dur-fast), background var(--dur-fast);
+}
+.nav-dropdown-menu a:last-child { border-bottom: none; }
+.nav-dropdown-menu a:hover { color: var(--fg); background: rgba(255,255,255,0.04); border-color: var(--border); }
+.nav-dropdown-menu a.active { color: var(--accent); }
+.nav-dropdown-menu .num { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+
 /* ============ BUTTONS ============ */
 .btn-wa {
   display: inline-flex; align-items: center; justify-content: center; gap: 12px;
@@ -183,10 +225,10 @@ header.nav {
 /* ============ PRODUCT CARD (shared) ============ */
 .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .pc {
-  background: var(--bg-elev); border: 1px solid transparent;
-  transition: all var(--dur-base) var(--ease-out);
+  background: var(--bg-elev); border: 1px solid var(--bg-elev);
+  transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
   display: flex; flex-direction: column; color: inherit;
-  position: relative;
+  position: relative; will-change: transform; backface-visibility: hidden; isolation: isolate;
 }
 .pc:hover { border-color: var(--border-strong); transform: translateY(-3px); }
 .pc-img {
@@ -198,12 +240,13 @@ header.nav {
 }
 .pc:hover .pc-img img { transform: scale(1.04); }
 .pc-grade {
-  position: absolute; top: 14px; left: 14px;
+  position: absolute; top: 14px; left: 14px; z-index: 2;
   background: var(--accent); color: #000;
   font-family: var(--font-heading); font-size: 10px; font-weight: 700;
   letter-spacing: var(--tracking-wider); text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 5px 10px; transition: opacity var(--dur-base) var(--ease-out);
 }
+.pc:hover .pc-grade { opacity: 0.75; }
 .pc-grade.entry  { background: var(--bg-light); color: #000; }
 .pc-grade.seven  { background: var(--accent); color: #000; }
 .pc-grade.ua     { background: #000; color: var(--accent); border: 1px solid var(--accent); }
@@ -275,12 +318,27 @@ footer { border-top: 1px solid var(--border); padding: 56px var(--pad-x) 32px; }
   100% { box-shadow: 0 0 0 22px rgba(37,211,102,0); }
 }
 
+/* ============ PAGE TRANSITIONS ============ */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes page-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-6px); }
+}
+body.leaving {
+  animation: page-out 0.18s ease-in forwards !important;
+  pointer-events: none;
+}
+
 /* ============ REDUCED MOTION ============ */
 /* Only disable continuous looping animations — hover transforms are brief
    intentional feedback and are retained for all users */
 @media (prefers-reduced-motion: reduce) {
   .wa-fab .pulse { animation: none; }
   html { scroll-behavior: auto; }
+  body, body.leaving { animation: none !important; }
 }
 
 /* ============ MOBILE NAV DRAWER ============ */
