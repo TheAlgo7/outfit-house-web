@@ -69,19 +69,37 @@
     color: var(--fg-muted);
   }
   .meta-row .count b { color: var(--fg); }
-  .meta-row select {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpolyline points='1,1 5,5 9,1' fill='none' stroke='%23F2ECDD' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    color: var(--fg);
-    border: 1px solid var(--border-strong); padding: 8px 32px 8px 12px;
-    font-family: var(--font-heading); font-size: 11px;
+  .sort-drop { position: relative; }
+  .sort-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--fg);
+    border: 1px solid var(--border-strong); padding: 8px 12px;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     text-transform: uppercase; letter-spacing: var(--tracking-wide);
-    cursor: pointer;
+    cursor: pointer; white-space: nowrap;
+    transition: border-color var(--dur-fast), color var(--dur-fast);
   }
+  .sort-btn:hover { border-color: var(--fg); }
+  .sort-btn svg { width: 10px; height: 10px; flex-shrink: 0; transition: transform var(--dur-base) var(--ease-out); }
+  .sort-drop.open .sort-btn svg { transform: rotate(180deg); }
+  .sort-menu {
+    position: absolute; right: 0; top: calc(100% + 4px);
+    background: #0d0d0d; border: 1px solid var(--border);
+    min-width: 190px; list-style: none; padding: 0; margin: 0; z-index: 60;
+    opacity: 0; pointer-events: none; transform: translateY(-6px);
+    transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+  }
+  .sort-drop.open .sort-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .sort-opt {
+    padding: 13px 16px; border-bottom: 1px solid var(--border);
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: var(--tracking-wide);
+    color: var(--fg-muted); cursor: pointer;
+    transition: color var(--dur-fast), background var(--dur-fast);
+  }
+  .sort-opt:last-child { border-bottom: none; }
+  .sort-opt:hover { color: var(--fg); background: rgba(255,255,255,0.04); }
+  .sort-opt.active { color: var(--accent); }
 
   .grid-wrap { padding: 56px 0 96px; max-width: 1280px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
   .empty {
@@ -112,12 +130,17 @@
   <div class="tabs" id="tabs"></div>
   <div class="meta-row">
     <div class="count">Showing <b id="count">0</b> pieces</div>
-    <label for="sort" class="sr-only">Sort by</label>
-    <select id="sort">
-      <option value="feat">Featured</option>
-      <option value="low">Price: low → high</option>
-      <option value="high">Price: high → low</option>
-    </select>
+    <div class="sort-drop" id="sort-wrap" role="group" aria-label="Sort by">
+      <button class="sort-btn" id="sort-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span id="sort-label">Featured</span>
+        <svg><use href="#chevron-down"/></svg>
+      </button>
+      <ul class="sort-menu" id="sort-menu" role="listbox" aria-label="Sort options">
+        <li class="sort-opt active" role="option" aria-selected="true"  data-val="feat">Featured</li>
+        <li class="sort-opt"        role="option" aria-selected="false" data-val="low">Price: Low → High</li>
+        <li class="sort-opt"        role="option" aria-selected="false" data-val="high">Price: High → Low</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -189,17 +212,49 @@
   }
   window.setTier = function(k) { activeTier = k; renderTabs(); render(); };
 
+  let sortMode = 'feat';
+
   function render() {
     let list = (activeTier === 'all') ? ALL : ALL.filter(p => p.grade === activeTier);
-    const mode = document.getElementById('sort').value;
     const num = s => parseInt(s.replace(/[^0-9]/g,''), 10);
-    if (mode === 'low')  list = [...list].sort((a,b) => num(a.price) - num(b.price));
-    if (mode === 'high') list = [...list].sort((a,b) => num(b.price) - num(a.price));
+    if (sortMode === 'low')  list = [...list].sort((a,b) => num(a.price) - num(b.price));
+    if (sortMode === 'high') list = [...list].sort((a,b) => num(b.price) - num(a.price));
     document.getElementById('count').textContent = list.length;
     document.getElementById('grid').innerHTML = list.map(renderProductCard).join('');
     document.getElementById('empty').style.display = list.length ? 'none' : 'block';
   }
-  document.getElementById('sort').addEventListener('change', render);
+
+  // Custom sort dropdown
+  (function() {
+    var wrap = document.getElementById('sort-wrap');
+    var btn  = document.getElementById('sort-btn');
+    var menu = document.getElementById('sort-menu');
+    var lbl  = document.getElementById('sort-label');
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    menu.addEventListener('click', function(e) {
+      var opt = e.target.closest('[data-val]');
+      if (!opt) return;
+      sortMode = opt.getAttribute('data-val');
+      lbl.textContent = opt.textContent;
+      Array.from(menu.children).forEach(function(o) {
+        var sel = o === opt;
+        o.classList.toggle('active', sel);
+        o.setAttribute('aria-selected', String(sel));
+      });
+      wrap.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      render();
+    });
+    document.addEventListener('click', function() {
+      wrap.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  }());
+
   renderTabs(); render();
 </script>
 </body>
