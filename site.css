@@ -357,7 +357,9 @@ body.leaving {
   .wa-fab .pulse { animation: none; }
   html { scroll-behavior: auto; }
   body, body.leaving { animation: none !important; }
-  .peek, .peek.show { opacity: 1 !important; transform: none !important; transition: none !important; }
+  /* Reduced-motion: keep opacity fade (not jarring) but remove translateY movement */
+  .peek { transform: none !important; transition: opacity 0.5s ease !important; }
+  .peek.show { transform: none !important; }
 }
 
 /* ============ MOBILE NAV DRAWER ============ */
