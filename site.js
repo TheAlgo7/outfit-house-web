@@ -261,7 +261,11 @@ window.renderFooter = function() {
   </button>`;
 };
 
-// Scroll reveal — only animates elements below the initial viewport
+// Scroll reveal — all targeted elements start hidden; IO reveals them.
+// Elements already in-viewport get revealed immediately (IO fires on the
+// next rAF after observe()). The body page-in opacity animation runs
+// simultaneously, masking the one-frame hidden state for above-fold content.
+// Below-fold elements animate in naturally as the user scrolls.
 (function() {
   if (!window.IntersectionObserver) return;
 
@@ -271,15 +275,13 @@ window.renderFooter = function() {
     var els = Array.from(document.querySelectorAll(TARGETS));
     if (!els.length) return;
 
-    var vh = window.innerHeight;
-
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (!e.isIntersecting) return;
         var el = e.target;
         el.classList.add('show');
         io.unobserve(el);
-        // Remove peek+show after animation so hover transforms resume normally
+        // Remove classes after animation so hover transforms (e.g. .tier:hover) resume
         el.addEventListener('transitionend', function() {
           el.classList.remove('peek', 'show');
           el.style.transitionDelay = '';
@@ -288,17 +290,13 @@ window.renderFooter = function() {
     }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
     els.forEach(function(el) {
-      // Skip elements already visible on page load — they just appear normally
-      if (el.getBoundingClientRect().top < vh - 30) return;
-
       el.classList.add('peek');
-      // Stagger siblings of the same type in the same parent
-      var sibs = Array.from(el.parentElement ? el.parentElement.children : []).filter(function(c) {
+      // Stagger siblings of same class within same parent
+      var peekSibs = Array.from(el.parentElement ? el.parentElement.children : []).filter(function(c) {
         return c.classList.contains('peek');
       });
-      var idx = sibs.indexOf(el);
+      var idx = peekSibs.indexOf(el);
       if (idx > 0) el.style.transitionDelay = Math.min(idx * 0.1, 0.4) + 's';
-
       io.observe(el);
     });
   }
