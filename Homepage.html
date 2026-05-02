@@ -16,9 +16,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"/></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=optional"/>
 <link rel="preload" as="image" href="assets/Sneakers/AJ1 Mid Panda (1).png" fetchpriority="high"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
@@ -124,6 +122,7 @@
   }
   .strip-inner {
     display: flex;
+    width: max-content; /* ensures -50% = one strip-set width, not half-viewport */
     animation: marquee 32s linear infinite;
     will-change: transform;
   }
@@ -139,7 +138,7 @@
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
   }
   /* -50% = exactly one .strip-set width → seamless infinite loop */
-  @keyframes marquee { to { transform: translateX(-50%); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .strip-inner { animation: none; } }
 
   /* ============ TIERS ============ */

@@ -79,7 +79,7 @@ window.renderProductCard = function(p) {
     <div class="pc">
       <div class="pc-img">
         <span class="pc-grade ${gradeClass(p.grade)}">${p.grade}</span>
-        <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+        <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async"/>
       </div>
       <div class="pc-body">
         <span class="pc-brand">${p.brand}</span>
@@ -261,7 +261,7 @@ window.renderFooter = function() {
   </button>`;
 };
 
-// Scroll reveal — auto-targets landmark elements on every page
+// Scroll reveal — only animates elements below the initial viewport
 (function() {
   if (!window.IntersectionObserver) return;
 
@@ -271,23 +271,34 @@ window.renderFooter = function() {
     var els = Array.from(document.querySelectorAll(TARGETS));
     if (!els.length) return;
 
+    var vh = window.innerHeight;
+
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('show');
-          io.unobserve(e.target);
-        }
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add('show');
+        io.unobserve(el);
+        // Remove peek+show after animation so hover transforms resume normally
+        el.addEventListener('transitionend', function() {
+          el.classList.remove('peek', 'show');
+          el.style.transitionDelay = '';
+        }, { once: true });
       });
-    }, { threshold: 0.06, rootMargin: '0px 0px -12px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
     els.forEach(function(el) {
+      // Skip elements already visible on page load — they just appear normally
+      if (el.getBoundingClientRect().top < vh - 30) return;
+
       el.classList.add('peek');
-      // stagger delay for siblings of the same class within the same parent
+      // Stagger siblings of the same type in the same parent
       var sibs = Array.from(el.parentElement ? el.parentElement.children : []).filter(function(c) {
         return c.classList.contains('peek');
       });
       var idx = sibs.indexOf(el);
-      if (idx > 0) el.style.transitionDelay = Math.min(idx * 0.1, 0.42) + 's';
+      if (idx > 0) el.style.transitionDelay = Math.min(idx * 0.1, 0.4) + 's';
+
       io.observe(el);
     });
   }

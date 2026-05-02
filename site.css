@@ -329,15 +329,20 @@ body.leaving {
 }
 
 /* ============ SCROLL REVEAL ============ */
-/* JS adds .peek to targeted elements; IO adds .show when they enter viewport */
+/* JS adds .peek to below-fold elements; IO adds .show on scroll-into-view.
+   Uses !important to beat transition:all on .tier and similar elements.
+   JS removes both classes after transitionend so hover transforms resume normally. */
 .peek {
-  opacity: 0;
-  translate: 0 18px;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
   transition:
     opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    translate 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
-.peek.show { opacity: 1; translate: none; }
+.peek.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 
 /* ============ BUTTON PRESS STATES ============ */
 .btn-wa:active  { transform: translateY(0) scale(0.97) !important; transition-duration: 0.07s !important; }
@@ -352,7 +357,7 @@ body.leaving {
   .wa-fab .pulse { animation: none; }
   html { scroll-behavior: auto; }
   body, body.leaving { animation: none !important; }
-  .peek { opacity: 1 !important; translate: none !important; transition: none !important; }
+  .peek, .peek.show { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
 /* ============ MOBILE NAV DRAWER ============ */
