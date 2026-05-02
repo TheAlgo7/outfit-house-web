@@ -289,7 +289,11 @@ window.renderFooter = function() {
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
+    var vh = window.innerHeight;
     els.forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      // Elements already visible on page load — skip, don't hide them
+      if (rect.top < vh && rect.bottom > 0) return;
       el.classList.add('peek');
       // Stagger siblings of same class within same parent
       var peekSibs = Array.from(el.parentElement ? el.parentElement.children : []).filter(function(c) {

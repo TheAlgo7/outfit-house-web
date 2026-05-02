@@ -139,7 +139,7 @@
   }
   /* -50% = exactly one .strip-set width → seamless infinite loop */
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .strip-inner { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .strip-inner { animation-duration: 80s; } }
 
   /* ============ TIERS ============ */
   .tiers-block { padding: 96px 0; }
@@ -615,33 +615,6 @@
   document.getElementById('featured-grid').innerHTML =
     PRODUCTS.slice(0, 6).map(renderProductCard).join('');
 
-  // Marquee — rAF driven so the loop is frame-perfect on every browser.
-  // CSS animation is unreliable when the container width isn't a stable anchor
-  // for %-based translateX, so we drive it manually in pixels instead.
-  (function() {
-    var inner = document.querySelector('.strip-inner');
-    if (!inner || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var firstSet = inner.querySelector('.strip-set');
-    if (!firstSet) return;
-    // Kill the CSS animation; we own the transform now
-    inner.style.animation = 'none';
-    inner.style.willChange = 'transform';
-    var px = 0, last = null, paused = false, PX_PER_S = 55;
-    var strip = inner.closest('.strip');
-    strip.addEventListener('mouseenter', function() { paused = true; });
-    strip.addEventListener('mouseleave', function() { paused = false; });
-    function tick(ts) {
-      if (last !== null && !paused) {
-        px -= PX_PER_S * (ts - last) / 1000;
-        var w = firstSet.offsetWidth; // re-read on each frame so resizes are handled
-        if (px <= -w) px += w;
-        inner.style.transform = 'translateX(' + px.toFixed(2) + 'px)';
-      }
-      last = ts;
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }());
 </script>
 </body>
 </html>
