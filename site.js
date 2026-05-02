@@ -261,6 +261,44 @@ window.renderFooter = function() {
   </button>`;
 };
 
+// Scroll reveal — auto-targets landmark elements on every page
+(function() {
+  if (!window.IntersectionObserver) return;
+
+  var TARGETS = '.sec-head, .tier, .trust-row, .crumbs, .products-grid';
+
+  function init() {
+    var els = Array.from(document.querySelectorAll(TARGETS));
+    if (!els.length) return;
+
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -12px 0px' });
+
+    els.forEach(function(el) {
+      el.classList.add('peek');
+      // stagger delay for siblings of the same class within the same parent
+      var sibs = Array.from(el.parentElement ? el.parentElement.children : []).filter(function(c) {
+        return c.classList.contains('peek');
+      });
+      var idx = sibs.indexOf(el);
+      if (idx > 0) el.style.transitionDelay = Math.min(idx * 0.1, 0.42) + 's';
+      io.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+}());
+
 // Page-transition interceptor — fade out before navigating to internal pages
 (function() {
   var leaving = false;

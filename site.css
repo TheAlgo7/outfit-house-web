@@ -328,6 +328,23 @@ body.leaving {
   pointer-events: none;
 }
 
+/* ============ SCROLL REVEAL ============ */
+/* JS adds .peek to targeted elements; IO adds .show when they enter viewport */
+.peek {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    translate 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.peek.show { opacity: 1; translate: none; }
+
+/* ============ BUTTON PRESS STATES ============ */
+.btn-wa:active  { transform: translateY(0) scale(0.97) !important; transition-duration: 0.07s !important; }
+.btn-ghost:active { transform: scale(0.97) !important; transition-duration: 0.07s !important; }
+.pc-cta:active  { transform: scale(0.97); transition-duration: 0.07s !important; }
+.nav-wa:active  { transform: scale(0.97); transition-duration: 0.07s !important; }
+
 /* ============ REDUCED MOTION ============ */
 /* Only disable continuous looping animations — hover transforms are brief
    intentional feedback and are retained for all users */
@@ -335,6 +352,7 @@ body.leaving {
   .wa-fab .pulse { animation: none; }
   html { scroll-behavior: auto; }
   body, body.leaving { animation: none !important; }
+  .peek { opacity: 1 !important; translate: none !important; transition: none !important; }
 }
 
 /* ============ MOBILE NAV DRAWER ============ */

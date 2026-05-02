@@ -122,14 +122,25 @@
     background: var(--accent); color: #000; padding: 14px 0; overflow: hidden;
     border-top: 1px solid #000; border-bottom: 1px solid #000;
   }
-  .strip-track {
-    display: flex; gap: 56px; white-space: nowrap;
-    animation: scroll 38s linear infinite;
-    font-family: var(--font-heading); font-size: 12px; font-weight: 700;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  .strip-inner {
+    display: flex;
+    animation: marquee 32s linear infinite;
     will-change: transform;
   }
-  @keyframes scroll { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+  /* Hover pauses the scroll for readability */
+  .strip:hover .strip-inner { animation-play-state: paused; }
+  .strip-set {
+    display: flex; align-items: center; flex-shrink: 0;
+    gap: 52px;
+    /* padding-right must equal gap so the loop-back gap matches inter-item gap */
+    padding-right: 52px;
+    white-space: nowrap;
+    font-family: var(--font-heading); font-size: 12px; font-weight: 700;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  }
+  /* -50% = exactly one .strip-set width → seamless infinite loop */
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .strip-inner { animation: none; } }
 
   /* ============ TIERS ============ */
   .tiers-block { padding: 96px 0; }
@@ -439,20 +450,24 @@
 </section>
 
 <!-- MARQUEE -->
-<div class="strip">
-  <div class="strip-track">
-    <span>Free Shipping All India</span><span>·</span>
-    <span>Pay on Delivery</span><span>·</span>
-    <span>Hand-Checked QC</span><span>·</span>
-    <span>7-Day Exchange</span><span>·</span>
-    <span>WhatsApp Confirmed</span><span>·</span>
-    <span>New Drops Every Friday</span><span>·</span>
-    <span>Free Shipping All India</span><span>·</span>
-    <span>Pay on Delivery</span><span>·</span>
-    <span>Hand-Checked QC</span><span>·</span>
-    <span>7-Day Exchange</span><span>·</span>
-    <span>WhatsApp Confirmed</span><span>·</span>
-    <span>New Drops Every Friday</span><span>·</span>
+<div class="strip" role="marquee" aria-label="Site highlights">
+  <div class="strip-inner">
+    <div class="strip-set">
+      <span>Free Shipping All India</span><span aria-hidden="true">·</span>
+      <span>Pay on Delivery</span><span aria-hidden="true">·</span>
+      <span>Hand-Checked QC</span><span aria-hidden="true">·</span>
+      <span>7-Day Exchange</span><span aria-hidden="true">·</span>
+      <span>WhatsApp Confirmed</span><span aria-hidden="true">·</span>
+      <span>New Drops Every Friday</span><span aria-hidden="true">·</span>
+    </div>
+    <div class="strip-set" aria-hidden="true">
+      <span>Free Shipping All India</span><span>·</span>
+      <span>Pay on Delivery</span><span>·</span>
+      <span>Hand-Checked QC</span><span>·</span>
+      <span>7-Day Exchange</span><span>·</span>
+      <span>WhatsApp Confirmed</span><span>·</span>
+      <span>New Drops Every Friday</span><span>·</span>
+    </div>
   </div>
 </div>
 
