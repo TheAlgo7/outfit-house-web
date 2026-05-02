@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>About — The Outfit House</title>
+<meta name="description" content="Meet the people behind The Outfit House. New Delhi-based streetwear specialists building a hybrid physical + digital vault for premium grade kicks and apparel."/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://theoutfithouse.in/about"/>
+<link rel="icon" href="assets/logo-crown.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://theoutfithouse.in/about"/>
+<meta property="og:title" content="About — The Outfit House"/>
+<meta property="og:description" content="Meet the founders of The Outfit House. New Delhi-based streetwear vault — same flex, smarter price."/>
+<meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=optional"/>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<link rel="stylesheet" href="site.css"/>
+<style>
+
+/* ===== ABOUT WRAPPER ===== */
+.about-wrap {
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* ===== 3-COLUMN GRID ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1.2fr;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== LEFT COLUMN ===== */
+.about-left {
+  grid-column: 1;
+  padding: 80px 48px 80px 0;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--accent); margin-bottom: 40px;
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  align-self: flex-start;
+}
+
+.about-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 5.8vw, 92px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--fg);
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.about-h1 .yellow { color: var(--accent); }
+
+.about-sub {
+  font-family: var(--font-heading);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 28px 0 0;
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 56px;
+}
+
+.stat-box {
+  border: 1px solid var(--border-strong);
+  padding: 18px 20px;
+  font-family: var(--font-heading);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg); line-height: 1.65;
+}
+
+/* ===== SHARED HOVER ZONE (center + right cols) ===== */
+.about-zone {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+/* ===== CENTER: PORTRAITS ===== */
+.about-center {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+}
+
+.portraits-row {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.portrait-cell { overflow: hidden; position: relative; }
+
+.portrait-cell img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+  filter: grayscale(1);
+  transition: filter 0.6s var(--ease-out);
+}
+
+/* Entire zone activates portraits together */
+.about-zone:hover .portrait-cell img,
+.about-zone:focus-within .portrait-cell img {
+  filter: grayscale(0);
+}
+
+.about-wa-wrap {
+  padding: 28px 32px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.about-wa-wrap .btn-wa {
+  width: 100%; justify-content: center;
+  padding: 18px 24px; font-size: 13px;
+}
+.about-wa-sub {
+  font-family: var(--font-heading); font-size: 10px; font-weight: 600;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg-subtle); text-align: center;
+}
+
+/* ===== RIGHT: INFO PANEL ===== */
+.about-info {
+  padding: 48px 36px;
+  display: flex; flex-direction: column;
+  transform: translateX(8px);
+  opacity: 0.6;
+  transition:
+    transform 0.5s var(--ease-out),
+    opacity   0.5s var(--ease-out);
+}
+
+.about-zone:hover .about-info,
+.about-zone:focus-within .about-info {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.info-block {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+.info-block:first-child { padding-top: 0; }
+.info-block:last-child  { border-bottom: none; padding-bottom: 0; }
+
+.info-divider {
+  font-family: var(--font-heading); font-size: 10px; font-weight: 700;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg-subtle); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.info-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.founder + .founder {
+  margin-top: 22px; padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.founder-name {
+  font-family: var(--font-display); font-size: 34px;
+  text-transform: uppercase; color: var(--fg);
+  margin: 0 0 4px; line-height: 1;
+}
+.founder-role {
+  font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--accent); margin-bottom: 2px;
+}
+.founder-spec {
+  font-family: var(--font-heading); font-size: 10px; font-weight: 600;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.mission-brand {
+  font-family: var(--font-display); font-size: 30px;
+  text-transform: uppercase; color: var(--fg);
+  margin: 0 0 14px; line-height: 1;
+}
+.mission-body {
+  font-size: 13px; color: var(--fg-muted);
+  line-height: 1.65; margin: 0 0 20px;
+}
+.mission-tag {
+  font-family: var(--font-display); font-size: 24px;
+  text-transform: uppercase; color: var(--accent);
+  line-height: 1.05; margin-bottom: 6px;
+}
+.mission-sub {
+  font-family: var(--font-heading); font-size: 10px; font-weight: 600;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ===== TRUST STRIP ===== */
+.about-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--border);
+}
+.trust-cell {
+  padding: 44px 32px;
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.trust-cell:last-child { border-right: none; }
+.trust-cell svg {
+  width: 28px; height: 28px; color: var(--accent); flex-shrink: 0;
+}
+.trust-cell-title {
+  font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase;
+  color: var(--fg);
+}
+.trust-cell p {
+  font-size: 12px; color: var(--fg-muted); line-height: 1.65; margin: 0;
+}
+
+/* ===== TOUCH DEVICES: info always visible, portrait toggle on tap ===== */
+@media (hover: none) {
+  .about-info {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .about-zone .portrait-cell img       { filter: grayscale(1); }
+  .about-zone.revealed .portrait-cell img { filter: grayscale(0); }
+}
+
+/* ===== TABLET / MOBILE ===== */
+@media (max-width: 1080px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-left {
+    padding: 56px 0 48px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .about-h1 { font-size: clamp(56px, 13vw, 88px); }
+  .about-stats { flex-direction: row; padding-top: 36px; }
+  .stat-box { flex: 1; }
+
+  .about-zone {
+    grid-template-columns: 1fr;
+  }
+  .about-center { border-right: none; }
+  .portraits-row { min-height: auto; aspect-ratio: 2 / 1.5; }
+
+  .about-info {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .about-trust {
+    grid-template-columns: 1fr 1fr;
+  }
+  .trust-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 28px 20px;
+  }
+  .trust-cell:nth-child(odd)          { border-right: 1px solid var(--border); }
+  .trust-cell:nth-last-child(-n + 2)  { border-bottom: none; }
+}
+
+@media (max-width: 540px) {
+  .about-stats { flex-direction: column; }
+  .about-trust { grid-template-columns: 1fr; }
+  .trust-cell:nth-child(odd)         { border-right: none; }
+  .trust-cell:nth-last-child(-n + 2) { border-bottom: 1px solid var(--border); }
+  .trust-cell:last-child             { border-bottom: none; }
+  .about-wa-wrap { padding: 24px 0; }
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div id="header-mount"></div>
+
+<main id="main-content" class="about-wrap">
+
+  <div class="about-grid">
+
+    <!-- ===== LEFT COLUMN ===== -->
+    <div class="about-left">
+      <div>
+        <div class="about-eyebrow">
+          <span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span>
+          About Us
+        </div>
+        <h1 class="about-h1">The People<br>Behind<br>The House<span class="yellow">.</span></h1>
+        <p class="about-sub">New Delhi Made.<br>Street Culture Runs In.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">New Delhi,<br>Chattarpur 110074</div>
+        <div class="stat-box">Est. 2026<br>Built Different.</div>
+      </div>
+    </div>
+
+    <!-- ===== SHARED HOVER ZONE ===== -->
+    <div class="about-zone" id="about-zone">
+
+      <!-- CENTER: portraits + WA CTA -->
+      <div class="about-center">
+        <div class="portraits-row">
+          <div class="portrait-cell">
+            <img
+              src="assets/about/gaurav.png"
+              alt="Gaurav Kumar, Digital &amp; Sourcing lead at The Outfit House"
+              loading="eager"
+            />
+          </div>
+          <div class="portrait-cell">
+            <img
+              src="assets/about/shivam.png"
+              alt="Shivam, Store &amp; Operations lead at The Outfit House"
+              loading="eager"
+            />
+          </div>
+        </div>
+        <div class="about-wa-wrap">
+          <button class="btn-wa" onclick="wa('Hey, I want to know more about The Outfit House')">
+            <svg aria-hidden="true"><use href="#wa-icon"/></svg>
+            Chat on WhatsApp
+          </button>
+          <span class="about-wa-sub">Ask anything before ordering</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: founders + mission info panel -->
+      <div class="about-info">
+
+        <div class="info-block">
+          <div class="info-divider">01 / Founders</div>
+
+          <div class="founder">
+            <h2 class="founder-name">Gaurav Kumar</h2>
+            <div class="founder-role">Digital &amp; Sourcing</div>
+            <div class="founder-spec">Delhi UA Specialist</div>
+          </div>
+
+          <div class="founder">
+            <h2 class="founder-name">Shivam</h2>
+            <div class="founder-role">Store &amp; Operations</div>
+            <div class="founder-spec">Local Market Management</div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-divider">02 / Our Mission</div>
+          <h3 class="mission-brand">The Outfit House</h3>
+          <p class="mission-body">We're building an optimal hybrid physical + digital streetwear vault. Reframing value. Protecting your margin.</p>
+          <div class="mission-tag">Same Flex.<br>Smarter Price.</div>
+          <div class="mission-sub">Your Fit, Sorted.</div>
+        </div>
+
+      </div><!-- /.about-info -->
+
+    </div><!-- /.about-zone -->
+
+  </div><!-- /.about-grid -->
+
+  <!-- ===== TRUST STRIP ===== -->
+  <div class="about-trust" role="list" aria-label="The Outfit House guarantees">
+
+    <div class="trust-cell" role="listitem">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/>
+        <path d="M2 7l10 5 10-5"/>
+        <line x1="12" y1="12" x2="12" y2="22"/>
+      </svg>
+      <div class="trust-cell-title">The Vault</div>
+      <p>Verified pieces. Curated drops. Always rotating.</p>
+    </div>
+
+    <div class="trust-cell" role="listitem">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="11" width="14" height="11"/>
+        <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+        <circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/>
+        <line x1="12" y1="17" x2="12" y2="19"/>
+      </svg>
+      <div class="trust-cell-title">Access Control</div>
+      <p>Private sourcing. Quality check. No compromises.</p>
+    </div>
+
+    <div class="trust-cell" role="listitem">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="10" width="18" height="12"/>
+        <path d="M3 10l2.5-5h13L21 10"/>
+        <line x1="12" y1="10" x2="12" y2="22"/>
+        <line x1="3" y1="16" x2="21" y2="16"/>
+      </svg>
+      <div class="trust-cell-title">Discreet Packaging</div>
+      <p>Zero branding. 100% discreet. Delivered safe.</p>
+    </div>
+
+    <div class="trust-cell" role="listitem">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="13 2 7 14 13 14 11 22 17 10 11 10 13 2"/>
+      </svg>
+      <div class="trust-cell-title">Fast &amp; Reliable</div>
+      <p>Quick dispatch. Real-time updates. No ghosting.</p>
+    </div>
+
+  </div><!-- /.about-trust -->
+
+</main>
+
+<div id="footer-mount"></div>
+
+<script src="site.js"></script>
+<script>
+  injectSprite();
+  document.getElementById('header-mount').innerHTML = renderHeader('About');
+  document.getElementById('footer-mount').innerHTML = renderFooter();
+  initHeader();
+
+  // Mobile tap-to-toggle portrait grayscale (hover: none devices)
+  (function() {
+    var zone = document.getElementById('about-zone');
+    if (!zone || window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    zone.addEventListener('click', function() {
+      zone.classList.toggle('revealed');
+    });
+  }());
+
+  // Staggered scroll reveal: left → center → right
+  (function() {
+    if (!window.IntersectionObserver) return;
+    var targets = [
+      document.querySelector('.about-left'),
+      document.querySelector('.about-center'),
+      document.querySelector('.about-info'),
+    ].filter(Boolean);
+
+    var vh = window.innerHeight;
+    targets.forEach(function(el, i) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top >= vh) {
+        el.classList.add('peek');
+        el.style.transitionDelay = (i * 0.12) + 's';
+      }
+    });
+
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+        e.target.addEventListener('transitionend', function() {
+          e.target.classList.remove('peek', 'show');
+          e.target.style.transitionDelay = '';
+        }, { once: true });
+      });
+    }, { threshold: 0.06 });
+
+    targets.forEach(function(el) {
+      if (el.classList.contains('peek')) io.observe(el);
+    });
+  }());
+</script>
+</body>
+</html>

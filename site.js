@@ -179,6 +179,7 @@ window.renderHeader = function(active) {
   ];
   var topLinks = [
     { h:'Home',       href:'/' },
+    { h:'About',      href:'/about' },
     { h:'Spec Sheet', href:'/spec-sheet' },
     { h:'Contact',    href:'/contact' },
   ];
