@@ -8,13 +8,19 @@ window.wa = function(msg) {
 };
 
 // Mobile nav drawer open/close
+var _mobNavTrigger = null;
+
 window.openMobNav = function() {
   var nav = document.getElementById('mob-nav');
   var bd  = document.getElementById('mob-backdrop');
   if (!nav || !bd) return;
+  _mobNavTrigger = document.activeElement;
   nav.classList.add('open');
   bd.classList.add('open');
   document.body.style.overflow = 'hidden';
+  // Move focus into drawer after CSS transition starts
+  var first = nav.querySelector('button, a[href], [tabindex]:not([tabindex="-1"])');
+  if (first) setTimeout(function() { first.focus(); }, 50);
 };
 window.closeMobNav = function() {
   var nav = document.getElementById('mob-nav');
@@ -23,10 +29,27 @@ window.closeMobNav = function() {
   nav.classList.remove('open');
   bd.classList.remove('open');
   document.body.style.overflow = '';
+  // Restore focus to the element that triggered the open
+  if (_mobNavTrigger && _mobNavTrigger.focus) { _mobNavTrigger.focus(); _mobNavTrigger = null; }
 };
-// Close on ESC
+// ESC closes drawer; Tab key is trapped inside it while open
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeMobNav();
+  var nav = document.getElementById('mob-nav');
+  var isOpen = nav && nav.classList.contains('open');
+  if (e.key === 'Escape' && isOpen) { closeMobNav(); return; }
+  if (e.key === 'Tab' && isOpen && nav) {
+    var focusable = Array.from(nav.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )).filter(function(el) { return el.offsetParent !== null; });
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last  = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+    }
+  }
 });
 
 window.gradeClass = function(g) {
@@ -171,7 +194,8 @@ window.renderHeader = function(active) {
       </a>
       <nav class="nav-links">
         <div class="nav-dropdown">
-          <button class="nav-dropdown-btn ${isShop ? 'active' : ''}" type="button">
+          <button class="nav-dropdown-btn ${isShop ? 'active' : ''}" type="button"
+            aria-haspopup="menu" aria-expanded="false">
             Shop <svg><use href="#chevron-down"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
@@ -259,6 +283,39 @@ window.renderFooter = function() {
     <span class="pulse"></span>
     <svg><use href="#wa-icon"/></svg>
   </button>`;
+};
+
+// Wire up nav dropdown ARIA states + arrow-key navigation after renderHeader() injects the markup
+window.initHeader = function() {
+  var dd  = document.querySelector('.nav-dropdown');
+  var btn = dd && dd.querySelector('.nav-dropdown-btn');
+  if (!dd || !btn) return;
+  function setExpanded(open) { btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  dd.addEventListener('mouseenter', function() { setExpanded(true); });
+  dd.addEventListener('mouseleave', function() { setExpanded(false); });
+  dd.addEventListener('focusin',    function() { setExpanded(true); });
+  dd.addEventListener('focusout',   function(e) {
+    if (!dd.contains(e.relatedTarget)) setExpanded(false);
+  });
+  // Arrow-key navigation between menu items (ARIA menu pattern)
+  dd.addEventListener('keydown', function(e) {
+    var items = Array.from(dd.querySelectorAll('[role="menuitem"]'));
+    if (!items.length) return;
+    var idx = items.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      items[idx < items.length - 1 ? idx + 1 : 0].focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      items[idx > 0 ? idx - 1 : items.length - 1].focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault(); items[0].focus();
+    } else if (e.key === 'End') {
+      e.preventDefault(); items[items.length - 1].focus();
+    } else if (e.key === 'Escape') {
+      btn.focus(); setExpanded(false);
+    }
+  });
 };
 
 // Scroll reveal — all targeted elements start hidden; IO reveals them.

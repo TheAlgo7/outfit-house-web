@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=optional"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=optional"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -50,17 +50,18 @@
     transition: all var(--dur-base) var(--ease-out);
     min-height: 260px;
   }
+  button.channel { font: inherit; text-align: left; cursor: pointer; }
   .channel:hover { border-color: var(--border-strong); transform: translateY(-3px); }
-  .channel.primary { background: var(--accent); color: #000; border-color: var(--accent); }
+  .channel.primary { background: var(--accent); color: var(--accent-on); border-color: var(--accent); }
   .channel.primary:hover { border-color: #000; }
   .channel svg { width: 28px; height: 28px; color: var(--accent); }
-  .channel.primary svg { color: #000; }
+  .channel.primary svg { color: var(--accent-on); }
   .channel .label {
     font-family: var(--font-heading); font-size: 10px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-muted);
   }
-  .channel.primary .label { color: rgba(0,0,0,0.6); }
+  .channel.primary .label { color: rgba(6,4,3,0.6); }
   .channel h3 {
     font-family: var(--font-display); font-size: 36px; line-height: 1;
     text-transform: uppercase; margin: 0;
@@ -68,7 +69,7 @@
   .channel p {
     font-size: 13px; color: var(--fg-muted); line-height: 1.55; margin: 0;
   }
-  .channel.primary p { color: rgba(0,0,0,0.7); }
+  .channel.primary p { color: rgba(6,4,3,0.7); }
   .channel .arrow {
     margin-top: auto; font-family: var(--font-heading); font-size: 11px;
     font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase;
@@ -135,20 +136,20 @@
 
 <section id="main-content" class="contact-hero">
   <div>
-    <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> Get in touch</div>
+    <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> Get in touch</div>
     <h1>Slide into<br/><span class="accent">our DMs.</span></h1>
   </div>
   <p>WhatsApp is the fastest way — that's where we run the whole shop. Instagram for drops, email for paperwork, store visit by appointment.</p>
 </section>
 
 <section class="channels">
-  <a class="channel primary" onclick="wa('Hi! I want to enquire.')" style="cursor:pointer;">
+  <button class="channel primary" onclick="wa('Hi! I want to enquire.')">
     <svg><use href="#wa-icon"/></svg>
     <div class="label">Primary · 9am–11pm</div>
     <h3>WhatsApp</h3>
     <p>Sizes, photos, prices, orders. Average reply time: 7 minutes.</p>
     <span class="arrow">Chat now →</span>
-  </a>
+  </button>
   <a class="channel" href="https://instagram.com/theoutfithouse" target="_blank" rel="noopener">
     <svg><use href="#ig-icon"/></svg>
     <div class="label">Drops · DMs</div>
@@ -165,7 +166,7 @@
   </a>
 </section>
 
-<section class="wrap" style="padding:0;">
+<section class="wrap" style="padding:0;" aria-label="Store information">
   <div class="info-grid">
     <div class="info-cell">
       <div class="k">Store · By appointment</div>
@@ -210,6 +211,7 @@
   injectSprite();
   document.getElementById('header-mount').innerHTML = renderHeader('Contact');
   document.getElementById('footer-mount').innerHTML = renderFooter();
+  initHeader();
 </script>
 </body>
 </html>

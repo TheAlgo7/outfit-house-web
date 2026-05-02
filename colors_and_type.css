@@ -8,13 +8,13 @@
 
 :root {
   /* ---------- BRAND PALETTE ---------- */
-  --tho-black:        #000000;   /* primary background */
+  --tho-black:        #060403;   /* primary background — near-black tinted toward brand yellow */
   --tho-eggshell:     #F2ECDD;   /* secondary background, primary fg on dark */
   --tho-hampton:      #E8D3B2;   /* warm neutral */
   --tho-yellow:       #E3A848;   /* Indian Yellow — accent ONLY */
 
   /* Extended scale (derived, used sparingly for surfaces and dividers) */
-  --tho-black-900:    #000000;
+  --tho-black-900:    #060403;
   --tho-black-800:    #0A0A0A;
   --tho-black-700:    #141414;   /* card / elevated surface on dark */
   --tho-black-600:    #1C1C1C;   /* hover surface on dark */
@@ -34,10 +34,12 @@
   --bg-elev-hover:    var(--tho-black-600);
   --surface-glass:    rgba(20, 20, 20, 0.55);    /* glassmorphism panel on dark */
   --surface-glass-warm: rgba(242, 236, 221, 0.06);
+  --surface-dropdown: #0d0d0d;                   /* nav dropdown + sort menus */
+  --surface-spec:     rgba(26, 26, 26, 0.70);    /* spec grid cells */
 
   --fg:               var(--tho-eggshell);       /* primary text on dark */
   --fg-muted:         rgba(242, 236, 221, 0.65); /* secondary text on dark */
-  --fg-subtle:        rgba(242, 236, 221, 0.40); /* tertiary / labels */
+  --fg-subtle:        rgba(242, 236, 221, 0.55); /* tertiary / labels — 4.5:1 on #060403 */
   --fg-warm:          var(--tho-hampton);        /* warm accent text */
 
   --border:           rgba(242, 236, 221, 0.10);
@@ -59,7 +61,7 @@
   /* ---------- TYPE FAMILIES ---------- */
   --font-display:     'Bebas Neue', 'Anton', 'Oswald', system-ui, sans-serif; /* condensed display */
   --font-heading:     'Archivo', 'Inter', system-ui, sans-serif;              /* geometric headings */
-  --font-body:        'Inter', system-ui, -apple-system, sans-serif;          /* body */
+  --font-body:        'Archivo', system-ui, -apple-system, sans-serif;        /* body */
   --font-brush:       'Permanent Marker', 'Caveat Brush', cursive;            /* expressive only */
   --font-mono:        ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
 

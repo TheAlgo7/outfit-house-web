@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=optional"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=optional"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -83,7 +83,7 @@
   .sort-drop.open .sort-btn svg { transform: rotate(180deg); }
   .sort-menu {
     position: absolute; right: 0; top: calc(100% + 4px);
-    background: #0d0d0d; border: 1px solid var(--border);
+    background: var(--surface-dropdown); border: 1px solid var(--border);
     min-width: 190px; list-style: none; padding: 0; margin: 0; z-index: 60;
     opacity: 0; pointer-events: none; transform: translateY(-6px);
     transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
@@ -152,9 +152,7 @@
 
 <script src="site.js"></script>
 <script>
-  injectSprite();
-
-  // Determine category — supports clean URLs (/sneakers) and legacy query params
+  injectSprite(); — supports clean URLs (/sneakers) and legacy query params
   const params = new URLSearchParams(location.search);
   let catKey = params.get('cat');
   if (!catKey) {
@@ -174,12 +172,13 @@
   document.querySelector('meta[name="description"]').content = cat.title + ' — shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, 7A or UA 1:1 grade. Real photos before dispatch.';
   document.querySelector('meta[property="og:title"]').content = cat.title + ' — The Outfit House';
   document.querySelector('meta[property="og:description"]').content = cat.title + ' — premium ' + cat.label.toLowerCase() + ' across three quality tiers.';
-  document.getElementById('cat-eyebrow').innerHTML = '<span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> ' + cat.tag;
+  document.getElementById('cat-eyebrow').innerHTML = '<span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> ' + cat.tag;
   document.getElementById('cat-title').textContent = cat.title;
   document.getElementById('cat-blurb').textContent = cat.blurb;
 
   document.getElementById('header-mount').innerHTML = renderHeader(cat.label);
   document.getElementById('footer-mount').innerHTML = renderFooter();
+  initHeader();
 
   // Filter products by category
   const ALL = PRODUCTS.filter(p => p.cat === catKey);
@@ -206,7 +205,7 @@
 
   function renderTabs() {
     document.getElementById('tabs').innerHTML = tabs.map(t =>
-      `<button class="tab ${activeTier===t.k?'active':''}" onclick="setTier('${t.k}')">${t.label}<span class="count">${TIER_COUNTS[t.k]}</span></button>`
+      `<button class="tab ${activeTier===t.k?'active':''}" onclick="setTier('${t.k}')" aria-pressed="${activeTier===t.k}">${t.label}<span class="count">${TIER_COUNTS[t.k]}</span></button>`
     ).join('');
   }
   window.setTier = function(k) { activeTier = k; renderTabs(); render(); };

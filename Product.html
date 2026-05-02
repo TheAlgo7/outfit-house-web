@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=optional"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=optional"/>
 <link rel="stylesheet" href="/colors_and_type.css"/>
 <link rel="stylesheet" href="/site.css"/>
 <style>
@@ -44,13 +44,13 @@
   }
   .gal-grade {
     position: absolute; top: 18px; left: 18px;
-    background: var(--accent); color: #000;
+    background: var(--accent); color: var(--accent-on);
     font-family: var(--font-heading); font-size: 11px; font-weight: 700;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     padding: 7px 12px;
   }
-  .gal-grade.entry  { background: var(--bg-light); color: #000; }
-  .gal-grade.ua     { background: #000; color: var(--accent); border: 1px solid var(--accent); }
+  .gal-grade.entry  { background: var(--bg-light); color: var(--accent-on); }
+  .gal-grade.ua     { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
   .gal-nav {
     position: absolute; inset: auto 0 50% auto;
     display: flex; justify-content: space-between; width: 100%;
@@ -111,7 +111,7 @@
     transition: all var(--dur-fast);
   }
   .size:hover:not(.oos):not(.sel) { border-color: var(--fg); }
-  .size.sel { background: var(--fg); color: #000; border-color: var(--fg); }
+  .size.sel { background: var(--fg); color: var(--accent-on); border-color: var(--fg); }
   .size.oos { color: var(--fg-subtle); cursor: not-allowed;
     background-image: linear-gradient(to top left, transparent calc(50% - 1px), var(--border) calc(50% - 1px), var(--border) calc(50% + 1px), transparent calc(50% + 1px)); }
   .size-help {
@@ -137,7 +137,7 @@
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   }
   .spec {
-    background: rgba(26,26,26,0.7); padding: 18px 20px;
+    background: var(--surface-spec); padding: 18px 20px;
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   }
   .spec .k {
@@ -200,13 +200,13 @@
 <a href="#main-content" class="skip-link">Skip to content</a>
 <div id="header-mount"></div>
 
-<nav id="main-content" class="crumbs">
+<nav class="crumbs" aria-label="Breadcrumb">
   <a href="/">Home</a><span class="sep">/</span>
   <a id="crumb-cat" href="/sneakers">Sneakers</a><span class="sep">/</span>
   <span id="crumb-name">Product</span>
 </nav>
 
-<main class="pdp">
+<main id="main-content" class="pdp">
   <!-- GALLERY -->
   <div class="gallery">
     <div class="gal-main">
@@ -262,15 +262,15 @@
       <h4>Shipping & policy</h4>
       <div class="policy">
         <div class="policy-item">
-          <svg><use href="#truck"/></svg>
+          <svg aria-hidden="true"><use href="#truck"/></svg>
           <div><div class="lab">Shipping</div><div class="val">PAN-India · 2–5 days · discreet packing</div></div>
         </div>
         <div class="policy-item">
-          <svg><use href="#shield"/></svg>
+          <svg aria-hidden="true"><use href="#shield"/></svg>
           <div><div class="lab">Payment</div><div class="val">UPI · Bank transfer · COD (metros)</div></div>
         </div>
         <div class="policy-item">
-          <svg><use href="#rotate"/></svg>
+          <svg aria-hidden="true"><use href="#rotate"/></svg>
           <div><div class="lab">Exchange</div><div class="val">Size swap within 7 days · unworn pairs</div></div>
         </div>
       </div>
@@ -310,6 +310,7 @@
 
   document.getElementById('header-mount').innerHTML = renderHeader(cat.label);
   document.getElementById('footer-mount').innerHTML = renderFooter();
+  initHeader();
 
   // Inject
   const crumbCat = document.getElementById('crumb-cat');
@@ -362,7 +363,7 @@
   function renderGallery() {
     document.getElementById('gal-img').src = images[idx];
     thumbsEl.innerHTML = images.map((src, i) =>
-      `<button class="thumb ${i===idx?'active':''}" onclick="setImg(${i})"><img src="${src}" alt=""/></button>`).join('');
+      `<button class="thumb ${i===idx?'active':''}" onclick="setImg(${i})"><img src="${src}" alt="${p.name}${i > 0 ? ' — view ' + (i+1) : ''}"/></button>`).join('');
     dotsEl.innerHTML = images.map((_, i) =>
       `<button class="gal-dot ${i===idx?'active':''}" onclick="setImg(${i})" aria-label="Image ${i+1}"></button>`).join('');
   }
@@ -386,7 +387,7 @@
   const sizesEl = document.getElementById('sizes');
   function renderSizes() {
     sizesEl.innerHTML = UK.map(s =>
-      `<button class="size ${OOS.has(s)?'oos':''} ${selSize===s?'sel':''}" ${OOS.has(s)?'disabled':''} onclick="selectSize(${s})">UK ${s}</button>`
+      `<button class="size ${OOS.has(s)?'oos':''} ${selSize===s?'sel':''}" ${OOS.has(s)?'disabled':''} aria-pressed="${selSize===s}" onclick="selectSize(${s})">UK ${s}</button>`
     ).join('');
   }
   window.selectSize = function(s) { selSize = s; renderSizes(); };

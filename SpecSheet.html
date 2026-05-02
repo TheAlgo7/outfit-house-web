@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=optional"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=optional"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -169,7 +169,7 @@
 
 <section id="main-content" class="ss-hero">
   <div>
-    <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> The Spec Sheet</div>
+    <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> The Spec Sheet</div>
     <h1>What you're<br/><span class="accent">paying for.</span></h1>
   </div>
   <p>The replica market is opaque on purpose — sellers blur the line between "1:1" and "looks fine in photos." We don't. Three tiers, three honest specs. Read it once, buy with confidence.</p>
@@ -310,6 +310,7 @@
   injectSprite();
   document.getElementById('header-mount').innerHTML = renderHeader('Spec Sheet');
   document.getElementById('footer-mount').innerHTML = renderFooter();
+  initHeader();
 </script>
 </body>
 </html>
