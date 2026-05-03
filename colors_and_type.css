@@ -233,3 +233,16 @@ a {
 a:hover { color: var(--accent); border-color: var(--accent); }
 
 ::selection { background: var(--accent); color: var(--accent-on); }
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+/* Firefox */
+* { scrollbar-width: thin; scrollbar-color: var(--tho-black-500) var(--tho-black); }
+
+/* Chromium / Safari */
+::-webkit-scrollbar              { width: 6px; height: 6px; }
+::-webkit-scrollbar-track        { background: var(--tho-black); }
+::-webkit-scrollbar-thumb        { background: var(--tho-black-500); }
+::-webkit-scrollbar-thumb:hover  { background: var(--border-strong); }
+::-webkit-scrollbar-corner       { background: var(--tho-black); }

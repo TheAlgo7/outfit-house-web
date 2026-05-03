@@ -1,1 +1,27 @@
+# ── Environment / Secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+.env.local
+.env.production
+
+# ── AI tool configs ────────────────────────────────────────────────────────────
+.gemini/
+.impeccable.md
+SKILL.md
+chats/
+
+# ── Vercel ─────────────────────────────────────────────────────────────────────
 .vercel
+
+# ── Windows system files ───────────────────────────────────────────────────────
+*.lnk
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ── macOS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+
+# ── Test / scratch assets ──────────────────────────────────────────────────────
+assets/test-video.mp4

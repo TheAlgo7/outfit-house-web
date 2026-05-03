@@ -16,11 +16,21 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=optional"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=optional"/>
 <link rel="preload" as="image" href="assets/Sneakers/AJ1 Mid Panda (1).png" fetchpriority="high"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
+  /* ============ BRUSH ACCENT ============ */
+  .brush-tag {
+    display: block;
+    font-family: var(--font-brush);
+    font-size: clamp(18px, 2.2vw, 26px);
+    color: var(--accent);
+    transform: rotate(-1.5deg);
+    line-height: 1.1;
+  }
+
   /* ============ HERO ============ */
   .hero {
     position: relative; min-height: 88vh;
@@ -378,7 +388,7 @@
         "name": "What is UA 1:1 grade?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "UA 1:1 (Unauthorized Authentic) is the highest quality tier — virtually indistinguishable from retail. Premium materials, OG boxes, real photos dispatched before shipping. Priced from ₹6,899."
+          "text": "UA 1:1 is our highest quality tier — original-spec materials, full retail packaging, and real QC photos sent before dispatch. Priced from ₹6,899."
         }
       },
       {
@@ -414,8 +424,8 @@
 <section id="main-content" class="hero">
   <div class="hero-content">
     <div class="eyebrow"><span class="dot"></span> Now drop · AJ1 Panda · 7A</div>
-    <h1>Replica.<br/><span class="accent">Reimagined.</span></h1>
-    <p class="lede">Curated 7A and UA-grade sneakers. We don't have a checkout — we have a conversation. Every order is hand-checked in New Delhi and confirmed on WhatsApp before it ships.</p>
+    <h1>Street.<br/><span class="accent">Sorted.</span></h1>
+    <p class="lede">Grade-certified streetwear, hand-verified in New Delhi. We don't have a checkout — we have a conversation. Every order is confirmed on WhatsApp with real photos before it ships.</p>
     <div class="hero-ctas">
       <button class="btn-wa" onclick="wa('Hi! I want to browse the latest drops.')">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
@@ -484,7 +494,7 @@
         <span class="num">01</span>
         <div class="label">Tier · Entry</div>
         <h3>Entry</h3>
-        <p>Solid daily-driver replicas. Faithful silhouette, comfortable wear, lighter materials.</p>
+        <p>Everyday essential. Faithful silhouette, comfortable wear, lighter materials.</p>
         <ul>
           <li>PU-blend upper</li>
           <li>Glued sole construction</li>
@@ -499,7 +509,7 @@
         <span class="badge-best">★ Most Loved</span>
         <div class="label">Tier · Premium</div>
         <h3>7A</h3>
-        <p>Our bestseller. Visually identical to retail at a fraction of the price.</p>
+        <p>Our bestseller. Premium build at a fraction of the boutique price.</p>
         <ul>
           <li>Genuine leather upper</li>
           <li>Stitched (not glued) sole</li>
@@ -513,12 +523,12 @@
         <span class="num">03</span>
         <div class="label">Tier · Top</div>
         <h3>UA 1:1</h3>
-        <p>Indistinguishable from the original. Unauthorised authentic — same factory tooling.</p>
+        <p>Indistinguishable from retail. Same factory spec, same tooling precision.</p>
         <ul>
-          <li>Original-spec materials</li>
-          <li>Identical stitch count</li>
-          <li>Full retail packaging</li>
-          <li>Passes legit-check apps</li>
+          <li>Premium-grade materials</li>
+          <li>Factory-precise stitching</li>
+          <li>Full branded packaging</li>
+          <li>Hand-checked QC photos</li>
         </ul>
         <div class="price-from"><span>From</span><b>₹6,499</b></div>
       </a>
@@ -547,7 +557,7 @@
       <div class="trust-left">
         <span class="trust-eyebrow">03 · Quality</span>
         <h2>Quality you can read in the stitching.</h2>
-        <p>The replica market is opaque on purpose. We're not. Here's exactly what you get at each tier — material, construction, packaging, and how close it gets to the retail original.</p>
+        <p>The alternative market is opaque on purpose. We're not. Here's exactly what you get at each tier — material, construction, packaging, and how close it gets to retail.</p>
         <button class="btn-wa" onclick="wa('Hi! Can you walk me through the quality differences?')">
           <svg><use href="#wa-icon"/></svg> Ask a quality question
         </button>
@@ -556,26 +566,26 @@
         <div class="trust-row">
           <div class="grade">Entry</div>
           <div>
-            <h4>Daily-driver replicas</h4>
+            <h4>Everyday grade</h4>
             <p>PU-blend upper, glued sole, generic dust bag. Looks the part from across the room.</p>
           </div>
-          <div class="pct">~ 85% match</div>
+          <div class="pct">Solid build</div>
         </div>
         <div class="trust-row">
           <div class="grade">7A</div>
           <div>
-            <h4>Premium replicas</h4>
+            <h4>Premium grade</h4>
             <p>Genuine leather, stitched sole, original tooling box. The sweet spot for most buyers.</p>
           </div>
-          <div class="pct">~ 95% match</div>
+          <div class="pct">Premium build</div>
         </div>
         <div class="trust-row">
           <div class="grade">UA</div>
           <div>
-            <h4>Unauthorised authentic 1:1</h4>
-            <p>Same factory, same materials, same tooling. Indistinguishable in a side-by-side.</p>
+            <h4>Factory-spec 1:1</h4>
+            <p>Factory spec, premium materials, precision build. The most detailed tier we carry.</p>
           </div>
-          <div class="pct">~ 99% match</div>
+          <div class="pct">Factory spec</div>
         </div>
         <div class="trust-row">
           <div class="grade" style="font-size:24px;">QC</div>
@@ -594,7 +604,7 @@
 <section class="cta-final" id="contact">
   <div class="cta-tag"><span class="dot"></span> Direct line · 9am–11pm</div>
   <h2>Slide in.<br/>We'll handle the rest.</h2>
-  <p>Sneakers, sizes, specs — sorted on WhatsApp.</p>
+  <span class="brush-tag" style="color:var(--accent-on);display:block;margin:16px 0 40px;font-size:clamp(28px,3.5vw,52px);transform:rotate(-1.5deg);">your fit, sorted.</span>
   <div class="cta-btn-row">
     <button class="btn-dark" onclick="wa('Hi! I want to place an order.')">
       <svg><use href="#wa-icon"/></svg> Message us on WhatsApp

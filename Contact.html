@@ -15,10 +15,19 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=optional"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=optional"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
+  .brush-tag {
+    display: block;
+    font-family: var(--font-brush);
+    font-size: clamp(18px, 2.2vw, 26px);
+    color: var(--accent);
+    transform: rotate(-1.5deg);
+    line-height: 1.1;
+  }
+
   .contact-hero {
     padding: 96px 32px 64px; max-width: 1280px; margin: 0 auto;
     border-bottom: 1px solid var(--border);
@@ -138,6 +147,7 @@
   <div>
     <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> Get in touch</div>
     <h1>Slide into<br/><span class="accent">our DMs.</span></h1>
+    <span class="brush-tag" style="margin-top:-4px;font-size:clamp(22px,2.8vw,36px);transform:none;">we don't ghost.</span>
   </div>
   <p>WhatsApp is the fastest way — that's where we run the whole shop. Instagram for drops, email for paperwork, store visit by appointment.</p>
 </section>

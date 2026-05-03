@@ -55,6 +55,7 @@ header.nav {
 }
 /* Spacer so page content doesn't hide under the fixed nav */
 #header-mount { min-height: 68px; }
+@media (max-width: 900px) { #header-mount { min-height: 60px; } }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 var(--pad-x); max-width: var(--container); margin: 0 auto;
