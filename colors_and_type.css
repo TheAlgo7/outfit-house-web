@@ -238,11 +238,11 @@ a:hover { color: var(--accent); border-color: var(--accent); }
    SCROLLBAR
    ========================================================= */
 /* Firefox */
-* { scrollbar-width: thin; scrollbar-color: var(--tho-black-500) var(--tho-black); }
+* { scrollbar-width: thin; scrollbar-color: #484848 var(--tho-black); }
 
 /* Chromium / Safari */
-::-webkit-scrollbar              { width: 6px; height: 6px; }
+::-webkit-scrollbar              { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track        { background: var(--tho-black); }
-::-webkit-scrollbar-thumb        { background: var(--tho-black-500); }
-::-webkit-scrollbar-thumb:hover  { background: var(--border-strong); }
+::-webkit-scrollbar-thumb        { background: #484848; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover  { background: #6a6a6a; }
 ::-webkit-scrollbar-corner       { background: var(--tho-black); }

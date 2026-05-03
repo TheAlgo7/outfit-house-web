@@ -1,6 +1,7 @@
 {
   "redirects": [
     { "source": "/Homepage.html",  "destination": "/",           "permanent": true },
+    { "source": "/About.html",     "destination": "/about",      "permanent": true },
     { "source": "/Contact.html",   "destination": "/contact",    "permanent": true },
     { "source": "/SpecSheet.html", "destination": "/spec-sheet", "permanent": true }
   ],
@@ -9,6 +10,7 @@
     { "source": "/apparel",       "destination": "/Category.html?cat=apparel" },
     { "source": "/bottomwear",    "destination": "/Category.html?cat=bottomwear" },
     { "source": "/accessories",   "destination": "/Category.html?cat=accessories" },
+    { "source": "/about",         "destination": "/About.html" },
     { "source": "/contact",       "destination": "/Contact.html" },
     { "source": "/spec-sheet",    "destination": "/SpecSheet.html" },
     { "source": "/product/:slug", "destination": "/Product.html?slug=:slug" },
