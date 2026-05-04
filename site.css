@@ -245,9 +245,9 @@ header.nav {
   padding: 5px 10px; transition: opacity var(--dur-base) var(--ease-out);
 }
 .pc:hover .pc-grade { opacity: 0.75; }
-.pc-grade.entry  { background: var(--bg-light); color: var(--accent-on); }
-.pc-grade.seven  { background: var(--accent); color: var(--accent-on); }
-.pc-grade.ua     { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
+.pc-grade.entry    { background: var(--bg-light); color: var(--accent-on); }
+.pc-grade.standard { background: var(--accent); color: var(--accent-on); }
+.pc-grade.vault    { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
 .pc-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 4px; }
 .pc-brand { font-family: var(--font-heading); font-size: 10px;
   letter-spacing: var(--tracking-wider); text-transform: uppercase;

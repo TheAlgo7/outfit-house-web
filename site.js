@@ -1,6 +1,6 @@
 // Shared catalog + WhatsApp helpers for The Outfit House
 window.WA_NUMBER = '918700825707';
-window.IG_URL    = 'https://www.instagram.com/theoutfithouse';
+window.IG_URL    = 'https://www.instagram.com/theoutfithouse.in';
 
 window.wa = function(msg) {
   const url = 'https://wa.me/' + window.WA_NUMBER + '?text=' + encodeURIComponent(msg);
@@ -53,9 +53,10 @@ document.addEventListener('keydown', function(e) {
 });
 
 window.gradeClass = function(g) {
-  if (g === 'Entry') return 'entry';
-  if (g === '7A')    return 'seven';
-  return 'ua';
+  if (g === 'Entry')    return 'entry';
+  if (g === 'Standard') return 'standard';
+  if (g === 'Vault')    return 'vault';
+  return 'entry';
 };
 
 // Categories
@@ -69,30 +70,30 @@ window.CATEGORIES = {
 // Catalog
 window.PRODUCTS = [
   // Sneakers
-  { slug:'aj1-mid-panda',      cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Mid · Panda',       grade:'7A',     price:'₹4,499', was:'₹14,995', img:'assets/Sneakers/AJ1 Mid Panda (1).png' },
-  { slug:'nb-530-sea-salt',    cat:'sneakers',    brand:'New Balance', name:'530 · Cream Sea Salt',  grade:'UA 1:1', price:'₹6,899', was:'₹14,499', img:'assets/Sneakers/NB 530 Cream Sea Salt.png' },
-  { slug:'aj1-high-bred-toe',  cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 High · Bred Toe',   grade:'7A',     price:'₹4,799', was:'₹16,995', img:'assets/Sneakers/AJ1 High Bred Toe.png' },
-  { slug:'nb-550-white-green', cat:'sneakers',    brand:'New Balance', name:'550 · White Green',     grade:'7A',     price:'₹4,099', was:'₹12,499', img:'assets/Sneakers/NB 550 White Green.png' },
-  { slug:'aj1-low-panda',      cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Low · Panda',       grade:'Entry',  price:'₹2,199', was:'₹13,495', img:'assets/Sneakers/AJ1 Low Panda.png' },
-  { slug:'nb-530-stone',       cat:'sneakers',    brand:'New Balance', name:'530 · Stone Pink',      grade:'UA 1:1', price:'₹6,899', was:'₹11,499', img:'assets/Sneakers/NB 530 Stone Pink.png' },
-  { slug:'aj1-mid-shadow',     cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Mid · Shadow',      grade:'Entry',  price:'₹2,099', was:'₹13,495', img:'assets/Sneakers/AJ1 Mid Shadow.png' },
-  { slug:'nb-2002r',           cat:'sneakers',    brand:'New Balance', name:'2002R · Protection',    grade:'UA 1:1', price:'₹7,299', was:'₹17,499', img:'assets/Sneakers/NB 2002R Protection Pack.png' },
+  { slug:'aj1-mid-panda',      cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Mid · Panda',       grade:'Standard', price:'₹4,499', was:'₹14,995', img:'assets/Sneakers/AJ1 Mid Panda (1).png' },
+  { slug:'nb-530-sea-salt',    cat:'sneakers',    brand:'New Balance', name:'530 · Cream Sea Salt',  grade:'Vault',    price:'₹6,899', was:'₹14,499', img:'assets/Sneakers/NB 530 Cream Sea Salt.png' },
+  { slug:'aj1-high-bred-toe',  cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 High · Bred Toe',   grade:'Standard', price:'₹4,799', was:'₹16,995', img:'assets/Sneakers/AJ1 High Bred Toe.png' },
+  { slug:'nb-550-white-green', cat:'sneakers',    brand:'New Balance', name:'550 · White Green',     grade:'Standard', price:'₹4,099', was:'₹12,499', img:'assets/Sneakers/NB 550 White Green.png' },
+  { slug:'aj1-low-panda',      cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Low · Panda',       grade:'Entry',    price:'₹2,199', was:'₹13,495', img:'assets/Sneakers/AJ1 Low Panda.png' },
+  { slug:'nb-530-stone',       cat:'sneakers',    brand:'New Balance', name:'530 · Stone Pink',      grade:'Vault',    price:'₹6,899', was:'₹11,499', img:'assets/Sneakers/NB 530 Stone Pink.png' },
+  { slug:'aj1-mid-shadow',     cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Mid · Shadow',      grade:'Entry',    price:'₹2,099', was:'₹13,495', img:'assets/Sneakers/AJ1 Mid Shadow.png' },
+  { slug:'nb-2002r',           cat:'sneakers',    brand:'New Balance', name:'2002R · Protection',    grade:'Vault',    price:'₹7,299', was:'₹17,499', img:'assets/Sneakers/NB 2002R Protection Pack.png' },
 
   // Apparel
-  { slug:'tho-box-tee',        cat:'apparel',     brand:'TOH',         name:'Box Logo Tee',          grade:'Entry',  price:'₹1,299', was:'₹2,499',  img:'assets/Apparel/Box Logo Tee.png' },
-  { slug:'essentials-hoodie',  cat:'apparel',     brand:'Essentials',  name:'Heavyweight Hoodie',    grade:'7A',     price:'₹3,499', was:'₹9,990',  img:'assets/Apparel/Essentials Heavyweight Hoodie.png' },
-  { slug:'sp5der-hoodie',      cat:'apparel',     brand:'Sp5der',      name:'Web Hoodie · Pink',     grade:'UA 1:1', price:'₹4,899', was:'₹19,995', img:'assets/Apparel/Sp5der Web Hoodie Pink.png' },
-  { slug:'corteiz-overshirt',  cat:'apparel',     brand:'Corteiz',     name:'Alcatraz Overshirt',    grade:'7A',     price:'₹3,899', was:'₹11,500', img:'assets/Apparel/Corteiz Alcatraz Overshirt.png' },
+  { slug:'tho-box-tee',        cat:'apparel',     brand:'TOH',         name:'Box Logo Tee',          grade:'Entry',    price:'₹1,299', was:'₹2,499',  img:'assets/Apparel/Box Logo Tee.png' },
+  { slug:'essentials-hoodie',  cat:'apparel',     brand:'Essentials',  name:'Heavyweight Hoodie',    grade:'Standard', price:'₹3,499', was:'₹9,990',  img:'assets/Apparel/Essentials Heavyweight Hoodie.png' },
+  { slug:'sp5der-hoodie',      cat:'apparel',     brand:'Sp5der',      name:'Web Hoodie · Pink',     grade:'Vault',    price:'₹4,899', was:'₹19,995', img:'assets/Apparel/Sp5der Web Hoodie Pink.png' },
+  { slug:'corteiz-overshirt',  cat:'apparel',     brand:'Corteiz',     name:'Alcatraz Overshirt',    grade:'Standard', price:'₹3,899', was:'₹11,500', img:'assets/Apparel/Corteiz Alcatraz Overshirt.png' },
 
   // Bottomwear
-  { slug:'essentials-sweats',  cat:'bottomwear',  brand:'Essentials',  name:'Fleece Sweatpants',     grade:'7A',     price:'₹2,899', was:'₹8,990',  img:'assets/Bottomwear/Essentials Fleece Sweatpants.png' },
-  { slug:'corteiz-cargos',     cat:'bottomwear',  brand:'Corteiz',     name:'Guerillaz Cargos',      grade:'UA 1:1', price:'₹4,499', was:'₹14,500', img:'assets/Bottomwear/Corteiz Guerillaz Cargos.png' },
-  { slug:'tho-baggy-jeans',    cat:'bottomwear',  brand:'TOH',         name:'Baggy Denim · Indigo',  grade:'Entry',  price:'₹1,799', was:'₹3,999',  img:'assets/Bottomwear/Baggy Denim Indigo.png' },
+  { slug:'essentials-sweats',  cat:'bottomwear',  brand:'Essentials',  name:'Fleece Sweatpants',     grade:'Standard', price:'₹2,899', was:'₹8,990',  img:'assets/Bottomwear/Essentials Fleece Sweatpants.png' },
+  { slug:'corteiz-cargos',     cat:'bottomwear',  brand:'Corteiz',     name:'Guerillaz Cargos',      grade:'Vault',    price:'₹4,499', was:'₹14,500', img:'assets/Bottomwear/Corteiz Guerillaz Cargos.png' },
+  { slug:'tho-baggy-jeans',    cat:'bottomwear',  brand:'TOH',         name:'Baggy Denim · Indigo',  grade:'Entry',    price:'₹1,799', was:'₹3,999',  img:'assets/Bottomwear/Baggy Denim Indigo.png' },
 
   // Accessories
-  { slug:'tho-tote',           cat:'accessories', brand:'TOH',         name:'Crown Tote · Cream',    grade:'Entry',  price:'₹699',   was:'₹1,299',  img:'assets/Accessories/Crown Tote · Cream.png' },
-  { slug:'nb-cap',             cat:'accessories', brand:'New Balance', name:'6-Panel Cap',           grade:'7A',     price:'₹1,099', was:'₹2,999',  img:'assets/Accessories/New Balance 6-Panel Cap.png' },
-  { slug:'sock-pack',          cat:'accessories', brand:'TOH',         name:'Crew Sock 3-Pack',      grade:'Entry',  price:'₹499',   was:'₹999',    img:'assets/Accessories/Crew Sock 3-Pack.png' },
+  { slug:'tho-tote',           cat:'accessories', brand:'TOH',         name:'Crown Tote · Cream',    grade:'Entry',    price:'₹699',   was:'₹1,299',  img:'assets/Accessories/Crown Tote · Cream.png' },
+  { slug:'nb-cap',             cat:'accessories', brand:'New Balance', name:'6-Panel Cap',           grade:'Standard', price:'₹1,099', was:'₹2,999',  img:'assets/Accessories/New Balance 6-Panel Cap.png' },
+  { slug:'sock-pack',          cat:'accessories', brand:'TOH',         name:'Crew Sock 3-Pack',      grade:'Entry',    price:'₹499',   was:'₹999',    img:'assets/Accessories/Crew Sock 3-Pack.png' },
 ];
 
 // Render product card markup (shared)
@@ -255,7 +256,7 @@ window.renderFooter = function() {
     <div class="ft">
       <div>
         <img src="assets/logo-text.png" alt="The Outfit House"/>
-        <p>Premium 7A and UA-grade streetwear. Hand-checked, shipped from New Delhi.</p>
+        <p>Streetwear and sneakers across three tiers. Hand-checked, shipped from New Delhi.</p>
       </div>
       <div><h5>Shop</h5><ul>
         <li><a href="/sneakers">Sneakers</a></li>

@@ -1,20 +1,20 @@
 # The Outfit House
 
-> New Delhi streetwear and alternative sneaker shop. Sells Entry, 7A, and UA 1:1 grade
+> New Delhi streetwear and sneaker shop. Sells Entry, Standard, and Vault tier
 > footwear and apparel via WhatsApp-first ordering. Physical studio in Chattarpur, New Delhi.
 > Founded 2026 by Gaurav Kumar (digital & sourcing) and Shivam Kumar (operations & store).
 
 ## What We Sell
 
-Alternative-grade sneakers, apparel, bottomwear, and accessories across three quality tiers.
+Sneakers, apparel, bottomwear, and accessories across three build tiers.
 All pieces are hand-checked and QC-photographed before dispatch. WhatsApp-first ordering —
 no checkout flow, every order is confirmed live with real photos.
 
-### Grade Tiers
+### Build Tiers
 
-- **Entry** — PU-blend leather upper, glued sole construction, generic dust bag. From ₹1,899.
-- **7A** — Genuine leather upper, stitched sole, original tooling box + branded tissue. From ₹3,899.
-- **UA 1:1** — Factory-spec leather, precision stitching, full branded packaging. From ₹6,499.
+- **Entry** — PU-blend leather upper, glued sole construction, protective dust bag. From ₹1,899.
+- **Standard** — Genuine leather upper, stitched sole, original tooling box + branded tissue. From ₹3,899.
+- **Vault** — Premium-grade leather, precision stitching, full branded packaging. From ₹6,499.
 
 ### Brands Stocked
 
@@ -26,14 +26,14 @@ Sneakers, Apparel (tees/hoodies/overshirts), Bottomwear (cargos/sweats/denim), A
 
 ## How to Order
 
-WhatsApp-first. Browse the online catalog, message to confirm stock and grade, receive QC photos,
+WhatsApp-first. Browse the online catalog, message to confirm stock and tier, receive QC photos,
 then pay via UPI, bank transfer, or COD (available in most metros). Average reply: 7 minutes.
 
 ## Key Pages
 
-- https://theoutfithouse.in/ — Homepage, featured drops, grade overview
+- https://theoutfithouse.in/ — Homepage, featured drops, tier overview
 - https://theoutfithouse.in/about — Founders, story, how the business works
-- https://theoutfithouse.in/spec-sheet — Full grade comparison: Entry vs 7A vs UA 1:1
+- https://theoutfithouse.in/spec-sheet — Full tier comparison: Entry vs Standard vs Vault
 - https://theoutfithouse.in/contact — WhatsApp, Instagram, FAQ, store address
 - https://theoutfithouse.in/sneakers — Sneaker catalog
 - https://theoutfithouse.in/apparel — Apparel catalog

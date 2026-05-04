@@ -3,36 +3,36 @@
 <head>
 <meta charset="utf-8"/>
 <title id="page-title">Product — The Outfit House</title>
-<meta name="description" content="Shop premium streetwear and sneakers at The Outfit House — Entry, 7A and UA 1:1 grades. Real photos before dispatch. Ships PAN-India."/>
+<meta name="description" content="Shop premium streetwear and sneakers at The Outfit House — Entry, Standard and Vault tiers. Real photos before dispatch. Ships PAN-India."/>
 <script>
 (function() {
   var s = new URLSearchParams(location.search);
   var slug = s.get('slug') || location.pathname.replace(/\/+$/, '').split('/').pop();
   var M = {
-    'aj1-mid-panda':      ['AJ1 Mid · Panda',        'Air Jordan',  '7A',     '₹4,499'],
-    'nb-530-sea-salt':    ['530 · Cream Sea Salt',    'New Balance', 'UA 1:1', '₹6,899'],
-    'aj1-high-bred-toe':  ['AJ1 High · Bred Toe',    'Air Jordan',  '7A',     '₹4,799'],
-    'nb-550-white-green': ['550 · White Green',       'New Balance', '7A',     '₹4,099'],
-    'aj1-low-panda':      ['AJ1 Low · Panda',         'Air Jordan',  'Entry',  '₹2,199'],
-    'nb-530-stone':       ['530 · Stone Pink',        'New Balance', 'UA 1:1', '₹6,899'],
-    'aj1-mid-shadow':     ['AJ1 Mid · Shadow',        'Air Jordan',  'Entry',  '₹2,099'],
-    'nb-2002r':           ['2002R · Protection Pack', 'New Balance', 'UA 1:1', '₹7,299'],
-    'tho-box-tee':        ['Box Logo Tee',            'TOH',         'Entry',  '₹1,299'],
-    'essentials-hoodie':  ['Heavyweight Hoodie',      'Essentials',  '7A',     '₹3,499'],
-    'sp5der-hoodie':      ['Web Hoodie · Pink',       'Sp5der',      'UA 1:1', '₹4,899'],
-    'corteiz-overshirt':  ['Alcatraz Overshirt',      'Corteiz',     '7A',     '₹3,899'],
-    'essentials-sweats':  ['Fleece Sweatpants',       'Essentials',  '7A',     '₹2,899'],
-    'corteiz-cargos':     ['Guerillaz Cargos',        'Corteiz',     'UA 1:1', '₹4,499'],
-    'tho-baggy-jeans':    ['Baggy Denim · Indigo',    'TOH',         'Entry',  '₹1,799'],
-    'tho-tote':           ['Crown Tote · Cream',      'TOH',         'Entry',  '₹699'],
-    'nb-cap':             ['6-Panel Cap',             'New Balance', '7A',     '₹1,099'],
-    'sock-pack':          ['Crew Sock 3-Pack',        'TOH',         'Entry',  '₹499']
+    'aj1-mid-panda':      ['AJ1 Mid · Panda',        'Air Jordan',  'Standard', '₹4,499'],
+    'nb-530-sea-salt':    ['530 · Cream Sea Salt',    'New Balance', 'Vault',    '₹6,899'],
+    'aj1-high-bred-toe':  ['AJ1 High · Bred Toe',    'Air Jordan',  'Standard', '₹4,799'],
+    'nb-550-white-green': ['550 · White Green',       'New Balance', 'Standard', '₹4,099'],
+    'aj1-low-panda':      ['AJ1 Low · Panda',         'Air Jordan',  'Entry',    '₹2,199'],
+    'nb-530-stone':       ['530 · Stone Pink',        'New Balance', 'Vault',    '₹6,899'],
+    'aj1-mid-shadow':     ['AJ1 Mid · Shadow',        'Air Jordan',  'Entry',    '₹2,099'],
+    'nb-2002r':           ['2002R · Protection Pack', 'New Balance', 'Vault',    '₹7,299'],
+    'tho-box-tee':        ['Box Logo Tee',            'TOH',         'Entry',    '₹1,299'],
+    'essentials-hoodie':  ['Heavyweight Hoodie',      'Essentials',  'Standard', '₹3,499'],
+    'sp5der-hoodie':      ['Web Hoodie · Pink',       'Sp5der',      'Vault',    '₹4,899'],
+    'corteiz-overshirt':  ['Alcatraz Overshirt',      'Corteiz',     'Standard', '₹3,899'],
+    'essentials-sweats':  ['Fleece Sweatpants',       'Essentials',  'Standard', '₹2,899'],
+    'corteiz-cargos':     ['Guerillaz Cargos',        'Corteiz',     'Vault',    '₹4,499'],
+    'tho-baggy-jeans':    ['Baggy Denim · Indigo',    'TOH',         'Entry',    '₹1,799'],
+    'tho-tote':           ['Crown Tote · Cream',      'TOH',         'Entry',    '₹699'],
+    'nb-cap':             ['6-Panel Cap',             'New Balance', 'Standard', '₹1,099'],
+    'sock-pack':          ['Crew Sock 3-Pack',        'TOH',         'Entry',    '₹499']
   };
   var d = M[slug];
   if (!d) return;
   document.getElementById('page-title').textContent = d[0] + ' — The Outfit House';
   var desc = document.querySelector('meta[name="description"]');
-  if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' grade — ' + d[3] + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
+  if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' tier — ' + d[3] + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
   var c = document.createElement('link');
   c.rel = 'canonical';
   c.href = 'https://theoutfithouse.in/product/' + slug;
@@ -40,7 +40,8 @@
 }());
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="icon" href="/assets/logo-crown.png"/>
+<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-crown.png"/>
+<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-crown.png"/>
 <meta property="og:type" content="product"/>
 <meta property="og:title" content="Product — The Outfit House"/>
 <meta property="og:description" content="Premium grade sneakers and streetwear at The Outfit House."/>
@@ -84,8 +85,9 @@
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     padding: 7px 12px;
   }
-  .gal-grade.entry  { background: var(--bg-light); color: var(--accent-on); }
-  .gal-grade.ua     { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
+  .gal-grade.entry    { background: var(--bg-light); color: var(--accent-on); }
+  .gal-grade.standard { background: var(--accent); color: var(--accent-on); }
+  .gal-grade.vault    { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
   .gal-nav {
     position: absolute; inset: auto 0 50% auto;
     display: flex; justify-content: space-between; width: 100%;
@@ -243,7 +245,7 @@
   <!-- GALLERY -->
   <div class="gallery">
     <div class="gal-main">
-      <span class="gal-grade" id="gal-grade">7A</span>
+      <span class="gal-grade standard" id="gal-grade">Standard</span>
       <img id="gal-img" src="assets/product-airjordan.jpg" alt="Product image"/>
       <div class="gal-nav">
         <button onclick="gal(-1)" aria-label="Previous"><svg><use href="#arrow-left"/></svg></button>
@@ -287,7 +289,7 @@
         <div class="spec"><div class="k">Upper</div><div class="v" id="s-upper">Premium leather</div></div>
         <div class="spec"><div class="k">Sole</div><div class="v" id="s-sole">Rubber · air</div></div>
         <div class="spec"><div class="k">Box</div><div class="v" id="s-box">Branded · OG</div></div>
-        <div class="spec"><div class="k">Grade</div><div class="v" id="s-grade">7A</div></div>
+        <div class="spec"><div class="k">Tier</div><div class="v" id="s-grade">Standard</div></div>
       </div>
     </div>
 
@@ -357,9 +359,9 @@
   document.title = p.name + ' — The Outfit House';
 
   // SEO — update dynamic meta + inject Product schema
-  document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' grade — ' + p.price + '. Real photos before dispatch. Ships PAN-India from The Outfit House.';
+  document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' tier — ' + p.price + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
   document.querySelector('meta[property="og:title"]').content = p.name + ' — The Outfit House';
-  document.querySelector('meta[property="og:description"]').content = p.name + ' · ' + p.grade + ' grade at ' + p.price + '.';
+  document.querySelector('meta[property="og:description"]').content = p.name + ' · ' + p.grade + ' tier at ' + p.price + '.';
   document.querySelector('meta[property="og:image"]').content = 'https://theoutfithouse.in/' + p.img;
   var canonicalProd = document.createElement('link');
   canonicalProd.rel = 'canonical';

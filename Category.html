@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title id="page-title">Category — The Outfit House</title>
-<meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, 7A or UA 1:1 grade. Real photos — ships PAN-India."/>
+<meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos — ships PAN-India."/>
 <script>
 (function() {
   var s = new URLSearchParams(location.search);
@@ -13,10 +13,10 @@
     if (['sneakers','apparel','bottomwear','accessories'].indexOf(seg) !== -1) cat = seg;
   }
   var M = {
-    'sneakers':    ['The Sneaker Vault — The Outfit House',    'Shop premium Air Jordan, New Balance and more in Entry, 7A and UA 1:1 grades at The Outfit House, New Delhi. Real photos before dispatch.'],
-    'apparel':     ['Topwear — The Outfit House',              'Premium tees, hoodies and overshirts in Entry, 7A and UA 1:1 grades at The Outfit House. Ships PAN-India.'],
-    'bottomwear':  ['Streetwear Bottoms — The Outfit House',   'Premium cargos, sweats and denim in Entry, 7A and UA 1:1 grades. Hand-checked in New Delhi. Ships PAN-India.'],
-    'accessories': ['Finishing Touches — The Outfit House',    'Caps, totes, socks and accessories in Entry, 7A and UA 1:1 grades at The Outfit House. Ships PAN-India.']
+    'sneakers':    ['The Sneaker Vault — The Outfit House',    'Shop premium Air Jordan, New Balance and more in Entry, Standard and Vault tiers at The Outfit House, New Delhi. Real photos before dispatch.'],
+    'apparel':     ['Topwear — The Outfit House',              'Premium tees, hoodies and overshirts in Entry, Standard and Vault tiers at The Outfit House. Ships PAN-India.'],
+    'bottomwear':  ['Streetwear Bottoms — The Outfit House',   'Premium cargos, sweats and denim in Entry, Standard and Vault tiers. Hand-checked in New Delhi. Ships PAN-India.'],
+    'accessories': ['Finishing Touches — The Outfit House',    'Caps, totes, socks and accessories in Entry, Standard and Vault tiers at The Outfit House. Ships PAN-India.']
   };
   var d = cat && M[cat];
   if (!d) return;
@@ -30,7 +30,8 @@
 }());
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="icon" href="assets/logo-crown.png"/>
+<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-crown.png"/>
+<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-crown.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Category — The Outfit House"/>
 <meta property="og:description" content="Shop premium sneakers, apparel and accessories at The Outfit House across three quality tiers."/>
@@ -197,7 +198,7 @@
   canonicalEl.rel = 'canonical';
   canonicalEl.href = 'https://theoutfithouse.in/' + catKey;
   document.head.appendChild(canonicalEl);
-  document.querySelector('meta[name="description"]').content = cat.title + ' — shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, 7A or UA 1:1 grade. Real photos before dispatch.';
+  document.querySelector('meta[name="description"]').content = cat.title + ' — shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch.';
   document.querySelector('meta[property="og:title"]').content = cat.title + ' — The Outfit House';
   document.querySelector('meta[property="og:description"]').content = cat.title + ' — premium ' + cat.label.toLowerCase() + ' across three quality tiers.';
   document.getElementById('cat-eyebrow').innerHTML = '<span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> ' + cat.tag;
@@ -211,25 +212,25 @@
   // Filter products by category
   const ALL = PRODUCTS.filter(p => p.cat === catKey);
   const TIER_COUNTS = {
-    'all':   ALL.length,
-    'Entry': ALL.filter(p => p.grade === 'Entry').length,
-    '7A':    ALL.filter(p => p.grade === '7A').length,
-    'UA 1:1':ALL.filter(p => p.grade === 'UA 1:1').length,
+    'all':      ALL.length,
+    'Entry':    ALL.filter(p => p.grade === 'Entry').length,
+    'Standard': ALL.filter(p => p.grade === 'Standard').length,
+    'Vault':    ALL.filter(p => p.grade === 'Vault').length,
   };
 
   const tabs = [
-    { k:'all',    label:'All' },
-    { k:'Entry',  label:'Entry' },
-    { k:'7A',     label:'7A' },
-    { k:'UA 1:1', label:'UA 1:1' },
+    { k:'all',      label:'All' },
+    { k:'Entry',    label:'Entry' },
+    { k:'Standard', label:'Standard' },
+    { k:'Vault',    label:'Vault' },
   ];
 
   let activeTier = 'all';
   // Honor #tier-key in hash
   const hashKey = (location.hash || '').replace('#','');
-  if (hashKey === 'entry') activeTier = 'Entry';
-  else if (hashKey === '7a') activeTier = '7A';
-  else if (hashKey === 'ua') activeTier = 'UA 1:1';
+  if (hashKey === 'entry')    activeTier = 'Entry';
+  else if (hashKey === 'standard') activeTier = 'Standard';
+  else if (hashKey === 'vault')    activeTier = 'Vault';
 
   function renderTabs() {
     document.getElementById('tabs').innerHTML = tabs.map(t =>
