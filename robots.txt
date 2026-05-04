@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /.git/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 Sitemap: https://theoutfithouse.in/sitemap.xml

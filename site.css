@@ -458,6 +458,10 @@ body.leaving {
   .ft { grid-template-columns: 1fr 1fr; gap: 28px; }
 }
 
+@media (max-width: 420px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+
 /* ============ MOBILE — 900px ============ */
 @media (max-width: 900px) {
   :root { --pad-x: 20px; }

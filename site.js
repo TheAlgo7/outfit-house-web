@@ -1,6 +1,6 @@
 // Shared catalog + WhatsApp helpers for The Outfit House
 window.WA_NUMBER = '918700825707';
-window.IG_URL    = 'https://instagram.com/theoutfithouse.in';
+window.IG_URL    = 'https://www.instagram.com/theoutfithouse';
 
 window.wa = function(msg) {
   const url = 'https://wa.me/' + window.WA_NUMBER + '?text=' + encodeURIComponent(msg);
@@ -102,7 +102,7 @@ window.renderProductCard = function(p) {
     <div class="pc">
       <div class="pc-img">
         <span class="pc-grade ${gradeClass(p.grade)}">${p.grade}</span>
-        <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async"/>
+        <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600"/>
       </div>
       <div class="pc-body">
         <span class="pc-brand">${p.brand}</span>

@@ -3,7 +3,9 @@
     { "source": "/Homepage.html",  "destination": "/",           "permanent": true },
     { "source": "/About.html",     "destination": "/about",      "permanent": true },
     { "source": "/Contact.html",   "destination": "/contact",    "permanent": true },
-    { "source": "/SpecSheet.html", "destination": "/spec-sheet", "permanent": true }
+    { "source": "/SpecSheet.html", "destination": "/spec-sheet", "permanent": true },
+    { "source": "/.git",           "destination": "/",           "statusCode": 301 },
+    { "source": "/.git/:path*",    "destination": "/",           "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/sneakers",      "destination": "/Category.html?cat=sneakers" },
@@ -13,6 +15,7 @@
     { "source": "/about",         "destination": "/About.html" },
     { "source": "/contact",       "destination": "/Contact.html" },
     { "source": "/spec-sheet",    "destination": "/SpecSheet.html" },
+    { "source": "/policy",        "destination": "/Policy.html" },
     { "source": "/product/:slug", "destination": "/Product.html?slug=:slug" },
     { "source": "/",              "destination": "/Homepage.html" }
   ],
@@ -20,10 +23,12 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options",        "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy",        "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy",     "value": "camera=(), microphone=(), geolocation=()" }
+        { "key": "X-Content-Type-Options",    "value": "nosniff" },
+        { "key": "X-Frame-Options",           "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy",           "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",        "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "Content-Security-Policy",   "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'" }
       ]
     }
   ]

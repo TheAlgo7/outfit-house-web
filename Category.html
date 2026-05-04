@@ -2,8 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Category — The Outfit House</title>
+<title id="page-title">Category — The Outfit House</title>
 <meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, 7A or UA 1:1 grade. Real photos — ships PAN-India."/>
+<script>
+(function() {
+  var s = new URLSearchParams(location.search);
+  var cat = s.get('cat');
+  if (!cat) {
+    var seg = location.pathname.replace(/^\//, '').split('/')[0];
+    if (['sneakers','apparel','bottomwear','accessories'].indexOf(seg) !== -1) cat = seg;
+  }
+  var M = {
+    'sneakers':    ['The Sneaker Vault — The Outfit House',    'Shop premium Air Jordan, New Balance and more in Entry, 7A and UA 1:1 grades at The Outfit House, New Delhi. Real photos before dispatch.'],
+    'apparel':     ['Topwear — The Outfit House',              'Premium tees, hoodies and overshirts in Entry, 7A and UA 1:1 grades at The Outfit House. Ships PAN-India.'],
+    'bottomwear':  ['Streetwear Bottoms — The Outfit House',   'Premium cargos, sweats and denim in Entry, 7A and UA 1:1 grades. Hand-checked in New Delhi. Ships PAN-India.'],
+    'accessories': ['Finishing Touches — The Outfit House',    'Caps, totes, socks and accessories in Entry, 7A and UA 1:1 grades at The Outfit House. Ships PAN-India.']
+  };
+  var d = cat && M[cat];
+  if (!d) return;
+  document.getElementById('page-title').textContent = d[0];
+  var desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.content = d[1];
+  var c = document.createElement('link');
+  c.rel = 'canonical';
+  c.href = 'https://theoutfithouse.in/' + cat;
+  document.head.appendChild(c);
+}());
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="icon" href="assets/logo-crown.png"/>
 <meta property="og:type" content="website"/>
@@ -119,7 +144,8 @@
 <a href="#main-content" class="skip-link">Skip to content</a>
 <div id="header-mount"></div>
 
-<section id="main-content" class="cat-hero">
+<main id="main-content">
+<section class="cat-hero">
   <div class="eyebrow" id="cat-eyebrow">01 · Category</div>
   <h1 id="cat-title">Category</h1>
   <p id="cat-blurb">Loading…</p>
@@ -148,11 +174,13 @@
   <div class="empty" id="empty" style="display:none">No pieces in this tier yet — check back soon.</div>
 </section>
 
+</main>
+
 <div id="footer-mount"></div>
 
 <script src="site.js"></script>
 <script>
-  injectSprite(); — supports clean URLs (/sneakers) and legacy query params
+  injectSprite(); // supports clean URLs (/sneakers) and legacy query params
   const params = new URLSearchParams(location.search);
   let catKey = params.get('cat');
   if (!catKey) {

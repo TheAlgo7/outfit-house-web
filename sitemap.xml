@@ -1,58 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <!-- Core pages -->
   <url>
     <loc>https://theoutfithouse.in/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-05-04</lastmod>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/Category.html?cat=sneakers</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://theoutfithouse.in/about</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/Category.html?cat=apparel</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://theoutfithouse.in/sneakers</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/Category.html?cat=bottomwear</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://theoutfithouse.in/apparel</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/Category.html?cat=accessories</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://theoutfithouse.in/bottomwear</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/SpecSheet.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://theoutfithouse.in/accessories</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/Contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://theoutfithouse.in/spec-sheet</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
-  <!-- Product pages -->
-  <url><loc>https://theoutfithouse.in/Product.html?slug=aj1-mid-panda</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=nb-530-sea-salt</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=aj1-high-bred-toe</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=nb-550-white-green</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=aj1-low-panda</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=nb-530-stone</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=aj1-mid-shadow</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=nb-2002r</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=tho-box-tee</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=essentials-hoodie</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=sp5der-hoodie</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=corteiz-overshirt</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=essentials-sweats</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=corteiz-cargos</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=tho-baggy-jeans</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=tho-tote</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=nb-cap</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://theoutfithouse.in/Product.html?slug=sock-pack</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url>
+    <loc>https://theoutfithouse.in/contact</loc>
+    <lastmod>2026-05-04</lastmod>
+  </url>
+
+  <!-- Sneakers -->
+  <url>
+    <loc>https://theoutfithouse.in/product/aj1-mid-panda</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20Mid%20Panda%20(1).png</image:loc>
+      <image:title>Air Jordan 1 Mid Panda</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/nb-530-sea-salt</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%20530%20Cream%20Sea%20Salt.png</image:loc>
+      <image:title>New Balance 530 Cream Sea Salt</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/aj1-high-bred-toe</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20High%20Bred%20Toe.png</image:loc>
+      <image:title>Air Jordan 1 High Bred Toe</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/nb-550-white-green</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%20550%20White%20Green.png</image:loc>
+      <image:title>New Balance 550 White Green</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/aj1-low-panda</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20Low%20Panda.png</image:loc>
+      <image:title>Air Jordan 1 Low Panda</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/nb-530-stone</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%20530%20Stone%20Pink.png</image:loc>
+      <image:title>New Balance 530 Stone Pink</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/aj1-mid-shadow</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20Mid%20Shadow.png</image:loc>
+      <image:title>Air Jordan 1 Mid Shadow</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/nb-2002r</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%202002R%20Protection%20Pack.png</image:loc>
+      <image:title>New Balance 2002R Protection Pack</image:title>
+    </image:image>
+  </url>
+
+  <!-- Apparel -->
+  <url>
+    <loc>https://theoutfithouse.in/product/tho-box-tee</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/Box%20Logo%20Tee.png</image:loc>
+      <image:title>THO Box Logo Tee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/essentials-hoodie</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/Essentials%20Heavyweight%20Hoodie.png</image:loc>
+      <image:title>Essentials Heavyweight Hoodie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sp5der-hoodie</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/Sp5der%20Web%20Hoodie%20Pink.png</image:loc>
+      <image:title>Sp5der Web Hoodie Pink</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/corteiz-overshirt</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/Corteiz%20Alcatraz%20Overshirt.png</image:loc>
+      <image:title>Corteiz Alcatraz Overshirt</image:title>
+    </image:image>
+  </url>
+
+  <!-- Bottomwear -->
+  <url>
+    <loc>https://theoutfithouse.in/product/essentials-sweats</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/Essentials%20Fleece%20Sweatpants.png</image:loc>
+      <image:title>Essentials Fleece Sweatpants</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/corteiz-cargos</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/Corteiz%20Guerillaz%20Cargos.png</image:loc>
+      <image:title>Corteiz Guerillaz Cargos</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/tho-baggy-jeans</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/Baggy%20Denim%20Indigo.png</image:loc>
+      <image:title>THO Baggy Denim Indigo</image:title>
+    </image:image>
+  </url>
+
+  <!-- Accessories -->
+  <url>
+    <loc>https://theoutfithouse.in/product/tho-tote</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/Crown%20Tote%20%C2%B7%20Cream.png</image:loc>
+      <image:title>THO Crown Tote Cream</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/nb-cap</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/New%20Balance%206-Panel%20Cap.png</image:loc>
+      <image:title>New Balance 6-Panel Cap</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sock-pack</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/Crew%20Sock%203-Pack.png</image:loc>
+      <image:title>Crew Sock 3-Pack</image:title>
+    </image:image>
+  </url>
+
 </urlset>

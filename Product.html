@@ -2,8 +2,43 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Product — The Outfit House</title>
+<title id="page-title">Product — The Outfit House</title>
 <meta name="description" content="Shop premium streetwear and sneakers at The Outfit House — Entry, 7A and UA 1:1 grades. Real photos before dispatch. Ships PAN-India."/>
+<script>
+(function() {
+  var s = new URLSearchParams(location.search);
+  var slug = s.get('slug') || location.pathname.replace(/\/+$/, '').split('/').pop();
+  var M = {
+    'aj1-mid-panda':      ['AJ1 Mid · Panda',        'Air Jordan',  '7A',     '₹4,499'],
+    'nb-530-sea-salt':    ['530 · Cream Sea Salt',    'New Balance', 'UA 1:1', '₹6,899'],
+    'aj1-high-bred-toe':  ['AJ1 High · Bred Toe',    'Air Jordan',  '7A',     '₹4,799'],
+    'nb-550-white-green': ['550 · White Green',       'New Balance', '7A',     '₹4,099'],
+    'aj1-low-panda':      ['AJ1 Low · Panda',         'Air Jordan',  'Entry',  '₹2,199'],
+    'nb-530-stone':       ['530 · Stone Pink',        'New Balance', 'UA 1:1', '₹6,899'],
+    'aj1-mid-shadow':     ['AJ1 Mid · Shadow',        'Air Jordan',  'Entry',  '₹2,099'],
+    'nb-2002r':           ['2002R · Protection Pack', 'New Balance', 'UA 1:1', '₹7,299'],
+    'tho-box-tee':        ['Box Logo Tee',            'TOH',         'Entry',  '₹1,299'],
+    'essentials-hoodie':  ['Heavyweight Hoodie',      'Essentials',  '7A',     '₹3,499'],
+    'sp5der-hoodie':      ['Web Hoodie · Pink',       'Sp5der',      'UA 1:1', '₹4,899'],
+    'corteiz-overshirt':  ['Alcatraz Overshirt',      'Corteiz',     '7A',     '₹3,899'],
+    'essentials-sweats':  ['Fleece Sweatpants',       'Essentials',  '7A',     '₹2,899'],
+    'corteiz-cargos':     ['Guerillaz Cargos',        'Corteiz',     'UA 1:1', '₹4,499'],
+    'tho-baggy-jeans':    ['Baggy Denim · Indigo',    'TOH',         'Entry',  '₹1,799'],
+    'tho-tote':           ['Crown Tote · Cream',      'TOH',         'Entry',  '₹699'],
+    'nb-cap':             ['6-Panel Cap',             'New Balance', '7A',     '₹1,099'],
+    'sock-pack':          ['Crew Sock 3-Pack',        'TOH',         'Entry',  '₹499']
+  };
+  var d = M[slug];
+  if (!d) return;
+  document.getElementById('page-title').textContent = d[0] + ' — The Outfit House';
+  var desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' grade — ' + d[3] + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
+  var c = document.createElement('link');
+  c.rel = 'canonical';
+  c.href = 'https://theoutfithouse.in/product/' + slug;
+  document.head.appendChild(c);
+}());
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="icon" href="/assets/logo-crown.png"/>
 <meta property="og:type" content="product"/>
@@ -58,7 +93,7 @@
   }
   .gal-nav button {
     pointer-events: auto; width: 44px; height: 44px;
-    background: rgba(0,0,0,0.55); backdrop-filter: blur(8px);
+    background: var(--overlay-backdrop); backdrop-filter: blur(8px);
     border: 1px solid var(--border-strong); color: var(--fg); cursor: pointer;
     display: inline-flex; align-items: center; justify-content: center;
   }
@@ -134,11 +169,9 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
     background: var(--border);
     border: 1px solid var(--border);
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   }
   .spec {
     background: var(--surface-spec); padding: 18px 20px;
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   }
   .spec .k {
     font-family: var(--font-heading); font-size: 10px; font-weight: 600;
@@ -337,18 +370,52 @@
   ldScript.type = 'application/ld+json';
   ldScript.text = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": p.name,
-    "image": ['https://theoutfithouse.in/' + p.img],
-    "description": p.name + ' · ' + p.grade + ' grade at The Outfit House.',
-    "brand": { "@type": "Brand", "name": p.brand },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "price": p.price.replace(/[^0-9]/g, ''),
-      "availability": "https://schema.org/InStock",
-      "url": 'https://theoutfithouse.in/product/' + p.slug
-    }
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": 'https://theoutfithouse.in/product/' + p.slug + '#product',
+        "name": p.name,
+        "description": p.brand + ' ' + p.name + ' · ' + p.grade + ' grade at The Outfit House, New Delhi. Ships PAN-India. Real QC photos before dispatch.',
+        "image": ['https://theoutfithouse.in/' + p.img],
+        "sku": p.slug,
+        "brand": { "@type": "Brand", "name": p.brand },
+        "itemCondition": "https://schema.org/NewCondition",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "INR",
+          "price": p.price.replace(/[^0-9]/g, ''),
+          "availability": "https://schema.org/InStock",
+          "url": 'https://theoutfithouse.in/product/' + p.slug,
+          "seller": { "@id": "https://theoutfithouse.in/#store" },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" },
+            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" },
+              "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY" }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "IN",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 7,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",       "item": "https://theoutfithouse.in" },
+          { "@type": "ListItem", "position": 2, "name": cat.label,    "item": 'https://theoutfithouse.in/' + cat.key },
+          { "@type": "ListItem", "position": 3, "name": p.name,       "item": 'https://theoutfithouse.in/product/' + p.slug }
+        ]
+      }
+    ]
   });
   document.head.appendChild(ldScript);
 
