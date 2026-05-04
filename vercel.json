@@ -8,6 +8,7 @@
     { "source": "/.git/:path*",    "destination": "/",           "statusCode": 301 }
   ],
   "rewrites": [
+    { "source": "/favicon.ico",   "destination": "/assets/logo-crown.ico" },
     { "source": "/sneakers",      "destination": "/Category.html?cat=sneakers" },
     { "source": "/apparel",       "destination": "/Category.html?cat=apparel" },
     { "source": "/bottomwear",    "destination": "/Category.html?cat=bottomwear" },
