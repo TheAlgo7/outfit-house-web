@@ -266,9 +266,9 @@ window.renderFooter = function() {
       </ul></div>
       <div><h5>Help</h5><ul>
         <li><a href="/spec-sheet">Spec Sheet</a></li>
-        <li><a href="/contact">Shipping</a></li>
-        <li><a href="/contact">Sizing</a></li>
-        <li><a href="/contact">Exchange</a></li>
+        <li><a href="/policy">Shipping</a></li>
+        <li><a href="/terms">Sizing</a></li>
+        <li><a href="/policy">Exchange</a></li>
       </ul></div>
       <div><h5>Connect</h5><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
@@ -278,7 +278,7 @@ window.renderFooter = function() {
     </div>
     <div class="ft-bot">
       <span>© 2026 The Outfit House · New Delhi</span>
-      <span>Sneakers · Streetwear · Premium</span>
+      <span><a href="/policy">Policy</a> · <a href="/terms">Terms</a></span>
     </div>
   </footer>
   <button class="wa-fab" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
