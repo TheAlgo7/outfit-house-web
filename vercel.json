@@ -5,6 +5,8 @@
     { "source": "/Contact.html",   "destination": "/contact",    "permanent": true },
     { "source": "/SpecSheet.html", "destination": "/spec-sheet", "permanent": true },
     { "source": "/Terms.html",     "destination": "/terms",       "permanent": true },
+    { "source": "/Policy.html",    "destination": "/terms",       "permanent": true },
+    { "source": "/policy",         "destination": "/terms",       "permanent": true },
     { "source": "/.git",           "destination": "/",           "statusCode": 301 },
     { "source": "/.git/:path*",    "destination": "/",           "statusCode": 301 }
   ],
@@ -17,7 +19,6 @@
     { "source": "/about",         "destination": "/About.html" },
     { "source": "/contact",       "destination": "/Contact.html" },
     { "source": "/spec-sheet",    "destination": "/SpecSheet.html" },
-    { "source": "/policy",        "destination": "/Policy.html" },
     { "source": "/terms",         "destination": "/Terms.html" },
     { "source": "/product/:slug", "destination": "/Product.html?slug=:slug" },
     { "source": "/",              "destination": "/Homepage.html" }

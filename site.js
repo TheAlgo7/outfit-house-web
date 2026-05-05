@@ -266,9 +266,9 @@ window.renderFooter = function() {
       </ul></div>
       <div><h5>Help</h5><ul>
         <li><a href="/spec-sheet">Spec Sheet</a></li>
-        <li><a href="/policy">Shipping</a></li>
+        <li><a href="/terms">Shipping</a></li>
         <li><a href="/terms">Sizing</a></li>
-        <li><a href="/policy">Exchange</a></li>
+        <li><a href="/terms">Exchange</a></li>
       </ul></div>
       <div><h5>Connect</h5><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
