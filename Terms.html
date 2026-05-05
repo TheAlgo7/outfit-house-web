@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>House Rules | The Outfit House</title>
+<meta name="description" content="The Outfit House terms — how we handle exchanges, sizing, shipping, ordering and your data. No fine print, no corporate loops."/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://theoutfithouse.in/terms"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-black.png"/>
+<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-black.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://theoutfithouse.in/terms"/>
+<meta property="og:title" content="House Rules | The Outfit House"/>
+<meta property="og:description" content="How we handle exchanges, sizing, shipping, ordering and your data. Plain language."/>
+<meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<link rel="stylesheet" href="site.css"/>
+<style>
+  .terms-hero {
+    padding: clamp(80px, 12vw, 160px) 32px 80px;
+    border-bottom: 1px solid var(--border);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .terms-hero .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--accent); margin-bottom: 24px;
+    padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  .terms-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(64px, 10vw, 140px);
+    margin-bottom: 24px;
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+  }
+  .terms-hero .sub {
+    max-width: 600px;
+    font-size: 16px;
+    color: var(--fg-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .terms-body {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .terms-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 80px;
+    padding: 80px 0 120px;
+  }
+
+  .terms-nav {
+    position: sticky;
+    top: 88px;
+    height: fit-content;
+  }
+  .terms-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .terms-nav a {
+    display: block;
+    padding: 10px 0;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--fg-subtle);
+    border: none;
+    border-bottom: 1px solid var(--border);
+    transition: color var(--dur-fast);
+  }
+  .terms-nav li:first-child a { border-top: 1px solid var(--border); }
+  .terms-nav a:hover { color: var(--fg); }
+  .terms-nav a.active { color: var(--accent); }
+
+  .terms-content {
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+  }
+
+  .terms-block h2 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    margin: 0 0 32px;
+    color: var(--fg);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .terms-block h3 {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--accent);
+    margin: 40px 0 12px;
+  }
+  .terms-block p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: var(--fg-muted);
+  }
+  .terms-block p:last-child { margin-bottom: 0; }
+  .terms-block strong { color: var(--fg); }
+
+  .terms-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .terms-block ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--fg-muted);
+    line-height: 1.55;
+  }
+  .terms-block ul li::before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 10px;
+  }
+
+  .callout {
+    background: var(--bg-elev);
+    border: 1px solid var(--border-strong);
+    padding: 28px 28px 28px 24px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .callout-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--accent-on);
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+  .callout p { margin-bottom: 0; color: var(--fg); font-size: 14px; line-height: 1.6; }
+
+  .sizing-guide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+  .sizing-guide-cell {
+    background: var(--bg-elev);
+    padding: 24px;
+  }
+  .sizing-guide-cell h4 {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--fg);
+    margin: 0 0 10px;
+  }
+  .sizing-guide-cell p {
+    font-size: 14px;
+    color: var(--fg-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .terms-cta {
+    border-top: 1px solid var(--border);
+    padding: 80px 32px 96px;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .terms-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 72px);
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin: 0 0 16px;
+  }
+  .terms-cta p {
+    font-size: 15px;
+    color: var(--fg-muted);
+    margin: 0 0 36px;
+  }
+
+  @media (max-width: 900px) {
+    .terms-hero { padding: 56px 20px 40px; }
+    .terms-body { padding: 0 20px; }
+    .terms-grid { grid-template-columns: 1fr; gap: 48px; padding: 48px 0 80px; }
+    .terms-nav { display: none; }
+    .sizing-guide { grid-template-columns: 1fr; }
+    .terms-cta { padding: 56px 20px 64px; }
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div id="header-mount"></div>
+
+<main id="main-content">
+
+  <section class="terms-hero">
+    <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> Transparency &amp; Trust</div>
+    <h1>The House Rules.</h1>
+    <p class="sub">We operate differently because we care about the culture. No faceless corporate loops — just direct conversation and clear standards.</p>
+  </section>
+
+  <div class="terms-body">
+    <div class="terms-grid">
+
+      <nav class="terms-nav" aria-label="Terms sections">
+        <ul>
+          <li><a href="#returns">Returns &amp; Exchanges</a></li>
+          <li><a href="#shipping">Shipping &amp; Delivery</a></li>
+          <li><a href="#ordering">Ordering Terms</a></li>
+          <li><a href="#privacy">Privacy &amp; Data</a></li>
+        </ul>
+      </nav>
+
+      <div class="terms-content">
+
+        <div class="terms-block" id="returns">
+          <h2>Returns &amp; Exchanges</h2>
+          <p>At The Outfit House, we operate on a <strong>case-by-case basis</strong>. Because we deal in curated drops and premium pieces, we don't follow generic one-click return patterns. We talk to you directly to find a solution.</p>
+
+          <div class="callout">
+            <span class="callout-tag">Required</span>
+            <p><strong>360° unboxing video is compulsory.</strong> To claim any damage or wrong item, you must provide a continuous, uncut video of the package being opened from all angles. No video, no claim. This protects the House and our customers equally.</p>
+          </div>
+
+          <h3>Sizing Issues</h3>
+          <p>To avoid the hassle of exchanges, measure your current gear before ordering. Don't guess — measure.</p>
+
+          <div class="sizing-guide">
+            <div class="sizing-guide-cell">
+              <h4>Shoes</h4>
+              <p>Take an old shoe that fits perfectly. Check the UK/US size on the tongue. Better yet, use an inch tape to measure the insole length in centimetres.</p>
+            </div>
+            <div class="sizing-guide-cell">
+              <h4>Apparel</h4>
+              <p>Take your favourite tee or track. Lay it flat. Measure the chest (pit-to-pit) and length. Share these specs with us on WhatsApp.</p>
+            </div>
+          </div>
+
+          <p>Once you provide these details, we pack the <strong>correct size for your fit</strong>. Exchanges for sizing are only handled if the House dispatched a size different from what was agreed upon.</p>
+        </div>
+
+        <div class="terms-block" id="shipping">
+          <h2>Shipping &amp; Delivery</h2>
+          <p>We don't leave you guessing. Every step of fulfilment is documented and shared with you live from our Chattarpur studio.</p>
+
+          <h3>The Process</h3>
+          <p>Once you confirm your order, we pack it in front of the camera. You receive <strong>photos of your actual package</strong> packed and ready to go. We use trusted courier partners for Delhi NCR and reliable national partners for the rest of India.</p>
+
+          <h3>Discreet Packaging</h3>
+          <p>Your privacy matters. All shipments are sent in <strong>zero-branding outer packaging</strong> — 100% discreet. No logos, no product names, no indication of contents on the outside.</p>
+
+          <h3>Live Tracking</h3>
+          <p>As soon as the shipment is assigned, we share the <strong>tracking number and courier details</strong> directly with you on WhatsApp. Real-time updates. No ghosting.</p>
+
+          <ul>
+            <li>Delivery time: 2–5 business days PAN-India</li>
+            <li>Delhi NCR: same-day dispatch possible for orders confirmed before 1pm</li>
+            <li>Shipping is free on all orders</li>
+          </ul>
+        </div>
+
+        <div class="terms-block" id="ordering">
+          <h2>Ordering Terms</h2>
+          <p>The Outfit House is a conversation-first vault. We don't use automated checkouts because we want to make sure you get exactly what you're looking for.</p>
+
+          <h3>Payments &amp; Pricing</h3>
+          <p>Pricing for each piece is listed on the product page. Payment is confirmed via <strong>WhatsApp chat</strong> — UPI, bank transfer, or COD in most metros. This lets us check real-time stock and handle any special requests before money moves.</p>
+
+          <h3>QC Photos Before Dispatch</h3>
+          <p>Every piece is opened and photographed in our New Delhi studio before it ships. You receive clear photos — packaging open, stitching close-up, sole, and any specific detail you ask for. <strong>You confirm before we dispatch.</strong> This is non-negotiable and protects both sides.</p>
+
+          <h3>In-Store Experience</h3>
+          <p>If you're in Delhi, skip the shipping. Our collection is ready at our Chattarpur studio. Walk in, try it, check it, decide. Book a slot on WhatsApp first — <strong>visits are by appointment only</strong>.</p>
+        </div>
+
+        <div class="terms-block" id="privacy">
+          <h2>Privacy &amp; Data</h2>
+          <p>We value your trust more than your data. We only collect what's necessary to get your fit to your door.</p>
+          <ul>
+            <li>Your contact details are used strictly for order coordination</li>
+            <li>We do not sell or share your information with third-party marketing services</li>
+            <li>All WhatsApp conversations are kept private and used only for order fulfilment</li>
+            <li>Photos shared for QC purposes are not used for any promotional content without your consent</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <section class="terms-cta">
+    <h2>Any Questions?</h2>
+    <p>If a rule isn't clear or your situation isn't covered, ask us directly. We're here.</p>
+    <button class="btn-wa" onclick="wa('Hi! I have a question about the House Rules.')">
+      <svg><use href="#wa-icon"/></svg> Message Us on WhatsApp
+    </button>
+  </section>
+
+</main>
+
+<div id="footer-mount"></div>
+
+<script src="site.js"></script>
+<script>
+  injectSprite();
+  document.getElementById('header-mount').innerHTML = renderHeader('');
+  document.getElementById('footer-mount').innerHTML = renderFooter();
+  initHeader();
+
+  // Scroll spy for sticky nav
+  const navLinks = document.querySelectorAll('.terms-nav a');
+  const sections = document.querySelectorAll('.terms-block');
+  window.addEventListener('scroll', function() {
+    let current = '';
+    sections.forEach(function(s) {
+      if (window.pageYOffset >= s.offsetTop - 140) current = s.id;
+    });
+    navLinks.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>

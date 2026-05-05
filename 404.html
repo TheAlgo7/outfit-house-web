@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>404 | Page Not Found | The Outfit House</title>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-black.png"/>
+<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-black.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="404 | Page Not Found | The Outfit House"/>
+<meta property="og:description" content="This page doesn't exist at The Outfit House."/>
+<meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<link rel="stylesheet" href="site.css"/>
+<style>
+  .error-page {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .error-page::before {
+    content: 'ACCESS DENIED';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-family: var(--font-display);
+    font-size: 20vw;
+    color: var(--fg);
+    opacity: 0.03;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .error-content { position: relative; z-index: 1; }
+  .error-code {
+    font-family: var(--font-display);
+    font-size: clamp(120px, 25vw, 280px);
+    line-height: 0.8;
+    color: var(--accent);
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 20px rgba(227, 168, 72, 0.2));
+  }
+  .error-message {
+    font-family: var(--font-heading);
+    font-size: clamp(24px, 4vw, 40px);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: 16px;
+    color: var(--fg);
+  }
+  .error-sub {
+    font-size: 16px;
+    color: var(--fg-muted);
+    max-width: 480px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+  .error-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .error-actions .btn-wa,
+  .error-actions .btn-ghost {
+    padding: 18px 36px;
+    min-width: 220px;
+  }
+  @media (max-width: 600px) {
+    .error-actions { flex-direction: column; width: 100%; max-width: 280px; }
+    .error-actions .btn-wa,
+    .error-actions .btn-ghost { width: 100%; min-width: 0; }
+    .error-code { font-size: 140px; }
+    .error-page::before { font-size: 40vw; }
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div id="header-mount"></div>
+
+<main id="main-content">
+  <section class="error-page">
+    <div class="error-content">
+      <div class="error-code">404</div>
+      <h1 class="error-message">Page Not Found</h1>
+      <p class="error-sub">The vault entry you're looking for doesn't exist or has been rotated out. Either way, you're at a dead end.</p>
+      <div class="error-actions">
+        <a href="/" class="btn-ghost">Return to Home</a>
+        <button class="btn-wa" onclick="wa('Hi! I hit a 404 error on the site and need help finding a product.')">
+          <svg><use href="#wa-icon"/></svg> WhatsApp Support
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-mount"></div>
+
+<script src="site.js"></script>
+<script>
+  injectSprite();
+  document.getElementById('header-mount').innerHTML = renderHeader('');
+  document.getElementById('footer-mount').innerHTML = renderFooter();
+  initHeader();
+</script>
+</body>
+</html>
