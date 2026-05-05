@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title id="page-title">Category — The Outfit House</title>
+<title id="page-title">Category | The Outfit House</title>
 <meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos — ships PAN-India."/>
 <script>
 (function() {
@@ -13,10 +13,10 @@
     if (['sneakers','apparel','bottomwear','accessories'].indexOf(seg) !== -1) cat = seg;
   }
   var M = {
-    'sneakers':    ['The Sneaker Vault — The Outfit House',    'Shop premium Air Jordan, New Balance and more in Entry, Standard and Vault tiers at The Outfit House, New Delhi. Real photos before dispatch.'],
-    'apparel':     ['Topwear — The Outfit House',              'Premium tees, hoodies and overshirts in Entry, Standard and Vault tiers at The Outfit House. Ships PAN-India.'],
-    'bottomwear':  ['Streetwear Bottoms — The Outfit House',   'Premium cargos, sweats and denim in Entry, Standard and Vault tiers. Hand-checked in New Delhi. Ships PAN-India.'],
-    'accessories': ['Finishing Touches — The Outfit House',    'Caps, totes, socks and accessories in Entry, Standard and Vault tiers at The Outfit House. Ships PAN-India.']
+    'sneakers':    ['The Sneaker Vault | The Outfit House',    'Shop premium Air Jordan, New Balance and more in Entry, Standard and Vault tiers at The Outfit House, New Delhi. Real photos before dispatch.'],
+    'apparel':     ['Topwear | The Outfit House',              'Premium tees, hoodies and overshirts in Entry, Standard and Vault tiers at The Outfit House. Ships PAN-India.'],
+    'bottomwear':  ['Streetwear Bottoms | The Outfit House',   'Premium cargos, sweats and denim in Entry, Standard and Vault tiers. Hand-checked in New Delhi. Ships PAN-India.'],
+    'accessories': ['Finishing Touches | The Outfit House',    'Caps, totes, socks and accessories in Entry, Standard and Vault tiers at The Outfit House. Ships PAN-India.']
   };
   var d = cat && M[cat];
   if (!d) return;
@@ -31,10 +31,10 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
-<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/black-crown-on-accent.png"/>
-<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/black-crown-on-accent.png"/>
+<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-crown.png"/>
+<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-crown.png"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Category — The Outfit House"/>
+<meta property="og:title" content="Category | The Outfit House"/>
 <meta property="og:description" content="Shop premium sneakers, apparel and accessories at The Outfit House across three quality tiers."/>
 <meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -192,7 +192,7 @@
   catKey = catKey || 'sneakers';
   const cat = CATEGORIES[catKey] || CATEGORIES.sneakers;
 
-  document.title = cat.title + ' — The Outfit House';
+  document.title = cat.title + ' | The Outfit House';
 
   // SEO — update dynamic meta
   var canonicalEl = document.createElement('link');
@@ -200,7 +200,7 @@
   canonicalEl.href = 'https://theoutfithouse.in/' + catKey;
   document.head.appendChild(canonicalEl);
   document.querySelector('meta[name="description"]').content = cat.title + ' — shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch.';
-  document.querySelector('meta[property="og:title"]').content = cat.title + ' — The Outfit House';
+  document.querySelector('meta[property="og:title"]').content = cat.title + ' | The Outfit House';
   document.querySelector('meta[property="og:description"]').content = cat.title + ' — premium ' + cat.label.toLowerCase() + ' across three quality tiers.';
   document.getElementById('cat-eyebrow').innerHTML = '<span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> ' + cat.tag;
   document.getElementById('cat-title').textContent = cat.title;

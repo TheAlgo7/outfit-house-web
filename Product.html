@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title id="page-title">Product — The Outfit House</title>
+<title id="page-title">Product | The Outfit House</title>
 <meta name="description" content="Shop premium streetwear and sneakers at The Outfit House — Entry, Standard and Vault tiers. Real photos before dispatch. Ships PAN-India."/>
 <script>
 (function() {
@@ -30,7 +30,7 @@
   };
   var d = M[slug];
   if (!d) return;
-  document.getElementById('page-title').textContent = d[0] + ' — The Outfit House';
+  document.getElementById('page-title').textContent = d[0] + ' | The Outfit House';
   var desc = document.querySelector('meta[name="description"]');
   if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' tier — ' + d[3] + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
   var c = document.createElement('link');
@@ -41,10 +41,10 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
-<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/black-crown-on-accent.png"/>
-<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/black-crown-on-accent.png"/>
+<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-crown.png"/>
+<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-crown.png"/>
 <meta property="og:type" content="product"/>
-<meta property="og:title" content="Product — The Outfit House"/>
+<meta property="og:title" content="Product | The Outfit House"/>
 <meta property="og:description" content="Premium grade sneakers and streetwear at The Outfit House."/>
 <meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -357,11 +357,11 @@
   document.getElementById('p-name').textContent = p.name;
   document.getElementById('p-price').innerHTML = p.price + ' <s>' + p.was + '</s>';
   document.getElementById('s-grade').textContent = p.grade;
-  document.title = p.name + ' — The Outfit House';
+  document.title = p.name + ' | The Outfit House';
 
   // SEO — update dynamic meta + inject Product schema
   document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' tier — ' + p.price + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
-  document.querySelector('meta[property="og:title"]').content = p.name + ' — The Outfit House';
+  document.querySelector('meta[property="og:title"]').content = p.name + ' | The Outfit House';
   document.querySelector('meta[property="og:description"]').content = p.name + ' · ' + p.grade + ' tier at ' + p.price + '.';
   document.querySelector('meta[property="og:image"]').content = 'https://theoutfithouse.in/' + p.img;
   var canonicalProd = document.createElement('link');
