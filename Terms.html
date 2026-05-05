@@ -221,6 +221,8 @@
     margin: 0 0 36px;
   }
 
+  .terms-mob-nav { display: none; }
+
   @media (max-width: 900px) {
     .terms-hero { padding: 56px 20px 40px; }
     .terms-body { padding: 0 20px; }
@@ -228,6 +230,34 @@
     .terms-nav { display: none; }
     .sizing-guide { grid-template-columns: 1fr; }
     .terms-cta { padding: 56px 20px 64px; }
+
+    .terms-mob-nav {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      position: sticky;
+      top: 60px;
+      z-index: 40;
+      background: var(--overlay-strong);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .terms-mob-nav::-webkit-scrollbar { display: none; }
+    .terms-mob-nav a {
+      padding: 14px 16px;
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--fg-muted);
+      border: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color var(--dur-fast);
+    }
+    .terms-mob-nav a:hover { color: var(--fg); }
   }
 </style>
 </head>
@@ -242,6 +272,13 @@
     <h1>The House Rules.</h1>
     <p class="sub">We operate differently because we care about the culture. No faceless corporate loops — just direct conversation and clear standards.</p>
   </section>
+
+  <nav class="terms-mob-nav" aria-label="Terms sections">
+    <a href="#returns">Returns</a>
+    <a href="#shipping">Shipping</a>
+    <a href="#ordering">Ordering</a>
+    <a href="#privacy">Privacy</a>
+  </nav>
 
   <div class="terms-body">
     <div class="terms-grid">

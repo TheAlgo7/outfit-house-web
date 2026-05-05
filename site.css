@@ -176,7 +176,7 @@ header.nav {
   transition: color var(--dur-fast), background var(--dur-fast);
 }
 .nav-dropdown-menu a:last-child { border-bottom: none; }
-.nav-dropdown-menu a:hover { color: var(--fg); background: rgba(255,255,255,0.04); border-color: var(--border); }
+.nav-dropdown-menu a:hover { color: var(--fg); background: var(--surface-hover); border-color: var(--border); }
 .nav-dropdown-menu a.active { color: var(--accent); }
 .nav-dropdown-menu .num { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
 
@@ -226,9 +226,9 @@ header.nav {
   background: var(--bg-elev); border: 1px solid var(--bg-elev);
   transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
   display: flex; flex-direction: column; color: inherit;
-  position: relative; will-change: transform; backface-visibility: hidden; isolation: isolate;
+  position: relative; backface-visibility: hidden; isolation: isolate;
 }
-.pc:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+.pc:hover { border-color: var(--border-strong); transform: translateY(-3px); will-change: transform; }
 .pc-img {
   aspect-ratio: 4/3; background: var(--bg-light); position: relative; overflow: hidden;
 }
@@ -436,7 +436,7 @@ body.leaving {
   transition: color var(--dur-fast), background var(--dur-fast);
 }
 .mob-nav-links a:first-child { border-top: none; }
-.mob-nav-links a:hover { color: var(--accent); background: rgba(255,255,255,0.02); }
+.mob-nav-links a:hover { color: var(--accent); background: var(--surface-hover-subtle); }
 .mob-nav-links a svg { width: 14px; height: 14px; opacity: 0.35; flex-shrink: 0; }
 
 /* Footer CTA at the bottom of the drawer */

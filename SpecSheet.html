@@ -129,17 +129,27 @@
   }
   .compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .compare-table {
-    border: 1px solid var(--border); display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
     min-width: 540px;
+    width: 100%;
+    font-size: 13px;
   }
-  .compare-table > div {
-    padding: 18px 24px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
-    font-size: 13px; color: var(--fg);
+  .compare-table th,
+  .compare-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    color: var(--fg);
+    text-align: left;
+    font-weight: 400;
   }
-  .compare-table > div:nth-child(4n) { border-right: none; }
-  .compare-table > div:nth-last-child(-n+4) { border-bottom: none; }
-  .compare-table .h {
+  .compare-table th:last-child,
+  .compare-table td:last-child { border-right: none; }
+  .compare-table tbody tr:last-child td,
+  .compare-table tbody tr:last-child th { border-bottom: none; }
+  .compare-table thead th,
+  .compare-table tbody th[scope="row"] {
     font-family: var(--font-heading); font-size: 11px; font-weight: 700;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-muted); background: var(--bg-elev);
@@ -263,7 +273,7 @@
       </div>
       <div class="honest">
         <div class="k">Our Take</div>
-        <p>UA is for collectors who won't settle on a single detail. Materials, finish, packaging — nothing is rounded down. If you want the complete experience, this is it.</p>
+        <p>Vault is for collectors who won't settle on a single detail. Materials, finish, packaging — nothing is rounded down. If you want the complete experience, this is it.</p>
       </div>
     </div>
   </div>
@@ -273,37 +283,48 @@
 <section class="compare">
   <h2>At a glance.</h2>
   <div class="compare-scroll">
-  <div class="compare-table">
-    <div class="h">Spec</div>
-    <div class="h">Entry</div>
-    <div class="h h-std">Standard</div>
-    <div class="h">Vault</div>
-
-    <div class="h">Upper</div>
-    <div>PU blend</div>
-    <div>Genuine leather</div>
-    <div>Original-spec leather</div>
-
-    <div class="h">Sole</div>
-    <div>Glued</div>
-    <div>Stitched</div>
-    <div>Factory-stitched</div>
-
-    <div class="h">Box</div>
-    <div>Plain dust bag</div>
-    <div>Branded box + tissue</div>
-    <div>Full packaging</div>
-
-    <div class="h">Build</div>
-    <div>Solid everyday</div>
-    <div>Premium grade</div>
-    <div>Factory spec</div>
-
-    <div class="h">From</div>
-    <div>₹1,899</div>
-    <div>₹3,899</div>
-    <div>₹6,499</div>
-  </div>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th scope="col">Spec</th>
+        <th scope="col">Entry</th>
+        <th scope="col" class="h-std">Standard</th>
+        <th scope="col">Vault</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Upper</th>
+        <td>PU blend</td>
+        <td>Genuine leather</td>
+        <td>Original-spec leather</td>
+      </tr>
+      <tr>
+        <th scope="row">Sole</th>
+        <td>Glued</td>
+        <td>Stitched</td>
+        <td>Factory-stitched</td>
+      </tr>
+      <tr>
+        <th scope="row">Box</th>
+        <td>Plain dust bag</td>
+        <td>Branded box + tissue</td>
+        <td>Full packaging</td>
+      </tr>
+      <tr>
+        <th scope="row">Build</th>
+        <td>Solid everyday</td>
+        <td>Premium grade</td>
+        <td>Factory spec</td>
+      </tr>
+      <tr>
+        <th scope="row">From</th>
+        <td>₹1,899</td>
+        <td>₹3,899</td>
+        <td>₹6,499</td>
+      </tr>
+    </tbody>
+  </table>
   </div><!-- /.compare-scroll -->
 </section>
 

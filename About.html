@@ -164,7 +164,7 @@
   display: flex; flex-direction: column; gap: 20px;
   transition: background var(--dur-base);
 }
-.trust-about-item:hover { background: #080808; }
+.trust-about-item:hover { background: var(--tho-black-800); }
 .trust-about-item .num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
 .trust-about-item h4 {
   font-size: 24px; text-transform: uppercase;
@@ -202,6 +202,7 @@
   .founder-grid { grid-template-columns: 1fr; gap: 64px; }
   .vault-content { grid-template-columns: 1fr; gap: 40px; }
   .vault-visual  { order: -1; }
+  .vault-meta { grid-template-columns: 1fr; gap: 20px; }
   .trust-about-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {

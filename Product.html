@@ -240,7 +240,7 @@
 <nav class="crumbs" aria-label="Breadcrumb">
   <a href="/">Home</a><span class="sep">/</span>
   <a id="crumb-cat" href="/sneakers">Sneakers</a><span class="sep">/</span>
-  <span id="crumb-name">Product</span>
+  <span id="crumb-name" aria-current="page">Product</span>
 </nav>
 
 <main id="main-content" class="pdp">
@@ -248,7 +248,7 @@
   <div class="gallery">
     <div class="gal-main">
       <span class="gal-grade standard" id="gal-grade">Standard</span>
-      <img id="gal-img" src="assets/product-airjordan.jpg" alt="Product image"/>
+      <img id="gal-img" src="data:," alt=""/>
       <div class="gal-nav">
         <button onclick="gal(-1)" aria-label="Previous"><svg><use href="#arrow-left"/></svg></button>
         <button onclick="gal(1)" aria-label="Next"><svg><use href="#arrow-right"/></svg></button>
@@ -458,10 +458,10 @@
   const sizesEl = document.getElementById('sizes');
   function renderSizes() {
     sizesEl.innerHTML = UK.map(s =>
-      `<button class="size ${OOS.has(s)?'oos':''} ${selSize===s?'sel':''}" ${OOS.has(s)?'disabled':''} aria-pressed="${selSize===s}" onclick="selectSize(${s})">UK ${s}</button>`
+      `<button class="size ${OOS.has(s)?'oos':''} ${selSize===s?'sel':''}" ${OOS.has(s)?'aria-disabled="true"':''} aria-pressed="${selSize===s}" onclick="selectSize(${s})">UK ${s}</button>`
     ).join('');
   }
-  window.selectSize = function(s) { selSize = s; renderSizes(); };
+  window.selectSize = function(s) { if (OOS.has(s)) return; selSize = s; renderSizes(); };
   renderSizes();
 
   window.enquire = function() {

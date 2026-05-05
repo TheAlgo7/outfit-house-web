@@ -210,7 +210,7 @@ window.renderHeader = function(active) {
         <a class="icon-link" href="${window.IG_URL}" target="_blank" rel="noopener" aria-label="Instagram">
           <svg><use href="#ig-icon"/></svg>
         </a>
-        <button class="nav-wa" onclick="wa('Hi! I want to enquire.')">
+        <button class="nav-wa" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
           <svg><use href="#wa-icon"/></svg> <span class="lbl">Enquire</span>
         </button>
       </div>
