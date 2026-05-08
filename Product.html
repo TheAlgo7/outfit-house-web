@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title id="page-title">Product | The Outfit House</title>
-<meta name="description" content="Shop premium streetwear and sneakers at The Outfit House — Entry, Standard and Vault tiers. Real photos before dispatch. Ships PAN-India."/>
+<meta name="description" content="Shop premium streetwear and sneakers at The Outfit House | Entry, Standard and Vault tiers. Real photos before dispatch. Ships PAN-India."/>
 <script>
 (function() {
   var s = new URLSearchParams(location.search);
@@ -32,7 +32,7 @@
   if (!d) return;
   document.getElementById('page-title').textContent = d[0] + ' | The Outfit House';
   var desc = document.querySelector('meta[name="description"]');
-  if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' tier — ' + d[3] + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
+  if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' tier, ' + d[3] + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
   var c = document.createElement('link');
   c.rel = 'canonical';
   c.href = 'https://theoutfithouse.in/product/' + slug;
@@ -363,7 +363,7 @@
   document.title = p.name + ' | The Outfit House';
 
   // SEO — update dynamic meta + inject Product schema
-  document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' tier — ' + p.price + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
+  document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' tier, ' + p.price + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
   document.querySelector('meta[property="og:title"]').content = p.name + ' | The Outfit House';
   document.querySelector('meta[property="og:description"]').content = p.name + ' · ' + p.grade + ' tier at ' + p.price + '.';
   document.querySelector('meta[property="og:image"]').content = 'https://theoutfithouse.in/' + p.img;
@@ -468,7 +468,7 @@
 
   window.enquire = function() {
     const sz = selSize ? `size UK ${selSize}` : 'available sizes';
-    wa(`Hi! I want to enquire about ${p.name} (${p.grade}) — ${sz}. Price: ${p.price}.`);
+    wa(`Hi! I want to enquire about ${p.name} (${p.grade}), ${sz}. Price: ${p.price}.`);
   };
 
   // Related = other products from same category

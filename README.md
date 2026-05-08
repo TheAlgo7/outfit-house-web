@@ -90,10 +90,10 @@ Currency leads with `₹` for INR, no space.
 
 | Token | Hex | Role |
 | --- | --- | --- |
-| `--tho-black` | `#000000` | Primary background. Default surface. |
-| `--tho-eggshell` | `#F2ECDD` | Primary text on dark; secondary background on light surfaces. |
-| `--tho-hampton` | `#E8D3B2` | Warm neutral — muted text, subtle warm panels. |
-| `--tho-yellow` | `#E3A848` | Accent **only**. CTAs, highlights, the crown mark. |
+| `--toh-black` | `#000000` | Primary background. Default surface. |
+| `--toh-eggshell` | `#F2ECDD` | Primary text on dark; secondary background on light surfaces. |
+| `--toh-hampton` | `#E8D3B2` | Warm neutral — muted text, subtle warm panels. |
+| `--toh-yellow` | `#E3A848` | Accent **only**. CTAs, highlights, the crown mark. |
 
 **80 / 15 / 5 rule:** ~80% black, ~15% eggshell/hampton, ~5% yellow. If
 yellow appears more than once per primary view, it's overused.

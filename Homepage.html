@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>The Outfit House | Sneakers &amp; Streetwear</title>
-<meta name="description" content="Shop premium sneakers, streetwear & accessories at The Outfit House. Three tiers: Entry, Standard and Vault. Air Jordan, New Balance, Essentials — real photos before dispatch. Ships PAN-India."/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Outfit House | Sneakers, Apparel &amp; Accessories · Chhatarpur, New Delhi</title>
+<meta name="description" content="Premium sneakers, branded apparel, bottoms and accessories. Hand-checked in Delhi, shipped pan-India. Free delivery on prepaid orders. Visit our Chhatarpur store or order directly on WhatsApp."/>
 <link rel="canonical" href="https://theoutfithouse.in/"/>
 <meta name="google-site-verification" content="GeXrb8By3V0hAyzSurMKlnkUiZ3j0GPXU0OYkoO7G5c"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://theoutfithouse.in/"/>
+<meta property="og:title" content="The Outfit House | Sneakers, Apparel &amp; Accessories"/>
+<meta property="og:description" content="Premium sneakers, branded apparel, accessories and more. Hand-checked in Delhi, shipped pan-India."/>
+<meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
 <link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-black.png"/>
 <link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-black.png"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://theoutfithouse.in/"/>
-<meta property="og:title" content="The Outfit House | Sneakers &amp; Streetwear"/>
-<meta property="og:description" content="Shop premium sneakers, streetwear & accessories at The Outfit House. Three tiers: Entry, Standard and Vault."/>
-<meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
-<meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2"/>
@@ -23,628 +23,779 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/>
 <link rel="preload" as="image" href="assets/Sneakers/AJ1 Mid Panda (1).png" fetchpriority="high"/>
+<link rel="preload" as="image" href="assets/Apparel/Sp5der Web Hoodie Pink.png" fetchpriority="high"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
-  /* ============ BRUSH ACCENT ============ */
-  .brush-tag {
-    display: block;
-    font-family: var(--font-brush);
-    font-size: clamp(18px, 2.2vw, 26px);
-    color: var(--accent);
-    transform: rotate(-1.5deg);
-    line-height: 1.1;
+  /* ============================================================
+     HOMEPAGE — Full catalog landing page
+     Dark, premium, editorial. Builds on colors_and_type.css + site.css
+     ============================================================ */
+
+
+  /* ---- HERO ---- */
+  .lp-hero {
+    padding: 48px 0 96px; position: relative; overflow: hidden;
+  }
+  .lp-hero-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center;
   }
 
-  /* ============ HERO ============ */
-  .hero {
-    position: relative; min-height: 88vh;
-    display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px;
-    align-items: center; padding: 80px 32px 64px;
-    max-width: 1280px; margin: 0 auto;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; top: 50%; right: -120px;
-    width: 640px; height: 640px; transform: translateY(-50%);
-    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 10%, transparent) 0%, transparent 65%);
-    pointer-events: none; z-index: 0;
-  }
-  .hero-content { position: relative; z-index: 2; }
-  .hero .eyebrow {
+  /* eyebrow pill */
+  .lp-eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--accent); margin-bottom: 28px;
-    padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    color: var(--accent); padding: 7px 12px; margin-bottom: 28px;
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
   }
-  .hero .eyebrow .dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  .lp-eyebrow .dot {
+    width: 6px; height: 6px; background: var(--accent); border-radius: 50%;
+    animation: lp-pulse 2.2s ease-in-out infinite;
   }
-  .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(64px, 9vw, 132px);
-    line-height: 0.92; text-transform: uppercase; color: var(--fg);
-    margin: 0 0 24px; letter-spacing: -0.005em;
+  @keyframes lp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%        { opacity: 0.35; transform: scale(0.75); }
   }
-  .hero h1 .accent { color: var(--accent); }
-  .hero .lede {
-    font-size: 17px; color: var(--fg-muted); line-height: 1.6;
-    max-width: 480px; margin: 0 0 40px;
-  }
-  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .hero-trust {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
-    margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);
-    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
-    letter-spacing: var(--tracking-wide); text-transform: uppercase;
-    color: var(--fg-muted);
-  }
-  .hero-trust .sep { color: var(--fg-subtle); }
 
-  .hero-img-wrap { position: relative; z-index: 1; }
-  .hero-img {
-    aspect-ratio: 4/5; background: var(--bg-light); overflow: hidden; position: relative;
+  .lp-hero h1 {
+    font-family: var(--font-display); font-size: clamp(68px, 10.5vw, 160px);
+    line-height: 0.87; text-transform: uppercase; margin: 0 0 28px;
+    letter-spacing: -0.005em;
   }
-  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
-  .hero-tag {
-    position: absolute; top: 20px; left: 20px;
-    background: var(--accent); color: var(--accent-on);
-    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+  .lp-hero h1 .acc  { color: var(--accent); }
+  .lp-hero h1 .out  { -webkit-text-stroke: 1.5px var(--fg); color: transparent; }
+  .lp-hero h1 .dim  { color: var(--fg-muted); }
+
+  .lp-hero .lede {
+    max-width: 500px; font-size: 16px; line-height: 1.65; color: var(--fg-muted);
+    margin: 0 0 32px;
+  }
+  /* category chips row */
+  .lp-cat-chips {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;
+  }
+  .lp-cat-chips a {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    padding: 7px 12px;
-  }
-  .hero-glass {
-    position: absolute; left: 20px; right: 20px; bottom: 20px;
-    background: var(--surface-glass); backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    color: var(--fg-muted); padding: 12px 14px;
     border: 1px solid var(--border);
-    padding: 18px 22px;
+    transition: color var(--dur-base), border-color var(--dur-base), background var(--dur-base);
   }
-  .hero-glass .row1 {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+  .lp-cat-chips a:hover {
+    color: var(--accent-on); background: var(--accent);
+    border-color: var(--accent);
   }
-  .hero-glass .name {
-    font-family: var(--font-display); font-size: 22px; color: var(--fg);
-    text-transform: uppercase; line-height: 1;
+  .lp-hero .ctas {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px;
   }
-  .hero-glass .price {
-    font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--accent);
+  .lp-hero .ctas .btn-wa  { padding: 18px 26px; }
+  .lp-hero .ctas .btn-ghost { padding: 18px 26px; }
+
+  .lp-hero .meta {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-top: 1px solid var(--border); padding-top: 20px; max-width: 540px;
   }
-  .hero-glass .specs {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
-    padding-top: 14px; border-top: 1px solid var(--border);
+  .lp-hero .meta-item {
+    display: flex; flex-direction: column; gap: 4px; padding-right: 20px;
+    border-right: 1px solid var(--border); margin-right: 20px;
   }
-  .hero-glass .specs > div span {
-    display: block; font-family: var(--font-heading); font-size: clamp(10px, 2.5vw, 11px);
+  .lp-hero .meta-item:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .lp-hero .meta span {
+    font-family: var(--font-mono); font-size: 10px;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted); margin-bottom: 2px; font-weight: 600;
+    color: var(--fg-subtle);
   }
-  .hero-glass .specs > div b {
-    font-family: var(--font-heading); font-size: 12px; color: var(--fg); font-weight: 700;
+  .lp-hero .meta b {
+    font-family: var(--font-heading); font-size: 13px; font-weight: 600;
+    color: var(--fg); letter-spacing: 0.01em;
   }
 
-  /* ============ MARQUEE STRIP ============ */
-  .strip {
-    background: var(--accent); color: var(--accent-on); padding: 14px 0; overflow: hidden;
-    border-top: 1px solid var(--accent-on); border-bottom: 1px solid var(--accent-on);
+  /* hero image stack */
+  .lp-hero-imgs {
+    position: relative; aspect-ratio: 4/5; min-height: 520px;
+    display: block;
   }
-  .strip-inner {
-    display: flex;
-    width: max-content; /* ensures -50% = one strip-set width, not half-viewport */
-    animation: marquee 32s linear infinite;
-    will-change: transform;
-  }
-  /* Hover pauses the scroll for readability */
-  .strip:hover .strip-inner { animation-play-state: paused; }
-  .strip-set {
-    display: flex; align-items: center; flex-shrink: 0;
-    gap: 52px;
-    /* padding-right must equal gap so the loop-back gap matches inter-item gap */
-    padding-right: 52px;
-    white-space: nowrap;
-    font-family: var(--font-heading); font-size: 12px; font-weight: 700;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
-  }
-  /* -50% = exactly one .strip-set width → seamless infinite loop */
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .strip-inner { animation-duration: 80s; } }
-
-  /* ============ TIERS ============ */
-  .tiers-block { padding: 96px 0; }
-  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .tier {
+  .hi {
+    position: absolute; overflow: hidden;
     background: var(--bg-elev); border: 1px solid var(--border);
-    padding: 32px 28px; min-height: 360px;
-    display: flex; flex-direction: column; position: relative; overflow: hidden;
-    transition: all var(--dur-base) var(--ease-out);
+    transition: transform var(--dur-slow) var(--ease-out);
   }
-  .tier:hover { border-color: var(--border-strong); transform: translateY(-3px); }
-  .tier .num {
-    font-family: var(--font-display); font-size: 92px; line-height: 0.85;
-    color: var(--fg); text-transform: uppercase; opacity: 0.10;
-    position: absolute; top: 24px; right: 24px; pointer-events: none;
+  .hi:hover { transform: translateY(-5px); }
+  .hi img   { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hi-1 { left: 0; top: 0; width: 70%; aspect-ratio: 3/4; z-index: 1; }
+  .hi-2 {
+    right: 0; bottom: 6%; width: 54%; aspect-ratio: 3/4; z-index: 2;
+    box-shadow: 0 28px 56px -16px rgba(0,0,0,0.7);
   }
-  .tier .label {
-    font-family: var(--font-heading); font-size: 10px;
+  .hi-stamp {
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    font-family: var(--font-mono); font-size: 10px;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted); font-weight: 600; margin-bottom: 18px;
+    color: var(--accent); padding: 5px 10px;
+    background: color-mix(in srgb, var(--toh-black) 80%, transparent); backdrop-filter: blur(8px);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   }
-  .tier h3 {
-    font-family: var(--font-display); font-size: 56px;
-    text-transform: uppercase; line-height: 1; margin: 0 0 12px;
-  }
-  .tier p {
-    font-size: 14px; color: var(--fg-muted); line-height: 1.6;
-    margin: 0 0 24px; max-width: 280px;
-  }
-  .tier ul { list-style: none; padding: 0; margin: 0 0 28px;
-    display: flex; flex-direction: column; gap: 10px; }
-  .tier ul li { display: flex; align-items: center; gap: 10px;
-    font-size: 13px; color: var(--fg); }
-  .tier ul li::before { content: ''; width: 14px; height: 1px; background: var(--accent); flex-shrink: 0; }
-  .tier .price-from {
-    margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: baseline;
-  }
-  .tier .price-from span {
-    font-family: var(--font-heading); font-size: 10px;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted); font-weight: 600;
-  }
-  .tier .price-from b {
-    font-family: var(--font-display); font-size: 26px; color: var(--accent);
-    text-transform: uppercase; font-weight: 400;
-  }
-  .tier.featured { background: var(--accent); color: var(--accent-on); }
-  .tier.featured .num { color: var(--accent-on); opacity: 0.10; }
-  .tier.featured .label, .tier.featured .price-from span { color: var(--accent-on-55); }
-  .tier.featured h3 { color: var(--accent-on); }
-  .tier.featured p { color: var(--accent-on-65); }
-  .tier.featured ul li { color: var(--accent-on); }
-  .tier.featured ul li::before { background: var(--accent-on); }
-  .tier.featured .price-from { border-top-color: var(--accent-on-20); }
-  .tier.featured .price-from b { color: var(--accent-on); }
-  .tier.featured .badge-best {
-    position: absolute; top: 20px; left: 20px;
-    background: var(--accent-on); color: var(--accent); padding: 6px 10px;
-    font-family: var(--font-heading); font-size: 9px; font-weight: 700;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    white-space: nowrap;
+  .hi-2 .hi-stamp {
+    background: var(--accent); color: var(--accent-on); border-color: transparent;
   }
 
-  /* ============ PRODUCTS — local overrides for premium feel ============ */
-  .products-strip { padding: 96px 0; }
-  .products-strip .pc-cta { padding: 12px 14px; }
+  /* ---- MARQUEE STRIP ---- */
+  .lp-strip {
+    background: var(--accent); color: var(--accent-on);
+    padding: 16px 0; overflow: hidden;
+    border-block: 1px solid rgba(0,0,0,0.15);
+  }
+  .lp-strip-inner {
+    display: flex; width: max-content;
+    animation: lp-marq 40s linear infinite; will-change: transform;
+  }
+  .lp-strip-set {
+    display: inline-flex; align-items: center; gap: 32px; padding-right: 32px;
+    font-family: var(--font-display); font-size: 26px; text-transform: uppercase;
+    letter-spacing: 0.01em; line-height: 1; flex-shrink: 0;
+  }
+  .lp-strip-set i { font-style: normal; opacity: 0.35; font-size: 16px; }
+  @keyframes lp-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .lp-strip-inner { animation-duration: 120s; } }
 
-  /* ============ TRUST ============ */
-  .trust { background: var(--bg-elev); padding: 96px 0;
-    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .trust-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  /* ---- CATALOG TILES ---- */
+  .lp-catalog { padding: 112px 0; background: var(--bg-elev); border-bottom: 1px solid var(--border); }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px; height: 740px; margin-top: 20px;
   }
-  .trust-left h2 {
-    font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px);
-    text-transform: uppercase; line-height: 0.95; margin: 0 0 20px;
+  .ct {
+    position: relative; overflow: hidden; background: var(--bg);
+    border: 1px solid var(--border); text-decoration: none; color: var(--fg);
+    transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
   }
-  .trust-left p {
-    font-size: 16px; color: var(--fg-muted); line-height: 1.6;
-    max-width: 460px; margin: 0 0 32px;
+  .ct:hover { border-color: color-mix(in srgb, var(--accent) 45%, transparent); transform: translateY(-2px); }
+  /* footwear — tall, spans both rows */
+  .ct-1 { grid-row: 1 / 3; }
+  .ct img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.55; transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+    filter: contrast(1.05) saturate(0.85);
   }
-  .trust-eyebrow {
-    display: block; font-family: var(--font-heading); font-size: 11px;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  .ct:hover img { opacity: 0.8; transform: scale(1.05); }
+  .ct::after {
+    content: ''; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.88) 100%);
   }
-  .trust-rows { display: flex; flex-direction: column; }
-  .trust-row {
-    display: grid; grid-template-columns: 80px 1fr auto; gap: 24px;
-    padding: 28px 0; border-bottom: 1px solid var(--border);
-  }
-  .trust-row:first-child { border-top: 1px solid var(--border); }
-  .trust-row .grade {
-    font-family: var(--font-display); font-size: 36px;
-    color: var(--accent); text-transform: uppercase; line-height: 1;
-  }
-  .trust-row .grade.grade-sm { font-size: 24px; }
-  .trust-row h4 {
-    font-family: var(--font-heading); font-size: 14px; font-weight: 700;
-    color: var(--fg); margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.04em;
-  }
-  .trust-row p { font-size: 13px; color: var(--fg-muted); line-height: 1.55; margin: 0; }
-  .trust-row .pct {
-    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted); align-self: center; white-space: nowrap;
+  /* accessories — spans 2 cols at bottom to give it visual weight */
+  .ct-4 { grid-column: 2 / 4; }
+  .ct-4::after {
+    background: linear-gradient(135deg, transparent 30%, rgba(0,0,0,0.88) 100%);
   }
 
-  /* ============ FINAL CTA ============ */
+  .ct .body {
+    position: absolute; inset: 0; z-index: 2; padding: 26px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .ct-1 .body { padding: 34px; }
+  .ct-4 .body { padding: 30px; }
+
+  .ct .cat-num {
+    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    align-self: flex-start; padding: 4px 8px;
+    background: color-mix(in srgb, var(--toh-black) 50%, transparent); backdrop-filter: blur(4px);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .ct .ct-bottom { display: flex; flex-direction: column; gap: 12px; }
+  .ct h3 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 2.8vw, 48px);
+    text-transform: uppercase; margin: 0; line-height: 0.92; color: var(--fg);
+    letter-spacing: -0.005em;
+  }
+  .ct-1 h3 { font-size: clamp(56px, 5.5vw, 88px); }
+  .ct-4 h3 { font-size: clamp(32px, 3.5vw, 60px); }
+  .ct .ct-row {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
+  }
+  .ct .ct-meta {
+    font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted);
+    letter-spacing: var(--tracking-wide); text-transform: uppercase; line-height: 1.7; flex: 1;
+  }
+  .ct-4 .ct-meta { max-width: 60%; }
+  .ct .ct-arr {
+    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+    color: var(--fg); letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    border-bottom: 1px solid var(--accent); padding-bottom: 3px;
+    transition: color var(--dur-fast); white-space: nowrap; flex-shrink: 0;
+  }
+  .ct:hover .ct-arr { color: var(--accent); }
+
+  /* ---- FEATURED PRODUCTS ---- */
+  .lp-featured { padding: 112px 0; }
+  .products-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+  /* ---- SALE BANNER ---- */
+  .lp-sale {
+    position: relative; overflow: hidden; padding: 108px 0;
+    background: #000; border-block: 1px solid var(--border-strong);
+  }
+  .lp-sale::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 20% 50%, color-mix(in srgb, var(--accent) 6%, transparent) 0%, transparent 55%);
+  }
+  .lp-sale-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px;
+    align-items: center; position: relative;
+  }
+  .lp-sale .ti {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--accent); letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    padding: 8px 12px; margin-bottom: 24px;
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  .lp-sale h2 {
+    font-family: var(--font-display); font-size: clamp(48px, 7vw, 100px);
+    line-height: 0.92; text-transform: uppercase; margin: 0 0 20px;
+  }
+  .lp-sale h2 .acc { color: var(--accent); }
+  .lp-sale p {
+    color: var(--fg-muted); max-width: 460px; line-height: 1.65;
+    margin: 0 0 32px; font-size: 15px;
+  }
+  /* countdown tiles */
+  .countdown { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cd {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 24px 16px; flex: 1; min-width: 80px;
+    background: var(--surface-hover);
+    border: 1px solid var(--border-strong);
+    position: relative; overflow: hidden;
+  }
+  .cd::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 4%, transparent), transparent);
+    pointer-events: none;
+  }
+  .cd b {
+    font-family: var(--font-display); font-size: 52px; line-height: 1;
+    color: var(--accent); letter-spacing: -0.01em; position: relative;
+  }
+  .cd span {
+    font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle);
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    margin-top: 6px; position: relative;
+  }
+
+  /* ---- STORE SECTION ---- */
+  .lp-store {
+    padding: 112px 0; background: #000;
+    border-block: 1px solid var(--border-strong);
+  }
+  .lp-store-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
+
+  .lp-store .store-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--fg-subtle); margin-bottom: 16px;
+  }
+  .lp-store .store-eyebrow::before {
+    content: ''; width: 28px; height: 1px; background: var(--border-strong);
+  }
+  .lp-store h2 {
+    font-family: var(--font-display); font-size: clamp(52px, 7vw, 108px);
+    line-height: 0.9; text-transform: uppercase; margin: 0 0 20px;
+    color: var(--fg); letter-spacing: -0.005em;
+  }
+  .lp-store h2 .out {
+    -webkit-text-stroke: 1.5px var(--fg); color: transparent;
+  }
+  .lp-store p {
+    color: var(--fg-muted); max-width: 440px; line-height: 1.65;
+    margin: 0 0 28px; font-size: 15px;
+  }
+  .lp-store .store-info {
+    list-style: none; padding: 0; margin: 0 0 32px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 28px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding-block: 22px; max-width: 460px;
+  }
+  .lp-store .store-info li { display: flex; flex-direction: column; gap: 3px; }
+  .lp-store .store-info b {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--fg-subtle); font-weight: 500;
+  }
+  .lp-store .store-info span {
+    font-family: var(--font-heading); font-weight: 600; font-size: 14px;
+    color: var(--fg); line-height: 1.45;
+  }
+
+  /* store visual card */
+  .lp-store .store-visual {
+    aspect-ratio: 4/5; background: var(--bg); position: relative;
+    overflow: hidden; border: 1px solid var(--border-strong);
+  }
+  .lp-store .store-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 25% 25%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 60%),
+      linear-gradient(180deg, #111009 0%, #000 75%);
+  }
+  .lp-store .store-visual::after {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
+  }
+  .store-card-inner {
+    position: absolute; inset: 0; padding: 32px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    z-index: 1;
+  }
+  .store-card-inner .top-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .store-card-inner .crown { width: 52px; height: 52px; object-fit: contain; opacity: 0.95; }
+  .store-card-inner .coords {
+    font-family: var(--font-mono); font-size: 10px; color: var(--accent);
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    text-align: right; line-height: 1.5;
+  }
+  .store-card-inner .coords b { color: var(--fg); display: block; font-weight: 600; }
+  .store-card-inner .addr {
+    font-family: var(--font-display); color: var(--fg);
+    font-size: clamp(38px, 4.2vw, 68px); line-height: 0.9;
+    text-transform: uppercase; letter-spacing: -0.005em;
+    margin-bottom: 10px;
+  }
+  .store-card-inner .addr .acc { color: var(--accent); }
+  .store-card-inner .store-meta {
+    font-family: var(--font-mono); font-size: 11px; color: var(--fg-muted);
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .store-card-inner .store-meta span:nth-child(2) { color: var(--accent); }
+
+  /* ---- WHY TOH ---- */
+  .lp-mission { padding: 112px 0; }
+  .miss-list { margin-top: 20px; display: flex; flex-direction: column; }
+  .miss-item {
+    display: grid; grid-template-columns: 80px 1fr 1.4fr; gap: 40px;
+    align-items: start; padding: 40px 0;
+    border-top: 1px solid var(--border);
+    transition: border-color var(--dur-base);
+  }
+  .miss-item:last-child { border-bottom: 1px solid var(--border); }
+  .miss-item:hover { border-color: color-mix(in srgb, var(--accent) 30%, transparent); }
+  .miss-item .m-num {
+    font-family: var(--font-display); font-size: clamp(48px, 5vw, 72px);
+    color: color-mix(in srgb, var(--accent) 20%, transparent);
+    line-height: 1; letter-spacing: -0.01em; padding-top: 4px;
+  }
+  .miss-item h3 {
+    font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px);
+    line-height: 0.95; text-transform: uppercase; margin: 0; letter-spacing: -0.005em;
+    color: var(--fg); padding-top: 6px;
+  }
+  .miss-item p { color: var(--fg-muted); line-height: 1.7; font-size: 15px; margin: 0; max-width: 52ch; }
+  @media (max-width: 900px) {
+    .miss-item { grid-template-columns: 52px 1fr; gap: 20px; }
+    .miss-item p { grid-column: 2; margin-top: -8px; }
+    .miss-item .m-num { font-size: 40px; }
+  }
+  @media (max-width: 600px) {
+    .miss-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+    .miss-item .m-num { font-size: 32px; }
+  }
+
+  /* ---- FINAL CTA ---- */
   .cta-final {
     padding: 120px 32px; text-align: center; position: relative;
-    background: var(--accent); color: var(--accent-on);
-    overflow: hidden;
+    background: var(--accent); color: var(--accent-on); overflow: hidden;
   }
   .cta-final::before {
     content: ''; position: absolute; inset: 0;
     background:
-      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.06) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(0,0,0,0.05) 0%, transparent 40%);
+      radial-gradient(ellipse at 25% 30%, rgba(0,0,0,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 70%, rgba(0,0,0,0.06) 0%, transparent 50%);
     pointer-events: none;
   }
-  .cta-final .cta-tag {
-    position: relative;
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--accent-on); margin-bottom: 28px;
-    padding: 8px 14px; border: 1px solid var(--accent-on-35);
+  .cta-tag {
+    position: relative; display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--accent-on); letter-spacing: var(--tracking-wider);
+    text-transform: uppercase; margin-bottom: 28px; padding: 8px 14px;
+    border: 1px solid var(--accent-on-35);
   }
-  .cta-final .cta-tag .dot {
+  .cta-tag .dot {
     width: 7px; height: 7px; border-radius: 50%; background: var(--accent-on);
   }
   .cta-final h2 {
     position: relative; font-family: var(--font-display);
-    font-size: clamp(48px, 7.2vw, 112px); text-transform: uppercase;
-    line-height: 0.92; margin: 0 0 24px; color: var(--accent-on);
-    letter-spacing: -0.005em; max-width: 1100px; margin-left: auto; margin-right: auto;
+    font-size: clamp(52px, 8vw, 120px); text-transform: uppercase;
+    line-height: 0.92; margin: 0 0 20px; color: var(--accent-on);
   }
   .cta-final p {
-    position: relative; font-family: var(--font-body); font-size: 17px; color: var(--accent-on);
-    max-width: 540px; margin: 0 auto 44px; line-height: 1.55;
-    opacity: 0.78;
-  }
-  .cta-final .cta-btn-row {
-    position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: 14px;
+    position: relative; font-size: 16px;
+    color: var(--accent-on-65); max-width: 520px;
+    margin: 0 auto 36px; line-height: 1.6;
   }
   .cta-final .btn-dark {
-    display: inline-flex; align-items: center; gap: 14px;
+    position: relative; display: inline-flex; align-items: center; gap: 12px;
     background: var(--accent-on); color: var(--accent);
-    padding: 22px 36px; border: none; cursor: pointer;
-    font-family: var(--font-heading); font-size: 13px; font-weight: 700;
+    padding: 22px 32px; border: none; cursor: pointer; text-decoration: none;
+    font-family: var(--font-heading); font-size: 14px; font-weight: 700;
     letter-spacing: var(--tracking-wide); text-transform: uppercase;
     transition: all var(--dur-base) var(--ease-out);
-    text-decoration: none;
   }
-  .cta-final .btn-dark:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.22);
-  }
-  .cta-final .btn-dark svg { width: 16px; height: 16px; color: var(--accent); }
-  .cta-final .cta-meta {
+  .cta-final .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.22); }
+  .cta-final .btn-dark svg { width: 16px; height: 16px; }
+  .cta-meta {
+    position: relative; margin-top: 20px;
     font-family: var(--font-mono); font-size: 11px;
-    letter-spacing: var(--tracking-wide); text-transform: uppercase;
-    color: var(--accent-on-55);
+    color: var(--accent-on-55); letter-spacing: var(--tracking-wide); text-transform: uppercase;
+  }
+  /* brush moment inside CTA */
+  .cta-brush {
+    font-family: var(--font-brush); font-size: clamp(20px, 2.5vw, 30px);
+    color: var(--accent-on); opacity: 0.55; transform: rotate(-1.5deg);
+    display: block; margin-bottom: 16px;
   }
 
-  /* ============ MOBILE ============ */
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 1080px) {
+    .lp-hero { padding: 60px 0 88px; }
+    .lp-hero-grid { grid-template-columns: 1fr; gap: 52px; }
+    .lp-hero-imgs { aspect-ratio: 16/11; min-height: 0; }
+    .hi-1 { width: 64%; }
+    .hi-2 { width: 48%; bottom: 0; }
+    .hi-3 { display: none; }
+    .products-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto;
-      padding: 48px 20px 32px; gap: 32px; }
-    .hero-trust { margin-top: 28px; padding-top: 20px; gap: 8px 12px; }
-    .tiers { grid-template-columns: 1fr 1fr; }
-    .trust-grid { grid-template-columns: 1fr; gap: 40px; }
-    .tiers-block, .products-strip, .trust { padding: 64px 0; }
+    .cat-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1.2fr 1fr 1fr;
+      height: auto; gap: 10px;
+    }
+    .ct-1 { grid-column: 1 / 3; aspect-ratio: 16/10; }
+    .ct-4 { grid-column: 1 / 3; aspect-ratio: 16/9; }
+    .ct { aspect-ratio: 4/3; }
+    .lp-sale-grid { grid-template-columns: 1fr; gap: 40px; }
+    .lp-store-grid { grid-template-columns: 1fr; gap: 40px; }
+    .lp-store .store-visual { aspect-ratio: 4/3; }
+    .lp-miss-grid { grid-template-columns: 1fr; gap: 10px; }
+  }
+  @media (max-width: 600px) {
+    .lp-hero { padding: 48px 0 72px; }
+    .lp-hero h1 { font-size: clamp(60px, 17vw, 96px); }
+    .lp-hero .meta { grid-template-columns: 1fr 1fr; gap: 16px 0; }
+    .lp-hero .meta-item:last-child { grid-column: 1 / 3; border-right: none; margin-right: 0; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .lp-strip-set { font-size: 22px; gap: 24px; padding-right: 24px; }
+    .lp-catalog { padding: 72px 0; }
+    .cat-grid { grid-template-columns: 1fr; height: auto; }
+    .ct-1 { grid-column: auto; aspect-ratio: 3/4; }
+    .ct-4 { grid-column: auto; aspect-ratio: 4/3; }
+    .cd { min-width: 0; padding: 18px 12px; }
+    .cd b { font-size: 40px; }
+    .lp-store .store-card-inner { padding: 22px; }
     .cta-final { padding: 80px 20px; }
-  }
-  @media (max-width: 540px) {
-    .tiers { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 480px) {
-    .trust-row { grid-template-columns: 1fr; gap: 8px; }
-    .trust-row .pct { align-self: auto; }
+    .cta-final h2 { font-size: clamp(44px, 14vw, 72px); }
+    .miss-card { padding: 28px 24px; }
+    .miss-card h3 { font-size: 30px; }
+    .lp-featured { padding: 72px 0; }
+    .lp-mission { padding: 72px 0; }
+    .lp-store { padding: 80px 0; }
+    .lp-sale { padding: 72px 0; }
   }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://theoutfithouse.in/#organization",
-      "name": "The Outfit House",
-      "url": "https://theoutfithouse.in",
-      "foundingDate": "2026",
-      "logo": { "@type": "ImageObject", "url": "https://theoutfithouse.in/assets/logo-black.png" },
-      "sameAs": ["https://www.instagram.com/theoutfithouse.in"],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Hindi"]
-      }
-    },
-    {
-      "@type": "ClothingStore",
-      "@id": "https://theoutfithouse.in/#store",
-      "name": "The Outfit House",
-      "url": "https://theoutfithouse.in",
-      "description": "Premium sneakers, streetwear and accessories across three tiers — Entry, Standard and Vault. Ships PAN-India.",
-      "logo": { "@type": "ImageObject", "url": "https://theoutfithouse.in/assets/logo-black.png" },
-      "priceRange": "₹499–₹7,299",
-      "currenciesAccepted": "INR",
-      "paymentAccepted": "UPI, COD, Bank Transfer",
-      "areaServed": "IN",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Chattarpur",
-        "addressRegion": "New Delhi",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.4823",
-        "longitude": "77.1718"
-      },
-      "telephone": "+918700825707",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "09:00",
-          "closes": "23:00"
-        }
-      ],
-      "sameAs": ["https://www.instagram.com/theoutfithouse.in"],
-      "parentOrganization": { "@id": "https://theoutfithouse.in/#organization" }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://theoutfithouse.in/#website",
-      "url": "https://theoutfithouse.in",
-      "name": "The Outfit House",
-      "publisher": { "@id": "https://theoutfithouse.in/#organization" }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the Entry tier at The Outfit House?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Entry tier pieces are built for daily wear at the lowest price point — solid construction, easy to clean, and great for everyday rotation. Priced from ₹1,899."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the Standard tier at The Outfit House?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard tier is our most popular build — genuine leather construction, stitched sole, original packaging with branded tissue and paper tags, and accurate colorway matching. The best value for money we carry. Priced from ₹3,899."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the Vault tier at The Outfit House?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vault tier is our highest-spec build — premium materials, precision stitching, and complete branded packaging. Built to the strictest standard we carry. QC photos sent before every dispatch. Priced from ₹6,499."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you ship across India?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we ship PAN-India in 2–5 business days with discreet packaging. COD available in metro cities. Delhi NCR same-day in most cases."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "name": "Featured Sneakers",
-      "url": "https://theoutfithouse.in/sneakers",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "AJ1 Mid Panda",       "url": "https://theoutfithouse.in/product/aj1-mid-panda" },
-        { "@type": "ListItem", "position": 2, "name": "NB 530 Cream Sea Salt","url": "https://theoutfithouse.in/product/nb-530-sea-salt" },
-        { "@type": "ListItem", "position": 3, "name": "AJ1 High Bred Toe",   "url": "https://theoutfithouse.in/product/aj1-high-bred-toe" },
-        { "@type": "ListItem", "position": 4, "name": "NB 550 White Green",  "url": "https://theoutfithouse.in/product/nb-550-white-green" }
-      ]
-    }
-  ]
-}
-</script>
 </head>
-<body class="page-home">
-<a href="#main-content" class="skip-link">Skip to content</a>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
 <div id="header-mount"></div>
 
 <!-- HERO -->
-<main id="main-content">
-<section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow"><span class="dot"></span> Now dropping · AJ1 Panda · Standard</div>
-    <h1>Street.<br/><span class="accent">Sorted.</span></h1>
-    <p class="lede">Streetwear and sneakers, hand-verified in New Delhi. We don't have a checkout — we have a conversation. Every order is confirmed on WhatsApp with real photos before it ships.</p>
-    <div class="hero-ctas">
-      <button class="btn-wa" onclick="wa('Hi! I want to browse the latest drops.')">
-        <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-      </button>
-      <a class="btn-ghost" href="/spec-sheet">Three tiers →</a>
-    </div>
-    <div class="hero-trust">
-      <span>PAN-India shipping</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <span>UPI &amp; COD</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <span>7-day exchange</span>
-    </div>
-  </div>
-  <div class="hero-img-wrap">
-    <div class="hero-img">
-      <span class="hero-tag">Standard · New</span>
-      <img src="assets/Sneakers/AJ1 Mid Panda (1).png" alt="Air Jordan 1 Mid Panda"/>
-      <div class="hero-glass">
-        <div class="row1">
-          <div class="name">AJ1 Mid · Panda</div>
-          <div class="price">₹4,499</div>
-        </div>
-        <div class="specs">
-          <div><span>Upper</span><b>Genuine Lthr</b></div>
-          <div><span>Sole</span><b>Stitched</b></div>
-          <div><span>Box</span><b>Original</b></div>
-        </div>
+<main id="main">
+<section class="lp-hero" aria-label="Hero">
+  <div class="wrap lp-hero-grid">
+
+    <!-- LEFT: copy -->
+    <div class="lp-hero-text">
+      <span class="lp-eyebrow"><span class="dot"></span> Drop 03 · Sneakers, Apparel & More</span>
+      <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
+      <p class="lede">From AJ1 Pandas and NB 530s to Sp5der hoodies, Corteiz cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
+      <nav class="lp-cat-chips" aria-label="Product categories">
+        <a href="Category.html?cat=sneakers">Sneakers</a>
+        <a href="Category.html?cat=apparel">Apparel</a>
+        <a href="Category.html?cat=bottomwear">Bottomwear</a>
+        <a href="Category.html?cat=accessories">Accessories</a>
+        <a href="Category.html?cat=accessories">Sunglasses</a>
+        <a href="Category.html?cat=accessories">Footwear</a>
+      </nav>
+      <div class="ctas">
+        <button class="btn-wa" onclick="wa('Hi! I want to browse the latest drop.')">
+          <svg aria-hidden="true"><use href="#wa-icon"/></svg>
+          <span class="lbl">Browse on WhatsApp</span>
+        </button>
+        <a class="btn-ghost" href="#catalog">Explore catalog →</a>
+      </div>
+      <div class="meta">
+        <div class="meta-item"><span>Shipping</span><b>Free prepaid · COD</b></div>
+        <div class="meta-item"><span>Store</span><b>Chattarpur, Delhi</b></div>
+        <div class="meta-item"><span>Prices</span><b>From ₹699</b></div>
       </div>
     </div>
+
+    <!-- RIGHT: editorial image stack -->
+    <div class="lp-hero-imgs">
+      <div class="hi hi-1">
+        <span class="hi-stamp">AJ1 Mid · Panda · Standard</span>
+        <img src="assets/Sneakers/AJ1 Mid Panda (1).png" alt="Air Jordan 1 Mid Panda sneaker" loading="eager" decoding="async"/>
+      </div>
+      <div class="hi hi-2">
+        <span class="hi-stamp">Sp5der · Web Hoodie · Vault</span>
+        <img src="assets/Apparel/Sp5der Web Hoodie Pink.png" alt="Sp5der Web Hoodie Pink" loading="eager" decoding="async"/>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="strip" aria-label="Site highlights" aria-live="off">
-  <div class="strip-inner">
-    <div class="strip-set">
-      <span>Free Shipping All India</span><span aria-hidden="true">·</span>
-      <span>Pay on Delivery</span><span aria-hidden="true">·</span>
-      <span>Hand-Checked QC</span><span aria-hidden="true">·</span>
-      <span>7-Day Exchange</span><span aria-hidden="true">·</span>
-      <span>WhatsApp Confirmed</span><span aria-hidden="true">·</span>
-      <span>New Drops Every Friday</span><span aria-hidden="true">·</span>
+<!-- MARQUEE STRIP -->
+<div class="lp-strip" aria-hidden="true">
+  <div class="lp-strip-inner">
+    <div class="lp-strip-set">
+      <span>Sneakers</span><i>✦</i>
+      <span>Apparel</span><i>✦</i>
+      <span>Loafers</span><i>✦</i>
+      <span>Sunglasses</span><i>✦</i>
+      <span>Belts</span><i>✦</i>
+      <span>Wallets</span><i>✦</i>
+      <span>Hoodies</span><i>✦</i>
+      <span>Jeans</span><i>✦</i>
+      <span>Track pants</span><i>✦</i>
+      <span>Clogs</span><i>✦</i>
+      <span>Chattarpur · New Delhi</span><i>✦</i>
     </div>
-    <div class="strip-set" aria-hidden="true">
-      <span>Free Shipping All India</span><span>·</span>
-      <span>Pay on Delivery</span><span>·</span>
-      <span>Hand-Checked QC</span><span>·</span>
-      <span>7-Day Exchange</span><span>·</span>
-      <span>WhatsApp Confirmed</span><span>·</span>
-      <span>New Drops Every Friday</span><span>·</span>
+    <div class="lp-strip-set">
+      <span>Sneakers</span><i>✦</i>
+      <span>Apparel</span><i>✦</i>
+      <span>Loafers</span><i>✦</i>
+      <span>Sunglasses</span><i>✦</i>
+      <span>Belts</span><i>✦</i>
+      <span>Wallets</span><i>✦</i>
+      <span>Hoodies</span><i>✦</i>
+      <span>Jeans</span><i>✦</i>
+      <span>Track pants</span><i>✦</i>
+      <span>Clogs</span><i>✦</i>
+      <span>Chattarpur · New Delhi</span><i>✦</i>
     </div>
   </div>
 </div>
 
-<!-- TIERS -->
-<section class="tiers-block" id="tiers">
+<!-- CATALOG TILES -->
+<section class="lp-catalog" id="catalog" aria-labelledby="catalog-heading">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head peek">
       <div>
-        <span class="eyebrow">01 · Tiers</span>
-        <h2>Three tiers.<br/>One honest price.</h2>
+        <span class="eyebrow">02 · The full catalog</span>
+        <h2 id="catalog-heading">Sneakers<br/>to sunglasses.</h2>
       </div>
-      <p class="right">We carry exactly three build tiers. Different finishes, different price points — same standard of care. Pick what suits your rotation.</p>
+      <p class="right">Four categories, 50+ hand-checked styles in stock. From ₹699 totes to ₹7,299 sneakers. One WhatsApp gets you the lot.</p>
     </div>
-    <div class="tiers">
-      <a class="tier" href="/spec-sheet#entry" style="text-decoration:none; color:inherit;">
-        <span class="num">01</span>
-        <div class="label">Tier · Entry</div>
-        <h3>Entry</h3>
-        <p>Everyday essential. Clean silhouette, comfortable wear, built for daily rotation.</p>
-        <ul>
-          <li>PU-blend upper</li>
-          <li>Glued sole construction</li>
-          <li>Protective dust bag</li>
-          <li>Sized true to brand</li>
-        </ul>
-        <div class="price-from"><span>From</span><b>₹1,899</b></div>
+    <div class="cat-grid">
+
+      <!-- FOOTWEAR — tall primary -->
+      <a class="ct ct-1 peek" href="Category.html?cat=sneakers" aria-label="Browse footwear">
+        <img src="assets/Sneakers/NB 530 Cream Sea Salt.png" alt="" loading="lazy"/>
+        <div class="body">
+          <span class="cat-num">01 · Footwear</span>
+          <div class="ct-bottom">
+            <h3>Sneakers<br/>& loafers</h3>
+            <div class="ct-row">
+              <span class="ct-meta">AJ1 · NB · Yeezy · Loafers<br/>Clogs · Slippers · 8+ styles</span>
+              <span class="ct-arr">Browse →</span>
+            </div>
+          </div>
+        </div>
       </a>
 
-      <a class="tier featured" href="/spec-sheet#standard" style="text-decoration:none; color:inherit;">
-        <span class="num">02</span>
-        <span class="badge-best">★ Most Loved</span>
-        <div class="label">Tier · Standard</div>
-        <h3>Standard</h3>
-        <p>Our bestseller. Clean finish, accurate build — the best value in the Vault.</p>
-        <ul>
-          <li>Genuine leather upper</li>
-          <li>Stitched (not glued) sole</li>
-          <li>Original tooling box</li>
-          <li>Matching colorway laces</li>
-        </ul>
-        <div class="price-from"><span>From</span><b>₹3,899</b></div>
+      <!-- APPAREL -->
+      <a class="ct ct-2 peek" href="Category.html?cat=apparel" aria-label="Browse apparel" style="animation-delay:0.08s">
+        <img src="assets/Apparel/Essentials Heavyweight Hoodie.png" alt="" loading="lazy"/>
+        <div class="body">
+          <span class="cat-num">02 · Apparel</span>
+          <div class="ct-bottom">
+            <h3>Tops</h3>
+            <div class="ct-row">
+              <span class="ct-meta">Tees · Shirts · Hoodies · Jackets</span>
+              <span class="ct-arr">→</span>
+            </div>
+          </div>
+        </div>
       </a>
 
-      <a class="tier" href="/spec-sheet#vault" style="text-decoration:none; color:inherit;">
-        <span class="num">03</span>
-        <div class="label">Tier · Vault</div>
-        <h3>Vault</h3>
-        <p>Precision-level detailing. For people who notice everything.</p>
-        <ul>
-          <li>Premium-grade materials</li>
-          <li>Factory-precise stitching</li>
-          <li>Full branded packaging</li>
-          <li>Hand-checked QC photos</li>
-        </ul>
-        <div class="price-from"><span>From</span><b>₹6,499</b></div>
+      <!-- BOTTOMWEAR -->
+      <a class="ct ct-3 peek" href="Category.html?cat=bottomwear" aria-label="Browse bottomwear" style="animation-delay:0.14s">
+        <img src="assets/Bottomwear/Corteiz Guerillaz Cargos.png" alt="" loading="lazy" onerror="this.src='assets/Apparel/Corteiz Alcatraz Overshirt.png'"/>
+        <div class="body">
+          <span class="cat-num">03 · Bottomwear</span>
+          <div class="ct-bottom">
+            <h3>Bottoms</h3>
+            <div class="ct-row">
+              <span class="ct-meta">Cargos · Jeans · Sweats · Track pants</span>
+              <span class="ct-arr">→</span>
+            </div>
+          </div>
+        </div>
       </a>
+
+      <!-- ACCESSORIES — wide bottom tile -->
+      <a class="ct ct-4 peek" href="Category.html?cat=accessories" aria-label="Browse accessories" style="animation-delay:0.2s">
+        <img src="assets/insta-post-tote.jpg" alt="" loading="lazy"/>
+        <div class="body">
+          <span class="cat-num">04 · Accessories</span>
+          <div class="ct-bottom">
+            <h3>Finishing<br/>touches.</h3>
+            <div class="ct-row">
+              <span class="ct-meta">Belts · Wallets · Sunglasses · Caps · Totes · Socks</span>
+              <span class="ct-arr">Browse all →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
 
 <!-- FEATURED PRODUCTS -->
-<section class="products-strip" id="featured">
+<section class="lp-featured sec" aria-labelledby="featured-heading">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head peek">
       <div>
-        <span class="eyebrow">02 · Featured</span>
-        <h2>This week's drops</h2>
+        <span class="eyebrow">03 · This week's floor</span>
+        <h2 id="featured-heading">Hand-picked<br/>from the drop.</h2>
       </div>
-      <p class="right">Hand-picked from this week's incoming. Tap to enquire — sizes confirmed live on WhatsApp.</p>
+      <p class="right">A rotating set across the full catalog. Every piece QC'd and photographed before dispatch. WhatsApp to lock yours.</p>
     </div>
-    <div class="products-grid" id="featured-grid"></div>
+    <div class="products-grid products-grid--4" id="featured-grid"></div>
   </div>
 </section>
 
-<!-- TRUST -->
-<section class="trust" id="trust">
-  <div class="wrap">
-    <div class="trust-grid">
-      <div class="trust-left">
-        <span class="trust-eyebrow">03 · Quality</span>
-        <h2>Quality you can read in the stitching.</h2>
-        <p>Different tiers. Same standard of care. Here's exactly what you get at each build level — material, construction, packaging, and finish quality at every price point.</p>
-        <button class="btn-wa" onclick="wa('Hi! Can you walk me through the quality differences?')">
-          <svg><use href="#wa-icon"/></svg> Ask a quality question
-        </button>
+<!-- LIMITED SALE -->
+<section class="lp-sale" aria-label="Limited-time sale">
+  <div class="wrap lp-sale-grid">
+    <div class="peek">
+      <span class="ti">⚡ Limited time · Drop 03</span>
+      <h2>Up to 40% off<br/><span class="acc">on prepaid.</span></h2>
+      <p>Pre-paid orders only. Stock limited per size. Drop 03 closes Friday. Shipping starts Monday across India, free above ₹2,000. Sneakers, tees, belts, all included.</p>
+      <button class="btn-wa" onclick="wa('Hi! Show me the prepaid sale offers.')">
+        <svg aria-hidden="true"><use href="#wa-icon"/></svg> Reserve a piece
+      </button>
+    </div>
+    <div class="countdown peek" id="cd" aria-label="Countdown timer" style="animation-delay:0.1s">
+      <div class="cd"><b>03</b><span>Days</span></div>
+      <div class="cd"><b>14</b><span>Hours</span></div>
+      <div class="cd"><b>22</b><span>Min</span></div>
+      <div class="cd"><b>09</b><span>Sec</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHYSICAL STORE -->
+<section class="lp-store" aria-labelledby="store-heading">
+  <div class="wrap lp-store-grid">
+    <div class="peek">
+      <span class="store-eyebrow">Now open in Delhi</span>
+      <h2 id="store-heading">The Chhatarpur<br/><span class="out">studio.</span></h2>
+      <p>Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first or just walk in.</p>
+      <ul class="store-info">
+        <li><b>Address</b><span>Block A1, Chhatarpur,<br/>New Delhi 110074</span></li>
+        <li><b>Hours</b><span>12 PM – 9 PM · Daily</span></li>
+        <li><b>Booking</b><span>WhatsApp first<br/>Walk-ins welcome</span></li>
+        <li><b>Parking</b><span>Free · Behind the unit</span></li>
+      </ul>
+      <button class="btn-wa" onclick="wa('Hi! I want to visit the Chhatarpur store.')">
+        <svg aria-hidden="true"><use href="#wa-icon"/></svg> Book a slot
+      </button>
+    </div>
+
+    <!-- decorative store card -->
+    <div class="peek" style="animation-delay:0.12s" aria-hidden="true">
+      <div class="store-visual">
+        <div class="store-card-inner">
+          <div class="top-row">
+            <img class="crown" src="assets/logo-crown.png" alt=""/>
+            <div class="coords">
+              28.5066° N<br/>
+              <b>77.1739° E</b>
+            </div>
+          </div>
+          <div>
+            <div class="addr">Block <span class="acc">A1</span><br/>Chhatarpur</div>
+            <div class="store-meta">
+              <span>⏐ The Outfit House Studio</span>
+              <span>Open · 12pm – 9pm</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="trust-rows">
-        <div class="trust-row">
-          <div class="grade">Entry</div>
-          <div>
-            <h4>Everyday grade</h4>
-            <p>PU-blend upper, glued sole, generic dust bag. Looks the part from across the room.</p>
-          </div>
-          <div class="pct">Solid build</div>
-        </div>
-        <div class="trust-row">
-          <div class="grade">Std</div>
-          <div>
-            <h4>Standard build</h4>
-            <p>Genuine leather, stitched sole, original tooling box. The sweet spot for most buyers.</p>
-          </div>
-          <div class="pct">Premium build</div>
-        </div>
-        <div class="trust-row">
-          <div class="grade">Vlt</div>
-          <div>
-            <h4>Vault precision</h4>
-            <p>Factory spec, premium materials, precision build. The most detailed tier we carry.</p>
-          </div>
-          <div class="pct">Factory spec</div>
-        </div>
-        <div class="trust-row">
-          <div class="grade grade-sm">QC</div>
-          <div>
-            <h4>Every pair checked by hand</h4>
-            <p>We open every box in New Delhi, photograph the pair, and send you the QC shots before dispatch.</p>
-          </div>
-          <div class="pct">100% pre-ship</div>
-        </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TOH -->
+<section class="lp-mission" aria-labelledby="mission-heading">
+  <div class="wrap">
+    <div class="sec-head peek">
+      <div>
+        <span class="eyebrow">04 · Why TOH</span>
+        <h2 id="mission-heading">Quiet promises.<br/>Loud quality.</h2>
+      </div>
+      <p class="right">No exclusive drops, no hype. Hand-checked premium articles at honest prices, delivered or handed over in person. Whatever suits you.</p>
+    </div>
+    <div class="miss-list">
+      <div class="miss-item peek">
+        <span class="m-num">01</span>
+        <h3>Three-tier grading</h3>
+        <p>Every piece marked Entry, Standard, or Vault. Real photos sent on WhatsApp before payment. What you see is what ships. No surprises.</p>
+      </div>
+      <div class="miss-item peek">
+        <span class="m-num">02</span>
+        <h3>No checkout, no chase</h3>
+        <p>No carts, no abandoned-cart emails. Talk to a real human on WhatsApp from selection to delivery to exchange. One conversation, sorted.</p>
+      </div>
+      <div class="miss-item peek">
+        <span class="m-num">03</span>
+        <h3>Pricing, no markup</h3>
+        <p>From ₹699 sock packs to ₹7,299 vault sneakers. Leather articles from ₹1,200, premium sport editions ₹2,000 to ₹2,500. No surprise fees.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="cta-final" id="contact">
-  <div class="cta-tag"><span class="dot"></span> Direct line · 9am–11pm</div>
-  <h2>Slide in.<br/>We'll handle the rest.</h2>
-  <span class="brush-tag" style="color:var(--accent-on);display:block;margin:16px 0 40px;font-size:clamp(28px,3.5vw,52px);transform:rotate(-1.5deg);">your fit, sorted.</span>
-  <div class="cta-btn-row">
-    <button class="btn-dark" onclick="wa('Hi! I want to place an order.')">
-      <svg><use href="#wa-icon"/></svg> Message us on WhatsApp
-    </button>
-    <span class="cta-meta">Avg reply · 7 min · New Delhi</span>
-  </div>
+<section class="cta-final" id="contact" aria-label="Contact call to action">
+  <span class="cta-tag"><span class="dot"></span> Direct line · 12pm – 9pm IST</span>
+  <span class="cta-brush">Just WhatsApp us.</span>
+  <h2>Tell us what<br/>you're after.</h2>
+  <p>Sneaker, tee, belt, sunglasses. Doesn't matter. We'll send real photos, sizing notes and a quote. No checkout. No waiting. Just a conversation.</p>
+  <a class="btn-dark" href="https://wa.me/918700825707?text=Hi!%20I%20want%20to%20start%20an%20enquiry." target="_blank" rel="noopener">
+    <svg aria-hidden="true"><use href="#wa-icon"/></svg> Open WhatsApp
+  </a>
+  <div class="cta-meta">+91 87008 25707 · @theoutfithouse.in</div>
 </section>
-
 </main>
 
 <div id="footer-mount"></div>
@@ -654,11 +805,64 @@
   injectSprite();
   document.getElementById('header-mount').innerHTML = renderHeader('Home');
   document.getElementById('footer-mount').innerHTML = renderFooter();
-  initHeader();
-  // Featured: pick 6
-  document.getElementById('featured-grid').innerHTML =
-    PRODUCTS.slice(0, 6).map(renderProductCard).join('');
 
+  /* Featured products — one from each category for breadth */
+  var FEATURED_SLUGS = ['aj1-mid-panda', 'essentials-hoodie', 'corteiz-cargos', 'nb-cap'];
+  var featured = FEATURED_SLUGS
+    .map(function(s) { return PRODUCTS.find(function(p) { return p.slug === s; }); })
+    .filter(Boolean);
+  document.getElementById('featured-grid').innerHTML = featured.map(renderProductCard).join('');
+
+  /* Sale countdown — to next Friday 23:59 */
+  (function() {
+    var el = document.getElementById('cd');
+    if (!el) return;
+    var bs = el.querySelectorAll('.cd b');
+    if (bs.length !== 4) return;
+    var pad = function(n) { return String(n).padStart(2, '0'); };
+    function tick() {
+      var now  = new Date();
+      var day  = now.getDay();
+      var add  = (5 - day + 7) % 7 || 7;
+      var target = new Date(now.getFullYear(), now.getMonth(), now.getDate() + add, 23, 59, 59);
+      var diff = Math.max(0, target - now);
+      var s = Math.floor(diff / 1000);
+      var d = Math.floor(s / 86400); s %= 86400;
+      var h = Math.floor(s / 3600);  s %= 3600;
+      var m = Math.floor(s / 60);    s %= 60;
+      bs[0].textContent = pad(d);
+      bs[1].textContent = pad(h);
+      bs[2].textContent = pad(m);
+      bs[3].textContent = pad(s);
+    }
+    tick();
+    var cdTimer = setInterval(tick, 1000);
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) { clearInterval(cdTimer); } else { cdTimer = setInterval(tick, 1000); tick(); }
+    });
+  })();
+
+  /* Scroll reveal — only hide elements that are below the fold */
+  (function() {
+    if (!window.IntersectionObserver) return;
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    var vh = window.innerHeight;
+    document.querySelectorAll('.peek').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < vh && rect.bottom > 0) {
+        el.classList.add('show');
+      } else {
+        io.observe(el);
+      }
+    });
+  })();
 </script>
 </body>
 </html>

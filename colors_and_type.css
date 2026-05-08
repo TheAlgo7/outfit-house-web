@@ -8,57 +8,57 @@
 
 :root {
   /* ---------- BRAND PALETTE ---------- */
-  --tho-black:        #060403;   /* primary background — near-black tinted toward brand yellow */
-  --tho-eggshell:     #F2ECDD;   /* secondary background, primary fg on dark */
-  --tho-hampton:      #E8D3B2;   /* warm neutral */
-  --tho-yellow:       #E3A848;   /* Indian Yellow — accent ONLY */
+  --toh-black:        #060403;   /* primary background — near-black tinted toward brand yellow */
+  --toh-eggshell:     #F2ECDD;   /* secondary background, primary fg on dark */
+  --toh-hampton:      #E8D3B2;   /* warm neutral */
+  --toh-yellow:       #E3A848;   /* Indian Yellow — accent ONLY */
 
   /* Extended scale (derived, used sparingly for surfaces and dividers) */
-  --tho-black-900:    #060403;
-  --tho-black-800:    #0A0A0A;
-  --tho-black-700:    #141414;   /* card / elevated surface on dark */
-  --tho-black-600:    #1C1C1C;   /* hover surface on dark */
-  --tho-black-500:    #2A2A2A;   /* divider on dark */
-  --tho-eggshell-50:  #FAF6EC;
-  --tho-eggshell-100: #F2ECDD;
-  --tho-eggshell-200: #EAE2CD;
-  --tho-hampton-300:  #E8D3B2;
-  --tho-hampton-400:  #D9BE94;
-  --tho-yellow-400:   #E8B561;
-  --tho-yellow-500:   #E3A848;
-  --tho-yellow-600:   #C28C30;
+  --toh-black-900:    #060403;
+  --toh-black-800:    #0A0A0A;
+  --toh-black-700:    #141414;   /* card / elevated surface on dark */
+  --toh-black-600:    #1C1C1C;   /* hover surface on dark */
+  --toh-black-500:    #2A2A2A;   /* divider on dark */
+  --toh-eggshell-50:  #FAF6EC;
+  --toh-eggshell-100: #F2ECDD;
+  --toh-eggshell-200: #EAE2CD;
+  --toh-hampton-300:  #E8D3B2;
+  --toh-hampton-400:  #D9BE94;
+  --toh-yellow-400:   #E8B561;
+  --toh-yellow-500:   #E3A848;
+  --toh-yellow-600:   #C28C30;
 
   /* ---------- SEMANTIC: DARK SURFACE (primary) ---------- */
-  --bg:               var(--tho-black);
-  --bg-elev:          var(--tho-black-700);
-  --bg-elev-hover:    var(--tho-black-600);
+  --bg:               var(--toh-black);
+  --bg-elev:          var(--toh-black-700);
+  --bg-elev-hover:    var(--toh-black-600);
   --surface-glass:    rgba(20, 20, 20, 0.55);    /* glassmorphism panel on dark */
   --surface-glass-warm: rgba(242, 236, 221, 0.06);
   --surface-dropdown: #0d0d0d;                   /* nav dropdown + sort menus */
   --surface-spec:     rgba(26, 26, 26, 0.70);    /* spec grid cells */
 
-  --fg:               var(--tho-eggshell);       /* primary text on dark */
+  --fg:               var(--toh-eggshell);       /* primary text on dark */
   --fg-muted:         rgba(242, 236, 221, 0.65); /* secondary text on dark */
   --fg-subtle:        rgba(242, 236, 221, 0.55); /* tertiary / labels — 4.5:1 on #060403 */
-  --fg-warm:          var(--tho-hampton);        /* warm accent text */
+  --fg-warm:          var(--toh-hampton);        /* warm accent text */
 
   --border:           rgba(242, 236, 221, 0.10);
   --border-strong:    rgba(242, 236, 221, 0.20);
-  --divider:          var(--tho-black-500);
+  --divider:          var(--toh-black-500);
 
-  --accent:           var(--tho-yellow);
-  --accent-hover:     var(--tho-yellow-400);
-  --accent-press:     var(--tho-yellow-600);
-  --accent-on:        var(--tho-black);          /* fg on yellow */
+  --accent:           var(--toh-yellow);
+  --accent-hover:     var(--toh-yellow-400);
+  --accent-press:     var(--toh-yellow-600);
+  --accent-on:        var(--toh-black);          /* fg on yellow */
   --accent-on-20:     rgba(6, 4, 3, 0.20);       /* border on yellow surface */
   --accent-on-35:     rgba(6, 4, 3, 0.35);       /* border on yellow surface, stronger */
   --accent-on-55:     rgba(6, 4, 3, 0.55);       /* muted text on yellow surface */
   --accent-on-65:     rgba(6, 4, 3, 0.65);       /* secondary text on yellow surface */
 
   /* ---------- SEMANTIC: LIGHT SURFACE ---------- */
-  --bg-light:         var(--tho-eggshell);
-  --bg-light-elev:    var(--tho-eggshell-50);
-  --fg-on-light:      var(--tho-black);
+  --bg-light:         var(--toh-eggshell);
+  --bg-light-elev:    var(--toh-eggshell-50);
+  --fg-on-light:      var(--toh-black);
   --fg-muted-on-light:rgba(0, 0, 0, 0.60);
   --border-on-light:  rgba(0, 0, 0, 0.10);
 
@@ -246,11 +246,11 @@ a:hover { color: var(--accent); border-color: var(--accent); }
    SCROLLBAR
    ========================================================= */
 /* Firefox */
-* { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) var(--tho-black); }
+* { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) var(--toh-black); }
 
 /* Chromium / Safari */
 ::-webkit-scrollbar              { width: 8px; height: 8px; }
-::-webkit-scrollbar-track        { background: var(--tho-black); }
+::-webkit-scrollbar-track        { background: var(--toh-black); }
 ::-webkit-scrollbar-thumb        { background: var(--scrollbar-thumb); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover  { background: #6a6a6a; }
-::-webkit-scrollbar-corner       { background: var(--tho-black); }
+::-webkit-scrollbar-corner       { background: var(--toh-black); }

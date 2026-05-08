@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title id="page-title">Category | The Outfit House</title>
-<meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos — ships PAN-India."/>
+<meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos, ships PAN-India."/>
 <script>
 (function() {
   var s = new URLSearchParams(location.search);
@@ -67,8 +67,7 @@
 
   .filter-bar {
     position: sticky; top: 68px; z-index: 40;
-    background: var(--overlay-strong); backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: var(--surface-dropdown);
     border-bottom: 1px solid var(--border);
   }
   .tabs {
@@ -202,9 +201,9 @@
   canonicalEl.rel = 'canonical';
   canonicalEl.href = 'https://theoutfithouse.in/' + catKey;
   document.head.appendChild(canonicalEl);
-  document.querySelector('meta[name="description"]').content = cat.title + ' — shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch.';
+  document.querySelector('meta[name="description"]').content = cat.title + ': shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch.';
   document.querySelector('meta[property="og:title"]').content = cat.title + ' | The Outfit House';
-  document.querySelector('meta[property="og:description"]').content = cat.title + ' — premium ' + cat.label.toLowerCase() + ' across three quality tiers.';
+  document.querySelector('meta[property="og:description"]').content = cat.title + ': premium ' + cat.label.toLowerCase() + ' across three quality tiers.';
   document.getElementById('cat-eyebrow').innerHTML = '<span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> ' + cat.tag;
   document.getElementById('cat-title').textContent = cat.title;
   document.getElementById('cat-blurb').textContent = cat.blurb;

@@ -201,10 +201,10 @@ window.renderHeader = function(active) {
             Shop <svg><use href="#chevron-down"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
-            ${shopLinks.map(i => `<a href="${i.href}" role="menuitem" class="${active===i.h?'active':''}"><span>${i.h}</span><span class="num">${i.num}</span></a>`).join('')}
+            ${shopLinks.map(i => `<a href="${i.href}" role="menuitem" class="${active===i.h?'active':''}"${active===i.h?' aria-current="page"':''}><span>${i.h}</span><span class="num">${i.num}</span></a>`).join('')}
           </div>
         </div>
-        ${topLinks.map(i => `<a href="${i.href}" class="${active===i.h?'active':''}">${i.h}</a>`).join('')}
+        ${topLinks.map(i => `<a href="${i.href}" class="${active===i.h?'active':''}"${active===i.h?' aria-current="page"':''}>${i.h}</a>`).join('')}
       </nav>
       <div class="nav-cta">
         <a class="icon-link" href="${window.IG_URL}" target="_blank" rel="noopener" aria-label="Instagram">
@@ -256,7 +256,7 @@ window.renderFooter = function() {
     <div class="ft">
       <div>
         <img src="assets/logo-text.png" alt="The Outfit House"/>
-        <p>Streetwear and sneakers across three tiers. Hand-checked, shipped from New Delhi.</p>
+        <p>Sneakers, apparel, accessories and footwear. Hand-checked and shipped from Chhatarpur, New Delhi.</p>
       </div>
       <div><h5>Shop</h5><ul>
         <li><a href="/sneakers">Sneakers</a></li>
@@ -273,6 +273,7 @@ window.renderFooter = function() {
       <div><h5>Connect</h5><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
         <li><a href="${window.IG_URL}" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="mailto:theoutfithouse@outlook.com">Email</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul></div>
     </div>
@@ -292,12 +293,23 @@ window.initHeader = function() {
   var dd  = document.querySelector('.nav-dropdown');
   var btn = dd && dd.querySelector('.nav-dropdown-btn');
   if (!dd || !btn) return;
-  function setExpanded(open) { btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  function setExpanded(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    dd.classList.toggle('open', open);
+  }
   dd.addEventListener('mouseenter', function() { setExpanded(true); });
   dd.addEventListener('mouseleave', function() { setExpanded(false); });
   dd.addEventListener('focusin',    function() { setExpanded(true); });
   dd.addEventListener('focusout',   function(e) {
     if (!dd.contains(e.relatedTarget)) setExpanded(false);
+  });
+  btn.addEventListener('click', function(e) {
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    setExpanded(!isOpen);
+    e.stopPropagation();
+  });
+  document.addEventListener('click', function(e) {
+    if (!dd.contains(e.target)) setExpanded(false);
   });
   // Arrow-key navigation between menu items (ARIA menu pattern)
   dd.addEventListener('keydown', function(e) {
@@ -383,6 +395,6 @@ window.initHeader = function() {
     if (!href || /^(#|mailto:|tel:|javascript:|https?:\/\/)/.test(href)) return;
     leaving = true;
     document.body.classList.add('leaving');
-    setTimeout(function() { location.href = href; }, 180);
+    setTimeout(function() { location.href = href; }, 120);
   });
 }());
