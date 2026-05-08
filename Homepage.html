@@ -535,12 +535,12 @@
       <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
       <p class="lede">From AJ1 Pandas and NB 530s to Sp5der hoodies, Corteiz cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
       <nav class="lp-cat-chips" aria-label="Product categories">
-        <a href="Category.html?cat=sneakers">Sneakers</a>
-        <a href="Category.html?cat=apparel">Apparel</a>
-        <a href="Category.html?cat=bottomwear">Bottomwear</a>
-        <a href="Category.html?cat=accessories">Accessories</a>
-        <a href="Category.html?cat=accessories">Sunglasses</a>
-        <a href="Category.html?cat=accessories">Footwear</a>
+        <a href="/sneakers">Sneakers</a>
+        <a href="/apparel">Apparel</a>
+        <a href="/bottomwear">Bottomwear</a>
+        <a href="/accessories">Accessories</a>
+        <a href="/accessories">Sunglasses</a>
+        <a href="/accessories">Footwear</a>
       </nav>
       <div class="ctas">
         <button class="btn-wa" onclick="wa('Hi! I want to browse the latest drop.')">
@@ -616,7 +616,7 @@
     <div class="cat-grid">
 
       <!-- FOOTWEAR — tall primary -->
-      <a class="ct ct-1 peek" href="Category.html?cat=sneakers" aria-label="Browse footwear">
+      <a class="ct ct-1 peek" href="/sneakers" aria-label="Browse footwear">
         <img src="assets/Sneakers/NB 530 Cream Sea Salt.png" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">01 · Footwear</span>
@@ -631,7 +631,7 @@
       </a>
 
       <!-- APPAREL -->
-      <a class="ct ct-2 peek" href="Category.html?cat=apparel" aria-label="Browse apparel" style="animation-delay:0.08s">
+      <a class="ct ct-2 peek" href="/apparel" aria-label="Browse apparel" style="animation-delay:0.08s">
         <img src="assets/Apparel/Essentials Heavyweight Hoodie.png" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">02 · Apparel</span>
@@ -646,7 +646,7 @@
       </a>
 
       <!-- BOTTOMWEAR -->
-      <a class="ct ct-3 peek" href="Category.html?cat=bottomwear" aria-label="Browse bottomwear" style="animation-delay:0.14s">
+      <a class="ct ct-3 peek" href="/bottomwear" aria-label="Browse bottomwear" style="animation-delay:0.14s">
         <img src="assets/Bottomwear/Corteiz Guerillaz Cargos.png" alt="" loading="lazy" onerror="this.src='assets/Apparel/Corteiz Alcatraz Overshirt.png'"/>
         <div class="body">
           <span class="cat-num">03 · Bottomwear</span>
@@ -661,7 +661,7 @@
       </a>
 
       <!-- ACCESSORIES — wide bottom tile -->
-      <a class="ct ct-4 peek" href="Category.html?cat=accessories" aria-label="Browse accessories" style="animation-delay:0.2s">
+      <a class="ct ct-4 peek" href="/accessories" aria-label="Browse accessories" style="animation-delay:0.2s">
         <img src="assets/insta-post-tote.jpg" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">04 · Accessories</span>
@@ -800,6 +800,123 @@
 
 <div id="footer-mount"></div>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://theoutfithouse.in/#website",
+      "name": "The Outfit House",
+      "alternateName": ["TOH", "The Outfit House Delhi", "TOH Studio"],
+      "url": "https://theoutfithouse.in",
+      "description": "Premium sneakers, apparel, bottomwear and accessories. Hand-checked in Chhatarpur, New Delhi. Ships PAN-India. WhatsApp-first ordering.",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://theoutfithouse.in/sneakers?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://theoutfithouse.in/#organization",
+      "name": "The Outfit House",
+      "alternateName": ["TOH", "The Outfit House Delhi"],
+      "url": "https://theoutfithouse.in",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://theoutfithouse.in/assets/logo-full.png"
+      },
+      "foundingDate": "2026",
+      "founder": [
+        {
+          "@type": "Person",
+          "@id": "https://theoutfithouse.in/about#gaurav",
+          "name": "Gaurav Kumar",
+          "alternateName": "The Algothrim",
+          "jobTitle": "Co-founder, Digital and Sourcing Lead",
+          "sameAs": ["https://github.com/TheAlgo7"]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://theoutfithouse.in/about#shivam",
+          "name": "Shivam Kumar",
+          "jobTitle": "Co-founder, Store and Operations Lead"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-87008-25707",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["en", "hi"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/theoutfithouse.in"
+      ]
+    },
+    {
+      "@type": "ClothingStore",
+      "@id": "https://theoutfithouse.in/#store",
+      "name": "The Outfit House",
+      "alternateName": ["TOH", "TOH Chhatarpur Studio", "The Outfit House Chhatarpur"],
+      "description": "Premium grade sneakers and streetwear. Hand-checked in Chhatarpur, New Delhi. WhatsApp-first ordering with real QC photos before dispatch.",
+      "url": "https://theoutfithouse.in",
+      "telephone": "+91-87008-25707",
+      "email": "theoutfithouse@outlook.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Block A1, Chhatarpur",
+        "addressLocality": "Chhatarpur",
+        "addressRegion": "Delhi",
+        "postalCode": "110074",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.5066,
+        "longitude": 77.1739
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "12:00",
+          "closes": "21:00"
+        }
+      ],
+      "priceRange": "₹699–₹7,299",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, UPI, Bank Transfer, COD",
+      "image": "https://theoutfithouse.in/assets/social-preview-tho.jpg",
+      "logo": "https://theoutfithouse.in/assets/logo-full.png",
+      "hasMap": "https://maps.google.com/?q=28.5066,77.1739",
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "sameAs": [
+        "https://www.instagram.com/theoutfithouse.in"
+      ],
+      "parentOrganization": { "@id": "https://theoutfithouse.in/#organization" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "The Outfit House — Product Categories",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Sneakers",    "url": "https://theoutfithouse.in/sneakers" },
+        { "@type": "ListItem", "position": 2, "name": "Apparel",     "url": "https://theoutfithouse.in/apparel" },
+        { "@type": "ListItem", "position": 3, "name": "Bottomwear",  "url": "https://theoutfithouse.in/bottomwear" },
+        { "@type": "ListItem", "position": 4, "name": "Accessories", "url": "https://theoutfithouse.in/accessories" }
+      ]
+    }
+  ]
+}
+</script>
 <script src="site.js"></script>
 <script>
   injectSprite();
