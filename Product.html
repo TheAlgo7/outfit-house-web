@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title id="page-title">Product | The Outfit House</title>
+<title>Product | The Outfit House</title>
 <meta name="description" content="Shop premium streetwear and sneakers at The Outfit House | Entry, Standard and Vault tiers. Real photos before dispatch. Ships PAN-India."/>
 <script>
 (function() {
@@ -30,7 +30,7 @@
   };
   var d = M[slug];
   if (!d) return;
-  document.getElementById('page-title').textContent = d[0] + ' | The Outfit House';
+  document.title = d[0] + ' | The Outfit House';
   var desc = document.querySelector('meta[name="description"]');
   if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' tier, ' + d[3] + '. Real photos before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
   var c = document.createElement('link');
@@ -432,17 +432,28 @@
   grade.className = 'gal-grade ' + gradeClass(p.grade);
   const thumbsEl = document.getElementById('thumbs');
   const dotsEl = document.getElementById('dots');
+  const galImg = document.getElementById('gal-img');
   let idx = 0;
-  function renderGallery() {
-    document.getElementById('gal-img').src = images[idx];
-    thumbsEl.innerHTML = images.map((src, i) =>
-      `<button class="thumb ${i===idx?'active':''}" onclick="setImg(${i})"><img src="${src}" alt="${p.name}${i > 0 ? ' — view ' + (i+1) : ''}"/></button>`).join('');
-    dotsEl.innerHTML = images.map((_, i) =>
-      `<button class="gal-dot ${i===idx?'active':''}" onclick="setImg(${i})" aria-label="Image ${i+1}"></button>`).join('');
+
+  // Build thumbs + dots once; only swap active class on change
+  thumbsEl.innerHTML = images.map((src, i) =>
+    `<button class="thumb${i===0?' active':''}" aria-label="Image ${i+1}"><img src="${src}" alt="${p.name}${i > 0 ? ' — view ' + (i+1) : ''}"/></button>`).join('');
+  dotsEl.innerHTML = images.map((_, i) =>
+    `<button class="gal-dot${i===0?' active':''}" aria-label="Image ${i+1}"></button>`).join('');
+
+  const thumbBtns = Array.from(thumbsEl.querySelectorAll('.thumb'));
+  const dotBtns   = Array.from(dotsEl.querySelectorAll('.gal-dot'));
+  thumbBtns.forEach(function(btn, i) { btn.addEventListener('click', function() { setImg(i); }); });
+  dotBtns.forEach(function(btn, i)   { btn.addEventListener('click', function() { setImg(i); }); });
+
+  function updateActive() {
+    galImg.src = images[idx];
+    thumbBtns.forEach(function(b, i) { b.classList.toggle('active', i === idx); });
+    dotBtns.forEach(function(b, i)   { b.classList.toggle('active', i === idx); });
   }
-  window.setImg = function(i) { idx = i; renderGallery(); };
-  window.gal = function(d) { idx = (idx + d + images.length) % images.length; renderGallery(); };
-  renderGallery();
+  window.setImg = function(i) { idx = i; updateActive(); };
+  window.gal = function(d) { idx = (idx + d + images.length) % images.length; updateActive(); };
+  updateActive();
 
   // Swipe on mobile
   let sx = 0;
@@ -476,7 +487,9 @@
   if (related.length < 3) {
     related = related.concat(PRODUCTS.filter(x => x.slug !== p.slug && x.cat !== p.cat).slice(0, 3 - related.length));
   }
-  document.getElementById('related-grid').innerHTML = related.map(renderProductCard).join('');
+  var relatedGrid = document.getElementById('related-grid');
+  relatedGrid.innerHTML = '';
+  related.forEach(function(p) { relatedGrid.appendChild(renderProductCard(p)); });
 </script>
 </body>
 </html>

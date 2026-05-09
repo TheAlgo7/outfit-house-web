@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title id="page-title">Category | The Outfit House</title>
+<title>Category | The Outfit House</title>
 <meta name="description" content="Shop premium sneakers, apparel, bottomwear and accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos, ships PAN-India."/>
 <script>
 (function() {
@@ -20,7 +20,7 @@
   };
   var d = cat && M[cat];
   if (!d) return;
-  document.getElementById('page-title').textContent = d[0];
+  document.title = d[0];
   var desc = document.querySelector('meta[name="description"]');
   if (desc) desc.content = d[1];
   var c = document.createElement('link');
@@ -250,7 +250,9 @@
     if (sortMode === 'low')  list = [...list].sort((a,b) => num(a.price) - num(b.price));
     if (sortMode === 'high') list = [...list].sort((a,b) => num(b.price) - num(a.price));
     document.getElementById('count').textContent = list.length;
-    document.getElementById('grid').innerHTML = list.map(renderProductCard).join('');
+    var gridEl = document.getElementById('grid');
+    gridEl.innerHTML = '';
+    list.forEach(function(p) { gridEl.appendChild(renderProductCard(p)); });
     document.getElementById('empty').style.display = list.length ? 'none' : 'block';
   }
 

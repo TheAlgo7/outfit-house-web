@@ -99,21 +99,26 @@ window.PRODUCTS = [
 // Render product card markup (shared)
 // Stretched-link pattern: pc-name::after covers the card; pc-cta sits above via z-index
 window.renderProductCard = function(p) {
-  return `
-    <div class="pc">
-      <div class="pc-img">
-        <span class="pc-grade ${gradeClass(p.grade)}">${p.grade}</span>
-        <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600"/>
-      </div>
-      <div class="pc-body">
-        <span class="pc-brand">${p.brand}</span>
-        <a class="pc-name" href="/product/${p.slug}">${p.name}</a>
-        <span class="pc-price">${p.price} <s>${p.was}</s></span>
-        <button class="pc-cta" onclick="event.stopPropagation(); wa('Hi! I want to enquire about ${p.name} (${p.grade}). Available sizes?')">
-          <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-        </button>
-      </div>
+  var card = document.createElement('div');
+  card.className = 'pc';
+  card.innerHTML = `
+    <div class="pc-img">
+      <span class="pc-grade ${gradeClass(p.grade)}">${p.grade}</span>
+      <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600"/>
+    </div>
+    <div class="pc-body">
+      <span class="pc-brand">${p.brand}</span>
+      <a class="pc-name" href="/product/${p.slug}">${p.name}</a>
+      <span class="pc-price">${p.price} <s>${p.was}</s></span>
+      <button class="pc-cta" data-name="${p.name}" data-grade="${p.grade}">
+        <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+      </button>
     </div>`;
+  card.querySelector('.pc-cta').addEventListener('click', function(e) {
+    e.stopPropagation();
+    wa('Hi! I want to enquire about ' + p.name + ' (' + p.grade + '). Available sizes?');
+  });
+  return card;
 };
 
 // Shared SVG sprite — inject once

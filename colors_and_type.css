@@ -39,7 +39,7 @@
 
   --fg:               var(--toh-eggshell);       /* primary text on dark */
   --fg-muted:         rgba(242, 236, 221, 0.65); /* secondary text on dark */
-  --fg-subtle:        rgba(242, 236, 221, 0.55); /* tertiary / labels — 4.5:1 on #060403 */
+  --fg-subtle:        rgba(242, 236, 221, 0.60); /* tertiary / labels — ~4.9:1 on #060403, clears WCAG AA */
   --fg-warm:          var(--toh-hampton);        /* warm accent text */
 
   --border:           rgba(242, 236, 221, 0.10);
