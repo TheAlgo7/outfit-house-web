@@ -357,18 +357,6 @@ body.leaving {
 .pc-cta:active  { transform: scale(0.97); transition-duration: 0.07s !important; }
 .nav-wa:active  { transform: scale(0.97); transition-duration: 0.07s !important; }
 
-/* ============ REDUCED MOTION ============ */
-/* Only disable continuous looping animations — hover transforms are brief
-   intentional feedback and are retained for all users */
-@media (prefers-reduced-motion: reduce) {
-  .wa-fab .pulse { animation: none; }
-  html { scroll-behavior: auto; }
-  body, body.leaving { animation: none !important; }
-  /* Reduced-motion: keep opacity fade (not jarring) but remove translateY movement */
-  .peek { transform: none !important; transition: opacity 0.5s ease !important; }
-  .peek.show { transform: none !important; }
-}
-
 /* ============ MOBILE NAV DRAWER ============ */
 
 /* Backdrop — dims the page behind the panel */
