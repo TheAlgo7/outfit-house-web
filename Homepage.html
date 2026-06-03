@@ -534,7 +534,7 @@
 
     <!-- LEFT: copy -->
     <div class="lp-hero-text">
-      <span class="lp-eyebrow"><span class="dot"></span> Drop 03 · Sneakers, Apparel & More</span>
+      <span class="lp-eyebrow"><span class="dot"></span> Opening 14 June · Sneakers, Apparel & More</span>
       <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
       <p class="lede">From AJ1 Pandas and NB 530s to Sp5der hoodies, Corteiz cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
       <nav class="lp-cat-chips" aria-label="Product categories">
@@ -546,7 +546,7 @@
         <a href="/accessories">Footwear</a>
       </nav>
       <div class="ctas">
-        <button class="btn-wa" onclick="wa('Hi! I want to browse the latest drop.')">
+        <button class="btn-wa" onclick="wa('Hi! I want to browse the collection.')">
           <svg aria-hidden="true"><use href="#wa-icon"/></svg>
           <span class="lbl">Browse on WhatsApp</span>
         </button>
@@ -700,18 +700,18 @@
 <section class="lp-sale" aria-label="Limited-time sale">
   <div class="wrap lp-sale-grid">
     <div class="peek">
-      <span class="ti">⚡ Limited time · Drop 03</span>
-      <h2>Up to 40% off<br/><span class="acc">on prepaid.</span></h2>
-      <p>Pre-paid orders only. Stock limited per size. Drop 03 closes Friday. Shipping starts Monday across India, free above ₹2,000. Sneakers, tees, belts, all included.</p>
-      <button class="btn-wa" onclick="wa('Hi! Show me the prepaid sale offers.')">
+      <span class="ti">Grand opening · Chhatarpur</span>
+      <h2>Doors open<br/><span class="acc">14 June.</span></h2>
+      <p>The Chhatarpur studio opens Sunday 14 June, 12 PM. Sneakers, apparel and accessories, hand-checked, all under one roof. Message us on WhatsApp to reserve a piece for opening day or to get directions.</p>
+      <button class="btn-wa" onclick="wa('Hi! I want to reserve a piece for opening day, 14 June.')">
         <svg aria-hidden="true"><use href="#wa-icon"/></svg> Reserve a piece
       </button>
     </div>
-    <div class="countdown peek" id="cd" aria-label="Countdown timer" style="transition-delay:0.1s">
-      <div class="cd"><b>03</b><span>Days</span></div>
-      <div class="cd"><b>14</b><span>Hours</span></div>
-      <div class="cd"><b>22</b><span>Min</span></div>
-      <div class="cd"><b>09</b><span>Sec</span></div>
+    <div class="countdown peek" id="cd" aria-label="Countdown to grand opening" style="transition-delay:0.1s">
+      <div class="cd"><b>10</b><span>Days</span></div>
+      <div class="cd"><b>00</b><span>Hours</span></div>
+      <div class="cd"><b>00</b><span>Min</span></div>
+      <div class="cd"><b>00</b><span>Sec</span></div>
     </div>
     <span id="cd-sr" class="sr-only" aria-live="polite" aria-atomic="true"></span>
   </div>
@@ -721,12 +721,12 @@
 <section class="lp-store" aria-labelledby="store-heading">
   <div class="wrap lp-store-grid">
     <div class="peek">
-      <span class="store-eyebrow">Now open in Delhi</span>
+      <span class="store-eyebrow">Opening 14 June · Delhi</span>
       <h2 id="store-heading">The Chhatarpur<br/><span class="out">studio.</span></h2>
-      <p>Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first or just walk in.</p>
+      <p>Doors open Sunday 14 June. Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first or just walk in.</p>
       <ul class="store-info">
         <li><b>Address</b><span>Block A1, Chhatarpur,<br/>New Delhi 110074</span></li>
-        <li><b>Hours</b><span>12 PM – 9 PM · Daily</span></li>
+        <li><b>Opens</b><span>14 June · 12 PM<br/>then 12–9 PM daily</span></li>
         <li><b>Booking</b><span>WhatsApp first<br/>Walk-ins welcome</span></li>
         <li><b>Parking</b><span>Free · Behind the unit</span></li>
       </ul>
@@ -750,7 +750,7 @@
             <div class="addr">Block <span class="acc">A1</span><br/>Chhatarpur</div>
             <div class="store-meta">
               <span>⏐ The Outfit House Studio</span>
-              <span>Open · 12pm – 9pm</span>
+              <span>Opens 14 June · 12pm</span>
             </div>
           </div>
         </div>
@@ -939,7 +939,7 @@
   featuredGrid.innerHTML = '';
   featured.forEach(function(p) { featuredGrid.appendChild(renderProductCard(p)); });
 
-  /* Sale countdown — to next Friday 23:59 */
+  /* Grand-opening countdown — to Sun 14 June 2026, 12:00 PM (noon, store-local time) */
   (function() {
     var el = document.getElementById('cd');
     var sr = document.getElementById('cd-sr');
@@ -948,11 +948,10 @@
     if (bs.length !== 4) return;
     var pad = function(n) { return String(n).padStart(2, '0'); };
     var lastSrMin = -1;
+    /* month is 0-indexed: 5 = June */
+    var target = new Date(2026, 5, 14, 12, 0, 0);
     function tick() {
       var now  = new Date();
-      var day  = now.getDay();
-      var add  = (5 - day + 7) % 7 || 7;
-      var target = new Date(now.getFullYear(), now.getMonth(), now.getDate() + add, 23, 59, 59);
       var diff = Math.max(0, target - now);
       var s = Math.floor(diff / 1000);
       var d = Math.floor(s / 86400); s %= 86400;
