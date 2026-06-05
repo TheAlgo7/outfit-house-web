@@ -39,11 +39,10 @@
     display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end;
   }
   .contact-hero .eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
+    display: inline-block;
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--accent); margin-bottom: 24px;
-    padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   }
   .contact-hero h1 {
     font-family: var(--font-display); font-size: clamp(56px, 9vw, 132px);
@@ -151,7 +150,7 @@
 <main id="main-content">
 <section class="contact-hero">
   <div>
-    <div class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;"></span> Get in touch</div>
+    <div class="eyebrow">Get in touch</div>
     <h1>Slide into<br/><span class="accent">our DMs.</span></h1>
     <span class="brush-tag" style="margin-top:-4px;font-size:clamp(22px,2.8vw,36px);transform:none;">we don't ghost.</span>
   </div>
