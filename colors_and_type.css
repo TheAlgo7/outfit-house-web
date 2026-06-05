@@ -135,6 +135,12 @@
   --surface-hover-subtle: rgba(255, 255, 255, 0.02); /* softer hover tint */
   --scrollbar-thumb:      #484848;
 
+  /* Imagery scrims / blueprint hairlines (no pure #000 — tinted to brand) */
+  --toh-black-warm:   #111009;             /* warm near-black gradient stop */
+  --scrim-img:        rgba(6, 4, 3, 0.70); /* drop shadow under floating image cards */
+  --scrim-tile:       rgba(6, 4, 3, 0.88); /* gradient scrim over catalog tile imagery */
+  --grid-line:        rgba(242, 236, 221, 0.025); /* faint blueprint grid */
+
   /* ---------- MOTION ---------- */
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);

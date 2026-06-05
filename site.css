@@ -229,7 +229,6 @@ header.nav {
   transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
   display: flex; flex-direction: column; color: inherit;
   position: relative; backface-visibility: hidden; isolation: isolate;
-  will-change: transform;
 }
 .pc:hover { border-color: var(--border-strong); transform: translateY(-3px); }
 .pc-img {
@@ -286,7 +285,7 @@ footer { border-top: 1px solid var(--border); padding: 56px var(--pad-x) 32px; }
   letter-spacing: var(--tracking-wider); text-transform: uppercase;
   color: var(--fg-muted); font-weight: 600; margin: 0 0 14px; }
 .ft ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-.ft ul a { color: var(--fg); border-bottom: none; font-size: 13px; }
+.ft ul a { color: var(--fg); border-bottom: none; font-size: 13px; display: inline-block; padding: 5px 0; }
 .ft ul a:hover { color: var(--accent); }
 .ft-bot {
   max-width: var(--container); margin: 40px auto 0; padding-top: 24px;

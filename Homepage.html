@@ -22,8 +22,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2"/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/>
-<link rel="preload" as="image" href="assets/Sneakers/AJ1 Mid Panda (1).png" fetchpriority="high"/>
-<link rel="preload" as="image" href="assets/Apparel/Sp5der Web Hoodie Pink.png" fetchpriority="high"/>
+<link rel="preload" as="image" type="image/webp" href="assets/Sneakers/AJ1 Mid Panda (1).webp" fetchpriority="high"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -41,22 +40,12 @@
     display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center;
   }
 
-  /* eyebrow pill */
+  /* eyebrow: plain tracked label, no pill chrome */
   .lp-eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
+    display: inline-block;
     font-family: var(--font-mono); font-size: 11px; font-weight: 500;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--accent); padding: 7px 12px; margin-bottom: 28px;
-    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-    background: color-mix(in srgb, var(--accent) 7%, transparent);
-  }
-  .lp-eyebrow .dot {
-    width: 6px; height: 6px; background: var(--accent); border-radius: 50%;
-    animation: lp-pulse 2.2s ease-in-out infinite;
-  }
-  @keyframes lp-pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%        { opacity: 0.35; transform: scale(0.75); }
+    color: var(--accent); margin-bottom: 28px;
   }
 
   .lp-hero h1 {
@@ -77,9 +66,10 @@
     display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;
   }
   .lp-cat-chips a {
+    display: inline-flex; align-items: center; min-height: 44px;
     font-family: var(--font-mono); font-size: 10px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted); padding: 12px 14px;
+    color: var(--fg-muted); padding: 0 16px;
     border: 1px solid var(--border);
     transition: color var(--dur-base), border-color var(--dur-base), background var(--dur-base);
   }
@@ -127,7 +117,7 @@
   .hi-1 { left: 0; top: 0; width: 70%; aspect-ratio: 3/4; z-index: 1; }
   .hi-2 {
     right: 0; bottom: 6%; width: 54%; aspect-ratio: 3/4; z-index: 2;
-    box-shadow: 0 28px 56px -16px rgba(0,0,0,0.7);
+    box-shadow: 0 28px 56px -16px var(--scrim-img);
   }
   .hi-stamp {
     position: absolute; top: 12px; left: 12px; z-index: 2;
@@ -145,7 +135,7 @@
   .lp-strip {
     background: var(--accent); color: var(--accent-on);
     padding: 16px 0; overflow: hidden;
-    border-block: 1px solid rgba(0,0,0,0.15);
+    border-block: 1px solid var(--accent-on-20);
   }
   .lp-strip-inner {
     display: flex; width: max-content;
@@ -190,12 +180,12 @@
   .ct:hover img { opacity: 0.8; transform: scale(1.05); }
   .ct::after {
     content: ''; position: absolute; inset: 0; z-index: 1;
-    background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.88) 100%);
+    background: linear-gradient(180deg, transparent 30%, var(--scrim-tile) 100%);
   }
   /* accessories — spans 2 cols at bottom to give it visual weight */
   .ct-4 { grid-column: 2 / 4; }
   .ct-4::after {
-    background: linear-gradient(135deg, transparent 30%, rgba(0,0,0,0.88) 100%);
+    background: linear-gradient(135deg, transparent 30%, var(--scrim-tile) 100%);
   }
 
   .ct .body {
@@ -255,12 +245,10 @@
     align-items: center; position: relative;
   }
   .lp-sale .ti {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-block;
     font-family: var(--font-mono); font-size: 11px;
     color: var(--accent); letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    padding: 8px 12px; margin-bottom: 24px;
-    background: color-mix(in srgb, var(--accent) 8%, transparent);
-    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    margin-bottom: 24px;
   }
   .lp-sale h2 {
     font-family: var(--font-display); font-size: clamp(48px, 7vw, 100px);
@@ -346,13 +334,13 @@
     content: ''; position: absolute; inset: 0;
     background:
       radial-gradient(ellipse at 25% 25%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 60%),
-      linear-gradient(180deg, #111009 0%, #000 75%);
+      linear-gradient(180deg, var(--toh-black-warm) 0%, var(--toh-black) 75%);
   }
   .lp-store .store-visual::after {
     content: ''; position: absolute; inset: 0;
     background-image:
-      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: 40px 40px;
     mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
   }
@@ -381,7 +369,7 @@
   .store-card-inner .store-meta {
     font-family: var(--font-mono); font-size: 11px; color: var(--fg-muted);
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;
+    border-top: 1px solid var(--border); padding-top: 14px;
     display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
   }
   .store-card-inner .store-meta span:nth-child(2) { color: var(--accent); }
@@ -431,14 +419,10 @@
     pointer-events: none;
   }
   .cta-tag {
-    position: relative; display: inline-flex; align-items: center; gap: 10px;
+    position: relative; display: inline-block;
     font-family: var(--font-mono); font-size: 11px;
     color: var(--accent-on); letter-spacing: var(--tracking-wider);
-    text-transform: uppercase; margin-bottom: 28px; padding: 8px 14px;
-    border: 1px solid var(--accent-on-35);
-  }
-  .cta-tag .dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent-on);
+    text-transform: uppercase; margin-bottom: 28px;
   }
   .cta-final h2 {
     position: relative; font-family: var(--font-display);
@@ -463,7 +447,7 @@
   .cta-meta {
     position: relative; margin-top: 20px;
     font-family: var(--font-mono); font-size: 11px;
-    color: var(--accent-on-55); letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--accent-on-65); letter-spacing: var(--tracking-wide); text-transform: uppercase;
   }
   /* brush moment inside CTA */
   .cta-brush {
@@ -534,7 +518,7 @@
 
     <!-- LEFT: copy -->
     <div class="lp-hero-text">
-      <span class="lp-eyebrow"><span class="dot"></span> Opening 14 June · Sneakers, Apparel & More</span>
+      <span class="lp-eyebrow">Opening 14 June · Sneakers, Apparel &amp; More</span>
       <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
       <p class="lede">From AJ1 Pandas and NB 530s to Sp5der hoodies, Corteiz cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
       <nav class="lp-cat-chips" aria-label="Product categories">
@@ -543,7 +527,7 @@
         <a href="/bottomwear">Bottomwear</a>
         <a href="/accessories">Accessories</a>
         <a href="/accessories">Sunglasses</a>
-        <a href="/accessories">Footwear</a>
+        <a href="/sneakers">Footwear</a>
       </nav>
       <div class="ctas">
         <button class="btn-wa" onclick="wa('Hi! I want to browse the collection.')">
@@ -563,11 +547,11 @@
     <div class="lp-hero-imgs">
       <div class="hi hi-1">
         <span class="hi-stamp">AJ1 Mid · Panda · Standard</span>
-        <img src="assets/Sneakers/AJ1 Mid Panda (1).png" alt="Air Jordan 1 Mid Panda sneaker" loading="eager" decoding="async"/>
+        <img src="assets/Sneakers/AJ1 Mid Panda (1).webp" alt="Air Jordan 1 Mid Panda sneaker" loading="eager" decoding="async"/>
       </div>
       <div class="hi hi-2">
         <span class="hi-stamp">Sp5der · Web Hoodie · Vault</span>
-        <img src="assets/Apparel/Sp5der Web Hoodie Pink.png" alt="Sp5der Web Hoodie Pink" loading="eager" decoding="async"/>
+        <img src="assets/Apparel/Sp5der Web Hoodie Pink.webp" alt="Sp5der Web Hoodie Pink" loading="eager" decoding="async"/>
       </div>
     </div>
 
@@ -620,7 +604,7 @@
 
       <!-- FOOTWEAR — tall primary -->
       <a class="ct ct-1 peek" href="/sneakers" aria-label="Browse footwear">
-        <img src="assets/Sneakers/NB 530 Cream Sea Salt.png" alt="" loading="lazy"/>
+        <img src="assets/Sneakers/NB 530 Cream Sea Salt.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">01 · Footwear</span>
           <div class="ct-bottom">
@@ -635,7 +619,7 @@
 
       <!-- APPAREL -->
       <a class="ct ct-2 peek" href="/apparel" aria-label="Browse apparel" style="transition-delay:0.08s">
-        <img src="assets/Apparel/Essentials Heavyweight Hoodie.png" alt="" loading="lazy"/>
+        <img src="assets/Apparel/Essentials Heavyweight Hoodie.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">02 · Apparel</span>
           <div class="ct-bottom">
@@ -650,7 +634,7 @@
 
       <!-- BOTTOMWEAR -->
       <a class="ct ct-3 peek" href="/bottomwear" aria-label="Browse bottomwear" style="transition-delay:0.14s">
-        <img src="assets/Bottomwear/Corteiz Guerillaz Cargos.png" alt="" loading="lazy" onerror="this.src='assets/Apparel/Corteiz Alcatraz Overshirt.png'"/>
+        <img src="assets/Bottomwear/Corteiz Guerillaz Cargos.webp" alt="" loading="lazy" onerror="this.src='assets/Apparel/Corteiz Alcatraz Overshirt.webp'"/>
         <div class="body">
           <span class="cat-num">03 · Bottomwear</span>
           <div class="ct-bottom">
@@ -665,7 +649,7 @@
 
       <!-- ACCESSORIES — wide bottom tile -->
       <a class="ct ct-4 peek" href="/accessories" aria-label="Browse accessories" style="transition-delay:0.2s">
-        <img src="assets/insta-post-tote.jpg" alt="" loading="lazy"/>
+        <img src="assets/insta-post-tote.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">04 · Accessories</span>
           <div class="ct-bottom">
@@ -708,10 +692,10 @@
       </button>
     </div>
     <div class="countdown peek" id="cd" aria-label="Countdown to grand opening" style="transition-delay:0.1s">
-      <div class="cd"><b>10</b><span>Days</span></div>
-      <div class="cd"><b>00</b><span>Hours</span></div>
-      <div class="cd"><b>00</b><span>Min</span></div>
-      <div class="cd"><b>00</b><span>Sec</span></div>
+      <div class="cd"><b>--</b><span>Days</span></div>
+      <div class="cd"><b>--</b><span>Hours</span></div>
+      <div class="cd"><b>--</b><span>Min</span></div>
+      <div class="cd"><b>--</b><span>Sec</span></div>
     </div>
     <span id="cd-sr" class="sr-only" aria-live="polite" aria-atomic="true"></span>
   </div>
@@ -740,7 +724,7 @@
       <div class="store-visual">
         <div class="store-card-inner">
           <div class="top-row">
-            <img class="crown" src="assets/logo-crown.png" alt=""/>
+            <img class="crown" src="assets/logo-crown.webp" alt=""/>
             <div class="coords">
               28.5066° N<br/>
               <b>77.1739° E</b>
@@ -791,7 +775,7 @@
 
 <!-- FINAL CTA -->
 <section class="cta-final" id="contact" aria-label="Contact call to action">
-  <span class="cta-tag"><span class="dot"></span> Direct line · 12pm – 9pm IST</span>
+  <span class="cta-tag">Direct line · 12pm to 9pm IST</span>
   <span class="cta-brush">Just WhatsApp us.</span>
   <h2>Tell us what<br/>you're after.</h2>
   <p>Sneaker, tee, belt, sunglasses. Doesn't matter. We'll send real photos, sizing notes and a quote. No checkout. No waiting. Just a conversation.</p>
@@ -833,7 +817,7 @@
       "url": "https://theoutfithouse.in",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://theoutfithouse.in/assets/logo-full.png"
+        "url": "https://theoutfithouse.in/assets/logo-full.webp"
       },
       "foundingDate": "2026",
       "founder": [
@@ -898,7 +882,7 @@
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, UPI, Bank Transfer, COD",
       "image": "https://theoutfithouse.in/assets/social-preview-tho.jpg",
-      "logo": "https://theoutfithouse.in/assets/logo-full.png",
+      "logo": "https://theoutfithouse.in/assets/logo-full.webp",
       "hasMap": "https://maps.google.com/?q=28.5066,77.1739",
       "areaServed": {
         "@type": "Country",
@@ -912,7 +896,7 @@
     },
     {
       "@type": "ItemList",
-      "name": "The Outfit House — Product Categories",
+      "name": "The Outfit House Product Categories",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Sneakers",    "url": "https://theoutfithouse.in/sneakers" },
         { "@type": "ListItem", "position": 2, "name": "Apparel",     "url": "https://theoutfithouse.in/apparel" },

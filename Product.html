@@ -437,7 +437,7 @@
 
   // Build thumbs + dots once; only swap active class on change
   thumbsEl.innerHTML = images.map((src, i) =>
-    `<button class="thumb${i===0?' active':''}" aria-label="Image ${i+1}"><img src="${src}" alt="${p.name}${i > 0 ? ' — view ' + (i+1) : ''}"/></button>`).join('');
+    `<button class="thumb${i===0?' active':''}" aria-label="Image ${i+1}"><img src="${src}" alt="${p.name}${i > 0 ? ', view ' + (i+1) : ''}"/></button>`).join('');
   dotsEl.innerHTML = images.map((_, i) =>
     `<button class="gal-dot${i===0?' active':''}" aria-label="Image ${i+1}"></button>`).join('');
 
