@@ -1,6 +1,7 @@
 // Shared catalog + WhatsApp helpers for The Outfit House
 window.WA_NUMBER = '918700825707';
 window.IG_URL    = 'https://www.instagram.com/theoutfithouse.in';
+window.FB_URL    = 'https://www.facebook.com/profile.php?id=61589373328357';
 
 window.wa = function(msg) {
   const url = 'https://wa.me/' + window.WA_NUMBER + '?text=' + encodeURIComponent(msg);
@@ -68,32 +69,65 @@ window.CATEGORIES = {
 };
 
 // Catalog
+// Prices are intentionally NOT stored or shown — quoted on WhatsApp after enquiry
+// (we bargain and run launch offers). See SpecSheet for the tier system.
 window.PRODUCTS = [
-  // Sneakers
-  { slug:'aj1-mid-panda',      cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Mid · Panda',       grade:'Standard', price:'₹4,499', was:'₹14,995', img:'assets/Sneakers/AJ1 Mid Panda (1).webp' },
-  { slug:'nb-530-sea-salt',    cat:'sneakers',    brand:'New Balance', name:'530 · Cream Sea Salt',  grade:'Vault',    price:'₹6,899', was:'₹14,499', img:'assets/Sneakers/NB 530 Cream Sea Salt.webp' },
-  { slug:'aj1-high-bred-toe',  cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 High · Bred Toe',   grade:'Standard', price:'₹4,799', was:'₹16,995', img:'assets/Sneakers/AJ1 High Bred Toe.webp' },
-  { slug:'nb-550-white-green', cat:'sneakers',    brand:'New Balance', name:'550 · White Green',     grade:'Standard', price:'₹4,099', was:'₹12,499', img:'assets/Sneakers/NB 550 White Green.webp' },
-  { slug:'aj1-low-panda',      cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Low · Panda',       grade:'Entry',    price:'₹2,199', was:'₹13,495', img:'assets/Sneakers/AJ1 Low Panda.webp' },
-  { slug:'nb-530-stone',       cat:'sneakers',    brand:'New Balance', name:'530 · Stone Pink',      grade:'Vault',    price:'₹6,899', was:'₹11,499', img:'assets/Sneakers/NB 530 Stone Pink.webp' },
-  { slug:'aj1-mid-shadow',     cat:'sneakers',    brand:'Air Jordan',  name:'AJ1 Mid · Shadow',      grade:'Entry',    price:'₹2,099', was:'₹13,495', img:'assets/Sneakers/AJ1 Mid Shadow.webp' },
-  { slug:'nb-2002r',           cat:'sneakers',    brand:'New Balance', name:'2002R · Protection',    grade:'Vault',    price:'₹7,299', was:'₹17,499', img:'assets/Sneakers/NB 2002R Protection Pack.webp' },
+  // ---------- Sneakers ----------
+  { slug:'aj1-mid-panda',      cat:'sneakers',    brand:'Air Jordan',     name:'AJ1 Mid · Panda',          grade:'Standard', img:'assets/Sneakers/AJ1 Mid Panda (1).webp' },
+  { slug:'nb-530-sea-salt',    cat:'sneakers',    brand:'New Balance',    name:'530 · Cream Sea Salt',     grade:'Vault',    img:'assets/Sneakers/NB 530 Cream Sea Salt.webp' },
+  { slug:'aj1-high-bred-toe',  cat:'sneakers',    brand:'Air Jordan',     name:'AJ1 High · Bred Toe',      grade:'Standard', img:'assets/Sneakers/AJ1 High Bred Toe.webp' },
+  { slug:'nb-550-white-green', cat:'sneakers',    brand:'New Balance',    name:'550 · White Green',        grade:'Standard', img:'assets/Sneakers/NB 550 White Green.webp' },
+  { slug:'aj1-low-panda',      cat:'sneakers',    brand:'Air Jordan',     name:'AJ1 Low · Panda',          grade:'Entry',    img:'assets/Sneakers/AJ1 Low Panda.webp' },
+  { slug:'nb-530-stone',       cat:'sneakers',    brand:'New Balance',    name:'530 · Stone Pink',         grade:'Vault',    img:'assets/Sneakers/NB 530 Stone Pink.webp' },
+  { slug:'aj1-mid-shadow',     cat:'sneakers',    brand:'Air Jordan',     name:'AJ1 Mid · Shadow',         grade:'Entry',    img:'assets/Sneakers/AJ1 Mid Shadow.webp' },
+  { slug:'nb-2002r',           cat:'sneakers',    brand:'New Balance',    name:'2002R · Protection',       grade:'Vault',    img:'assets/Sneakers/NB 2002R Protection Pack.webp' },
+  { slug:'nike-dunk-low-panda',cat:'sneakers',    brand:'Nike',           name:'Dunk Low · Panda',         grade:'Standard', img:'assets/Sneakers/nike-dunk-low-panda.webp' },
+  { slug:'nike-af1-white',     cat:'sneakers',    brand:'Nike',           name:'Air Force 1 · Triple White',grade:'Entry',   img:'assets/Sneakers/nike-af1-white.webp' },
+  { slug:'yeezy-350-zebra',    cat:'sneakers',    brand:'Yeezy',          name:'Boost 350 V2 · Zebra',     grade:'Vault',    img:'assets/Sneakers/yeezy-350-zebra.webp' },
+  { slug:'yeezy-slide-bone',   cat:'sneakers',    brand:'Yeezy',          name:'Slide · Bone',             grade:'Standard', img:'assets/Sneakers/yeezy-slide-bone.webp' },
+  { slug:'aj4-bred',           cat:'sneakers',    brand:'Air Jordan',     name:'AJ4 · Bred Reimagined',    grade:'Vault',    img:'assets/Sneakers/aj4-bred.webp' },
+  { slug:'travis-aj1-mocha',   cat:'sneakers',    brand:'Air Jordan',     name:'AJ1 Low · Mocha',          grade:'Vault',    img:'assets/Sneakers/travis-aj1-mocha.webp' },
+  { slug:'nike-dunk-unc',      cat:'sneakers',    brand:'Nike',           name:'Dunk Low · University Blue',grade:'Standard',img:'assets/Sneakers/nike-dunk-unc.webp' },
+  { slug:'nb-9060-grey',       cat:'sneakers',    brand:'New Balance',    name:'9060 · Rain Cloud',        grade:'Vault',    img:'assets/Sneakers/nb-9060-grey.webp' },
+  { slug:'nike-am90-infrared', cat:'sneakers',    brand:'Nike',           name:'Air Max 90 · Infrared',    grade:'Standard', img:'assets/Sneakers/nike-am90-infrared.webp' },
+  { slug:'adidas-samba-og',    cat:'sneakers',    brand:'Adidas',         name:'Samba OG · White Black',   grade:'Standard', img:'assets/Sneakers/adidas-samba-og.webp' },
+  { slug:'adidas-campus-00s',  cat:'sneakers',    brand:'Adidas',         name:'Campus 00s · Grey',        grade:'Standard', img:'assets/Sneakers/adidas-campus-00s.webp' },
+  { slug:'asics-gel-1130',     cat:'sneakers',    brand:'Asics',          name:'Gel-1130 · Cream',         grade:'Standard', img:'assets/Sneakers/asics-gel-1130.webp' },
+  { slug:'onitsuka-mexico66',  cat:'sneakers',    brand:'Onitsuka Tiger', name:'Mexico 66 · White Blue',   grade:'Entry',    img:'assets/Sneakers/onitsuka-mexico66.webp' },
+  { slug:'crocs-classic-clog', cat:'sneakers',    brand:'Crocs',          name:'Classic Clog · Black',     grade:'Entry',    img:'assets/Sneakers/crocs-classic-clog.webp' },
 
-  // Apparel
-  { slug:'tho-box-tee',        cat:'apparel',     brand:'TOH',         name:'Box Logo Tee',          grade:'Entry',    price:'₹1,299', was:'₹2,499',  img:'assets/Apparel/Box Logo Tee.webp' },
-  { slug:'essentials-hoodie',  cat:'apparel',     brand:'Essentials',  name:'Heavyweight Hoodie',    grade:'Standard', price:'₹3,499', was:'₹9,990',  img:'assets/Apparel/Essentials Heavyweight Hoodie.webp' },
-  { slug:'sp5der-hoodie',      cat:'apparel',     brand:'Sp5der',      name:'Web Hoodie · Pink',     grade:'Vault',    price:'₹4,899', was:'₹19,995', img:'assets/Apparel/Sp5der Web Hoodie Pink.webp' },
-  { slug:'corteiz-overshirt',  cat:'apparel',     brand:'Corteiz',     name:'Alcatraz Overshirt',    grade:'Standard', price:'₹3,899', was:'₹11,500', img:'assets/Apparel/Corteiz Alcatraz Overshirt.webp' },
+  // ---------- Apparel ----------
+  { slug:'tho-box-tee',        cat:'apparel',     brand:'TOH',            name:'Box Logo Tee',             grade:'Entry',    img:'assets/Apparel/Box Logo Tee.webp' },
+  { slug:'essentials-hoodie',  cat:'apparel',     brand:'Essentials',     name:'Heavyweight Hoodie',       grade:'Standard', img:'assets/Apparel/Essentials Heavyweight Hoodie.webp' },
+  { slug:'sp5der-hoodie',      cat:'apparel',     brand:'Sp5der',         name:'Web Hoodie · Pink',        grade:'Vault',    img:'assets/Apparel/Sp5der Web Hoodie Pink.webp' },
+  { slug:'corteiz-overshirt',  cat:'apparel',     brand:'Corteiz',        name:'Alcatraz Overshirt',       grade:'Standard', img:'assets/Apparel/Corteiz Alcatraz Overshirt.webp' },
+  { slug:'stussy-basic-tee',   cat:'apparel',     brand:'Stussy',         name:'Basic Stock Tee',          grade:'Entry',    img:'assets/Apparel/stussy-basic-tee.webp' },
+  { slug:'nike-tech-hoodie',   cat:'apparel',     brand:'Nike',           name:'Tech Fleece Hoodie',       grade:'Standard', img:'assets/Apparel/nike-tech-hoodie.webp' },
+  { slug:'trapstar-hoodie',    cat:'apparel',     brand:'Trapstar',       name:'Hyperdrive Hoodie',        grade:'Vault',    img:'assets/Apparel/trapstar-hoodie.webp' },
+  { slug:'bape-shark-hoodie',  cat:'apparel',     brand:'Bape',           name:'Shark Full-Zip Hoodie',    grade:'Vault',    img:'assets/Apparel/bape-shark-hoodie.webp' },
+  { slug:'carhartt-hooded',    cat:'apparel',     brand:'Carhartt WIP',   name:'Hooded Sweatshirt',        grade:'Standard', img:'assets/Apparel/carhartt-hooded.webp' },
+  { slug:'polo-bear-tee',      cat:'apparel',     brand:'Polo Ralph Lauren',name:'Polo Bear Tee',          grade:'Standard', img:'assets/Apparel/polo-bear-tee.webp' },
+  { slug:'northface-nuptse',   cat:'apparel',     brand:'The North Face', name:'Nuptse 700 Puffer',        grade:'Vault',    img:'assets/Apparel/northface-nuptse.webp' },
+  { slug:'stone-island-crew',  cat:'apparel',     brand:'Stone Island',   name:'Badge Crewneck',           grade:'Vault',    img:'assets/Apparel/stone-island-crew.webp' },
 
-  // Bottomwear
-  { slug:'essentials-sweats',  cat:'bottomwear',  brand:'Essentials',  name:'Fleece Sweatpants',     grade:'Standard', price:'₹2,899', was:'₹8,990',  img:'assets/Bottomwear/Essentials Fleece Sweatpants.webp' },
-  { slug:'corteiz-cargos',     cat:'bottomwear',  brand:'Corteiz',     name:'Guerillaz Cargos',      grade:'Vault',    price:'₹4,499', was:'₹14,500', img:'assets/Bottomwear/Corteiz Guerillaz Cargos.webp' },
-  { slug:'tho-baggy-jeans',    cat:'bottomwear',  brand:'TOH',         name:'Baggy Denim · Indigo',  grade:'Entry',    price:'₹1,799', was:'₹3,999',  img:'assets/Bottomwear/Baggy Denim Indigo.webp' },
+  // ---------- Bottomwear ----------
+  { slug:'essentials-sweats',  cat:'bottomwear',  brand:'Essentials',     name:'Fleece Sweatpants',        grade:'Standard', img:'assets/Bottomwear/Essentials Fleece Sweatpants.webp' },
+  { slug:'corteiz-cargos',     cat:'bottomwear',  brand:'Corteiz',        name:'Guerillaz Cargos',         grade:'Vault',    img:'assets/Bottomwear/Corteiz Guerillaz Cargos.webp' },
+  { slug:'tho-baggy-jeans',    cat:'bottomwear',  brand:'TOH',            name:'Baggy Denim · Indigo',     grade:'Entry',    img:'assets/Bottomwear/Baggy Denim Indigo.webp' },
+  { slug:'nike-tech-joggers',  cat:'bottomwear',  brand:'Nike',           name:'Tech Fleece Joggers',      grade:'Standard', img:'assets/Bottomwear/nike-tech-joggers.webp' },
+  { slug:'adidas-tiro-pants',  cat:'bottomwear',  brand:'Adidas',         name:'Tiro Track Pants',         grade:'Entry',    img:'assets/Bottomwear/adidas-tiro-pants.webp' },
+  { slug:'stussy-nyco-cargo',  cat:'bottomwear',  brand:'Stussy',         name:'Nyco Cargo Pant',          grade:'Standard', img:'assets/Bottomwear/stussy-nyco-cargo.webp' },
+  { slug:'levis-501-denim',    cat:'bottomwear',  brand:"Levi's",         name:'501 Original Denim',       grade:'Standard', img:'assets/Bottomwear/levis-501-denim.webp' },
+  { slug:'represent-baggy',    cat:'bottomwear',  brand:'Represent',      name:'Baggy Denim',              grade:'Vault',    img:'assets/Bottomwear/represent-baggy.webp' },
 
-  // Accessories
-  { slug:'tho-tote',           cat:'accessories', brand:'TOH',         name:'Crown Tote · Cream',    grade:'Entry',    price:'₹699',   was:'₹1,299',  img:'assets/Accessories/Crown Tote · Cream.webp' },
-  { slug:'nb-cap',             cat:'accessories', brand:'New Balance', name:'6-Panel Cap',           grade:'Standard', price:'₹1,099', was:'₹2,999',  img:'assets/Accessories/New Balance 6-Panel Cap.webp' },
-  { slug:'sock-pack',          cat:'accessories', brand:'TOH',         name:'Crew Sock 3-Pack',      grade:'Entry',    price:'₹499',   was:'₹999',    img:'assets/Accessories/Crew Sock 3-Pack.webp' },
+  // ---------- Accessories ----------
+  { slug:'tho-tote',           cat:'accessories', brand:'TOH',            name:'Crown Tote · Cream',       grade:'Entry',    img:'assets/Accessories/Crown Tote · Cream.webp' },
+  { slug:'nb-cap',             cat:'accessories', brand:'New Balance',    name:'6-Panel Cap',              grade:'Standard', img:'assets/Accessories/New Balance 6-Panel Cap.webp' },
+  { slug:'sock-pack',          cat:'accessories', brand:'TOH',            name:'Crew Sock 3-Pack',         grade:'Entry',    img:'assets/Accessories/Crew Sock 3-Pack.webp' },
+  { slug:'rayban-wayfarer',    cat:'accessories', brand:'Ray-Ban',        name:'Wayfarer Sunglasses',      grade:'Standard', img:'assets/Accessories/rayban-wayfarer.webp' },
+  { slug:'rayban-aviator',     cat:'accessories', brand:'Ray-Ban',        name:'Aviator Sunglasses',       grade:'Standard', img:'assets/Accessories/rayban-aviator.webp' },
+  { slug:'double-buckle-belt', cat:'accessories', brand:'TOH',            name:'Double-Buckle Leather Belt',grade:'Standard',img:'assets/Accessories/double-buckle-belt.webp' },
+  { slug:'newera-yankees-cap', cat:'accessories', brand:'New Era',        name:'59FIFTY Yankees Cap',      grade:'Standard', img:'assets/Accessories/newera-yankees-cap.webp' },
 ];
 
 // Render product card markup (shared)
@@ -104,12 +138,12 @@ window.renderProductCard = function(p) {
   card.innerHTML = `
     <div class="pc-img">
       <span class="pc-grade ${gradeClass(p.grade)}">${p.grade}</span>
-      <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600"/>
+      <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='assets/placeholder.svg'"/>
     </div>
     <div class="pc-body">
       <span class="pc-brand">${p.brand}</span>
       <a class="pc-name" href="/product/${p.slug}">${p.name}</a>
-      <span class="pc-price">${p.price} <s>${p.was}</s></span>
+      <span class="pc-price">Price on enquiry</span>
       <button class="pc-cta" data-name="${p.name}" data-grade="${p.grade}">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
       </button>
@@ -136,6 +170,9 @@ window.injectSprite = function() {
         <rect x="3" y="3" width="18" height="18" rx="5"/>
         <circle cx="12" cy="12" r="4"/>
         <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+      </symbol>
+      <symbol id="fb-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/>
       </symbol>
       <symbol id="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
         <line x1="4" y1="7"  x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
@@ -246,6 +283,10 @@ window.renderHeader = function(active) {
         Instagram ↗
         <svg><use href="#arrow-right"/></svg>
       </a>
+      <a href="${window.FB_URL}" target="_blank" rel="noopener">
+        Facebook ↗
+        <svg><use href="#arrow-right"/></svg>
+      </a>
     </nav>
     <div class="mob-nav-foot">
       <button class="btn-wa" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
@@ -278,6 +319,7 @@ window.renderFooter = function() {
       <div><h5>Connect</h5><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
         <li><a href="${window.IG_URL}" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="${window.FB_URL}" target="_blank" rel="noopener">Facebook</a></li>
         <li><a href="mailto:theoutfithouse@outlook.com">Email</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul></div>

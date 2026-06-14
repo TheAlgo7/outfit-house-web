@@ -25,3 +25,9 @@ $RECYCLE.BIN/
 
 # ── Test / scratch assets ──────────────────────────────────────────────────────
 assets/test-video.mp4
+
+# ── Local helper scripts / scratch (not part of the deployed site) ──────────────
+sync-newitems.sh
+_*.png
+_*.jpeg
+*.bak

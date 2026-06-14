@@ -165,8 +165,8 @@
       </button>
       <ul class="sort-menu" id="sort-menu" role="listbox" aria-label="Sort options">
         <li class="sort-opt active" role="option" aria-selected="true"  data-val="feat">Featured</li>
-        <li class="sort-opt"        role="option" aria-selected="false" data-val="low">Price: Low → High</li>
-        <li class="sort-opt"        role="option" aria-selected="false" data-val="high">Price: High → Low</li>
+        <li class="sort-opt"        role="option" aria-selected="false" data-val="az">Name: A → Z</li>
+        <li class="sort-opt"        role="option" aria-selected="false" data-val="za">Name: Z → A</li>
       </ul>
     </div>
   </div>
@@ -245,9 +245,8 @@
 
   function render() {
     let list = (activeTier === 'all') ? ALL : ALL.filter(p => p.grade === activeTier);
-    const num = s => parseInt(s.replace(/[^0-9]/g,''), 10);
-    if (sortMode === 'low')  list = [...list].sort((a,b) => num(a.price) - num(b.price));
-    if (sortMode === 'high') list = [...list].sort((a,b) => num(b.price) - num(a.price));
+    if (sortMode === 'az') list = [...list].sort((a,b) => a.name.localeCompare(b.name));
+    if (sortMode === 'za') list = [...list].sort((a,b) => b.name.localeCompare(a.name));
     document.getElementById('count').textContent = list.length;
     var gridEl = document.getElementById('grid');
     gridEl.innerHTML = '';
