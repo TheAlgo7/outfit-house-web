@@ -95,6 +95,14 @@ window.PRODUCTS = [
   { slug:'asics-gel-1130',     cat:'sneakers',    brand:'Asics',          name:'Gel-1130 · Cream',         grade:'Standard', img:'assets/Sneakers/asics-gel-1130.webp' },
   { slug:'onitsuka-mexico66',  cat:'sneakers',    brand:'Onitsuka Tiger', name:'Mexico 66 · White Blue',   grade:'Entry',    img:'assets/Sneakers/onitsuka-mexico66.webp' },
   { slug:'crocs-classic-clog', cat:'sneakers',    brand:'Crocs',          name:'Classic Clog · Black',     grade:'Entry',    img:'assets/Sneakers/crocs-classic-clog.webp' },
+  { slug:'aj1-high-chicago',   cat:'sneakers',    brand:'Air Jordan',     name:'AJ1 High · Chicago',       grade:'Vault',    img:'assets/Sneakers/aj1-high-chicago.webp' },
+  { slug:'aj11-concord',       cat:'sneakers',    brand:'Air Jordan',     name:'AJ11 · Concord',           grade:'Vault',    img:'assets/Sneakers/aj11-concord.webp' },
+  { slug:'nike-dunk-grey-fog', cat:'sneakers',    brand:'Nike',           name:'Dunk Low · Grey Fog',      grade:'Standard', img:'assets/Sneakers/nike-dunk-grey-fog.webp' },
+  { slug:'nb-1906r-silver',    cat:'sneakers',    brand:'New Balance',    name:'1906R · Silver Metallic',  grade:'Vault',    img:'assets/Sneakers/nb-1906r-silver.webp' },
+  { slug:'yeezy-700-wave-runner',cat:'sneakers',  brand:'Yeezy',          name:'Boost 700 · Wave Runner',  grade:'Vault',    img:'assets/Sneakers/yeezy-700-wave-runner.webp' },
+  { slug:'nike-am97-silver',   cat:'sneakers',    brand:'Nike',           name:'Air Max 97 · Silver Bullet',grade:'Standard',img:'assets/Sneakers/nike-am97-silver.webp' },
+  { slug:'salomon-xt6-phantom',cat:'sneakers',    brand:'Salomon',        name:'XT-6 · Phantom',           grade:'Standard', img:'assets/Sneakers/salomon-xt6-phantom.webp' },
+  { slug:'puma-speedcat-black',cat:'sneakers',    brand:'Puma',           name:'Speedcat · OG Black',      grade:'Standard', img:'assets/Sneakers/puma-speedcat-black.webp' },
 
   // ---------- Apparel ----------
   { slug:'tho-box-tee',        cat:'apparel',     brand:'TOH',            name:'Box Logo Tee',             grade:'Entry',    img:'assets/Apparel/Box Logo Tee.webp' },
@@ -109,6 +117,14 @@ window.PRODUCTS = [
   { slug:'polo-bear-tee',      cat:'apparel',     brand:'Polo Ralph Lauren',name:'Polo Bear Tee',          grade:'Standard', img:'assets/Apparel/polo-bear-tee.webp' },
   { slug:'northface-nuptse',   cat:'apparel',     brand:'The North Face', name:'Nuptse 700 Puffer',        grade:'Vault',    img:'assets/Apparel/northface-nuptse.webp' },
   { slug:'stone-island-crew',  cat:'apparel',     brand:'Stone Island',   name:'Badge Crewneck',           grade:'Vault',    img:'assets/Apparel/stone-island-crew.webp' },
+  { slug:'supreme-box-logo-hoodie',cat:'apparel', brand:'Supreme',        name:'Box Logo Hoodie',          grade:'Vault',    img:'assets/Apparel/supreme-box-logo-hoodie.webp' },
+  { slug:'stussy-8ball-tee',   cat:'apparel',     brand:'Stussy',         name:'8-Ball Tee',               grade:'Standard', img:'assets/Apparel/stussy-8ball-tee.webp' },
+  { slug:'corteiz-4starz-tee', cat:'apparel',     brand:'Corteiz',        name:'4Starz Tee',               grade:'Standard', img:'assets/Apparel/corteiz-4starz-tee.webp' },
+  { slug:'ald-logo-tee',       cat:'apparel',     brand:'Aimé Leon Dore', name:'Logo Tee',                 grade:'Standard', img:'assets/Apparel/ald-logo-tee.webp' },
+  { slug:'nike-club-tee',      cat:'apparel',     brand:'Nike',           name:'Sportswear Club Tee',      grade:'Entry',    img:'assets/Apparel/nike-club-tee.webp' },
+  { slug:'adidas-firebird-track-top',cat:'apparel',brand:'Adidas',        name:'Firebird Track Top',       grade:'Standard', img:'assets/Apparel/adidas-firebird-track-top.webp' },
+  { slug:'denim-tears-sweatshirt',cat:'apparel',  brand:'Denim Tears',    name:'Cotton Wreath Sweatshirt', grade:'Vault',    img:'assets/Apparel/denim-tears-sweatshirt.webp' },
+  { slug:'palace-triferg-tee', cat:'apparel',     brand:'Palace',         name:'Tri-Ferg Tee',             grade:'Standard', img:'assets/Apparel/palace-triferg-tee.webp' },
 
   // ---------- Bottomwear ----------
   { slug:'essentials-sweats',  cat:'bottomwear',  brand:'Essentials',     name:'Fleece Sweatpants',        grade:'Standard', img:'assets/Bottomwear/Essentials Fleece Sweatpants.webp' },
@@ -119,6 +135,12 @@ window.PRODUCTS = [
   { slug:'stussy-nyco-cargo',  cat:'bottomwear',  brand:'Stussy',         name:'Nyco Cargo Pant',          grade:'Standard', img:'assets/Bottomwear/stussy-nyco-cargo.webp' },
   { slug:'levis-501-denim',    cat:'bottomwear',  brand:"Levi's",         name:'501 Original Denim',       grade:'Standard', img:'assets/Bottomwear/levis-501-denim.webp' },
   { slug:'represent-baggy',    cat:'bottomwear',  brand:'Represent',      name:'Baggy Denim',              grade:'Vault',    img:'assets/Bottomwear/represent-baggy.webp' },
+  { slug:'nike-tech-shorts',   cat:'bottomwear',  brand:'Nike',           name:'Tech Fleece Shorts',       grade:'Standard', img:'assets/Bottomwear/nike-tech-shorts.webp' },
+  { slug:'essentials-sweat-shorts',cat:'bottomwear',brand:'Essentials',   name:'Sweat Shorts',             grade:'Entry',    img:'assets/Bottomwear/essentials-sweat-shorts.webp' },
+  { slug:'carhartt-single-knee',cat:'bottomwear', brand:'Carhartt WIP',   name:'Single Knee Pant',         grade:'Standard', img:'assets/Bottomwear/carhartt-single-knee.webp' },
+  { slug:'adidas-3stripe-shorts',cat:'bottomwear',brand:'Adidas',         name:'Adicolor 3-Stripe Shorts', grade:'Entry',    img:'assets/Bottomwear/adidas-3stripe-shorts.webp' },
+  { slug:'true-religion-bootcut',cat:'bottomwear',brand:'True Religion',  name:'Bootcut Jeans',            grade:'Standard', img:'assets/Bottomwear/true-religion-bootcut.webp' },
+  { slug:'corteiz-cargo-shorts',cat:'bottomwear', brand:'Corteiz',        name:'Cargo Shorts',             grade:'Standard', img:'assets/Bottomwear/corteiz-cargo-shorts.webp' },
 
   // ---------- Accessories ----------
   { slug:'tho-tote',           cat:'accessories', brand:'TOH',            name:'Crown Tote · Cream',       grade:'Entry',    img:'assets/Accessories/Crown Tote · Cream.webp' },
@@ -137,6 +159,10 @@ window.PRODUCTS = [
   { slug:'rolex-datejust',     cat:'accessories', brand:'Rolex',          name:'Datejust',                 grade:'Vault',    img:'assets/Accessories/rolex-datejust.webp' },
   { slug:'carhartt-sling',     cat:'accessories', brand:'Carhartt WIP',   name:'Essentials Sling Bag',     grade:'Standard', img:'assets/Accessories/carhartt-sling.webp' },
   { slug:'toh-beanie',         cat:'accessories', brand:'TOH',            name:'Ribbed Beanie',            grade:'Entry',    img:'assets/Accessories/toh-beanie.webp' },
+  { slug:'stussy-bucket-hat',  cat:'accessories', brand:'Stussy',         name:'Bucket Hat',               grade:'Standard', img:'assets/Accessories/stussy-bucket-hat.webp' },
+  { slug:'carhartt-beanie',    cat:'accessories', brand:'Carhartt WIP',   name:'Acrylic Watch Hat',        grade:'Standard', img:'assets/Accessories/carhartt-beanie.webp' },
+  { slug:'nike-brasilia-backpack',cat:'accessories',brand:'Nike',         name:'Brasilia Backpack',        grade:'Entry',    img:'assets/Accessories/nike-brasilia-backpack.webp' },
+  { slug:'lv-keepall-duffle',  cat:'accessories', brand:'Louis Vuitton',  name:'Keepall Duffle',           grade:'Vault',    img:'assets/Accessories/lv-keepall-duffle.webp' },
 ];
 
 // Render product card markup (shared)
