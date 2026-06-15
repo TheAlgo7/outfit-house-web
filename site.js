@@ -242,7 +242,7 @@ window.renderHeader = function(active) {
         <svg><use href="#menu-icon"/></svg>
       </button>
       <a class="brand" href="/">
-        <img src="assets/logo-crown.webp" alt="The Outfit House crown logo"/>
+        <img src="/assets/logo-crown.webp" alt="The Outfit House crown logo"/>
         <span class="name">The Outfit House</span>
       </a>
       <nav class="nav-links">
@@ -310,7 +310,7 @@ window.renderFooter = function() {
   <footer>
     <div class="ft">
       <div>
-        <img src="assets/logo-text.webp" alt="The Outfit House" width="360" height="261" loading="lazy"/>
+        <img src="/assets/logo-text.webp" alt="The Outfit House" width="360" height="261" loading="lazy"/>
         <p>Sneakers, apparel, accessories and footwear. Hand-checked and shipped from Chhatarpur, New Delhi.</p>
       </div>
       <div><h5>Shop</h5><ul>
