@@ -121,15 +121,13 @@
     letter-spacing: -0.01em;
   }
   .price-row {
-    display: flex; align-items: baseline; gap: 14px;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
     padding-top: 20px; border-top: 1px solid var(--border);
   }
-  .price { font-family: var(--font-display); font-size: 40px; color: var(--fg); }
-  .price s { font-size: 18px; color: var(--fg-subtle); font-weight: 400; margin-left: 6px; }
-  .save {
-    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
-    letter-spacing: var(--tracking-wide); text-transform: uppercase;
-    color: var(--accent); padding: 6px 10px; border: 1px solid var(--accent);
+  .price { font-family: var(--font-display); font-size: 40px; color: var(--fg); line-height: 1; }
+  .price-note {
+    font-family: var(--font-body); font-size: 13px; line-height: 1.5;
+    color: var(--fg-muted); letter-spacing: 0.01em; margin: 0;
   }
 
   /* Size */
@@ -261,16 +259,16 @@
       <h1 id="p-name">AJ1 Mid · Panda</h1>
     </div>
     <div class="price-row">
-      <div class="price" id="p-price">Price on enquiry</div>
-      <span class="save" id="p-save">DM for best price</span>
+      <span class="price" id="p-price">Price on enquiry</span>
+      <span class="price-note">Best price shared on WhatsApp · we run regular launch offers</span>
     </div>
 
-    <div class="size-block">
-      <h4>Select size · UK</h4>
+    <div class="size-block" id="size-block">
+      <h4 id="size-label">Select size · UK</h4>
       <div class="sizes" id="sizes"></div>
       <div class="size-help">
-        <a href="#" onclick="wa('Hi! I need help with sizing for a pair.');return false;">Not sure? Ask on WhatsApp</a>
-        <span>UK sizing</span>
+        <a href="#" onclick="wa('Hi! I need help with sizing.');return false;">Not sure? Ask on WhatsApp</a>
+        <span id="size-help-note">UK sizing</span>
       </div>
     </div>
 
@@ -283,12 +281,7 @@
 
     <div class="spec-block">
       <h4>Spec highlights</h4>
-      <div class="specs">
-        <div class="spec"><div class="k">Upper</div><div class="v" id="s-upper">Premium leather</div></div>
-        <div class="spec"><div class="k">Sole</div><div class="v" id="s-sole">Rubber · air</div></div>
-        <div class="spec"><div class="k">Box</div><div class="v" id="s-box">Branded · OG</div></div>
-        <div class="spec"><div class="k">Tier</div><div class="v" id="s-grade">Standard</div></div>
-      </div>
+      <div class="specs" id="specs"></div>
     </div>
 
     <div class="policy-block">
@@ -296,17 +289,22 @@
       <div class="policy">
         <div class="policy-item">
           <svg aria-hidden="true"><use href="#truck"/></svg>
-          <div><div class="lab">Shipping</div><div class="val">PAN-India · 2–5 days · discreet packing</div></div>
+          <div><div class="lab">Shipping</div><div class="val">Free · PAN-India 2–5 days · discreet, zero-branding packing</div></div>
         </div>
         <div class="policy-item">
           <svg aria-hidden="true"><use href="#shield"/></svg>
-          <div><div class="lab">Payment</div><div class="val">UPI · Bank transfer · COD (metros)</div></div>
+          <div><div class="lab">QC photos</div><div class="val">Real photos of your piece before dispatch · you confirm first</div></div>
+        </div>
+        <div class="policy-item">
+          <svg aria-hidden="true"><use href="#mail"/></svg>
+          <div><div class="lab">Payment</div><div class="val">UPI · Bank transfer · COD in most metros</div></div>
         </div>
         <div class="policy-item">
           <svg aria-hidden="true"><use href="#rotate"/></svg>
-          <div><div class="lab">Exchange</div><div class="val">Size swap within 7 days · unworn pairs</div></div>
+          <div><div class="lab">Exchange</div><div class="val">Case-by-case · 360° unboxing video required for claims</div></div>
         </div>
       </div>
+      <a class="size-help" style="display:block;margin-top:16px" href="/terms">Read the full House Rules →</a>
     </div>
   </div>
 </main>
@@ -353,8 +351,30 @@
   document.getElementById('p-brand').textContent = p.brand;
   document.getElementById('p-name').textContent = p.name;
   document.getElementById('p-price').textContent = 'Price on enquiry';
-  document.getElementById('s-grade').textContent = p.grade;
   document.title = p.name + ' | The Outfit House';
+
+  // ---- Category-aware sizes + specs ----
+  // Accessories (wallets, watches, sunglasses, bags) are one-size: no size grid.
+  var SIZE_SETS = {
+    sneakers:    { label: 'Select size · UK', note: 'UK sizing',  sizes: ['UK 6','UK 7','UK 8','UK 9','UK 10','UK 11'] },
+    apparel:     { label: 'Select size',      note: 'Unisex fit', sizes: ['S','M','L','XL','XXL'] },
+    bottomwear:  { label: 'Select size',      note: 'Unisex fit', sizes: ['S','M','L','XL','XXL'] },
+    accessories: { label: '',                 note: '',           sizes: [] }
+  };
+  var SPEC_SETS = {
+    sneakers:    [['Upper','Premium leather'], ['Sole','Cushioned rubber'], ['Box','Branded · OG']],
+    apparel:     [['Fabric','Heavyweight cotton'], ['Fit','True to original'], ['Tags','Original tags']],
+    bottomwear:  [['Fabric','Heavyweight'], ['Fit','As original'], ['Hardware','Branded']],
+    accessories: [['Material','Premium build'], ['Finish','Hand-checked'], ['Packaging','Branded · OG']]
+  };
+  var sizeSet = SIZE_SETS[p.cat] || SIZE_SETS.sneakers;
+  var specSet = SPEC_SETS[p.cat] || SPEC_SETS.sneakers;
+
+  // Build spec highlights (category rows + the tier)
+  document.getElementById('specs').innerHTML =
+    specSet.concat([['Tier', p.grade]]).map(function(row) {
+      return '<div class="spec"><div class="k">' + row[0] + '</div><div class="v">' + row[1] + '</div></div>';
+    }).join('');
 
   // SEO — update dynamic meta + inject Product schema
   document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' tier. Real photos and price shared on WhatsApp before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
@@ -419,8 +439,8 @@
   });
   document.head.appendChild(ldScript);
 
-  // Gallery — reuse the single image 4x as placeholders
-  const images = [p.img, p.img, p.img, p.img];
+  // Gallery — one real image per product (root-relative so it loads on /product/:slug URLs)
+  const images = [('/' + p.img)];
   const grade = document.getElementById('gal-grade');
   grade.textContent = p.grade;
   grade.className = 'gal-grade ' + gradeClass(p.grade);
@@ -428,6 +448,14 @@
   const dotsEl = document.getElementById('dots');
   const galImg = document.getElementById('gal-img');
   let idx = 0;
+
+  // Single image: hide the thumbnail strip, arrows and dots entirely
+  if (images.length < 2) {
+    thumbsEl.style.display = 'none';
+    dotsEl.style.display = 'none';
+    var navEl = document.querySelector('.gal-nav');
+    if (navEl) navEl.style.display = 'none';
+  }
 
   // Build thumbs + dots once; only swap active class on change
   thumbsEl.innerHTML = images.map((src, i) =>
@@ -458,22 +486,27 @@
     if (Math.abs(dx) > 40) gal(dx < 0 ? 1 : -1);
   });
 
-  // Sizes
-  const UK = [6,7,8,9,10,11];
-  const OOS = new Set([6, 11]); // random placeholder
+  // Sizes — category-driven; accessories are one-size so the block is removed.
   let selSize = null;
   const sizesEl = document.getElementById('sizes');
-  function renderSizes() {
-    sizesEl.innerHTML = UK.map(s =>
-      `<button class="size ${OOS.has(s)?'oos':''} ${selSize===s?'sel':''}" ${OOS.has(s)?'aria-disabled="true"':''} aria-pressed="${selSize===s}" onclick="selectSize(${s})">UK ${s}</button>`
-    ).join('');
+  if (!sizeSet.sizes.length) {
+    document.getElementById('size-block').style.display = 'none';
+  } else {
+    document.getElementById('size-label').textContent = sizeSet.label;
+    document.getElementById('size-help-note').textContent = sizeSet.note;
+    function renderSizes() {
+      sizesEl.innerHTML = sizeSet.sizes.map(s =>
+        `<button class="size ${selSize===s?'sel':''}" aria-pressed="${selSize===s}" onclick="selectSize('${s}')">${s}</button>`
+      ).join('');
+    }
+    window.selectSize = function(s) { selSize = s; renderSizes(); };
+    renderSizes();
   }
-  window.selectSize = function(s) { if (OOS.has(s)) return; selSize = s; renderSizes(); };
-  renderSizes();
 
   window.enquire = function() {
-    const sz = selSize ? `size UK ${selSize}` : 'available sizes';
-    wa(`Hi! I want to enquire about ${p.name} (${p.grade}), ${sz}. Could you share the price and real photos?`);
+    var parts = ['Hi! I want to enquire about ' + p.name + ' (' + p.grade + ')'];
+    if (sizeSet.sizes.length) parts.push(selSize ? 'size ' + selSize : 'available sizes');
+    wa(parts.join(', ') + '. Could you share the price and real photos?');
   };
 
   // Related = other products from same category

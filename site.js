@@ -128,6 +128,15 @@ window.PRODUCTS = [
   { slug:'rayban-aviator',     cat:'accessories', brand:'Ray-Ban',        name:'Aviator Sunglasses',       grade:'Standard', img:'assets/Accessories/rayban-aviator.webp' },
   { slug:'double-buckle-belt', cat:'accessories', brand:'TOH',            name:'Double-Buckle Leather Belt',grade:'Standard',img:'assets/Accessories/double-buckle-belt.webp' },
   { slug:'newera-yankees-cap', cat:'accessories', brand:'New Era',        name:'59FIFTY Yankees Cap',      grade:'Standard', img:'assets/Accessories/newera-yankees-cap.webp' },
+  { slug:'lv-multiple-wallet', cat:'accessories', brand:'Louis Vuitton',  name:'Multiple Wallet',          grade:'Vault',    img:'assets/Accessories/lv-multiple-wallet.webp' },
+  { slug:'gucci-marmont-cardholder',cat:'accessories',brand:'Gucci',      name:'GG Marmont Card Holder',   grade:'Vault',    img:'assets/Accessories/gucci-marmont-cardholder.webp' },
+  { slug:'montblanc-wallet',   cat:'accessories', brand:'Montblanc',      name:'Meisterstück Wallet',      grade:'Standard', img:'assets/Accessories/montblanc-wallet.webp' },
+  { slug:'toh-bifold-wallet',  cat:'accessories', brand:'TOH',            name:'Bifold Leather Wallet',    grade:'Entry',    img:'assets/Accessories/toh-bifold-wallet.webp' },
+  { slug:'armani-exchange-watch',cat:'accessories',brand:'Armani Exchange',name:'Chronograph Watch',       grade:'Standard', img:'assets/Accessories/armani-exchange-watch.webp' },
+  { slug:'gshock-ga2100',      cat:'accessories', brand:'Casio',          name:'G-Shock GA-2100',          grade:'Standard', img:'assets/Accessories/gshock-ga2100.webp' },
+  { slug:'rolex-datejust',     cat:'accessories', brand:'Rolex',          name:'Datejust',                 grade:'Vault',    img:'assets/Accessories/rolex-datejust.webp' },
+  { slug:'carhartt-sling',     cat:'accessories', brand:'Carhartt WIP',   name:'Essentials Sling Bag',     grade:'Standard', img:'assets/Accessories/carhartt-sling.webp' },
+  { slug:'toh-beanie',         cat:'accessories', brand:'TOH',            name:'Ribbed Beanie',            grade:'Entry',    img:'assets/Accessories/toh-beanie.webp' },
 ];
 
 // Render product card markup (shared)
@@ -138,7 +147,7 @@ window.renderProductCard = function(p) {
   card.innerHTML = `
     <div class="pc-img">
       <span class="pc-grade ${gradeClass(p.grade)}">${p.grade}</span>
-      <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='assets/placeholder.svg'"/>
+      <img src="/${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     </div>
     <div class="pc-body">
       <span class="pc-brand">${p.brand}</span>
