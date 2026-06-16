@@ -124,6 +124,8 @@ window.PRODUCTS = [
   { slug:'travis-aj1-brown', cat:'sneakers', stock:'in', brand:'Low-Top Sneaker', name:'Velvet Brown', grade:'Vault', img:'assets/Sneakers/travis-aj1-brown.webp' },
   { slug:'puma-profoam', cat:'sneakers', stock:'in', brand:'Performance Runner', name:'White Orange', grade:'Standard', img:'assets/Sneakers/puma-profoam.webp' },
   { slug:'skechers-aero-burst', cat:'sneakers', stock:'in', brand:'Performance Runner', name:'Rainbow Sole', grade:'Standard', img:'assets/Sneakers/skechers-aero-burst.webp' },
+  { slug:'adidas-samba-grey', cat:'sneakers', stock:'in', brand:'Terrace Sneaker', name:'Grey', grade:'Standard', img:'assets/Sneakers/adidas-samba-grey.webp' },
+  { slug:'nike-cortez-white', cat:'sneakers', brand:'Track Runner', name:'Classic White', grade:'Entry', img:'assets/Sneakers/nike-cortez-white.webp' },
   // ---------- Apparel ----------
   { slug:'tho-box-tee', cat:'apparel', brand:'TOH', name:'Crest Tee', grade:'Entry', img:'assets/Apparel/Box Logo Tee.webp' },
   { slug:'essentials-hoodie', cat:'apparel', brand:'Heavyweight Hoodie', name:'Oatmeal', grade:'Standard', img:'assets/Apparel/Essentials Heavyweight Hoodie.webp' },
