@@ -9,18 +9,18 @@
   var s = new URLSearchParams(location.search);
   var slug = s.get('slug') || location.pathname.replace(/\/+$/, '').split('/').pop();
   var M = {
-    'aj1-mid-panda':      ['AJ1 Mid · Panda',        'Air Jordan',  'Standard'],
-    'nb-530-sea-salt':    ['530 · Cream Sea Salt',    'New Balance', 'Vault'],
-    'aj1-high-bred-toe':  ['AJ1 High · Bred Toe',    'Air Jordan',  'Standard'],
-    'nb-550-white-green': ['550 · White Green',       'New Balance', 'Standard'],
-    'aj1-low-panda':      ['AJ1 Low · Panda',         'Air Jordan',  'Entry'],
-    'nb-530-stone':       ['530 · Stone Pink',        'New Balance', 'Vault'],
-    'aj1-mid-shadow':     ['AJ1 Mid · Shadow',        'Air Jordan',  'Entry'],
-    'nb-2002r':           ['2002R · Protection Pack', 'New Balance', 'Vault'],
-    'tho-box-tee':        ['Box Logo Tee',            'TOH',         'Entry'],
-    'essentials-hoodie':  ['Heavyweight Hoodie',      'Essentials',  'Standard'],
-    'sp5der-hoodie':      ['Web Hoodie · Pink',       'Sp5der',      'Vault'],
-    'corteiz-overshirt':  ['Alcatraz Overshirt',      'Corteiz',     'Standard']
+    'aj1-mid-panda':      ['Panda',           'Mid-Top Sneaker',    'Standard'],
+    'nb-530-sea-salt':    ['Cream Sea Salt',  'Retro Runner',       'Vault'],
+    'aj1-high-bred-toe':  ['Bred Toe',        'High-Top Sneaker',   'Standard'],
+    'nb-550-white-green': ['White Green',      'Court Sneaker',      'Standard'],
+    'aj1-low-panda':      ['Black & White',   'Low-Top Sneaker',    'Entry'],
+    'nb-530-stone':       ['Stone Pink',      'Retro Runner',       'Vault'],
+    'aj1-mid-shadow':     ['Shadow Grey',     'Mid-Top Sneaker',    'Entry'],
+    'nb-2002r':           ['Protection Grey', 'Chunky Runner',      'Vault'],
+    'tho-box-tee':        ['Crest Tee',       'TOH',                'Entry'],
+    'essentials-hoodie':  ['Oatmeal',         'Heavyweight Hoodie', 'Standard'],
+    'sp5der-hoodie':      ['Pink Web',        'Graphic Hoodie',     'Vault'],
+    'corteiz-overshirt':  ['Washed Black',    'Overshirt',          'Standard']
   };
   var d = M[slug];
   if (!d) return;
@@ -255,7 +255,7 @@
   <!-- INFO -->
   <div class="info">
     <div>
-      <span class="brandtag" id="p-brand">Air Jordan</span>
+      <span class="brandtag" id="p-brand">The Outfit House</span>
       <h1 id="p-name">AJ1 Mid · Panda</h1>
     </div>
     <div class="price-row">
@@ -398,7 +398,7 @@
         "description": p.brand + ' ' + p.name + ' · ' + p.grade + ' grade at The Outfit House, New Delhi. Ships PAN-India. Real QC photos before dispatch.',
         "image": ['https://theoutfithouse.in/' + p.img],
         "sku": p.slug,
-        "brand": { "@type": "Brand", "name": p.brand },
+        "brand": { "@type": "Brand", "name": "The Outfit House" },
         "itemCondition": "https://schema.org/NewCondition",
         "offers": {
           "@type": "Offer",
