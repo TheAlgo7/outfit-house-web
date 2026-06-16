@@ -129,6 +129,15 @@
     font-family: var(--font-body); font-size: 13px; line-height: 1.5;
     color: var(--fg-muted); letter-spacing: 0.01em; margin: 0;
   }
+  .pdp-stock {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase; color: #4caf6a;
+  }
+  .pdp-stock::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: #4caf6a; box-shadow: 0 0 0 3px rgba(76,175,106,0.18); flex-shrink: 0;
+  }
 
   /* Size */
   .size-block h4, .spec-block h4, .policy-block h4 {
@@ -260,6 +269,7 @@
     </div>
     <div class="price-row">
       <span class="price" id="p-price">Price on enquiry</span>
+      <span class="pdp-stock" id="p-stock" hidden>In stock now · ready to ship</span>
       <span class="price-note">Best price shared on WhatsApp · we run regular launch offers</span>
     </div>
 
@@ -375,6 +385,9 @@
     specSet.concat([['Tier', p.grade]]).map(function(row) {
       return '<div class="spec"><div class="k">' + row[0] + '</div><div class="v">' + row[1] + '</div></div>';
     }).join('');
+
+  // In-stock items (physically held in store) get a positive availability badge
+  if (p.stock === 'in') { var stEl = document.getElementById('p-stock'); if (stEl) stEl.hidden = false; }
 
   // SEO — update dynamic meta + inject Product schema
   document.querySelector('meta[name="description"]').content = p.name + ' · ' + p.grade + ' tier. Real photos and price shared on WhatsApp before dispatch. Ships PAN-India from The Outfit House, New Delhi.';

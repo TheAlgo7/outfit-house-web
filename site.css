@@ -262,6 +262,11 @@ header.nav {
 .pc-price { font-family: var(--font-heading); font-weight: 700;
   color: var(--fg); margin-top: 8px; font-size: 15px; }
 .pc-price s { color: var(--fg-subtle); font-weight: 400; margin-left: 8px; font-size: 13px; }
+.pc-stock { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px;
+  font-family: var(--font-heading); font-size: 10px; font-weight: 700;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase; color: #4caf6a; }
+.pc-stock::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: #4caf6a; box-shadow: 0 0 0 3px rgba(76,175,106,0.18); flex-shrink: 0; }
 .pc-cta {
   margin-top: 18px; display: inline-flex; align-items: center; justify-content: center;
   gap: 8px; background: transparent; color: var(--fg);

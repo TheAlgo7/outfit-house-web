@@ -75,25 +75,25 @@ window.PRODUCTS = [
   // ---------- Sneakers ----------
   { slug:'aj1-mid-panda', cat:'sneakers', brand:'Mid-Top Sneaker', name:'Panda', grade:'Standard', img:'assets/Sneakers/AJ1 Mid Panda (1).webp' },
   { slug:'nb-530-sea-salt', cat:'sneakers', brand:'Retro Runner', name:'Cream Sea Salt', grade:'Vault', img:'assets/Sneakers/NB 530 Cream Sea Salt.webp' },
-  { slug:'aj1-high-bred-toe', cat:'sneakers', brand:'High-Top Sneaker', name:'Bred Toe', grade:'Standard', img:'assets/Sneakers/AJ1 High Bred Toe.webp' },
+  { slug:'aj1-high-bred-toe', cat:'sneakers', stock:'in', brand:'High-Top Sneaker', name:'Bred Toe', grade:'Standard', img:'assets/Sneakers/AJ1 High Bred Toe.webp' },
   { slug:'nb-550-white-green', cat:'sneakers', brand:'Court Sneaker', name:'White Green', grade:'Standard', img:'assets/Sneakers/NB 550 White Green.webp' },
-  { slug:'aj1-low-panda', cat:'sneakers', brand:'Low-Top Sneaker', name:'Black & White', grade:'Entry', img:'assets/Sneakers/AJ1 Low Panda.webp' },
+  { slug:'aj1-low-panda', cat:'sneakers', stock:'in', brand:'Low-Top Sneaker', name:'Black & White', grade:'Entry', img:'assets/Sneakers/AJ1 Low Panda.webp' },
   { slug:'nb-530-stone', cat:'sneakers', brand:'Retro Runner', name:'Stone Pink', grade:'Vault', img:'assets/Sneakers/NB 530 Stone Pink.webp' },
   { slug:'aj1-mid-shadow', cat:'sneakers', brand:'Mid-Top Sneaker', name:'Shadow Grey', grade:'Entry', img:'assets/Sneakers/AJ1 Mid Shadow.webp' },
   { slug:'nb-2002r', cat:'sneakers', brand:'Chunky Runner', name:'Protection Grey', grade:'Vault', img:'assets/Sneakers/NB 2002R Protection Pack.webp' },
   { slug:'nike-dunk-low-panda', cat:'sneakers', brand:'Skate Low', name:'Panda', grade:'Standard', img:'assets/Sneakers/nike-dunk-low-panda.webp' },
-  { slug:'nike-af1-white', cat:'sneakers', brand:'Court Sneaker', name:'Triple White', grade:'Entry', img:'assets/Sneakers/nike-af1-white.webp' },
+  { slug:'nike-af1-white', cat:'sneakers', stock:'in', brand:'Court Sneaker', name:'Triple White', grade:'Entry', img:'assets/Sneakers/nike-af1-white.webp' },
   { slug:'yeezy-350-zebra', cat:'sneakers', brand:'Knit Runner', name:'Zebra', grade:'Vault', img:'assets/Sneakers/yeezy-350-zebra.webp' },
   { slug:'yeezy-slide-bone', cat:'sneakers', brand:'Slide', name:'Bone', grade:'Standard', img:'assets/Sneakers/yeezy-slide-bone.webp' },
   { slug:'aj4-bred', cat:'sneakers', brand:'Mid-Top Sneaker', name:'Bred Reimagined', grade:'Vault', img:'assets/Sneakers/aj4-bred.webp' },
-  { slug:'travis-aj1-mocha', cat:'sneakers', brand:'Low-Top Sneaker', name:'Mocha', grade:'Vault', img:'assets/Sneakers/travis-aj1-mocha.webp' },
+  { slug:'travis-aj1-mocha', cat:'sneakers', stock:'in', brand:'Low-Top Sneaker', name:'Mocha', grade:'Vault', img:'assets/Sneakers/travis-aj1-mocha.webp' },
   { slug:'nike-dunk-unc', cat:'sneakers', brand:'Skate Low', name:'University Blue', grade:'Standard', img:'assets/Sneakers/nike-dunk-unc.webp' },
   { slug:'nb-9060-grey', cat:'sneakers', brand:'Chunky Runner', name:'Rain Cloud', grade:'Vault', img:'assets/Sneakers/nb-9060-grey.webp' },
   { slug:'nike-am90-infrared', cat:'sneakers', brand:'Retro Runner', name:'Infrared', grade:'Standard', img:'assets/Sneakers/nike-am90-infrared.webp' },
-  { slug:'adidas-samba-og', cat:'sneakers', brand:'Terrace Sneaker', name:'White Black', grade:'Standard', img:'assets/Sneakers/adidas-samba-og.webp' },
+  { slug:'adidas-samba-og', cat:'sneakers', stock:'in', brand:'Terrace Sneaker', name:'White Black', grade:'Standard', img:'assets/Sneakers/adidas-samba-og.webp' },
   { slug:'adidas-campus-00s', cat:'sneakers', brand:'Suede Low', name:'Grey', grade:'Standard', img:'assets/Sneakers/adidas-campus-00s.webp' },
   { slug:'asics-gel-1130', cat:'sneakers', brand:'Chunky Runner', name:'Cream', grade:'Standard', img:'assets/Sneakers/asics-gel-1130.webp' },
-  { slug:'onitsuka-mexico66', cat:'sneakers', brand:'Retro Trainer', name:'White Blue', grade:'Entry', img:'assets/Sneakers/onitsuka-mexico66.webp' },
+  { slug:'onitsuka-mexico66', cat:'sneakers', stock:'in', brand:'Retro Trainer', name:'White Blue', grade:'Entry', img:'assets/Sneakers/onitsuka-mexico66.webp' },
   { slug:'crocs-classic-clog', cat:'sneakers', brand:'Clog', name:'Black', grade:'Entry', img:'assets/Sneakers/crocs-classic-clog.webp' },
   { slug:'aj1-high-chicago', cat:'sneakers', brand:'High-Top Sneaker', name:'Chicago', grade:'Vault', img:'assets/Sneakers/aj1-high-chicago.webp' },
   { slug:'aj11-concord', cat:'sneakers', brand:'Patent High-Top', name:'Concord', grade:'Vault', img:'assets/Sneakers/aj11-concord.webp' },
@@ -102,7 +102,7 @@ window.PRODUCTS = [
   { slug:'yeezy-700-wave-runner', cat:'sneakers', brand:'Chunky Runner', name:'Wave Runner', grade:'Vault', img:'assets/Sneakers/yeezy-700-wave-runner.webp' },
   { slug:'nike-am97-silver', cat:'sneakers', brand:'Retro Runner', name:'Silver Bullet', grade:'Standard', img:'assets/Sneakers/nike-am97-silver.webp' },
   { slug:'salomon-xt6-phantom', cat:'sneakers', brand:'Trail Runner', name:'Phantom', grade:'Standard', img:'assets/Sneakers/salomon-xt6-phantom.webp' },
-  { slug:'puma-speedcat-black', cat:'sneakers', brand:'Racing Flat', name:'OG Black', grade:'Standard', img:'assets/Sneakers/puma-speedcat-black.webp' },
+  { slug:'puma-speedcat-black', cat:'sneakers', stock:'in', brand:'Racing Flat', name:'OG Black', grade:'Standard', img:'assets/Sneakers/puma-speedcat-black.webp' },
   { slug:'aj3-white-cement', cat:'sneakers', brand:'High-Top Sneaker', name:'White Cement', grade:'Vault', img:'assets/Sneakers/aj3-white-cement.webp' },
   { slug:'aj4-military-black', cat:'sneakers', brand:'Mid-Top Sneaker', name:'Military Black', grade:'Vault', img:'assets/Sneakers/aj4-military-black.webp' },
   { slug:'travis-aj1-olive', cat:'sneakers', brand:'Low-Top Sneaker', name:'Reverse Olive', grade:'Vault', img:'assets/Sneakers/travis-aj1-olive.webp' },
@@ -203,6 +203,7 @@ window.renderProductCard = function(p) {
     <div class="pc-body">
       <span class="pc-brand">${p.brand}</span>
       <a class="pc-name" href="/product/${p.slug}">${p.name}</a>
+      ${p.stock === 'in' ? '<span class="pc-stock">In stock now</span>' : ''}
       <span class="pc-price">Price on enquiry</span>
       <button class="pc-cta" data-name="${p.name}" data-grade="${p.grade}">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
