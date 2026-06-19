@@ -1,0 +1,14 @@
+# Dev / docs / scratch — never deploy these (they can contain brand names,
+# supplier notes, or build internals). The site itself is the static files.
+*.md
+*.bak
+build.js
+redirects.generated.json
+sync-newitems.sh
+.env
+.env.*
+.gemini/
+chats/
+_*.png
+_*.jpeg
+assets/test-video.mp4

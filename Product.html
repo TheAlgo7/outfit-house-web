@@ -5,28 +5,14 @@
 <title>Product | The Outfit House</title>
 <meta name="description" content="Shop premium streetwear and sneakers at The Outfit House | Entry, Standard and Vault tiers. Real photos before dispatch. Ships PAN-India."/>
 <script>
+/* Fallback template only. Every real product is pre-rendered to a static
+   /product/<slug>/index.html by build.js; this runs only if an un-built slug
+   is requested. Inject the canonical synchronously; title/meta/schema come
+   from the catalog-driven render below. */
 (function() {
   var s = new URLSearchParams(location.search);
   var slug = s.get('slug') || location.pathname.replace(/\/+$/, '').split('/').pop();
-  var M = {
-    'aj1-mid-panda':      ['Panda',           'Mid-Top Sneaker',    'Standard'],
-    'nb-530-sea-salt':    ['Cream Sea Salt',  'Retro Runner',       'Vault'],
-    'aj1-high-bred-toe':  ['Bred Toe',        'High-Top Sneaker',   'Standard'],
-    'nb-550-white-green': ['White Green',      'Court Sneaker',      'Standard'],
-    'aj1-low-panda':      ['Black & White',   'Low-Top Sneaker',    'Entry'],
-    'nb-530-stone':       ['Stone Pink',      'Retro Runner',       'Vault'],
-    'aj1-mid-shadow':     ['Shadow Grey',     'Mid-Top Sneaker',    'Entry'],
-    'nb-2002r':           ['Protection Grey', 'Chunky Runner',      'Vault'],
-    'tho-box-tee':        ['Crest Tee',       'TOH',                'Entry'],
-    'essentials-hoodie':  ['Oatmeal',         'Heavyweight Hoodie', 'Standard'],
-    'sp5der-hoodie':      ['Pink Web',        'Graphic Hoodie',     'Vault'],
-    'corteiz-overshirt':  ['Washed Black',    'Overshirt',          'Standard']
-  };
-  var d = M[slug];
-  if (!d) return;
-  document.title = d[0] + ' | The Outfit House';
-  var desc = document.querySelector('meta[name="description"]');
-  if (desc) desc.content = d[1] + ' ' + d[0] + ' · ' + d[2] + ' tier. Real photos and price shared on WhatsApp before dispatch. Ships PAN-India from The Outfit House, New Delhi.';
+  if (!slug) return;
   var c = document.createElement('link');
   c.rel = 'canonical';
   c.href = 'https://theoutfithouse.in/product/' + slug;
@@ -41,13 +27,15 @@
 <meta property="og:title" content="Product | The Outfit House"/>
 <meta property="og:description" content="Premium grade sneakers and streetwear at The Outfit House."/>
 <meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2"/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/></noscript>
 <link rel="stylesheet" href="/colors_and_type.css"/>
 <link rel="stylesheet" href="/site.css"/>
 <style>
@@ -132,11 +120,11 @@
   .pdp-stock {
     display: inline-flex; align-items: center; gap: 7px;
     font-family: var(--font-heading); font-size: 11px; font-weight: 700;
-    letter-spacing: var(--tracking-wide); text-transform: uppercase; color: #4caf6a;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--stock);
   }
   .pdp-stock::before {
     content: ""; width: 7px; height: 7px; border-radius: 50%;
-    background: #4caf6a; box-shadow: 0 0 0 3px rgba(76,175,106,0.18); flex-shrink: 0;
+    background: var(--stock); box-shadow: 0 0 0 3px var(--stock-ring); flex-shrink: 0;
   }
 
   /* Size */
@@ -265,7 +253,7 @@
   <div class="info">
     <div>
       <span class="brandtag" id="p-brand">The Outfit House</span>
-      <h1 id="p-name">AJ1 Mid · Panda</h1>
+      <h1 id="p-name">The Outfit House</h1>
     </div>
     <div class="price-row">
       <span class="price" id="p-price">Price on enquiry</span>

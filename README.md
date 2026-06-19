@@ -277,3 +277,45 @@ ui_kits/
 prices, and (c) 4–6 lifestyle / studio reference photos so we can lock the
 imagery rules. With that, I can promote this from "well-grounded starter" to
 "production-ready system" in one pass.
+
+---
+
+## 7. Build & catalog generation
+
+The catalog is **statically generated** so search engines and AI crawlers (which
+don't run JavaScript) can read every product. `site.js` is the single source of
+truth; `build.js` turns it into static pages.
+
+**Source of truth:** the `PRODUCTS` array in `site.js`
+(`{ slug, cat, brand, name, grade, img, stock? }`). `brand` is the *silhouette*
+(e.g. "Mid-Top Sneaker"), `name` is the *colour* (e.g. "Panda"). No real brand
+or model names, ever — see the Company Brief, section 3.
+
+**Run the build:**
+
+```bash
+npm run generate      # = node build.js
+```
+
+`build.js`:
+
+1. Derives a **brand-free slug + image path** for each product
+   (`silhouette + colour`), renames any still-branded image file, and rewrites
+   the `PRODUCTS` block in `site.js` so the data stays clean. Idempotent.
+2. Pre-renders `/product/<slug>/index.html` and `/<cat>/index.html` with baked-in
+   title, meta, canonical, OG, body copy, and JSON-LD (`Product` + `BreadcrumbList`,
+   `ItemList`). Static header/footer/SVG-sprite are inlined.
+3. Regenerates `sitemap.xml` (all products + categories + core pages).
+4. Writes `redirects.generated.json` (old→new slug 301s, merged into `vercel.json`).
+
+**Routing:** Vercel serves the committed `/product/<slug>/` and `/<cat>/` directories
+directly; `Product.html` / `Category.html` stay as JS fallbacks for any un-built slug
+(rewrites in `vercel.json`). `Guide.html` → `/guide`.
+
+**Adding a product:** add one line to `PRODUCTS` in `site.js`, drop the image in
+`Desktop/New-items` (mapped in `sync-newitems.sh`) or `assets/<Cat>/`, then run
+`sync-newitems.sh` (it calls `build.js` at the end) — or just `npm run generate`.
+Commit the generated `/product`, `/<cat>`, and `sitemap.xml`.
+
+**Not deployed** (see `.vercelignore` + `robots.txt`): `*.md`, `*.bak`, `build.js`,
+`sync-newitems.sh`, `redirects.generated.json`, `.env`.

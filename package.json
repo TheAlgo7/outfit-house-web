@@ -1,0 +1,9 @@
+{
+  "name": "the-outfit-house-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Outfit House — static, WhatsApp-first streetwear storefront. Catalog pages + sitemap are generated from site.js by build.js.",
+  "scripts": {
+    "generate": "node build.js"
+  }
+}

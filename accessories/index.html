@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Finishing Touches | The Outfit House</title>
+<meta name="description" content="Finishing Touches: shop premium accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch, ships PAN-India."/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://theoutfithouse.in/accessories"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-black.png"/>
+<link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-black.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://theoutfithouse.in/accessories"/>
+<meta property="og:title" content="Finishing Touches | The Outfit House"/>
+<meta property="og:description" content="Finishing Touches: shop premium accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch, ships PAN-India."/>
+<meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2"/>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2"/>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/></noscript>
+<link rel="stylesheet" href="/colors_and_type.css"/>
+<link rel="stylesheet" href="/site.css"/>
+<style>
+  .cat-hero {
+    padding: 80px 32px 56px; max-width: 1280px; margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .cat-hero .eyebrow {
+    display: inline-block;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase;
+    color: var(--accent); margin-bottom: 24px;
+  }
+  .cat-hero h1 {
+    font-family: var(--font-display); font-size: clamp(56px, 9vw, 132px);
+    line-height: 0.9; margin: 0; text-transform: uppercase; letter-spacing: -0.005em;
+  }
+  .cat-hero p { max-width: 560px; color: var(--fg-muted); font-size: 16px;
+    line-height: 1.6; margin: 24px 0 0; }
+
+  .filter-bar {
+    position: sticky; top: 68px; z-index: 40;
+    background: var(--surface-dropdown);
+    border-bottom: 1px solid var(--border);
+  }
+  .tabs {
+    display: flex; max-width: 1280px; margin: 0 auto; padding: 0 32px;
+    gap: 0; overflow-x: auto; scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 18px 12px; margin-right: 8px;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 700;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--fg-muted); cursor: pointer; background: transparent; border: none;
+    border-bottom: 2px solid transparent; white-space: nowrap;
+    transition: color var(--dur-fast); min-width: 44px;
+  }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab:hover { color: var(--fg); }
+  .tab .count {
+    display: inline-block; margin-left: 6px;
+    font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle);
+  }
+  .meta-row {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1280px; margin: 0 auto; padding: 18px 32px;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .meta-row .count b { color: var(--fg); }
+  .sort-drop { position: relative; }
+  .sort-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--fg);
+    border: 1px solid var(--border-strong); padding: 8px 12px;
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: var(--tracking-wide);
+    cursor: pointer; white-space: nowrap;
+    transition: border-color var(--dur-fast), color var(--dur-fast);
+  }
+  .sort-btn:hover { border-color: var(--fg); }
+  .sort-btn svg { width: 10px; height: 10px; flex-shrink: 0; transition: transform var(--dur-base) var(--ease-out); }
+  .sort-drop.open .sort-btn svg { transform: rotate(180deg); }
+  .sort-menu {
+    position: absolute; right: 0; top: calc(100% + 4px);
+    background: var(--surface-dropdown); border: 1px solid var(--border);
+    min-width: 190px; list-style: none; padding: 0; margin: 0; z-index: 60;
+    opacity: 0; pointer-events: none; transform: translateY(-6px);
+    transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+  }
+  .sort-drop.open .sort-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .sort-opt {
+    padding: 13px 16px; border-bottom: 1px solid var(--border);
+    font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: var(--tracking-wide);
+    color: var(--fg-muted); cursor: pointer;
+    transition: color var(--dur-fast), background var(--dur-fast);
+  }
+  .sort-opt:last-child { border-bottom: none; }
+  .sort-opt:hover { color: var(--fg); background: var(--surface-hover); }
+  .sort-opt.active { color: var(--accent); }
+
+  .grid-wrap { padding: 56px 0 96px; max-width: 1280px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
+  .empty {
+    padding: 120px 32px; text-align: center; color: var(--fg-muted);
+    font-family: var(--font-heading); letter-spacing: var(--tracking-wide); text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .cat-hero { padding: 56px 20px 40px; }
+    .filter-bar { top: 60px; }
+    .tabs { padding: 0 20px; }
+    .meta-row { padding: 14px 20px; }
+    .grid-wrap { padding: 32px 20px 64px; }
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div id="tho-sprite" style="display:none">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol id="wa-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12 3.7 7.4 7.4 3.7 12 3.7s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/>
+      </symbol>
+      <symbol id="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+      </symbol>
+      <symbol id="fb-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/>
+      </symbol>
+      <symbol id="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="4" y1="7"  x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+      </symbol>
+      <symbol id="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+      </symbol>
+      <symbol id="arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </symbol>
+      <symbol id="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </symbol>
+      <symbol id="truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+      </symbol>
+      <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+      </symbol>
+      <symbol id="rotate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1 4 1 10 7 10"/><path d="M3.5 15A9 9 0 1 0 6 5.3L1 10"/>
+      </symbol>
+      <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </symbol>
+      <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+      </symbol>
+      <symbol id="chevron-down" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1,1 5,5 9,1"/>
+      </symbol>
+    </svg></div>
+<div id="header-mount">
+  <header class="nav">
+    <div class="nav-inner">
+      <button class="nav-toggle" aria-label="Open menu" onclick="openMobNav()">
+        <svg><use href="#menu-icon"/></svg>
+      </button>
+      <a class="brand" href="/">
+        <img src="/assets/logo-crown.webp" alt="The Outfit House crown logo"/>
+        <span class="name">The Outfit House</span>
+      </a>
+      <nav class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn active" type="button"
+            aria-haspopup="menu" aria-expanded="false">
+            Shop <svg><use href="#chevron-down"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/sneakers" role="menuitem" class=""><span>Sneakers</span><span class="num">01</span></a><a href="/apparel" role="menuitem" class=""><span>Apparel</span><span class="num">02</span></a><a href="/bottomwear" role="menuitem" class=""><span>Bottomwear</span><span class="num">03</span></a><a href="/accessories" role="menuitem" class="active" aria-current="page"><span>Accessories</span><span class="num">04</span></a>
+          </div>
+        </div>
+        <a href="/" class="">Home</a><a href="/about" class="">About</a><a href="/spec-sheet" class="">Spec Sheet</a><a href="/guide" class="">Guide</a><a href="/contact" class="">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="icon-link" href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg><use href="#ig-icon"/></svg>
+        </a>
+        <button class="nav-wa" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
+          <svg><use href="#wa-icon"/></svg> <span class="lbl">Enquire</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mob-backdrop" class="mob-backdrop" onclick="closeMobNav()" aria-hidden="true"></div>
+
+  <div id="mob-nav" class="mob-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mob-nav-head">
+      <span class="mob-nav-label">Navigation</span>
+      <button class="mob-close" onclick="closeMobNav()" aria-label="Close menu">
+        <svg><use href="#x-icon"/></svg>
+      </button>
+    </div>
+    <nav class="mob-nav-links">
+      
+      <a href="/sneakers">
+        Sneakers
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="/apparel">
+        Apparel
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="/bottomwear">
+        Bottomwear
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="/accessories">
+        Accessories
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      
+      <a href="/">
+        Home
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="/about">
+        About
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="/spec-sheet">
+        Spec Sheet
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="/guide">
+        Guide
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="/contact">
+        Contact
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener">
+        Instagram ↗
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61589373328357" target="_blank" rel="noopener">
+        Facebook ↗
+        <svg><use href="#arrow-right"/></svg>
+      </a>
+    </nav>
+    <div class="mob-nav-foot">
+      <button class="btn-wa" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
+        <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+      </button>
+    </div>
+  </div></div>
+
+<main id="main-content">
+<section class="cat-hero">
+  <div class="eyebrow">04 · Accessories</div>
+  <h1>Finishing Touches</h1>
+  <p>Caps, bags, socks, belts. The small stuff that finishes the fit.</p>
+</section>
+
+<div class="filter-bar">
+  <div class="tabs" id="tabs"><button class="tab active" data-tier="all" aria-pressed="true">All<span class="count">26</span></button><button class="tab " data-tier="Entry" aria-pressed="false">Entry<span class="count">5</span></button><button class="tab " data-tier="Standard" aria-pressed="false">Standard<span class="count">13</span></button><button class="tab " data-tier="Vault" aria-pressed="false">Vault<span class="count">8</span></button></div>
+  <div class="meta-row">
+    <div class="count">Showing <b id="count">26</b> pieces</div>
+  </div>
+</div>
+
+<section class="grid-wrap">
+  <div class="products-grid" id="grid"><div class="pc" data-grade="Entry">
+  <div class="pc-img">
+    <span class="pc-grade entry">Entry</span>
+    <img src="/assets/Accessories/toh-crown-tote-cream.webp" alt="Crown Tote · Cream — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">TOH</span>
+    <a class="pc-name" href="/product/toh-crown-tote-cream">Crown Tote · Cream</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Crown Tote · Cream" data-grade="Entry">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/6-panel-cap-navy.webp" alt="6-Panel Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">6-Panel Cap</span>
+    <a class="pc-name" href="/product/6-panel-cap-navy">Navy</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Navy" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Entry">
+  <div class="pc-img">
+    <span class="pc-grade entry">Entry</span>
+    <img src="/assets/Accessories/toh-crew-sock-3-pack.webp" alt="Crew Sock 3-Pack — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">TOH</span>
+    <a class="pc-name" href="/product/toh-crew-sock-3-pack">Crew Sock 3-Pack</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Crew Sock 3-Pack" data-grade="Entry">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/sunglasses-classic-black.webp" alt="Sunglasses, Classic Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Sunglasses</span>
+    <a class="pc-name" href="/product/sunglasses-classic-black">Classic Black</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Classic Black" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/sunglasses-pilot-gold.webp" alt="Sunglasses, Pilot Gold — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Sunglasses</span>
+    <a class="pc-name" href="/product/sunglasses-pilot-gold">Pilot Gold</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Pilot Gold" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/toh-double-buckle-leather-belt.webp" alt="Double-Buckle Leather Belt — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">TOH</span>
+    <a class="pc-name" href="/product/toh-double-buckle-leather-belt">Double-Buckle Leather Belt</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Double-Buckle Leather Belt" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/fitted-cap-navy.webp" alt="Fitted Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Fitted Cap</span>
+    <a class="pc-name" href="/product/fitted-cap-navy">Navy</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Navy" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/premium-wallet-brown-print.webp" alt="Premium Wallet, Brown Print — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Premium Wallet</span>
+    <a class="pc-name" href="/product/premium-wallet-brown-print">Brown Print</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Brown Print" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/card-holder-black-leather.webp" alt="Card Holder, Black Leather — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Card Holder</span>
+    <a class="pc-name" href="/product/card-holder-black-leather">Black Leather</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black Leather" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/premium-wallet-black-leather.webp" alt="Premium Wallet, Black Leather — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Premium Wallet</span>
+    <a class="pc-name" href="/product/premium-wallet-black-leather">Black Leather</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black Leather" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Entry">
+  <div class="pc-img">
+    <span class="pc-grade entry">Entry</span>
+    <img src="/assets/Accessories/toh-bifold-leather-wallet.webp" alt="Bifold Leather Wallet — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">TOH</span>
+    <a class="pc-name" href="/product/toh-bifold-leather-wallet">Bifold Leather Wallet</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Bifold Leather Wallet" data-grade="Entry">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/sports-watch-chronograph-black.webp" alt="Sports Watch, Chronograph Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Sports Watch</span>
+    <a class="pc-name" href="/product/sports-watch-chronograph-black">Chronograph Black</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Chronograph Black" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/sports-watch-black-resin.webp" alt="Sports Watch, Black Resin — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Sports Watch</span>
+    <a class="pc-name" href="/product/sports-watch-black-resin">Black Resin</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black Resin" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/luxury-watch-silver-blue.webp" alt="Luxury Watch, Silver &amp; Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Luxury Watch</span>
+    <a class="pc-name" href="/product/luxury-watch-silver-blue">Silver &amp; Blue</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Silver &amp; Blue" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/crossbody-bag-black.webp" alt="Crossbody Bag, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Crossbody Bag</span>
+    <a class="pc-name" href="/product/crossbody-bag-black">Black</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Entry">
+  <div class="pc-img">
+    <span class="pc-grade entry">Entry</span>
+    <img src="/assets/Accessories/toh-ribbed-beanie.webp" alt="Ribbed Beanie — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">TOH</span>
+    <a class="pc-name" href="/product/toh-ribbed-beanie">Ribbed Beanie</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Ribbed Beanie" data-grade="Entry">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/bucket-hat-black.webp" alt="Bucket Hat, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Bucket Hat</span>
+    <a class="pc-name" href="/product/bucket-hat-black">Black</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/knit-beanie-brown.webp" alt="Knit Beanie, Brown — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Knit Beanie</span>
+    <a class="pc-name" href="/product/knit-beanie-brown">Brown</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Brown" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Entry">
+  <div class="pc-img">
+    <span class="pc-grade entry">Entry</span>
+    <img src="/assets/Accessories/backpack-black.webp" alt="Backpack, Black — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Backpack</span>
+    <a class="pc-name" href="/product/backpack-black">Black</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black" data-grade="Entry">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/duffle-bag-brown-print.webp" alt="Duffle Bag, Brown Print — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Duffle Bag</span>
+    <a class="pc-name" href="/product/duffle-bag-brown-print">Brown Print</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Brown Print" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/luxury-watch-steel-blue.webp" alt="Luxury Watch, Steel Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Luxury Watch</span>
+    <a class="pc-name" href="/product/luxury-watch-steel-blue">Steel Blue</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Steel Blue" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/luxury-watch-gold-steel.webp" alt="Luxury Watch, Gold &amp; Steel — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Luxury Watch</span>
+    <a class="pc-name" href="/product/luxury-watch-gold-steel">Gold &amp; Steel</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Gold &amp; Steel" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/cuban-link-chain-iced-silver.webp" alt="Cuban Link Chain, Iced Silver — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Cuban Link Chain</span>
+    <a class="pc-name" href="/product/cuban-link-chain-iced-silver">Iced Silver</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Iced Silver" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/card-holder-tan-chevron.webp" alt="Card Holder, Tan Chevron — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Card Holder</span>
+    <a class="pc-name" href="/product/card-holder-tan-chevron">Tan Chevron</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Tan Chevron" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Vault">
+  <div class="pc-img">
+    <span class="pc-grade vault">Vault</span>
+    <img src="/assets/Accessories/shoulder-bag-black-nylon.webp" alt="Shoulder Bag, Black Nylon — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Shoulder Bag</span>
+    <a class="pc-name" href="/product/shoulder-bag-black-nylon">Black Nylon</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black Nylon" data-grade="Vault">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div><div class="pc" data-grade="Standard">
+  <div class="pc-img">
+    <span class="pc-grade standard">Standard</span>
+    <img src="/assets/Accessories/sport-sunglasses-black.webp" alt="Sport Sunglasses, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Sport Sunglasses</span>
+    <a class="pc-name" href="/product/sport-sunglasses-black">Black</a>
+    
+    <span class="pc-price">Price on enquiry</span>
+    <button class="pc-cta" data-name="Black" data-grade="Standard">
+      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
+    </button>
+  </div>
+</div></div>
+  <div class="empty" id="empty" style="display:none">No pieces in this tier yet. Check back soon.</div>
+</section>
+</main>
+
+<div id="footer-mount">
+  <footer>
+    <div class="ft">
+      <div>
+        <img src="/assets/logo-text.webp" alt="The Outfit House" width="360" height="261" loading="lazy"/>
+        <p>Sneakers, apparel, accessories and footwear. Hand-checked and shipped from Chhatarpur, New Delhi.</p>
+      </div>
+      <div><h5>Shop</h5><ul>
+        <li><a href="/sneakers">Sneakers</a></li>
+        <li><a href="/apparel">Apparel</a></li>
+        <li><a href="/bottomwear">Bottomwear</a></li>
+        <li><a href="/accessories">Accessories</a></li>
+      </ul></div>
+      <div><h5>Help</h5><ul>
+        <li><a href="/spec-sheet">Spec Sheet</a></li>
+        <li><a href="/guide">Buying Guide</a></li>
+        <li><a href="/terms">Shipping</a></li>
+        <li><a href="/terms">Exchange</a></li>
+      </ul></div>
+      <div><h5>Connect</h5><ul>
+        <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61589373328357" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="mailto:theoutfithouse@outlook.com">Email</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 The Outfit House · New Delhi</span>
+      <span><a href="/terms">Policy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </footer>
+  <button class="wa-fab" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
+    <span class="pulse"></span>
+    <svg><use href="#wa-icon"/></svg>
+  </button></div>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Finishing Touches — The Outfit House","numberOfItems":26,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://theoutfithouse.in/product/toh-crown-tote-cream","name":"Crown Tote · Cream"},{"@type":"ListItem","position":2,"url":"https://theoutfithouse.in/product/6-panel-cap-navy","name":"6-Panel Cap · Navy"},{"@type":"ListItem","position":3,"url":"https://theoutfithouse.in/product/toh-crew-sock-3-pack","name":"Crew Sock 3-Pack"},{"@type":"ListItem","position":4,"url":"https://theoutfithouse.in/product/sunglasses-classic-black","name":"Sunglasses · Classic Black"},{"@type":"ListItem","position":5,"url":"https://theoutfithouse.in/product/sunglasses-pilot-gold","name":"Sunglasses · Pilot Gold"},{"@type":"ListItem","position":6,"url":"https://theoutfithouse.in/product/toh-double-buckle-leather-belt","name":"Double-Buckle Leather Belt"},{"@type":"ListItem","position":7,"url":"https://theoutfithouse.in/product/fitted-cap-navy","name":"Fitted Cap · Navy"},{"@type":"ListItem","position":8,"url":"https://theoutfithouse.in/product/premium-wallet-brown-print","name":"Premium Wallet · Brown Print"},{"@type":"ListItem","position":9,"url":"https://theoutfithouse.in/product/card-holder-black-leather","name":"Card Holder · Black Leather"},{"@type":"ListItem","position":10,"url":"https://theoutfithouse.in/product/premium-wallet-black-leather","name":"Premium Wallet · Black Leather"},{"@type":"ListItem","position":11,"url":"https://theoutfithouse.in/product/toh-bifold-leather-wallet","name":"Bifold Leather Wallet"},{"@type":"ListItem","position":12,"url":"https://theoutfithouse.in/product/sports-watch-chronograph-black","name":"Sports Watch · Chronograph Black"},{"@type":"ListItem","position":13,"url":"https://theoutfithouse.in/product/sports-watch-black-resin","name":"Sports Watch · Black Resin"},{"@type":"ListItem","position":14,"url":"https://theoutfithouse.in/product/luxury-watch-silver-blue","name":"Luxury Watch · Silver & Blue"},{"@type":"ListItem","position":15,"url":"https://theoutfithouse.in/product/crossbody-bag-black","name":"Crossbody Bag · Black"},{"@type":"ListItem","position":16,"url":"https://theoutfithouse.in/product/toh-ribbed-beanie","name":"Ribbed Beanie"},{"@type":"ListItem","position":17,"url":"https://theoutfithouse.in/product/bucket-hat-black","name":"Bucket Hat · Black"},{"@type":"ListItem","position":18,"url":"https://theoutfithouse.in/product/knit-beanie-brown","name":"Knit Beanie · Brown"},{"@type":"ListItem","position":19,"url":"https://theoutfithouse.in/product/backpack-black","name":"Backpack · Black"},{"@type":"ListItem","position":20,"url":"https://theoutfithouse.in/product/duffle-bag-brown-print","name":"Duffle Bag · Brown Print"},{"@type":"ListItem","position":21,"url":"https://theoutfithouse.in/product/luxury-watch-steel-blue","name":"Luxury Watch · Steel Blue"},{"@type":"ListItem","position":22,"url":"https://theoutfithouse.in/product/luxury-watch-gold-steel","name":"Luxury Watch · Gold & Steel"},{"@type":"ListItem","position":23,"url":"https://theoutfithouse.in/product/cuban-link-chain-iced-silver","name":"Cuban Link Chain · Iced Silver"},{"@type":"ListItem","position":24,"url":"https://theoutfithouse.in/product/card-holder-tan-chevron","name":"Card Holder · Tan Chevron"},{"@type":"ListItem","position":25,"url":"https://theoutfithouse.in/product/shoulder-bag-black-nylon","name":"Shoulder Bag · Black Nylon"},{"@type":"ListItem","position":26,"url":"https://theoutfithouse.in/product/sport-sunglasses-black","name":"Sport Sunglasses · Black"}]}</script>
+<script src="/site.js"></script>
+<script>
+  initHeader();
+  (function(){
+    var grid = document.getElementById('grid');
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.pc'));
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs .tab'));
+    function apply(t){
+      var n = 0;
+      cards.forEach(function(c){ var show = (t === 'all' || c.dataset.grade === t); c.style.display = show ? '' : 'none'; if (show) n++; });
+      document.getElementById('count').textContent = n;
+      document.getElementById('empty').style.display = n ? 'none' : 'block';
+    }
+    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); apply(b.dataset.tier); }); });
+    cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes?'); }); });
+  })();
+</script>
+</body>
+</html>

@@ -1,38 +1,795 @@
 {
   "redirects": [
-    { "source": "/Homepage.html",  "destination": "/",           "permanent": true },
-    { "source": "/About.html",     "destination": "/about",      "permanent": true },
-    { "source": "/Contact.html",   "destination": "/contact",    "permanent": true },
-    { "source": "/SpecSheet.html", "destination": "/spec-sheet", "permanent": true },
-    { "source": "/Terms.html",     "destination": "/terms",       "permanent": true },
-    { "source": "/Policy.html",    "destination": "/terms",       "permanent": true },
-    { "source": "/policy",         "destination": "/terms",       "permanent": true },
-    { "source": "/.git",           "destination": "/",           "statusCode": 301 },
-    { "source": "/.git/:path*",    "destination": "/",           "statusCode": 301 }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.theoutfithouse.in"
+        }
+      ],
+      "destination": "https://theoutfithouse.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/build.js",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/redirects.generated.json",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/:file(.*.md)",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/Homepage.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/About.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/Contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/SpecSheet.html",
+      "destination": "/spec-sheet",
+      "permanent": true
+    },
+    {
+      "source": "/Guide.html",
+      "destination": "/guide",
+      "permanent": true
+    },
+    {
+      "source": "/Terms.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/Policy.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/policy",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/.git",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/.git/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/product/aj1-mid-panda",
+      "destination": "/product/mid-top-sneaker-panda",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-530-sea-salt",
+      "destination": "/product/retro-runner-cream-sea-salt",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj1-high-bred-toe",
+      "destination": "/product/high-top-sneaker-bred-toe",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-550-white-green",
+      "destination": "/product/court-sneaker-white-green",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj1-low-panda",
+      "destination": "/product/low-top-sneaker-black-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-530-stone",
+      "destination": "/product/retro-runner-stone-pink",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj1-mid-shadow",
+      "destination": "/product/mid-top-sneaker-shadow-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-2002r",
+      "destination": "/product/chunky-runner-protection-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-dunk-low-panda",
+      "destination": "/product/skate-low-panda",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-af1-white",
+      "destination": "/product/court-sneaker-triple-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/yeezy-350-zebra",
+      "destination": "/product/knit-runner-zebra",
+      "permanent": true
+    },
+    {
+      "source": "/product/yeezy-slide-bone",
+      "destination": "/product/slide-bone",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj4-bred",
+      "destination": "/product/mid-top-sneaker-bred-reimagined",
+      "permanent": true
+    },
+    {
+      "source": "/product/travis-aj1-mocha",
+      "destination": "/product/low-top-sneaker-mocha",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-dunk-unc",
+      "destination": "/product/skate-low-university-blue",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-9060-grey",
+      "destination": "/product/chunky-runner-rain-cloud",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-am90-infrared",
+      "destination": "/product/retro-runner-infrared",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-samba-og",
+      "destination": "/product/terrace-sneaker-white-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-campus-00s",
+      "destination": "/product/suede-low-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/asics-gel-1130",
+      "destination": "/product/chunky-runner-cream",
+      "permanent": true
+    },
+    {
+      "source": "/product/onitsuka-mexico66",
+      "destination": "/product/retro-trainer-white-blue",
+      "permanent": true
+    },
+    {
+      "source": "/product/crocs-classic-clog",
+      "destination": "/product/clog-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj1-high-chicago",
+      "destination": "/product/high-top-sneaker-chicago",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj11-concord",
+      "destination": "/product/patent-high-top-concord",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-dunk-grey-fog",
+      "destination": "/product/skate-low-grey-fog",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-1906r-silver",
+      "destination": "/product/chunky-runner-silver-metallic",
+      "permanent": true
+    },
+    {
+      "source": "/product/yeezy-700-wave-runner",
+      "destination": "/product/chunky-runner-wave-runner",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-am97-silver",
+      "destination": "/product/retro-runner-silver-bullet",
+      "permanent": true
+    },
+    {
+      "source": "/product/salomon-xt6-phantom",
+      "destination": "/product/trail-runner-phantom",
+      "permanent": true
+    },
+    {
+      "source": "/product/puma-speedcat-black",
+      "destination": "/product/racing-flat-og-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj3-white-cement",
+      "destination": "/product/high-top-sneaker-white-cement",
+      "permanent": true
+    },
+    {
+      "source": "/product/aj4-military-black",
+      "destination": "/product/mid-top-sneaker-military-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/travis-aj1-olive",
+      "destination": "/product/low-top-sneaker-reverse-olive",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-990v6-grey",
+      "destination": "/product/chunky-runner-grey-suede",
+      "permanent": true
+    },
+    {
+      "source": "/product/am1-big-bubble",
+      "destination": "/product/retro-runner-big-bubble",
+      "permanent": true
+    },
+    {
+      "source": "/product/asics-kayano-14",
+      "destination": "/product/chunky-runner-white-silver",
+      "permanent": true
+    },
+    {
+      "source": "/product/vans-old-skool",
+      "destination": "/product/skate-low-black-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/converse-chuck70-hi",
+      "destination": "/product/canvas-high-top-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-samba-black",
+      "destination": "/product/terrace-sneaker-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-samba-green",
+      "destination": "/product/terrace-sneaker-dark-green",
+      "permanent": true
+    },
+    {
+      "source": "/product/onitsuka-mexico66-black",
+      "destination": "/product/retro-trainer-black-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-327-navy",
+      "destination": "/product/retro-runner-cream-navy",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-327-maroon",
+      "destination": "/product/retro-runner-cream-maroon",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-327-black",
+      "destination": "/product/retro-runner-black-cream",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-530-black",
+      "destination": "/product/retro-runner-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-530-white",
+      "destination": "/product/retro-runner-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-af1-black",
+      "destination": "/product/court-sneaker-triple-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-blazer-vintage",
+      "destination": "/product/court-low-vintage-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/travis-aj1-brown",
+      "destination": "/product/low-top-sneaker-velvet-brown",
+      "permanent": true
+    },
+    {
+      "source": "/product/puma-profoam",
+      "destination": "/product/performance-runner-white-orange",
+      "permanent": true
+    },
+    {
+      "source": "/product/skechers-aero-burst",
+      "destination": "/product/performance-runner-rainbow-sole",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-samba-grey",
+      "destination": "/product/terrace-sneaker-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-cortez-white",
+      "destination": "/product/track-runner-classic-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/tho-box-tee",
+      "destination": "/product/toh-crest-tee",
+      "permanent": true
+    },
+    {
+      "source": "/product/essentials-hoodie",
+      "destination": "/product/heavyweight-hoodie-oatmeal",
+      "permanent": true
+    },
+    {
+      "source": "/product/sp5der-hoodie",
+      "destination": "/product/graphic-hoodie-pink-web",
+      "permanent": true
+    },
+    {
+      "source": "/product/corteiz-overshirt",
+      "destination": "/product/overshirt-washed-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/stussy-basic-tee",
+      "destination": "/product/cotton-tee-basic-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-tech-hoodie",
+      "destination": "/product/tech-hoodie-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/trapstar-hoodie",
+      "destination": "/product/graphic-hoodie-black-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/bape-shark-hoodie",
+      "destination": "/product/full-zip-hoodie-camo",
+      "permanent": true
+    },
+    {
+      "source": "/product/carhartt-hooded",
+      "destination": "/product/hooded-sweatshirt-brown",
+      "permanent": true
+    },
+    {
+      "source": "/product/polo-bear-tee",
+      "destination": "/product/graphic-tee-bear-print",
+      "permanent": true
+    },
+    {
+      "source": "/product/northface-nuptse",
+      "destination": "/product/down-puffer-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/stone-island-crew",
+      "destination": "/product/crewneck-slate-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/supreme-box-logo-hoodie",
+      "destination": "/product/logo-hoodie-red",
+      "permanent": true
+    },
+    {
+      "source": "/product/stussy-8ball-tee",
+      "destination": "/product/graphic-tee-8-ball",
+      "permanent": true
+    },
+    {
+      "source": "/product/corteiz-4starz-tee",
+      "destination": "/product/graphic-tee-4-star",
+      "permanent": true
+    },
+    {
+      "source": "/product/ald-logo-tee",
+      "destination": "/product/cotton-tee-cream",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-club-tee",
+      "destination": "/product/cotton-tee-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-firebird-track-top",
+      "destination": "/product/track-top-black-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/denim-tears-sweatshirt",
+      "destination": "/product/crewneck-wreath-print",
+      "permanent": true
+    },
+    {
+      "source": "/product/palace-triferg-tee",
+      "destination": "/product/graphic-tee-tri-logo",
+      "permanent": true
+    },
+    {
+      "source": "/product/sp5der-hoodie-black",
+      "destination": "/product/graphic-hoodie-black-web",
+      "permanent": true
+    },
+    {
+      "source": "/product/chrome-hearts-tee",
+      "destination": "/product/graphic-tee-black-cross",
+      "permanent": true
+    },
+    {
+      "source": "/product/gallery-dept-tee",
+      "destination": "/product/graphic-tee-vintage-white",
+      "permanent": true
+    },
+    {
+      "source": "/product/hellstar-tee",
+      "destination": "/product/graphic-tee-grey-print",
+      "permanent": true
+    },
+    {
+      "source": "/product/nocta-tech-hoodie",
+      "destination": "/product/tech-hoodie-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/arcteryx-beta-jacket",
+      "destination": "/product/tech-shell-jacket-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/essentials-crewneck",
+      "destination": "/product/crewneck-heather-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-trefoil-tee",
+      "destination": "/product/cotton-tee-white-logo",
+      "permanent": true
+    },
+    {
+      "source": "/product/essentials-sweats",
+      "destination": "/product/sweatpants-oatmeal",
+      "permanent": true
+    },
+    {
+      "source": "/product/corteiz-cargos",
+      "destination": "/product/cargo-pants-olive",
+      "permanent": true
+    },
+    {
+      "source": "/product/tho-baggy-jeans",
+      "destination": "/product/toh-baggy-denim-indigo",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-tech-joggers",
+      "destination": "/product/tech-joggers-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-tiro-pants",
+      "destination": "/product/track-pants-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/stussy-nyco-cargo",
+      "destination": "/product/cargo-pants-beige",
+      "permanent": true
+    },
+    {
+      "source": "/product/levis-501-denim",
+      "destination": "/product/straight-denim-mid-blue",
+      "permanent": true
+    },
+    {
+      "source": "/product/represent-baggy",
+      "destination": "/product/baggy-denim-washed-blue",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-tech-shorts",
+      "destination": "/product/fleece-shorts-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/essentials-sweat-shorts",
+      "destination": "/product/sweat-shorts-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/carhartt-single-knee",
+      "destination": "/product/work-pants-brown",
+      "permanent": true
+    },
+    {
+      "source": "/product/adidas-3stripe-shorts",
+      "destination": "/product/sport-shorts-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/true-religion-bootcut",
+      "destination": "/product/bootcut-denim-mid-blue",
+      "permanent": true
+    },
+    {
+      "source": "/product/corteiz-cargo-shorts",
+      "destination": "/product/cargo-shorts-khaki",
+      "permanent": true
+    },
+    {
+      "source": "/product/amiri-mx1-jeans",
+      "destination": "/product/distressed-denim-indigo",
+      "permanent": true
+    },
+    {
+      "source": "/product/sp5der-sweatpants",
+      "destination": "/product/sweatpants-pink",
+      "permanent": true
+    },
+    {
+      "source": "/product/stone-island-cargo",
+      "destination": "/product/cargo-pants-slate",
+      "permanent": true
+    },
+    {
+      "source": "/product/palace-track-pant",
+      "destination": "/product/track-pants-navy",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-club-joggers",
+      "destination": "/product/fleece-joggers-grey",
+      "permanent": true
+    },
+    {
+      "source": "/product/dickies-874",
+      "destination": "/product/work-pants-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/tho-tote",
+      "destination": "/product/toh-crown-tote-cream",
+      "permanent": true
+    },
+    {
+      "source": "/product/nb-cap",
+      "destination": "/product/6-panel-cap-navy",
+      "permanent": true
+    },
+    {
+      "source": "/product/sock-pack",
+      "destination": "/product/toh-crew-sock-3-pack",
+      "permanent": true
+    },
+    {
+      "source": "/product/rayban-wayfarer",
+      "destination": "/product/sunglasses-classic-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/rayban-aviator",
+      "destination": "/product/sunglasses-pilot-gold",
+      "permanent": true
+    },
+    {
+      "source": "/product/double-buckle-belt",
+      "destination": "/product/toh-double-buckle-leather-belt",
+      "permanent": true
+    },
+    {
+      "source": "/product/newera-yankees-cap",
+      "destination": "/product/fitted-cap-navy",
+      "permanent": true
+    },
+    {
+      "source": "/product/lv-multiple-wallet",
+      "destination": "/product/premium-wallet-brown-print",
+      "permanent": true
+    },
+    {
+      "source": "/product/gucci-marmont-cardholder",
+      "destination": "/product/card-holder-black-leather",
+      "permanent": true
+    },
+    {
+      "source": "/product/montblanc-wallet",
+      "destination": "/product/premium-wallet-black-leather",
+      "permanent": true
+    },
+    {
+      "source": "/product/toh-bifold-wallet",
+      "destination": "/product/toh-bifold-leather-wallet",
+      "permanent": true
+    },
+    {
+      "source": "/product/armani-exchange-watch",
+      "destination": "/product/sports-watch-chronograph-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/gshock-ga2100",
+      "destination": "/product/sports-watch-black-resin",
+      "permanent": true
+    },
+    {
+      "source": "/product/rolex-datejust",
+      "destination": "/product/luxury-watch-silver-blue",
+      "permanent": true
+    },
+    {
+      "source": "/product/carhartt-sling",
+      "destination": "/product/crossbody-bag-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/toh-beanie",
+      "destination": "/product/toh-ribbed-beanie",
+      "permanent": true
+    },
+    {
+      "source": "/product/stussy-bucket-hat",
+      "destination": "/product/bucket-hat-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/carhartt-beanie",
+      "destination": "/product/knit-beanie-brown",
+      "permanent": true
+    },
+    {
+      "source": "/product/nike-brasilia-backpack",
+      "destination": "/product/backpack-black",
+      "permanent": true
+    },
+    {
+      "source": "/product/lv-keepall-duffle",
+      "destination": "/product/duffle-bag-brown-print",
+      "permanent": true
+    },
+    {
+      "source": "/product/ap-royal-oak",
+      "destination": "/product/luxury-watch-steel-blue",
+      "permanent": true
+    },
+    {
+      "source": "/product/cartier-santos",
+      "destination": "/product/luxury-watch-gold-steel",
+      "permanent": true
+    },
+    {
+      "source": "/product/cuban-link-chain",
+      "destination": "/product/cuban-link-chain-iced-silver",
+      "permanent": true
+    },
+    {
+      "source": "/product/goyard-cardholder",
+      "destination": "/product/card-holder-tan-chevron",
+      "permanent": true
+    },
+    {
+      "source": "/product/prada-renylon-bag",
+      "destination": "/product/shoulder-bag-black-nylon",
+      "permanent": true
+    },
+    {
+      "source": "/product/oakley-sutro",
+      "destination": "/product/sport-sunglasses-black",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/favicon.ico",   "destination": "/assets/logo-crown.ico" },
-    { "source": "/sneakers",      "destination": "/Category.html?cat=sneakers" },
-    { "source": "/apparel",       "destination": "/Category.html?cat=apparel" },
-    { "source": "/bottomwear",    "destination": "/Category.html?cat=bottomwear" },
-    { "source": "/accessories",   "destination": "/Category.html?cat=accessories" },
-    { "source": "/about",         "destination": "/About.html" },
-    { "source": "/contact",       "destination": "/Contact.html" },
-    { "source": "/spec-sheet",    "destination": "/SpecSheet.html" },
-    { "source": "/terms",         "destination": "/Terms.html" },
-    { "source": "/product/:slug", "destination": "/Product.html?slug=:slug" },
-    { "source": "/",              "destination": "/Homepage.html" }
+    {
+      "source": "/favicon.ico",
+      "destination": "/assets/logo-crown.ico"
+    },
+    {
+      "source": "/sneakers",
+      "destination": "/Category.html?cat=sneakers"
+    },
+    {
+      "source": "/apparel",
+      "destination": "/Category.html?cat=apparel"
+    },
+    {
+      "source": "/bottomwear",
+      "destination": "/Category.html?cat=bottomwear"
+    },
+    {
+      "source": "/accessories",
+      "destination": "/Category.html?cat=accessories"
+    },
+    {
+      "source": "/about",
+      "destination": "/About.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/Contact.html"
+    },
+    {
+      "source": "/spec-sheet",
+      "destination": "/SpecSheet.html"
+    },
+    {
+      "source": "/guide",
+      "destination": "/Guide.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/Terms.html"
+    },
+    {
+      "source": "/product/:slug",
+      "destination": "/Product.html?slug=:slug"
+    },
+    {
+      "source": "/",
+      "destination": "/Homepage.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options",    "value": "nosniff" },
-        { "key": "X-Frame-Options",           "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy",           "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy",        "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Content-Security-Policy",   "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+        }
       ]
     }
   ]

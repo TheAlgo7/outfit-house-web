@@ -1,190 +1,1041 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Core pages -->
-  <url>
-    <loc>https://theoutfithouse.in/</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://theoutfithouse.in/about</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://theoutfithouse.in/sneakers</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://theoutfithouse.in/apparel</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://theoutfithouse.in/bottomwear</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://theoutfithouse.in/accessories</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://theoutfithouse.in/spec-sheet</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://theoutfithouse.in/contact</loc>
-    <lastmod>2026-05-09</lastmod>
-  </url>
+  <url><loc>https://theoutfithouse.in/</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/about</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/spec-sheet</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/contact</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/terms</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/guide</loc><lastmod>2026-06-19</lastmod></url>
+
+  <!-- Category pages -->
+  <url><loc>https://theoutfithouse.in/sneakers</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/apparel</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/bottomwear</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://theoutfithouse.in/accessories</loc><lastmod>2026-06-19</lastmod></url>
 
   <!-- Sneakers -->
   <url>
-    <loc>https://theoutfithouse.in/product/aj1-mid-panda</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/mid-top-sneaker-panda</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20Mid%20Panda%20(1).png</image:loc>
-      <image:title>Air Jordan 1 Mid Panda</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-panda.webp</image:loc>
+      <image:title>Mid-Top Sneaker Panda</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/nb-530-sea-salt</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/retro-runner-cream-sea-salt</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%20530%20Cream%20Sea%20Salt.png</image:loc>
-      <image:title>New Balance 530 Cream Sea Salt</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-cream-sea-salt.webp</image:loc>
+      <image:title>Retro Runner Cream Sea Salt</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/aj1-high-bred-toe</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/high-top-sneaker-bred-toe</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20High%20Bred%20Toe.png</image:loc>
-      <image:title>Air Jordan 1 High Bred Toe</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/high-top-sneaker-bred-toe.webp</image:loc>
+      <image:title>High-Top Sneaker Bred Toe</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/nb-550-white-green</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/court-sneaker-white-green</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%20550%20White%20Green.png</image:loc>
-      <image:title>New Balance 550 White Green</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/court-sneaker-white-green.webp</image:loc>
+      <image:title>Court Sneaker White Green</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/aj1-low-panda</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/low-top-sneaker-black-white</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20Low%20Panda.png</image:loc>
-      <image:title>Air Jordan 1 Low Panda</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-black-white.webp</image:loc>
+      <image:title>Low-Top Sneaker Black &amp; White</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/nb-530-stone</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/retro-runner-stone-pink</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%20530%20Stone%20Pink.png</image:loc>
-      <image:title>New Balance 530 Stone Pink</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-stone-pink.webp</image:loc>
+      <image:title>Retro Runner Stone Pink</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/aj1-mid-shadow</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/mid-top-sneaker-shadow-grey</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/AJ1%20Mid%20Shadow.png</image:loc>
-      <image:title>Air Jordan 1 Mid Shadow</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-shadow-grey.webp</image:loc>
+      <image:title>Mid-Top Sneaker Shadow Grey</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/nb-2002r</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/chunky-runner-protection-grey</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Sneakers/NB%202002R%20Protection%20Pack.png</image:loc>
-      <image:title>New Balance 2002R Protection Pack</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-protection-grey.webp</image:loc>
+      <image:title>Chunky Runner Protection Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/skate-low-panda</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/skate-low-panda.webp</image:loc>
+      <image:title>Skate Low Panda</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/court-sneaker-triple-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/court-sneaker-triple-white.webp</image:loc>
+      <image:title>Court Sneaker Triple White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/knit-runner-zebra</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/knit-runner-zebra.webp</image:loc>
+      <image:title>Knit Runner Zebra</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/slide-bone</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/slide-bone.webp</image:loc>
+      <image:title>Slide Bone</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/mid-top-sneaker-bred-reimagined</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-bred-reimagined.webp</image:loc>
+      <image:title>Mid-Top Sneaker Bred Reimagined</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/low-top-sneaker-mocha</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-mocha.webp</image:loc>
+      <image:title>Low-Top Sneaker Mocha</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/skate-low-university-blue</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/skate-low-university-blue.webp</image:loc>
+      <image:title>Skate Low University Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/chunky-runner-rain-cloud</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-rain-cloud.webp</image:loc>
+      <image:title>Chunky Runner Rain Cloud</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-infrared</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-infrared.webp</image:loc>
+      <image:title>Retro Runner Infrared</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/terrace-sneaker-white-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/terrace-sneaker-white-black.webp</image:loc>
+      <image:title>Terrace Sneaker White Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/suede-low-grey</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/suede-low-grey.webp</image:loc>
+      <image:title>Suede Low Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/chunky-runner-cream</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-cream.webp</image:loc>
+      <image:title>Chunky Runner Cream</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-trainer-white-blue</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-trainer-white-blue.webp</image:loc>
+      <image:title>Retro Trainer White Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/clog-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/clog-black.webp</image:loc>
+      <image:title>Clog Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/high-top-sneaker-chicago</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/high-top-sneaker-chicago.webp</image:loc>
+      <image:title>High-Top Sneaker Chicago</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/patent-high-top-concord</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/patent-high-top-concord.webp</image:loc>
+      <image:title>Patent High-Top Concord</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/skate-low-grey-fog</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/skate-low-grey-fog.webp</image:loc>
+      <image:title>Skate Low Grey Fog</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/chunky-runner-silver-metallic</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-silver-metallic.webp</image:loc>
+      <image:title>Chunky Runner Silver Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/chunky-runner-wave-runner</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-wave-runner.webp</image:loc>
+      <image:title>Chunky Runner Wave Runner</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-silver-bullet</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-silver-bullet.webp</image:loc>
+      <image:title>Retro Runner Silver Bullet</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/trail-runner-phantom</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/trail-runner-phantom.webp</image:loc>
+      <image:title>Trail Runner Phantom</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/racing-flat-og-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/racing-flat-og-black.webp</image:loc>
+      <image:title>Racing Flat OG Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/high-top-sneaker-white-cement</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/high-top-sneaker-white-cement.webp</image:loc>
+      <image:title>High-Top Sneaker White Cement</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/mid-top-sneaker-military-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-military-black.webp</image:loc>
+      <image:title>Mid-Top Sneaker Military Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/low-top-sneaker-reverse-olive</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-reverse-olive.webp</image:loc>
+      <image:title>Low-Top Sneaker Reverse Olive</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/chunky-runner-grey-suede</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-grey-suede.webp</image:loc>
+      <image:title>Chunky Runner Grey Suede</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-big-bubble</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-big-bubble.webp</image:loc>
+      <image:title>Retro Runner Big Bubble</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/chunky-runner-white-silver</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-white-silver.webp</image:loc>
+      <image:title>Chunky Runner White Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/skate-low-black-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/skate-low-black-white.webp</image:loc>
+      <image:title>Skate Low Black &amp; White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/canvas-high-top-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/canvas-high-top-black.webp</image:loc>
+      <image:title>Canvas High-Top Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/terrace-sneaker-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/terrace-sneaker-black.webp</image:loc>
+      <image:title>Terrace Sneaker Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/terrace-sneaker-dark-green</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/terrace-sneaker-dark-green.webp</image:loc>
+      <image:title>Terrace Sneaker Dark Green</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-trainer-black-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-trainer-black-white.webp</image:loc>
+      <image:title>Retro Trainer Black White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-cream-navy</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-cream-navy.webp</image:loc>
+      <image:title>Retro Runner Cream Navy</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-cream-maroon</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-cream-maroon.webp</image:loc>
+      <image:title>Retro Runner Cream Maroon</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-black-cream</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-black-cream.webp</image:loc>
+      <image:title>Retro Runner Black Cream</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-black.webp</image:loc>
+      <image:title>Retro Runner Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/retro-runner-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-white.webp</image:loc>
+      <image:title>Retro Runner White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/court-sneaker-triple-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/court-sneaker-triple-black.webp</image:loc>
+      <image:title>Court Sneaker Triple Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/court-low-vintage-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/court-low-vintage-white.webp</image:loc>
+      <image:title>Court Low Vintage White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/low-top-sneaker-velvet-brown</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-velvet-brown.webp</image:loc>
+      <image:title>Low-Top Sneaker Velvet Brown</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/performance-runner-white-orange</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/performance-runner-white-orange.webp</image:loc>
+      <image:title>Performance Runner White Orange</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/performance-runner-rainbow-sole</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/performance-runner-rainbow-sole.webp</image:loc>
+      <image:title>Performance Runner Rainbow Sole</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/terrace-sneaker-grey</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/terrace-sneaker-grey.webp</image:loc>
+      <image:title>Terrace Sneaker Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/track-runner-classic-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Sneakers/track-runner-classic-white.webp</image:loc>
+      <image:title>Track Runner Classic White</image:title>
     </image:image>
   </url>
 
   <!-- Apparel -->
   <url>
-    <loc>https://theoutfithouse.in/product/tho-box-tee</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/toh-crest-tee</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Apparel/Box%20Logo%20Tee.png</image:loc>
-      <image:title>THO Box Logo Tee</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/toh-crest-tee.webp</image:loc>
+      <image:title>Crest Tee</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/essentials-hoodie</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/heavyweight-hoodie-oatmeal</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Apparel/Essentials%20Heavyweight%20Hoodie.png</image:loc>
-      <image:title>Essentials Heavyweight Hoodie</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/heavyweight-hoodie-oatmeal.webp</image:loc>
+      <image:title>Heavyweight Hoodie Oatmeal</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/sp5der-hoodie</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/graphic-hoodie-pink-web</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Apparel/Sp5der%20Web%20Hoodie%20Pink.png</image:loc>
-      <image:title>Sp5der Web Hoodie Pink</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-hoodie-pink-web.webp</image:loc>
+      <image:title>Graphic Hoodie Pink Web</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/corteiz-overshirt</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/overshirt-washed-black</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Apparel/Corteiz%20Alcatraz%20Overshirt.png</image:loc>
-      <image:title>Corteiz Alcatraz Overshirt</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/overshirt-washed-black.webp</image:loc>
+      <image:title>Overshirt Washed Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cotton-tee-basic-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-basic-white.webp</image:loc>
+      <image:title>Cotton Tee Basic White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/tech-hoodie-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/tech-hoodie-black.webp</image:loc>
+      <image:title>Tech Hoodie Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-hoodie-black-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-hoodie-black-white.webp</image:loc>
+      <image:title>Graphic Hoodie Black &amp; White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/full-zip-hoodie-camo</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/full-zip-hoodie-camo.webp</image:loc>
+      <image:title>Full-Zip Hoodie Camo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/hooded-sweatshirt-brown</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/hooded-sweatshirt-brown.webp</image:loc>
+      <image:title>Hooded Sweatshirt Brown</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-tee-bear-print</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-bear-print.webp</image:loc>
+      <image:title>Graphic Tee Bear Print</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/down-puffer-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/down-puffer-black.webp</image:loc>
+      <image:title>Down Puffer Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/crewneck-slate-grey</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/crewneck-slate-grey.webp</image:loc>
+      <image:title>Crewneck Slate Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/logo-hoodie-red</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/logo-hoodie-red.webp</image:loc>
+      <image:title>Logo Hoodie Red</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-tee-8-ball</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-8-ball.webp</image:loc>
+      <image:title>Graphic Tee 8-Ball</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-tee-4-star</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-4-star.webp</image:loc>
+      <image:title>Graphic Tee 4-Star</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cotton-tee-cream</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-cream.webp</image:loc>
+      <image:title>Cotton Tee Cream</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cotton-tee-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-black.webp</image:loc>
+      <image:title>Cotton Tee Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/track-top-black-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/track-top-black-white.webp</image:loc>
+      <image:title>Track Top Black &amp; White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/crewneck-wreath-print</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/crewneck-wreath-print.webp</image:loc>
+      <image:title>Crewneck Wreath Print</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-tee-tri-logo</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-tri-logo.webp</image:loc>
+      <image:title>Graphic Tee Tri-Logo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-hoodie-black-web</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-hoodie-black-web.webp</image:loc>
+      <image:title>Graphic Hoodie Black Web</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-tee-black-cross</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-black-cross.webp</image:loc>
+      <image:title>Graphic Tee Black Cross</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-tee-vintage-white</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-vintage-white.webp</image:loc>
+      <image:title>Graphic Tee Vintage White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/graphic-tee-grey-print</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-grey-print.webp</image:loc>
+      <image:title>Graphic Tee Grey Print</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/tech-hoodie-grey</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/tech-hoodie-grey.webp</image:loc>
+      <image:title>Tech Hoodie Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/tech-shell-jacket-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/tech-shell-jacket-black.webp</image:loc>
+      <image:title>Tech Shell Jacket Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/crewneck-heather-grey</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/crewneck-heather-grey.webp</image:loc>
+      <image:title>Crewneck Heather Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cotton-tee-white-logo</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-white-logo.webp</image:loc>
+      <image:title>Cotton Tee White Logo</image:title>
     </image:image>
   </url>
 
   <!-- Bottomwear -->
   <url>
-    <loc>https://theoutfithouse.in/product/essentials-sweats</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/sweatpants-oatmeal</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Bottomwear/Essentials%20Fleece%20Sweatpants.png</image:loc>
-      <image:title>Essentials Fleece Sweatpants</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/sweatpants-oatmeal.webp</image:loc>
+      <image:title>Sweatpants Oatmeal</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/corteiz-cargos</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/cargo-pants-olive</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Bottomwear/Corteiz%20Guerillaz%20Cargos.png</image:loc>
-      <image:title>Corteiz Guerillaz Cargos</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-pants-olive.webp</image:loc>
+      <image:title>Cargo Pants Olive</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/tho-baggy-jeans</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/toh-baggy-denim-indigo</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Bottomwear/Baggy%20Denim%20Indigo.png</image:loc>
-      <image:title>THO Baggy Denim Indigo</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/toh-baggy-denim-indigo.webp</image:loc>
+      <image:title>Baggy Denim · Indigo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/tech-joggers-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/tech-joggers-black.webp</image:loc>
+      <image:title>Tech Joggers Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/track-pants-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/track-pants-black.webp</image:loc>
+      <image:title>Track Pants Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cargo-pants-beige</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-pants-beige.webp</image:loc>
+      <image:title>Cargo Pants Beige</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/straight-denim-mid-blue</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-mid-blue.webp</image:loc>
+      <image:title>Straight Denim Mid Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/baggy-denim-washed-blue</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/baggy-denim-washed-blue.webp</image:loc>
+      <image:title>Baggy Denim Washed Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/fleece-shorts-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/fleece-shorts-black.webp</image:loc>
+      <image:title>Fleece Shorts Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sweat-shorts-grey</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/sweat-shorts-grey.webp</image:loc>
+      <image:title>Sweat Shorts Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/work-pants-brown</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/work-pants-brown.webp</image:loc>
+      <image:title>Work Pants Brown</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sport-shorts-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/sport-shorts-black.webp</image:loc>
+      <image:title>Sport Shorts Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/bootcut-denim-mid-blue</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/bootcut-denim-mid-blue.webp</image:loc>
+      <image:title>Bootcut Denim Mid Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cargo-shorts-khaki</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-shorts-khaki.webp</image:loc>
+      <image:title>Cargo Shorts Khaki</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/distressed-denim-indigo</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/distressed-denim-indigo.webp</image:loc>
+      <image:title>Distressed Denim Indigo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sweatpants-pink</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/sweatpants-pink.webp</image:loc>
+      <image:title>Sweatpants Pink</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cargo-pants-slate</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-pants-slate.webp</image:loc>
+      <image:title>Cargo Pants Slate</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/track-pants-navy</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/track-pants-navy.webp</image:loc>
+      <image:title>Track Pants Navy</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/fleece-joggers-grey</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/fleece-joggers-grey.webp</image:loc>
+      <image:title>Fleece Joggers Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/work-pants-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/work-pants-black.webp</image:loc>
+      <image:title>Work Pants Black</image:title>
     </image:image>
   </url>
 
   <!-- Accessories -->
   <url>
-    <loc>https://theoutfithouse.in/product/tho-tote</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/toh-crown-tote-cream</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Accessories/Crown%20Tote%20%C2%B7%20Cream.png</image:loc>
-      <image:title>THO Crown Tote Cream</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/toh-crown-tote-cream.webp</image:loc>
+      <image:title>Crown Tote · Cream</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/nb-cap</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/6-panel-cap-navy</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Accessories/New%20Balance%206-Panel%20Cap.png</image:loc>
-      <image:title>New Balance 6-Panel Cap</image:title>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/6-panel-cap-navy.webp</image:loc>
+      <image:title>6-Panel Cap Navy</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://theoutfithouse.in/product/sock-pack</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://theoutfithouse.in/product/toh-crew-sock-3-pack</loc>
+    <lastmod>2026-06-19</lastmod>
     <image:image>
-      <image:loc>https://theoutfithouse.in/assets/Accessories/Crew%20Sock%203-Pack.png</image:loc>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/toh-crew-sock-3-pack.webp</image:loc>
       <image:title>Crew Sock 3-Pack</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sunglasses-classic-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/sunglasses-classic-black.webp</image:loc>
+      <image:title>Sunglasses Classic Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sunglasses-pilot-gold</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/sunglasses-pilot-gold.webp</image:loc>
+      <image:title>Sunglasses Pilot Gold</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/toh-double-buckle-leather-belt</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/toh-double-buckle-leather-belt.webp</image:loc>
+      <image:title>Double-Buckle Leather Belt</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/fitted-cap-navy</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/fitted-cap-navy.webp</image:loc>
+      <image:title>Fitted Cap Navy</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/premium-wallet-brown-print</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/premium-wallet-brown-print.webp</image:loc>
+      <image:title>Premium Wallet Brown Print</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/card-holder-black-leather</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/card-holder-black-leather.webp</image:loc>
+      <image:title>Card Holder Black Leather</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/premium-wallet-black-leather</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/premium-wallet-black-leather.webp</image:loc>
+      <image:title>Premium Wallet Black Leather</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/toh-bifold-leather-wallet</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/toh-bifold-leather-wallet.webp</image:loc>
+      <image:title>Bifold Leather Wallet</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sports-watch-chronograph-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/sports-watch-chronograph-black.webp</image:loc>
+      <image:title>Sports Watch Chronograph Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sports-watch-black-resin</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/sports-watch-black-resin.webp</image:loc>
+      <image:title>Sports Watch Black Resin</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/luxury-watch-silver-blue</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/luxury-watch-silver-blue.webp</image:loc>
+      <image:title>Luxury Watch Silver &amp; Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/crossbody-bag-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/crossbody-bag-black.webp</image:loc>
+      <image:title>Crossbody Bag Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/toh-ribbed-beanie</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/toh-ribbed-beanie.webp</image:loc>
+      <image:title>Ribbed Beanie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/bucket-hat-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/bucket-hat-black.webp</image:loc>
+      <image:title>Bucket Hat Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/knit-beanie-brown</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/knit-beanie-brown.webp</image:loc>
+      <image:title>Knit Beanie Brown</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/backpack-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/backpack-black.webp</image:loc>
+      <image:title>Backpack Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/duffle-bag-brown-print</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/duffle-bag-brown-print.webp</image:loc>
+      <image:title>Duffle Bag Brown Print</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/luxury-watch-steel-blue</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/luxury-watch-steel-blue.webp</image:loc>
+      <image:title>Luxury Watch Steel Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/luxury-watch-gold-steel</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/luxury-watch-gold-steel.webp</image:loc>
+      <image:title>Luxury Watch Gold &amp; Steel</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/cuban-link-chain-iced-silver</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/cuban-link-chain-iced-silver.webp</image:loc>
+      <image:title>Cuban Link Chain Iced Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/card-holder-tan-chevron</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/card-holder-tan-chevron.webp</image:loc>
+      <image:title>Card Holder Tan Chevron</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/shoulder-bag-black-nylon</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/shoulder-bag-black-nylon.webp</image:loc>
+      <image:title>Shoulder Bag Black Nylon</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theoutfithouse.in/product/sport-sunglasses-black</loc>
+    <lastmod>2026-06-19</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Accessories/sport-sunglasses-black.webp</image:loc>
+      <image:title>Sport Sunglasses Black</image:title>
     </image:image>
   </url>
 

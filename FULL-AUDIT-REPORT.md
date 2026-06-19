@@ -1,260 +1,164 @@
 # SEO Audit Report — The Outfit House
-**theoutfithouse.in** · Audited 2026-05-09 · Powered by Claude SEO
+**theoutfithouse.in** · Audited 2026-06-17 · Powered by Claude SEO
+*(Supersedes the 2026-05-09 audit. Catalog has grown from ~18 to 127 products since then; this re-audit reflects that.)*
+
+> **⚑ IMPLEMENTED 2026-06-17.** Every Critical/High/Medium/Low item below has been actioned
+> in the same session. Score moved **68 → ~88 (projected)**. The catalog is now fully
+> pre-rendered (static, crawlable), all brand names are purged from slugs/paths/sitemap,
+> and the sitemap covers all 127 products. The findings below are preserved as the "before"
+> state; see **ACTION-PLAN.md** for what shipped and the short post-deploy verification list.
 
 ---
 
-## Executive Summary
+## Executive Summary (pre-implementation baseline)
 
-### SEO Health Score: 72 / 100
+### SEO Health Score: 68 / 100
 
 | Category | Weight | Score | Weighted |
 |---|---|---|---|
-| Technical SEO | 22% | 74 | 16.3 |
-| Content Quality | 23% | 71 | 16.3 |
-| On-Page SEO | 20% | 68 | 13.6 |
-| Schema / Structured Data | 10% | 82 | 8.2 |
-| Performance (CWV) | 10% | 58 | 5.8 |
-| AI Search Readiness | 10% | 67 | 6.7 |
-| Images | 5% | 42 | 2.1 |
-| **Total** | **100%** | — | **69.0 ≈ 72** |
+| Technical SEO | 22% | 70 | 15.4 |
+| Content Quality | 23% | 62 | 14.3 |
+| On-Page SEO | 20% | 64 | 12.8 |
+| Schema / Structured Data | 10% | 80 | 8.0 |
+| Performance (CWV) | 10% | 72 | 7.2 |
+| AI Search Readiness | 10% | 66 | 6.6 |
+| Images | 5% | 60 | 3.0 |
+| **Total** | **100%** | — | **67.3 ≈ 68** |
 
-**Rating:** Good — core structure is solid. Remaining gaps are in JS-rendered product content, images, and off-site signals.
-
----
+**Rating:** Good foundation, but the score has slipped slightly since May because the catalog grew 7× while the things that make a catalog discoverable — the sitemap and crawlable rendering — did not keep pace. The homepage and editorial pages are excellent. The 127 product pages and 4 category pages, which are the commercial heart of the site, are effectively invisible to crawlers that don't run JavaScript.
 
 ### Business Type Detected
-
-**Hybrid Local + Online E-Commerce** — New Delhi-based WhatsApp-first streetwear/sneaker shop with physical studio (by appointment at Chhatarpur). Ships PAN-India. Founded 2026.
-
----
-
-### Issues Fixed Since Last Audit (2026-05-04 → 2026-05-09)
-
-| # | Fix | File |
-|---|---|---|
-| ✅ | Homepage schema added: WebSite + SearchAction + Organization + ClothingStore + ItemList | Homepage.html |
-| ✅ | ClothingStore address, telephone, geo, opening hours — all populated | Homepage.html |
-| ✅ | Organization sameAs, founder (Gaurav + Shivam) linked | Homepage.html |
-| ✅ | WebSite SearchAction added — Sitelinks Search Box eligibility unlocked | Homepage.html |
-| ✅ | Person schema for Gaurav Kumar (alias: The Algothrim) + Shivam Kumar | About.html |
-| ✅ | AboutPage schema linking founders to organization | About.html |
-| ✅ | Internal catalog links fixed: Category.html?cat= → /category clean URLs | Homepage.html |
-| ✅ | Sitemap lastmod dates updated to 2026-05-09 | sitemap.xml |
-| ✅ | ItemList schema uses canonical clean URLs (was param format) | Homepage.html |
-| ✅ | HSTS + CSP headers live in vercel.json | vercel.json |
-| ✅ | .git/ blocked via vercel.json redirects | vercel.json |
-| ✅ | AI crawlers explicitly allowed in robots.txt | robots.txt |
-| ✅ | llms.txt created with structured business context | llms.txt |
+**Hybrid Local + Online E-Commerce (pre-launch).** WhatsApp-first streetwear/sneaker store, physical studio in Chhatarpur, New Delhi (opening "TBA"), ships PAN-India. De-branded catalog of premium-grade goods sold across Entry / Standard / Vault tiers. Co-founders Gaurav Kumar & Shivam Kumar. No prices shown online by design.
 
 ---
 
-### Top 5 Remaining Issues
+### Top 5 Critical / High-Priority Issues
 
-1. **Product pages: canonical, title, description, H1 are all JS-rendered** — static HTML fallback is "Product — The Outfit House". Googlebot wave-1 indexes the shell.
-2. **Product images PNG not WebP** — 25–35% payload savings available on all 18 product images.
-3. **Product images missing `width`/`height`** — browser cannot reserve space before load (CLS risk).
-4. **Zero external backlinks or mentions** — new brand; no authority signals yet. Critical for Sitelinks to eventually appear.
-5. **No returns/refund policy page** — YMYL trust gap for transactional site.
+1. **Catalog is JavaScript-only — invisible to non-JS crawlers (AI + initial render).** Category and product pages ship as empty shells; all content, titles, meta, internal links, and Product schema are injected by `site.js` at runtime. Googlebot renders JS (with delay), but **GPTBot, ClaudeBot, PerplexityBot, and social scrapers do not** — so 131 of your ~138 pages have no readable product content for them. This single issue drags Content, On-Page, Schema, and AI Readiness down at once.
+2. **Sitemap is 86% incomplete and stale.** `sitemap.xml` lists 18 product URLs; the catalog has **127**. 109 products are absent. `lastmod` is frozen at `2026-05-09`. `/terms` is missing entirely.
+3. **Brand names leak through URL slugs, image paths, and the sitemap** — directly conflicting with the "no brand names online" de-branding policy. Visible copy is clean, but `/product/rolex-datejust`, `/product/lv-keepall-duffle`, `/product/gucci-marmont-cardholder`, `/product/aj1-mid-panda`, `assets/Sneakers/AJ1 Mid Panda (1).webp`, and the sitemap's `<image:title>Air Jordan 1 Mid Panda</image:title>` all expose trademarks publicly and are indexable (incl. Google Image search).
+4. **115 of 127 product pages render a generic `<title>Product | The Outfit House</title>` in static HTML.** Only 12 slugs are in the in-`<head>` map; the rest only get a real title after `site.js` runs. Crawlers/social/AI that read head meta without full render see duplicate, generic titles.
+5. **Site navigation (header + footer) is JS-rendered**, so the internal link graph barely exists in static HTML. Category and product pages contain almost no crawlable internal links pointing into the catalog.
 
----
+### Top 5 Quick Wins
 
-## Schema / Structured Data — Score: 82 / 100
-
-### Current Implementation (Post-Fix)
-
-| Page | Schema Types | Status |
-|---|---|---|
-| Homepage | WebSite + SearchAction, Organization, ClothingStore, ItemList | ✅ Complete |
-| About | Person (Gaurav Kumar / The Algothrim), Person (Shivam Kumar), AboutPage | ✅ New |
-| Contact | FAQPage (5 Q&As) | ✅ Pass |
-| SpecSheet | FAQPage (5 tier Q&As) | ✅ Pass |
-| Product | Product + Offer + BreadcrumbList (dynamic) | ✅ Pass |
-| Category | None | ❌ Missing |
-
-### Sitelinks Eligibility
-
-**WebSite + SearchAction** is now live on the homepage. This signals to Google that the site supports a search function and provides the structured navigation signals needed for Sitelinks consideration. Google will show Sitelinks when:
-
-1. A brand-name query ("The Outfit House") generates sufficient search volume
-2. The site has clear, distinct navigational sections (✅ already — Sneakers, Apparel, Spec Sheet, etc.)
-3. The homepage is authoritative for the brand query (✅ ClothingStore + Organization schema with name + address)
-
-Sitelinks are **never guaranteed** and cannot be manually requested — they emerge from brand search volume over weeks/months after indexation.
-
-### Person Schema — "The Algothrim" / Gaurav Kumar
-
-Gaurav Kumar is now marked as co-founder with `alternateName: "The Algothrim"` on About.html and referenced from the Organization schema on the Homepage. This creates a crawlable Knowledge Graph connection between:
-
-- The Outfit House (Organization/ClothingStore) → founded by → Gaurav Kumar
-- Gaurav Kumar → `alternateName` → The Algothrim
-- Gaurav Kumar → `sameAs` → github.com/TheAlgo7
-
-For Google to surface "Gaurav Kumar / The Algothrim" in a Knowledge Panel, the brand also needs external mentions (blog posts, YouTube, Reddit threads naming him).
+1. **Regenerate `sitemap.xml`** from the `PRODUCTS` array (all 127 products + 4 categories + `/terms`) with fresh `lastmod`. Add the `sync-newitems.sh` step or a small build script so it can't drift again.
+2. **Fix `llms.txt`** — it points to `https://theoutfithouse.in/policy`, which now 301-redirects to `/terms`. Point it straight at `/terms`.
+3. **Add `og:image:width`/`og:image:height` (1200×630)** meta to all pages; the OG image is the right size but undeclared.
+4. **De-brand the slugs + image filenames** (e.g. `rolex-datejust` → `luxury-watch-silver-blue`) and add 301s for any of the 18 already-indexed brand slugs.
+5. **Remove the 33 stray source `.jpg` files and duplicate `.png`s from the deployed `assets/`** so brand-named image files don't get indexed (and to trim the 60 MB asset dir).
 
 ---
 
-## Technical SEO — Score: 74 / 100
+## Technical SEO — 70/100
 
-### Crawlability & Robots
-- robots.txt: Valid. Allows all crawlers including GPTBot, ClaudeBot, PerplexityBot. ✅
-- `.git/` blocked via vercel.json (301 redirect). ✅
-- sitemap.xml: 26 canonical URLs, image entries for all 18 products. ✅
+**Strong:**
+- `robots.txt` is clean: allows all, explicitly allows GPTBot / OAI-SearchBot / ClaudeBot / PerplexityBot, disallows `/.git/`, references the sitemap.
+- `vercel.json` security headers are excellent: HSTS (`max-age=63072000; includeSubDomains; preload`), a real CSP, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`.
+- Clean URL architecture via rewrites (`/sneakers`, `/product/:slug`, `/about`, `/spec-sheet`, `/terms`) with permanent redirects from legacy `.html` paths. `.git` access blocked at the edge.
+- Self-referencing canonicals on the static pages (homepage, about).
 
-### Security & Headers
-| Header | Status |
-|---|---|
-| HTTPS (Vercel) | ✅ |
-| X-Content-Type-Options | ✅ |
-| X-Frame-Options | ✅ |
-| Referrer-Policy | ✅ |
-| Permissions-Policy | ✅ |
-| HSTS | ✅ (max-age=63072000, includeSubDomains, preload) |
-| Content-Security-Policy | ✅ |
-| `.git/` blocked | ✅ |
+**Issues:**
+- **Sitemap incomplete & stale** (see Critical #2). 109/127 products missing; `lastmod` frozen; `/terms` absent.
+- **Sitemap `<image:loc>` uses `.png`.** The original 18 sneakers do have `.png` files so those resolve, but the convention diverges from the `.webp` the site actually serves, and the 109 newer (webp-only) products aren't in the sitemap at all.
+- **Canonical on category/product pages depends on JS** for 115 products (the in-`<head>` script only injects canonical for the 4 categories + 12 mapped slugs; the rest get it only from the bottom render script).
+- **Redundant double canonical** on the 12 mapped product slugs — both the head script and the bottom render script append a `<link rel="canonical">` (same URL, harmless but untidy).
+- `llms.txt` links to `/policy`, a redirect hop (should be `/terms`).
+- Verify apex-vs-www and HTTP→HTTPS canonicalization is enforced at the Vercel domain level (not visible in repo).
 
-### JS-Rendered Content Risk (Unchanged)
+## Content Quality / E-E-A-T — 62/100
 
-| Element | Pages Affected | Risk |
-|---|---|---|
-| `<title>` | All 18 product pages | High — generic fallback in SERPs |
-| `<meta description>` | All 18 product pages | High |
-| `<link rel="canonical">` | 18 products + 4 categories | High |
-| H1 | All 18 product pages | High |
-| Product schema | All 18 product pages | High |
+**Strong:**
+- **About page is a genuine E-E-A-T asset:** named founders (Gaurav & Shivam Kumar) with photos and defined roles, an origin story, location, and founding year, backed by `Person` + `AboutPage` schema.
+- Homepage has rich, distinctive editorial copy (mission, tier system, store section) — clear brand voice, no boilerplate.
+- Contact page carries a real FAQ; SpecSheet gives depth on the Entry/Standard/Vault system.
 
-**Recommended fix (not yet done):** A lightweight Node.js pre-render script (~50 lines) that walks `window.PRODUCTS` and writes one static HTML file per product slug. No framework change needed.
+**Issues:**
+- **The catalog is thin or empty as static content.** Product pages ship a placeholder name ("AJ1 Mid · Panda") and no description, spec, or policy text until JS runs. Category pages ship an empty grid. For the majority of the site, there is no crawlable body content.
+- Even when rendered, **product descriptions are templated** ("`{name}` · `{grade}` tier. Real photos…") — no unique, substantive copy per product.
+- No informational/editorial content (buying guides, sizing, "how the tiers compare in practice") to capture top-of-funnel and AI-cited queries.
+- Pre-launch status ("Opening soon / TBA") means no reviews/ratings yet — expected, but a trust gap until launch.
 
----
+## On-Page SEO — 64/100
 
-## Content Quality — Score: 71 / 100
+**Strong:**
+- Homepage `<title>` and meta description are keyword-rich and localized ("Sneakers, Apparel & Accessories · Chhatarpur, New Delhi"); static pages have unique titles/descriptions.
+- Clean single-`<h1>` hierarchy per page; sensible `<h2>`/`<h3>` structure; `aria-label`/`aria-labelledby` on sections.
+- Breadcrumbs on product pages; OG + Twitter card tags everywhere; `skip-link` for a11y.
 
-Unchanged from prior audit. Key gap remains: thin product page content before JS fires.
+**Issues:**
+- **Generic/duplicate static titles** on 115 product pages (Critical #4).
+- **Static internal linking is weak** — header/footer nav is JS-rendered, so non-JS crawlers see few links into `/sneakers`, `/apparel`, individual products, etc. The homepage's category tiles/chips are the main static internal links that exist.
+- Static-HTML meta descriptions on product/category pages are generic until JS overwrites them.
+- `og:image` has no declared `width`/`height`.
+- Brand-name slugs in URLs (Critical #3) — a pure-SEO lens would call these helpful, but they violate your stated no-brand policy and create trademark exposure, so they should go.
 
-### E-E-A-T Assessment
+## Schema / Structured Data — 80/100
 
-| Factor | Score | Notes |
-|---|---|---|
-| Experience | 74/100 | Named founders with schema, physical location, photos |
-| Expertise | 76/100 | SpecSheet tier comparison is genuine domain knowledge |
-| Authoritativeness | 46/100 | No external citations yet; Person schema planted seed |
-| Trustworthiness | 68/100 | Address, founders, pricing transparent |
+**Strong:**
+- Homepage `@graph`: `WebSite` + `SearchAction` (Sitelinks Search Box eligibility) + `Organization` (founders, sameAs, contactPoint) + `ClothingStore` (full NAP, geo, opening hours, payment) + `ItemList`. Comprehensive.
+- About: `Person` ×2 + `AboutPage`. Contact: `FAQPage`. Product: `Product` + `Offer` (with `OfferShippingDetails` + `MerchantReturnPolicy`) + `BreadcrumbList`. Well-formed.
 
----
+**Issues:**
+- **Product schema is JS-injected** → non-JS crawlers miss it and Google sees it only after render. The richest schema is on the pages least able to deliver it.
+- **`Offer` has no price.** With the "price on enquiry" model this is intentional, but Rich Results will flag a missing-`price` warning. Consider omitting the `Offer` price fields cleanly or using `priceSpecification` with `"price": "0"` is *not* advised; better to keep the Offer minimal and accept the warning, or model availability without a priced Offer.
+- **`availability` is hard-coded `InStock`** for every product even though only items with `stock:'in'` are physically held; and **`ClothingStore` `openingHoursSpecification` asserts 12:00–21:00 daily** while the site says "opening soon / TBA." Align schema with reality before launch.
 
-## On-Page SEO — Score: 68 / 100
+## Performance (CWV) — 72/100
 
-- Internal catalog links now use clean canonical paths (fixed). ✅
-- Category + product pages still rely on JS for H1 and title.
-- SpecSheet H1 remains "Spec Sheet" — opportunity to target "7A vs UA 1:1 sneakers explained India".
+**Strong:**
+- Lean stack: `site.js` 40 KB, `site.css` 20 KB, `colors_and_type.css` 12 KB, no framework.
+- Hero LCP image is a 36 KB webp, preloaded with `fetchpriority="high"`.
+- Product images are well-compressed webp (≤ ~90 KB, most smaller), `loading="lazy"`, `decoding="async"`, with explicit `width`/`height` (good for CLS).
+- Fonts preconnected and preloaded.
 
----
+**Issues:**
+- **Catalog is client-rendered**, so on category/product pages the LCP element (a product image) and main content only appear after `site.js` parses and runs — a real LCP/TTI risk on slower mobile connections.
+- **Google Fonts stylesheet is render-blocking.** It's `preload as=style` + a normal `<link rel=stylesheet>`, but without an `onload` swap it still blocks render; consider `media="print" onload="this.media='all'"` or self-hosting the woff2s.
+- OG image is 448 KB (not LCP, low impact).
+- **Asset hygiene:** 60 MB `assets/` includes 33 stray top-level source `.jpg`s and duplicate `.png`s for the original sneakers — deploy bloat and an indexation risk.
 
-## Performance — Score: 58 / 100
+## AI Search Readiness (GEO) — 66/100
 
-Unchanged. Key remaining items:
-- PNG → WebP for all 18 product images
-- Add `width`/`height` to product card `<img>` tags (CLS fix)
-- `<link rel="preload">` for LCP images on Category + Product pages
+**Strong:**
+- `llms.txt` is genuinely good: clear summary, build-tier explanation, how-to-order, and a key-pages list.
+- AI crawlers explicitly allowed in `robots.txt`.
+- Homepage, About, Contact, SpecSheet, Terms are fully static with rich content + schema → highly citable, passage-friendly, Q&A-structured.
 
----
+**Issues:**
+- **Product and category pages are empty to AI crawlers** (they don't run JS). ChatGPT/Claude/Perplexity can describe the brand and the tier system but **cannot see or cite a single product**. For a catalog business this is the dominant GEO gap.
+- `llms.txt` references the redirecting `/policy` URL.
+- No visible author/updated dates on editorial content (a minor freshness/authority signal).
 
-## Images — Score: 42 / 100
+## Images — 60/100
 
-Unchanged. PNG format and missing dimensions remain the primary issues.
+**Strong:**
+- Hero, founder, and OG images carry descriptive alt text; decorative homepage tiles correctly use `alt=""`.
+- Product cards use webp, explicit `width="600" height="600"`, lazy loading, `decoding="async"`, and an `onerror` placeholder fallback.
+- OG image is a correct 1200×630.
 
----
-
-## AI Search Readiness — Score: 67 / 100
-
-### What's New
-- `llms.txt` provides structured business context for AI crawlers.
-- ClothingStore schema with geo, address, hours — feeds Google AI Overviews local signals.
-- Person schema with `alternateName` creates a machine-readable link between "The Algothrim" and Gaurav Kumar.
-
-### Platform Scores
-| Platform | Score | Key Gap |
-|---|---|---|
-| Google AI Overviews | 68/100 | ClothingStore schema helps; SpecSheet still needs Article schema |
-| Bing Copilot | 55/100 | Sitemap not yet submitted to Bing Webmaster Tools |
-| Perplexity | 52/100 | No external authoritative mentions yet |
-| ChatGPT Browse | 45/100 | Brand too new; no training-data presence |
-
----
-
-## Sitelinks — How They Work & What We've Done
-
-> "Those links listed under the main search result are called **Google Sitelinks**."
-
-### What Sitelinks Are
-Sitelinks are the 4–6 indented links shown below the main result for a brand query. They cannot be manually chosen. Google's algorithm shows them when:
-- The brand query is unambiguous (one clear site)
-- The site has well-structured navigation with distinct, popular sections
-- The homepage has strong authority for the brand name
-- The brand generates enough direct search volume
-
-### What We've Done to Earn Them
-1. **WebSite + SearchAction schema** — the most direct technical signal to Google that the site has navigational depth
-2. **ClothingStore + Organization schema** — anchors "The Outfit House" as the canonical entity at this domain
-3. **Clean URL structure** — `/sneakers`, `/apparel`, `/spec-sheet`, `/contact`, `/about` are all distinct and well-linked
-4. **Internal links use clean paths** — all catalog tile links now use `/sneakers` etc. (fixed)
-5. **Sitelinks Search Box** — `SearchAction` in WebSite schema enables the search input below the main result
-
-### What Cannot Be Controlled
-- Brand search volume (increases with real customers searching your name)
-- How fast Google crawls + indexes the new schema
-- Whether Google deems sitelinks useful for a given query
+**Issues:**
+- **Product alt text is just the short colour name** ("Panda", "Bred Toe") — add silhouette/category for context ("Mid-top sneaker, panda black and white").
+- **Image sitemap covers only 18/127 products.**
+- **Brand names in image file paths** (`AJ1 Mid Panda`, `nike-…`, `rolex-…`, `lv-…`, `gucci-…`) are indexable via Google Images and leak brands.
+- Duplicate `.png` + stray source `.jpg` files inflate the deploy and risk being indexed instead of the canonical webp.
 
 ---
 
-## Issue Register (Current State)
+## Page Inventory
 
-### Critical (fix immediately)
+| Page | URL | Rendering | Title (static) | Schema (static) |
+|---|---|---|---|---|
+| Homepage | `/` | Static ✅ | Unique ✅ | Full graph ✅ |
+| About | `/about` | Static ✅ | Unique ✅ | Person×2 + AboutPage ✅ |
+| Contact | `/contact` | Static ✅ | Unique ✅ | FAQPage ✅ |
+| Spec Sheet | `/spec-sheet` | Static ✅ | Unique ✅ | Present ✅ |
+| Terms | `/terms` | Static ✅ | Unique ✅ | — |
+| Categories (×4) | `/sneakers` … | **JS-rendered** ⚠️ | 4 mapped in head ✅ | none in static |
+| Products (×127) | `/product/:slug` | **JS-rendered** ⚠️ | 12 mapped, 115 generic ⚠️ | JS-injected only ⚠️ |
 
-| # | Issue | Status |
-|---|---|---|
-| C2 | Product pages: canonical, title, description, H1 are JS-rendered | ❌ Open |
-
-### High (fix within 1 week)
-
-| # | Issue | Status |
-|---|---|---|
-| H1 | Product `<title>` static generic | ❌ Open — requires pre-render script |
-| H2 | Category pages: title, H1, canonical JS-rendered | ❌ Open |
-
-### Medium (fix within 1 month)
-
-| # | Issue | Status |
-|---|---|---|
-| M1 | Product images missing `width`/`height` | ❌ Open |
-| M2 | Product images PNG not WebP | ❌ Open |
-| M3 | No `<link rel="preload">` on Category + Product LCP images | ❌ Open |
-| M4 | No returns/refund policy page | ❌ Open |
-| M5 | SpecSheet H1 not keyword-optimised | ❌ Open |
-| M6 | No Category schema (CollectionPage) | ❌ Open |
-| M10 | No social proof / testimonials | ❌ Open |
-| M11 | No sizing guide page | ❌ Open |
-
-### Low (backlog)
-
-| # | Issue | Status |
-|---|---|---|
-| L1 | Homepage H1 "Street. Sorted." has zero keyword value | ❌ Open |
-| L2 | No GST number in footer | ❌ Open |
-| L3 | No Google Business Profile link on Contact | ❌ Open |
-| L5 | Bing Webmaster Tools — sitemap not submitted | ❌ Open |
-| L7 | No editorial blog content | ❌ Open |
-| L8 | Footer logo missing descriptive alt text | ❌ Open |
+**~138 indexable pages; ~131 (95%) depend on JavaScript for their real content.**
 
 ---
 
-## Positive Findings
-
-- **Complete schema coverage on key pages** — Homepage, About, Contact, SpecSheet, Product all have structured data.
-- **WebSite SearchAction** — Sitelinks Search Box eligible.
-- **Person schema links "The Algothrim" alias** — Knowledge Graph seed planted.
-- **Clean URL architecture** via Vercel rewrites. ✅
-- **All security headers live** — HSTS, CSP, X-Frame-Options, etc. ✅
-- **AI crawlers explicitly welcomed** in robots.txt + llms.txt. ✅
-- **Comprehensive accessibility** — skip links, ARIA, focus trap, keyboard navigation. ✅
-- **No third-party scripts** — zero analytics, ads, or chat widgets; no third-party performance drag. ✅
-- **FAQPage schema** on Contact + SpecSheet — directly parseable by Google AIO. ✅
+*Action items, prioritized with effort estimates, are in `ACTION-PLAN.md`.*

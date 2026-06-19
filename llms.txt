@@ -48,4 +48,5 @@ then pay via UPI, bank transfer, or COD (available in most metros). Average repl
 - https://theoutfithouse.in/apparel — Apparel catalog
 - https://theoutfithouse.in/bottomwear — Bottomwear catalog
 - https://theoutfithouse.in/accessories — Accessories catalog
-- https://theoutfithouse.in/policy — Exchange & shipping policy
+- https://theoutfithouse.in/terms — Exchange & shipping policy, House Rules
+- https://theoutfithouse.in/guide — Buying guide: how the Entry, Standard and Vault tiers compare

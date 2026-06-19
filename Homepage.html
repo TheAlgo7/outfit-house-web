@@ -12,6 +12,8 @@
 <meta property="og:title" content="The Outfit House | Sneakers, Apparel &amp; Accessories"/>
 <meta property="og:description" content="Premium sneakers, branded apparel, accessories and more. Hand-checked in Delhi, shipped pan-India."/>
 <meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
 <link rel="icon" type="image/png" href="https://theoutfithouse.in/assets/logo-black.png"/>
@@ -20,9 +22,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2"/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/>
-<link rel="preload" as="image" type="image/webp" href="assets/Sneakers/AJ1 Mid Panda (1).webp" fetchpriority="high"/>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap"/></noscript>
+<link rel="preload" as="image" type="image/webp" href="assets/Sneakers/mid-top-sneaker-panda.webp" fetchpriority="high"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -547,11 +549,11 @@
     <div class="lp-hero-imgs">
       <div class="hi hi-1">
         <span class="hi-stamp">Mid-Top Sneaker · Panda · Standard</span>
-        <img src="assets/Sneakers/AJ1 Mid Panda (1).webp" alt="Mid-top sneaker in panda black and white" loading="eager" decoding="async"/>
+        <img src="assets/Sneakers/mid-top-sneaker-panda.webp" alt="Mid-top sneaker in panda black and white" loading="eager" decoding="async"/>
       </div>
       <div class="hi hi-2">
         <span class="hi-stamp">Graphic Hoodie · Pink Web · Vault</span>
-        <img src="assets/Apparel/Sp5der Web Hoodie Pink.webp" alt="Graphic hoodie in pink web print" loading="eager" decoding="async"/>
+        <img src="assets/Apparel/graphic-hoodie-pink-web.webp" alt="Graphic hoodie in pink web print" loading="eager" decoding="async"/>
       </div>
     </div>
 
@@ -604,7 +606,7 @@
 
       <!-- FOOTWEAR — tall primary -->
       <a class="ct ct-1 peek" href="/sneakers" aria-label="Browse footwear">
-        <img src="assets/Sneakers/NB 530 Cream Sea Salt.webp" alt="" loading="lazy"/>
+        <img src="assets/Sneakers/retro-runner-cream-sea-salt.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">01 · Footwear</span>
           <div class="ct-bottom">
@@ -619,7 +621,7 @@
 
       <!-- APPAREL -->
       <a class="ct ct-2 peek" href="/apparel" aria-label="Browse apparel" style="transition-delay:0.08s">
-        <img src="assets/Apparel/Essentials Heavyweight Hoodie.webp" alt="" loading="lazy"/>
+        <img src="assets/Apparel/heavyweight-hoodie-oatmeal.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">02 · Apparel</span>
           <div class="ct-bottom">
@@ -634,7 +636,7 @@
 
       <!-- BOTTOMWEAR -->
       <a class="ct ct-3 peek" href="/bottomwear" aria-label="Browse bottomwear" style="transition-delay:0.14s">
-        <img src="assets/Bottomwear/Corteiz Guerillaz Cargos.webp" alt="" loading="lazy" onerror="this.src='assets/Apparel/Corteiz Alcatraz Overshirt.webp'"/>
+        <img src="assets/Bottomwear/cargo-pants-olive.webp" alt="" loading="lazy" onerror="this.src='assets/Apparel/overshirt-washed-black.webp'"/>
         <div class="body">
           <span class="cat-num">03 · Bottomwear</span>
           <div class="ct-bottom">
@@ -870,14 +872,6 @@
         "latitude": 28.5066,
         "longitude": 77.1739
       },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "12:00",
-          "closes": "21:00"
-        }
-      ],
       "priceRange": "$$",
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, UPI, Bank Transfer, COD",
@@ -916,7 +910,7 @@
   initHeader();
 
   /* Featured products — one from each category for breadth */
-  var FEATURED_SLUGS = ['aj1-mid-panda', 'essentials-hoodie', 'corteiz-cargos', 'nb-cap'];
+  var FEATURED_SLUGS = ['mid-top-sneaker-panda', 'heavyweight-hoodie-oatmeal', 'cargo-pants-olive', '6-panel-cap-navy'];
   var featured = FEATURED_SLUGS
     .map(function(s) { return PRODUCTS.find(function(p) { return p.slug === s; }); })
     .filter(Boolean);

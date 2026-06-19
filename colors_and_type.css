@@ -134,6 +134,11 @@
   --surface-hover:        rgba(255, 255, 255, 0.04); /* hover tint on dark surfaces */
   --surface-hover-subtle: rgba(255, 255, 255, 0.02); /* softer hover tint */
   --scrollbar-thumb:      #484848;
+  --scrollbar-thumb-hover:#6a6a6a;
+
+  /* ---------- STATUS ---------- */
+  --stock:                #4caf6a;              /* in-stock indicator (text + dot) */
+  --stock-ring:           rgba(76, 175, 106, 0.18); /* halo around the in-stock dot */
 
   /* Imagery scrims / blueprint hairlines (no pure #000 — tinted to brand) */
   --toh-black-warm:   #111009;             /* warm near-black gradient stop */
@@ -258,5 +263,5 @@ a:hover { color: var(--accent); border-color: var(--accent); }
 ::-webkit-scrollbar              { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track        { background: var(--toh-black); }
 ::-webkit-scrollbar-thumb        { background: var(--scrollbar-thumb); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover  { background: #6a6a6a; }
+::-webkit-scrollbar-thumb:hover  { background: var(--scrollbar-thumb-hover); }
 ::-webkit-scrollbar-corner       { background: var(--toh-black); }

@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /.git/
+Disallow: /*.md$
+Disallow: /build.js
+Disallow: /redirects.generated.json
 
 User-agent: GPTBot
 Allow: /
