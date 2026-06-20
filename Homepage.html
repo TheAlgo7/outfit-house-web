@@ -520,7 +520,7 @@
 
     <!-- LEFT: copy -->
     <div class="lp-hero-text">
-      <span class="lp-eyebrow">Opening soon · Sneakers, Apparel &amp; More</span>
+      <span class="lp-eyebrow">Opens 28 June 2026 · Sneakers, Apparel &amp; More</span>
       <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
       <p class="lede">From Panda low-tops and retro runners to graphic hoodies, cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
       <nav class="lp-cat-chips" aria-label="Product categories">
@@ -687,18 +687,19 @@
   <div class="wrap lp-sale-grid">
     <div class="peek">
       <span class="ti">Grand opening · Chhatarpur</span>
-      <h2>Doors open<br/><span class="acc">soon.</span></h2>
-      <p>The Chhatarpur studio is being finished now and the opening date is being locked in. Sneakers, apparel and accessories, hand-checked, all under one roof. Message us on WhatsApp to get notified the moment we set a date or to reserve a piece for opening day.</p>
-      <button class="btn-wa" onclick="wa('Hi! Let me know the moment the Chhatarpur store opening date is announced.')">
+      <h2>Doors open<br/><span class="acc">28 June.</span></h2>
+      <p>The Chhatarpur studio opens Sunday 28 June 2026, 12 PM. Sneakers, apparel and accessories, hand-checked, all under one roof. Message us on WhatsApp to reserve a piece for opening day or to get directions.</p>
+      <button class="btn-wa" onclick="wa('Hi! I want to reserve a piece for opening day, 28 June.')">
         <svg aria-hidden="true"><use href="#wa-icon"/></svg> Notify me
       </button>
     </div>
-    <div class="countdown peek" aria-label="Opening status" style="transition-delay:0.1s">
-      <div class="cd" style="flex:1 1 100%;">
-        <b style="font-size:clamp(40px,6vw,64px);">TBA</b>
-        <span>Opening date · to be announced</span>
-      </div>
+    <div class="countdown peek" id="cd" aria-label="Countdown to grand opening" style="transition-delay:0.1s">
+      <div class="cd"><b>--</b><span>Days</span></div>
+      <div class="cd"><b>--</b><span>Hours</span></div>
+      <div class="cd"><b>--</b><span>Min</span></div>
+      <div class="cd"><b>--</b><span>Sec</span></div>
     </div>
+    <span id="cd-sr" class="sr-only" aria-live="polite" aria-atomic="true"></span>
   </div>
 </section>
 
@@ -706,12 +707,12 @@
 <section class="lp-store" aria-labelledby="store-heading">
   <div class="wrap lp-store-grid">
     <div class="peek">
-      <span class="store-eyebrow">Opening soon · Delhi</span>
+      <span class="store-eyebrow">Opening 28 June 2026 · Delhi</span>
       <h2 id="store-heading">The Chhatarpur<br/><span class="out">studio.</span></h2>
-      <p>Doors open soon, date to be announced. Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first to get notified.</p>
+      <p>Doors open Sunday 28 June 2026. Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first or just walk in.</p>
       <ul class="store-info">
         <li><b>Address</b><span>Block A1, Chhatarpur,<br/>New Delhi 110074</span></li>
-        <li><b>Opens</b><span>Date TBA<br/>then 12–9 PM daily</span></li>
+        <li><b>Opens</b><span>28 June · 12 PM<br/>then 12–9 PM daily</span></li>
         <li><b>Booking</b><span>WhatsApp first<br/>Walk-ins welcome</span></li>
         <li><b>Parking</b><span>Free · Behind the unit</span></li>
       </ul>
@@ -735,7 +736,7 @@
             <div class="addr">Block <span class="acc">A1</span><br/>Chhatarpur</div>
             <div class="store-meta">
               <span>⏐ The Outfit House Studio</span>
-              <span>Opening soon · TBA</span>
+              <span>Opens 28 June · 12pm</span>
             </div>
           </div>
         </div>
@@ -873,6 +874,7 @@
         "longitude": 77.1739
       },
       "priceRange": "$$",
+      "openingDate": "2026-06-28",
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, UPI, Bank Transfer, COD",
       "image": "https://theoutfithouse.in/assets/social-preview-tho.jpg",
@@ -937,6 +939,41 @@
       } else {
         io.observe(el);
       }
+    });
+  })();
+
+  /* Grand-opening countdown — to Sun 28 June 2026, 12:00 PM (noon, store-local time) */
+  (function() {
+    var el = document.getElementById('cd');
+    var sr = document.getElementById('cd-sr');
+    if (!el) return;
+    var bs = el.querySelectorAll('.cd b');
+    if (bs.length !== 4) return;
+    var pad = function(n) { return String(n).padStart(2, '0'); };
+    var lastSrMin = -1;
+    /* month is 0-indexed: 5 = June */
+    var target = new Date(2026, 5, 28, 12, 0, 0);
+    function tick() {
+      var now  = new Date();
+      var diff = Math.max(0, target - now);
+      var s = Math.floor(diff / 1000);
+      var d = Math.floor(s / 86400); s %= 86400;
+      var h = Math.floor(s / 3600);  s %= 3600;
+      var m = Math.floor(s / 60);    s %= 60;
+      bs[0].textContent = pad(d);
+      bs[1].textContent = pad(h);
+      bs[2].textContent = pad(m);
+      bs[3].textContent = pad(s);
+      /* Update screen-reader summary once per minute */
+      if (sr && m !== lastSrMin) {
+        lastSrMin = m;
+        sr.textContent = d + ' days, ' + h + ' hours, ' + m + ' minutes remaining';
+      }
+    }
+    tick();
+    var cdTimer = setInterval(tick, 1000);
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) { clearInterval(cdTimer); } else { cdTimer = setInterval(tick, 1000); tick(); }
     });
   })();
 </script>
