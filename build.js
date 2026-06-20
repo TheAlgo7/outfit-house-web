@@ -260,7 +260,6 @@ function productSchema(p, cat) {
           seller: { '@id': ORIGIN + '/#store' },
           shippingDetails: {
             '@type': 'OfferShippingDetails',
-            shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'INR' },
             shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'IN' },
             deliveryTime: { '@type': 'ShippingDeliveryTime', handlingTime: { '@type': 'QuantitativeValue', minValue: 1, maxValue: 2, unitCode: 'DAY' }, transitTime: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 5, unitCode: 'DAY' } }
           },
@@ -374,7 +373,7 @@ ${SPRITE}
     <div class="policy-block">
       <h4>Shipping &amp; policy</h4>
       <div class="policy">
-        <div class="policy-item"><svg aria-hidden="true"><use href="#truck"/></svg><div><div class="lab">Shipping</div><div class="val">Free · PAN-India 2–5 days · discreet, zero-branding packing</div></div></div>
+        <div class="policy-item"><svg aria-hidden="true"><use href="#truck"/></svg><div><div class="lab">Shipping</div><div class="val">PAN-India 2–5 days · cost shared on WhatsApp · discreet packing</div></div></div>
         <div class="policy-item"><svg aria-hidden="true"><use href="#shield"/></svg><div><div class="lab">QC photos</div><div class="val">Real photos of your piece before dispatch · you confirm first</div></div></div>
         <div class="policy-item"><svg aria-hidden="true"><use href="#mail"/></svg><div><div class="lab">Payment</div><div class="val">UPI · Bank transfer · COD in most metros</div></div></div>
         <div class="policy-item"><svg aria-hidden="true"><use href="#rotate"/></svg><div><div class="lab">Exchange</div><div class="val">Case-by-case · 360° unboxing video required for claims</div></div></div>
