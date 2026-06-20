@@ -210,7 +210,7 @@ function card(p) {
   const g = p.grade.toLowerCase();
   const sold = p.stock === 'sold';
   const altImg = (p.imgs && p.imgs.length)
-    ? `<img class="pc-img-alt" src="/${esc(p.imgs[0])}" alt="" aria-hidden="true" loading="lazy" decoding="async" width="600" height="600"/>` : '';
+    ? `<img class="pc-img-alt" src="/${esc(p.imgs[0])}" alt="" aria-hidden="true" decoding="async" width="600" height="600"/>` : '';
   const badge = sold ? '<span class="pc-grade sold">Sold out</span>' : `<span class="pc-grade ${g}">${esc(p.grade)}</span>`;
   const limited = p.limited ? '<span class="pc-limited">Limited edition</span>' : '';
   let status = '';
@@ -230,7 +230,6 @@ function card(p) {
     <span class="pc-brand">${esc(p.brand)}</span>
     <a class="pc-name" href="/product/${esc(p.slug)}">${esc(p.name)}</a>
     ${status}
-    <span class="pc-price">${sold ? 'Currently unavailable' : 'Price on enquiry'}</span>
     ${cta}
   </div>
 </div>`;

@@ -212,7 +212,7 @@ window.renderProductCard = function(p) {
   var card = document.createElement('div');
   card.className = 'pc' + (p.limited ? ' pc--limited' : '') + (sold ? ' pc--sold' : '');
   card.setAttribute('data-grade', p.grade);
-  var altImg = (p.imgs && p.imgs.length) ? '<img class="pc-img-alt" src="/' + p.imgs[0] + '" alt="" aria-hidden="true" loading="lazy" decoding="async" width="600" height="600"/>' : '';
+  var altImg = (p.imgs && p.imgs.length) ? '<img class="pc-img-alt" src="/' + p.imgs[0] + '" alt="" aria-hidden="true" decoding="async" width="600" height="600"/>' : '';
   var badge = sold ? '<span class="pc-grade sold">Sold out</span>' : '<span class="pc-grade ' + gradeClass(p.grade) + '">' + p.grade + '</span>';
   var limited = p.limited ? '<span class="pc-limited">Limited edition</span>' : '';
   var status = sold ? '<span class="pc-stock sold">Sold out</span>'
@@ -230,7 +230,6 @@ window.renderProductCard = function(p) {
       <span class="pc-brand">${p.brand}</span>
       <a class="pc-name" href="/product/${p.slug}">${p.name}</a>
       ${status}
-      <span class="pc-price">${sold ? 'Currently unavailable' : 'Price on enquiry'}</span>
       ${cta}
     </div>`;
   var ctaBtn = card.querySelector('.pc-cta');
