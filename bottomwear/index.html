@@ -90,6 +90,19 @@
   }
   .search input::placeholder { color: var(--fg-subtle); }
   @media (max-width: 520px) { .search input { width: 96px; } }
+  /* accessories: grouped-by-type sections */
+  .acc-section { margin-bottom: 56px; }
+  .acc-section:last-child { margin-bottom: 0; }
+  .acc-head {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
+  }
+  .acc-head h2 {
+    font-family: var(--font-display); font-size: clamp(24px, 3vw, 34px);
+    text-transform: uppercase; line-height: 1; margin: 0;
+  }
+  .acc-n { font-family: var(--font-mono); font-size: 12px; color: var(--fg-subtle); }
+  @media (max-width: 900px) { .acc-section { margin-bottom: 40px; } }
   .sort-drop { position: relative; }
   .sort-btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -605,24 +618,37 @@
 <script>
   initHeader();
   (function(){
-    var grid = document.getElementById('grid');
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.pc'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.acc-section'));
+    var grouped = sections.length > 0;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.products-grid .pc'));
     var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs .tab'));
     var search = document.getElementById('search');
-    var tier = 'all';
+    var pick = 'all';
     function apply(){
       var q = ((search && search.value) || '').trim().toLowerCase();
       var n = 0;
       cards.forEach(function(c){
-        var okTier = (tier === 'all' || c.dataset.grade === tier);
+        var bucketOk = grouped ? true : (pick === 'all' || c.dataset.grade === pick);
         var okText = !q || (c.dataset.search || '').indexOf(q) !== -1;
-        var show = okTier && okText;
+        var show = bucketOk && okText;
         c.style.display = show ? '' : 'none'; if (show) n++;
       });
+      if (grouped) {
+        n = 0;
+        sections.forEach(function(sec){
+          var typeOk = (pick === 'all' || sec.dataset.type === pick);
+          var vis = 0;
+          Array.prototype.slice.call(sec.querySelectorAll('.pc')).forEach(function(c){
+            var ok = typeOk && c.style.display !== 'none';
+            c.style.display = ok ? '' : 'none'; if (ok) vis++;
+          });
+          sec.style.display = vis ? '' : 'none'; n += vis;
+        });
+      }
       document.getElementById('count').textContent = n;
       document.getElementById('empty').style.display = n ? 'none' : 'block';
     }
-    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); tier = b.dataset.tier; apply(); }); });
+    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); pick = b.dataset.tier; apply(); }); });
     if (search) search.addEventListener('input', apply);
     cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); if (cta.disabled) return; wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + cta.dataset.slug); }); });
   })();

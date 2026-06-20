@@ -199,7 +199,6 @@ window.PRODUCTS = [
   { slug:'duffle-bag-brown-print', cat:'accessories', stock:'sold', brand:'Duffle Bag', name:'Brown Print', grade:'Vault', img:'assets/Accessories/duffle-bag-brown-print.webp' },
   { slug:'luxury-watch-steel-blue', cat:'accessories', stock:'sold', brand:'Luxury Watch', name:'Steel Blue', grade:'Vault', img:'assets/Accessories/luxury-watch-steel-blue.webp' },
   { slug:'luxury-watch-gold-steel', cat:'accessories', stock:'sold', brand:'Luxury Watch', name:'Gold & Steel', grade:'Vault', img:'assets/Accessories/luxury-watch-gold-steel.webp' },
-  { slug:'cuban-link-chain-iced-silver', cat:'accessories', stock:'sold', brand:'Cuban Link Chain', name:'Iced Silver', grade:'Standard', img:'assets/Accessories/cuban-link-chain-iced-silver.webp' },
   { slug:'card-holder-tan-chevron', cat:'accessories', stock:'sold', brand:'Card Holder', name:'Tan Chevron', grade:'Vault', img:'assets/Accessories/card-holder-tan-chevron.webp' },
   { slug:'shoulder-bag-black-nylon', cat:'accessories', stock:'sold', brand:'Shoulder Bag', name:'Black Nylon', grade:'Vault', img:'assets/Accessories/shoulder-bag-black-nylon.webp' },
   { slug:'sport-sunglasses-black', cat:'accessories', stock:'sold', brand:'Sport Sunglasses', name:'Black', grade:'Standard', img:'assets/Accessories/sport-sunglasses-black.webp' },

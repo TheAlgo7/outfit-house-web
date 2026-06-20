@@ -31,6 +31,7 @@
     { "source": "/product/performance-runner-white-orange", "destination": "/sneakers", "permanent": true },
     { "source": "/product/performance-runner-rainbow-sole", "destination": "/sneakers", "permanent": true },
     { "source": "/product/terrace-sneaker-grey", "destination": "/sneakers", "permanent": true },
+    { "source": "/product/cuban-link-chain-iced-silver", "destination": "/accessories", "permanent": true },
     {
       "source": "/build.js",
       "destination": "/",

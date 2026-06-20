@@ -423,17 +423,52 @@ ${SPRITE}
 </html>`;
 }
 
+/* ---------- accessory type grouping (keeps the accessories page from cluttering) ---------- */
+const ACC_GROUPS = [
+  ['Watches', /watch/],
+  ['Sunglasses', /sunglass|glasses/],
+  ['Bags', /bag|tote|backpack|duffle|crossbody|sling/],
+  ['Wallets & Card Holders', /wallet|card holder/],
+  ['Headwear', /\bcap\b|beanie|bucket|hat/],
+  ['Belts', /belt/],
+  ['Socks', /sock/]
+];
+function accGroup(p) {
+  const t = (p.brand + ' ' + p.name).toLowerCase();
+  for (const [label, re] of ACC_GROUPS) if (re.test(t)) return label;
+  return 'Other';
+}
+
 /* ---------- render a category page ---------- */
 function categoryPage(catKey) {
   const cat = CATEGORIES[catKey];
   const list = PRODUCTS.filter(p => p.cat === catKey);
   const title = cat.title + ' | The Outfit House';
-  const desc = cat.title + ': shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch, ships PAN-India.';
   const url = ORIGIN + '/' + catKey;
-  const counts = { all: list.length, Entry: 0, Standard: 0, Vault: 0 };
-  list.forEach(p => { counts[p.grade]++; });
-  const tabs = [['all', 'All'], ['Entry', 'Entry'], ['Standard', 'Standard'], ['Vault', 'Vault']]
-    .map(([k, l], i) => `<button class="tab ${i === 0 ? 'active' : ''}" data-tier="${k}" aria-pressed="${i === 0}">${l}<span class="count">${counts[k]}</span></button>`).join('');
+  const grouped = catKey === 'accessories';
+  let desc, tabs, gridHtml, emptyMsg;
+  if (grouped) {
+    desc = cat.title + ': browse watches, sunglasses, bags, wallets, caps, belts and socks at The Outfit House, grouped by type. Real photos before dispatch, ships PAN-India.';
+    const order = ACC_GROUPS.map(g => g[0]).concat(['Other']);
+    const byType = {};
+    list.forEach(p => { const g = accGroup(p); (byType[g] || (byType[g] = [])).push(p); });
+    const active = order.filter(g => byType[g] && byType[g].length);
+    tabs = [['all', 'All', list.length]].concat(active.map(g => [g, g, byType[g].length]))
+      .map(([k, l, n], i) => `<button class="tab ${i === 0 ? 'active' : ''}" data-tier="${esc(k)}" aria-pressed="${i === 0}">${esc(l)}<span class="count">${n}</span></button>`).join('');
+    gridHtml = active.map(g => `<section class="acc-section" data-type="${esc(g)}">
+    <div class="acc-head"><h2>${esc(g)}</h2><span class="acc-n">${byType[g].length}</span></div>
+    <div class="products-grid">${byType[g].map(card).join('')}</div>
+  </section>`).join('\n');
+    emptyMsg = 'No matches. Pick another group or clear the search.';
+  } else {
+    desc = cat.title + ': shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch, ships PAN-India.';
+    const counts = { all: list.length, Entry: 0, Standard: 0, Vault: 0 };
+    list.forEach(p => { counts[p.grade]++; });
+    tabs = [['all', 'All'], ['Entry', 'Entry'], ['Standard', 'Standard'], ['Vault', 'Vault']]
+      .map(([k, l], i) => `<button class="tab ${i === 0 ? 'active' : ''}" data-tier="${k}" aria-pressed="${i === 0}">${l}<span class="count">${counts[k]}</span></button>`).join('');
+    gridHtml = `<div class="products-grid" id="grid">${list.map(card).join('')}</div>`;
+    emptyMsg = 'No matches. Try another tier or clear the search.';
+  }
 
   const itemList = JSON.stringify({
     '@context': 'https://schema.org',
@@ -470,8 +505,8 @@ ${SPRITE}
 </div>
 
 <section class="grid-wrap">
-  <div class="products-grid" id="grid">${list.map(card).join('')}</div>
-  <div class="empty" id="empty" style="display:none">No matches. Try another tier or clear the search.</div>
+  ${gridHtml}
+  <div class="empty" id="empty" style="display:none">${emptyMsg}</div>
 </section>
 </main>
 
@@ -482,24 +517,37 @@ ${SPRITE}
 <script>
   initHeader();
   (function(){
-    var grid = document.getElementById('grid');
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.pc'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.acc-section'));
+    var grouped = sections.length > 0;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.products-grid .pc'));
     var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs .tab'));
     var search = document.getElementById('search');
-    var tier = 'all';
+    var pick = 'all';
     function apply(){
       var q = ((search && search.value) || '').trim().toLowerCase();
       var n = 0;
       cards.forEach(function(c){
-        var okTier = (tier === 'all' || c.dataset.grade === tier);
+        var bucketOk = grouped ? true : (pick === 'all' || c.dataset.grade === pick);
         var okText = !q || (c.dataset.search || '').indexOf(q) !== -1;
-        var show = okTier && okText;
+        var show = bucketOk && okText;
         c.style.display = show ? '' : 'none'; if (show) n++;
       });
+      if (grouped) {
+        n = 0;
+        sections.forEach(function(sec){
+          var typeOk = (pick === 'all' || sec.dataset.type === pick);
+          var vis = 0;
+          Array.prototype.slice.call(sec.querySelectorAll('.pc')).forEach(function(c){
+            var ok = typeOk && c.style.display !== 'none';
+            c.style.display = ok ? '' : 'none'; if (ok) vis++;
+          });
+          sec.style.display = vis ? '' : 'none'; n += vis;
+        });
+      }
       document.getElementById('count').textContent = n;
       document.getElementById('empty').style.display = n ? 'none' : 'block';
     }
-    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); tier = b.dataset.tier; apply(); }); });
+    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); pick = b.dataset.tier; apply(); }); });
     if (search) search.addEventListener('input', apply);
     cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); if (cta.disabled) return; wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + cta.dataset.slug); }); });
   })();

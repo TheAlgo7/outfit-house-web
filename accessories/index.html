@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Finishing Touches | The Outfit House</title>
-<meta name="description" content="Finishing Touches: shop premium accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch, ships PAN-India."/>
+<meta name="description" content="Finishing Touches: browse watches, sunglasses, bags, wallets, caps, belts and socks at The Outfit House, grouped by type. Real photos before dispatch, ships PAN-India."/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="canonical" href="https://theoutfithouse.in/accessories"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://theoutfithouse.in/accessories"/>
 <meta property="og:title" content="Finishing Touches | The Outfit House"/>
-<meta property="og:description" content="Finishing Touches: shop premium accessories at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch, ships PAN-India."/>
+<meta property="og:description" content="Finishing Touches: browse watches, sunglasses, bags, wallets, caps, belts and socks at The Outfit House, grouped by type. Real photos before dispatch, ships PAN-India."/>
 <meta property="og:image" content="https://theoutfithouse.in/assets/social-preview-tho.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -90,6 +90,19 @@
   }
   .search input::placeholder { color: var(--fg-subtle); }
   @media (max-width: 520px) { .search input { width: 96px; } }
+  /* accessories: grouped-by-type sections */
+  .acc-section { margin-bottom: 56px; }
+  .acc-section:last-child { margin-bottom: 0; }
+  .acc-head {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
+  }
+  .acc-head h2 {
+    font-family: var(--font-display); font-size: clamp(24px, 3vw, 34px);
+    text-transform: uppercase; line-height: 1; margin: 0;
+  }
+  .acc-n { font-family: var(--font-mono); font-size: 12px; color: var(--fg-subtle); }
+  @media (max-width: 900px) { .acc-section { margin-bottom: 40px; } }
   .sort-drop { position: relative; }
   .sort-btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -290,54 +303,86 @@
 </section>
 
 <div class="filter-bar">
-  <div class="tabs" id="tabs"><button class="tab active" data-tier="all" aria-pressed="true">All<span class="count">26</span></button><button class="tab " data-tier="Entry" aria-pressed="false">Entry<span class="count">5</span></button><button class="tab " data-tier="Standard" aria-pressed="false">Standard<span class="count">13</span></button><button class="tab " data-tier="Vault" aria-pressed="false">Vault<span class="count">8</span></button></div>
+  <div class="tabs" id="tabs"><button class="tab active" data-tier="all" aria-pressed="true">All<span class="count">25</span></button><button class="tab " data-tier="Watches" aria-pressed="false">Watches<span class="count">5</span></button><button class="tab " data-tier="Sunglasses" aria-pressed="false">Sunglasses<span class="count">3</span></button><button class="tab " data-tier="Bags" aria-pressed="false">Bags<span class="count">5</span></button><button class="tab " data-tier="Wallets &amp; Card Holders" aria-pressed="false">Wallets &amp; Card Holders<span class="count">5</span></button><button class="tab " data-tier="Headwear" aria-pressed="false">Headwear<span class="count">5</span></button><button class="tab " data-tier="Belts" aria-pressed="false">Belts<span class="count">1</span></button><button class="tab " data-tier="Socks" aria-pressed="false">Socks<span class="count">1</span></button></div>
   <div class="meta-row">
     <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg><input id="search" type="search" placeholder="Search accessories" aria-label="Search Accessories"/></label>
-    <div class="count">Showing <b id="count">26</b> pieces</div>
+    <div class="count">Showing <b id="count">25</b> pieces</div>
   </div>
 </div>
 
 <section class="grid-wrap">
-  <div class="products-grid" id="grid"><div class="pc pc--sold" data-grade="Entry" data-search="toh crown tote · cream entry">
+  <section class="acc-section" data-type="Watches">
+    <div class="acc-head"><h2>Watches</h2><span class="acc-n">5</span></div>
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Standard" data-search="sports watch chronograph black standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/toh-crown-tote-cream.webp" alt="Crown Tote · Cream — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/sports-watch-chronograph-black.webp" alt="Sports Watch, Chronograph Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">TOH</span>
-    <a class="pc-name" href="/product/toh-crown-tote-cream">Crown Tote · Cream</a>
+    <span class="pc-brand">Sports Watch</span>
+    <a class="pc-name" href="/product/sports-watch-chronograph-black">Chronograph Black</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="6-panel cap navy standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="sports watch black resin standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/6-panel-cap-navy.webp" alt="6-Panel Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/sports-watch-black-resin.webp" alt="Sports Watch, Black Resin — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">6-Panel Cap</span>
-    <a class="pc-name" href="/product/6-panel-cap-navy">Navy</a>
+    <span class="pc-brand">Sports Watch</span>
+    <a class="pc-name" href="/product/sports-watch-black-resin">Black Resin</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Entry" data-search="toh crew sock 3-pack entry">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch silver &amp; blue vault">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/toh-crew-sock-3-pack.webp" alt="Crew Sock 3-Pack — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/luxury-watch-silver-blue.webp" alt="Luxury Watch, Silver &amp; Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">TOH</span>
-    <a class="pc-name" href="/product/toh-crew-sock-3-pack">Crew Sock 3-Pack</a>
+    <span class="pc-brand">Luxury Watch</span>
+    <a class="pc-name" href="/product/luxury-watch-silver-blue">Silver &amp; Blue</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="sunglasses classic black standard">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch steel blue vault">
+  <div class="pc-img">
+    
+    <span class="pc-grade sold">Sold out</span>
+    <img src="/assets/Accessories/luxury-watch-steel-blue.webp" alt="Luxury Watch, Steel Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Luxury Watch</span>
+    <a class="pc-name" href="/product/luxury-watch-steel-blue">Steel Blue</a>
+    <span class="pc-stock sold">Sold out</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+  </div>
+</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch gold &amp; steel vault">
+  <div class="pc-img">
+    
+    <span class="pc-grade sold">Sold out</span>
+    <img src="/assets/Accessories/luxury-watch-gold-steel.webp" alt="Luxury Watch, Gold &amp; Steel — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Luxury Watch</span>
+    <a class="pc-name" href="/product/luxury-watch-gold-steel">Gold &amp; Steel</a>
+    <span class="pc-stock sold">Sold out</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+  </div>
+</div></div>
+  </section>
+<section class="acc-section" data-type="Sunglasses">
+    <div class="acc-head"><h2>Sunglasses</h2><span class="acc-n">3</span></div>
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Standard" data-search="sunglasses classic black standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
@@ -363,33 +408,93 @@
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="toh double-buckle leather belt standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="sport sunglasses black standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/toh-double-buckle-leather-belt.webp" alt="Double-Buckle Leather Belt — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/sport-sunglasses-black.webp" alt="Sport Sunglasses, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Sport Sunglasses</span>
+    <a class="pc-name" href="/product/sport-sunglasses-black">Black</a>
+    <span class="pc-stock sold">Sold out</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+  </div>
+</div></div>
+  </section>
+<section class="acc-section" data-type="Bags">
+    <div class="acc-head"><h2>Bags</h2><span class="acc-n">5</span></div>
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Entry" data-search="toh crown tote · cream entry">
+  <div class="pc-img">
+    
+    <span class="pc-grade sold">Sold out</span>
+    <img src="/assets/Accessories/toh-crown-tote-cream.webp" alt="Crown Tote · Cream — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
-    <a class="pc-name" href="/product/toh-double-buckle-leather-belt">Double-Buckle Leather Belt</a>
+    <a class="pc-name" href="/product/toh-crown-tote-cream">Crown Tote · Cream</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="fitted cap navy standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="crossbody bag black standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/fitted-cap-navy.webp" alt="Fitted Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/crossbody-bag-black.webp" alt="Crossbody Bag, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">Fitted Cap</span>
-    <a class="pc-name" href="/product/fitted-cap-navy">Navy</a>
+    <span class="pc-brand">Crossbody Bag</span>
+    <a class="pc-name" href="/product/crossbody-bag-black">Black</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Vault" data-search="premium wallet brown print vault">
+</div><div class="pc pc--sold" data-grade="Entry" data-search="backpack black entry">
+  <div class="pc-img">
+    
+    <span class="pc-grade sold">Sold out</span>
+    <img src="/assets/Accessories/backpack-black.webp" alt="Backpack, Black — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Backpack</span>
+    <a class="pc-name" href="/product/backpack-black">Black</a>
+    <span class="pc-stock sold">Sold out</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+  </div>
+</div><div class="pc pc--sold" data-grade="Vault" data-search="duffle bag brown print vault">
+  <div class="pc-img">
+    
+    <span class="pc-grade sold">Sold out</span>
+    <img src="/assets/Accessories/duffle-bag-brown-print.webp" alt="Duffle Bag, Brown Print — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Duffle Bag</span>
+    <a class="pc-name" href="/product/duffle-bag-brown-print">Brown Print</a>
+    <span class="pc-stock sold">Sold out</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+  </div>
+</div><div class="pc pc--sold" data-grade="Vault" data-search="shoulder bag black nylon vault">
+  <div class="pc-img">
+    
+    <span class="pc-grade sold">Sold out</span>
+    <img src="/assets/Accessories/shoulder-bag-black-nylon.webp" alt="Shoulder Bag, Black Nylon — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">Shoulder Bag</span>
+    <a class="pc-name" href="/product/shoulder-bag-black-nylon">Black Nylon</a>
+    <span class="pc-stock sold">Sold out</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+  </div>
+</div></div>
+  </section>
+<section class="acc-section" data-type="Wallets &amp; Card Holders">
+    <div class="acc-head"><h2>Wallets &amp; Card Holders</h2><span class="acc-n">5</span></div>
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Vault" data-search="premium wallet brown print vault">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
@@ -441,55 +546,46 @@
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="sports watch chronograph black standard">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="card holder tan chevron vault">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/sports-watch-chronograph-black.webp" alt="Sports Watch, Chronograph Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/card-holder-tan-chevron.webp" alt="Card Holder, Tan Chevron — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">Sports Watch</span>
-    <a class="pc-name" href="/product/sports-watch-chronograph-black">Chronograph Black</a>
+    <span class="pc-brand">Card Holder</span>
+    <a class="pc-name" href="/product/card-holder-tan-chevron">Tan Chevron</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="sports watch black resin standard">
+</div></div>
+  </section>
+<section class="acc-section" data-type="Headwear">
+    <div class="acc-head"><h2>Headwear</h2><span class="acc-n">5</span></div>
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Standard" data-search="6-panel cap navy standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/sports-watch-black-resin.webp" alt="Sports Watch, Black Resin — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/6-panel-cap-navy.webp" alt="6-Panel Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">Sports Watch</span>
-    <a class="pc-name" href="/product/sports-watch-black-resin">Black Resin</a>
+    <span class="pc-brand">6-Panel Cap</span>
+    <a class="pc-name" href="/product/6-panel-cap-navy">Navy</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch silver &amp; blue vault">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="fitted cap navy standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/luxury-watch-silver-blue.webp" alt="Luxury Watch, Silver &amp; Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/fitted-cap-navy.webp" alt="Fitted Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">Luxury Watch</span>
-    <a class="pc-name" href="/product/luxury-watch-silver-blue">Silver &amp; Blue</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="crossbody bag black standard">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/crossbody-bag-black.webp" alt="Crossbody Bag, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Crossbody Bag</span>
-    <a class="pc-name" href="/product/crossbody-bag-black">Black</a>
+    <span class="pc-brand">Fitted Cap</span>
+    <a class="pc-name" href="/product/fitted-cap-navy">Navy</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
@@ -532,112 +628,43 @@
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc pc--sold" data-grade="Entry" data-search="backpack black entry">
+</div></div>
+  </section>
+<section class="acc-section" data-type="Belts">
+    <div class="acc-head"><h2>Belts</h2><span class="acc-n">1</span></div>
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Standard" data-search="toh double-buckle leather belt standard">
   <div class="pc-img">
     
     <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/backpack-black.webp" alt="Backpack, Black — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    <img src="/assets/Accessories/toh-double-buckle-leather-belt.webp" alt="Double-Buckle Leather Belt — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     
   </div>
   <div class="pc-body">
-    <span class="pc-brand">Backpack</span>
-    <a class="pc-name" href="/product/backpack-black">Black</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Vault" data-search="duffle bag brown print vault">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/duffle-bag-brown-print.webp" alt="Duffle Bag, Brown Print — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Duffle Bag</span>
-    <a class="pc-name" href="/product/duffle-bag-brown-print">Brown Print</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch steel blue vault">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/luxury-watch-steel-blue.webp" alt="Luxury Watch, Steel Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Luxury Watch</span>
-    <a class="pc-name" href="/product/luxury-watch-steel-blue">Steel Blue</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch gold &amp; steel vault">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/luxury-watch-gold-steel.webp" alt="Luxury Watch, Gold &amp; Steel — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Luxury Watch</span>
-    <a class="pc-name" href="/product/luxury-watch-gold-steel">Gold &amp; Steel</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="cuban link chain iced silver standard">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/cuban-link-chain-iced-silver.webp" alt="Cuban Link Chain, Iced Silver — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Cuban Link Chain</span>
-    <a class="pc-name" href="/product/cuban-link-chain-iced-silver">Iced Silver</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Vault" data-search="card holder tan chevron vault">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/card-holder-tan-chevron.webp" alt="Card Holder, Tan Chevron — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Card Holder</span>
-    <a class="pc-name" href="/product/card-holder-tan-chevron">Tan Chevron</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Vault" data-search="shoulder bag black nylon vault">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/shoulder-bag-black-nylon.webp" alt="Shoulder Bag, Black Nylon — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Shoulder Bag</span>
-    <a class="pc-name" href="/product/shoulder-bag-black-nylon">Black Nylon</a>
-    <span class="pc-stock sold">Sold out</span>
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
-  </div>
-</div><div class="pc pc--sold" data-grade="Standard" data-search="sport sunglasses black standard">
-  <div class="pc-img">
-    
-    <span class="pc-grade sold">Sold out</span>
-    <img src="/assets/Accessories/sport-sunglasses-black.webp" alt="Sport Sunglasses, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
-    
-  </div>
-  <div class="pc-body">
-    <span class="pc-brand">Sport Sunglasses</span>
-    <a class="pc-name" href="/product/sport-sunglasses-black">Black</a>
+    <span class="pc-brand">TOH</span>
+    <a class="pc-name" href="/product/toh-double-buckle-leather-belt">Double-Buckle Leather Belt</a>
     <span class="pc-stock sold">Sold out</span>
     <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
-  <div class="empty" id="empty" style="display:none">No matches. Try another tier or clear the search.</div>
+  </section>
+<section class="acc-section" data-type="Socks">
+    <div class="acc-head"><h2>Socks</h2><span class="acc-n">1</span></div>
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Entry" data-search="toh crew sock 3-pack entry">
+  <div class="pc-img">
+    
+    <span class="pc-grade sold">Sold out</span>
+    <img src="/assets/Accessories/toh-crew-sock-3-pack.webp" alt="Crew Sock 3-Pack — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
+  </div>
+  <div class="pc-body">
+    <span class="pc-brand">TOH</span>
+    <a class="pc-name" href="/product/toh-crew-sock-3-pack">Crew Sock 3-Pack</a>
+    <span class="pc-stock sold">Sold out</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+  </div>
+</div></div>
+  </section>
+  <div class="empty" id="empty" style="display:none">No matches. Pick another group or clear the search.</div>
 </section>
 </main>
 
@@ -678,29 +705,42 @@
     <svg><use href="#wa-icon"/></svg>
   </button></div>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Finishing Touches — The Outfit House","numberOfItems":26,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://theoutfithouse.in/product/toh-crown-tote-cream","name":"Crown Tote · Cream"},{"@type":"ListItem","position":2,"url":"https://theoutfithouse.in/product/6-panel-cap-navy","name":"6-Panel Cap · Navy"},{"@type":"ListItem","position":3,"url":"https://theoutfithouse.in/product/toh-crew-sock-3-pack","name":"Crew Sock 3-Pack"},{"@type":"ListItem","position":4,"url":"https://theoutfithouse.in/product/sunglasses-classic-black","name":"Sunglasses · Classic Black"},{"@type":"ListItem","position":5,"url":"https://theoutfithouse.in/product/sunglasses-pilot-gold","name":"Sunglasses · Pilot Gold"},{"@type":"ListItem","position":6,"url":"https://theoutfithouse.in/product/toh-double-buckle-leather-belt","name":"Double-Buckle Leather Belt"},{"@type":"ListItem","position":7,"url":"https://theoutfithouse.in/product/fitted-cap-navy","name":"Fitted Cap · Navy"},{"@type":"ListItem","position":8,"url":"https://theoutfithouse.in/product/premium-wallet-brown-print","name":"Premium Wallet · Brown Print"},{"@type":"ListItem","position":9,"url":"https://theoutfithouse.in/product/card-holder-black-leather","name":"Card Holder · Black Leather"},{"@type":"ListItem","position":10,"url":"https://theoutfithouse.in/product/premium-wallet-black-leather","name":"Premium Wallet · Black Leather"},{"@type":"ListItem","position":11,"url":"https://theoutfithouse.in/product/toh-bifold-leather-wallet","name":"Bifold Leather Wallet"},{"@type":"ListItem","position":12,"url":"https://theoutfithouse.in/product/sports-watch-chronograph-black","name":"Sports Watch · Chronograph Black"},{"@type":"ListItem","position":13,"url":"https://theoutfithouse.in/product/sports-watch-black-resin","name":"Sports Watch · Black Resin"},{"@type":"ListItem","position":14,"url":"https://theoutfithouse.in/product/luxury-watch-silver-blue","name":"Luxury Watch · Silver & Blue"},{"@type":"ListItem","position":15,"url":"https://theoutfithouse.in/product/crossbody-bag-black","name":"Crossbody Bag · Black"},{"@type":"ListItem","position":16,"url":"https://theoutfithouse.in/product/toh-ribbed-beanie","name":"Ribbed Beanie"},{"@type":"ListItem","position":17,"url":"https://theoutfithouse.in/product/bucket-hat-black","name":"Bucket Hat · Black"},{"@type":"ListItem","position":18,"url":"https://theoutfithouse.in/product/knit-beanie-brown","name":"Knit Beanie · Brown"},{"@type":"ListItem","position":19,"url":"https://theoutfithouse.in/product/backpack-black","name":"Backpack · Black"},{"@type":"ListItem","position":20,"url":"https://theoutfithouse.in/product/duffle-bag-brown-print","name":"Duffle Bag · Brown Print"},{"@type":"ListItem","position":21,"url":"https://theoutfithouse.in/product/luxury-watch-steel-blue","name":"Luxury Watch · Steel Blue"},{"@type":"ListItem","position":22,"url":"https://theoutfithouse.in/product/luxury-watch-gold-steel","name":"Luxury Watch · Gold & Steel"},{"@type":"ListItem","position":23,"url":"https://theoutfithouse.in/product/cuban-link-chain-iced-silver","name":"Cuban Link Chain · Iced Silver"},{"@type":"ListItem","position":24,"url":"https://theoutfithouse.in/product/card-holder-tan-chevron","name":"Card Holder · Tan Chevron"},{"@type":"ListItem","position":25,"url":"https://theoutfithouse.in/product/shoulder-bag-black-nylon","name":"Shoulder Bag · Black Nylon"},{"@type":"ListItem","position":26,"url":"https://theoutfithouse.in/product/sport-sunglasses-black","name":"Sport Sunglasses · Black"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Finishing Touches — The Outfit House","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://theoutfithouse.in/product/toh-crown-tote-cream","name":"Crown Tote · Cream"},{"@type":"ListItem","position":2,"url":"https://theoutfithouse.in/product/6-panel-cap-navy","name":"6-Panel Cap · Navy"},{"@type":"ListItem","position":3,"url":"https://theoutfithouse.in/product/toh-crew-sock-3-pack","name":"Crew Sock 3-Pack"},{"@type":"ListItem","position":4,"url":"https://theoutfithouse.in/product/sunglasses-classic-black","name":"Sunglasses · Classic Black"},{"@type":"ListItem","position":5,"url":"https://theoutfithouse.in/product/sunglasses-pilot-gold","name":"Sunglasses · Pilot Gold"},{"@type":"ListItem","position":6,"url":"https://theoutfithouse.in/product/toh-double-buckle-leather-belt","name":"Double-Buckle Leather Belt"},{"@type":"ListItem","position":7,"url":"https://theoutfithouse.in/product/fitted-cap-navy","name":"Fitted Cap · Navy"},{"@type":"ListItem","position":8,"url":"https://theoutfithouse.in/product/premium-wallet-brown-print","name":"Premium Wallet · Brown Print"},{"@type":"ListItem","position":9,"url":"https://theoutfithouse.in/product/card-holder-black-leather","name":"Card Holder · Black Leather"},{"@type":"ListItem","position":10,"url":"https://theoutfithouse.in/product/premium-wallet-black-leather","name":"Premium Wallet · Black Leather"},{"@type":"ListItem","position":11,"url":"https://theoutfithouse.in/product/toh-bifold-leather-wallet","name":"Bifold Leather Wallet"},{"@type":"ListItem","position":12,"url":"https://theoutfithouse.in/product/sports-watch-chronograph-black","name":"Sports Watch · Chronograph Black"},{"@type":"ListItem","position":13,"url":"https://theoutfithouse.in/product/sports-watch-black-resin","name":"Sports Watch · Black Resin"},{"@type":"ListItem","position":14,"url":"https://theoutfithouse.in/product/luxury-watch-silver-blue","name":"Luxury Watch · Silver & Blue"},{"@type":"ListItem","position":15,"url":"https://theoutfithouse.in/product/crossbody-bag-black","name":"Crossbody Bag · Black"},{"@type":"ListItem","position":16,"url":"https://theoutfithouse.in/product/toh-ribbed-beanie","name":"Ribbed Beanie"},{"@type":"ListItem","position":17,"url":"https://theoutfithouse.in/product/bucket-hat-black","name":"Bucket Hat · Black"},{"@type":"ListItem","position":18,"url":"https://theoutfithouse.in/product/knit-beanie-brown","name":"Knit Beanie · Brown"},{"@type":"ListItem","position":19,"url":"https://theoutfithouse.in/product/backpack-black","name":"Backpack · Black"},{"@type":"ListItem","position":20,"url":"https://theoutfithouse.in/product/duffle-bag-brown-print","name":"Duffle Bag · Brown Print"},{"@type":"ListItem","position":21,"url":"https://theoutfithouse.in/product/luxury-watch-steel-blue","name":"Luxury Watch · Steel Blue"},{"@type":"ListItem","position":22,"url":"https://theoutfithouse.in/product/luxury-watch-gold-steel","name":"Luxury Watch · Gold & Steel"},{"@type":"ListItem","position":23,"url":"https://theoutfithouse.in/product/card-holder-tan-chevron","name":"Card Holder · Tan Chevron"},{"@type":"ListItem","position":24,"url":"https://theoutfithouse.in/product/shoulder-bag-black-nylon","name":"Shoulder Bag · Black Nylon"},{"@type":"ListItem","position":25,"url":"https://theoutfithouse.in/product/sport-sunglasses-black","name":"Sport Sunglasses · Black"}]}</script>
 <script src="/site.js"></script>
 <script>
   initHeader();
   (function(){
-    var grid = document.getElementById('grid');
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.pc'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.acc-section'));
+    var grouped = sections.length > 0;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.products-grid .pc'));
     var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs .tab'));
     var search = document.getElementById('search');
-    var tier = 'all';
+    var pick = 'all';
     function apply(){
       var q = ((search && search.value) || '').trim().toLowerCase();
       var n = 0;
       cards.forEach(function(c){
-        var okTier = (tier === 'all' || c.dataset.grade === tier);
+        var bucketOk = grouped ? true : (pick === 'all' || c.dataset.grade === pick);
         var okText = !q || (c.dataset.search || '').indexOf(q) !== -1;
-        var show = okTier && okText;
+        var show = bucketOk && okText;
         c.style.display = show ? '' : 'none'; if (show) n++;
       });
+      if (grouped) {
+        n = 0;
+        sections.forEach(function(sec){
+          var typeOk = (pick === 'all' || sec.dataset.type === pick);
+          var vis = 0;
+          Array.prototype.slice.call(sec.querySelectorAll('.pc')).forEach(function(c){
+            var ok = typeOk && c.style.display !== 'none';
+            c.style.display = ok ? '' : 'none'; if (ok) vis++;
+          });
+          sec.style.display = vis ? '' : 'none'; n += vis;
+        });
+      }
       document.getElementById('count').textContent = n;
       document.getElementById('empty').style.display = n ? 'none' : 'block';
     }
-    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); tier = b.dataset.tier; apply(); }); });
+    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); pick = b.dataset.tier; apply(); }); });
     if (search) search.addEventListener('input', apply);
     cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); if (cta.disabled) return; wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + cta.dataset.slug); }); });
   })();
