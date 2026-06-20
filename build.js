@@ -112,7 +112,11 @@ const newProductsText = '[\n' + (() => {
     groups[cat].forEach(p => {
       let f = '  { slug:' + jsq(p._newSlug) + ', cat:' + jsq(p.cat) + ', ';
       if (p.stock) f += 'stock:' + jsq(p.stock) + ', ';
-      f += 'brand:' + jsq(p.brand) + ', name:' + jsq(p.name) + ', grade:' + jsq(p.grade) + ', img:' + jsq(p._newImg) + ' },';
+      if (p.sizes) f += 'sizes:' + jsq(p.sizes) + ', ';
+      if (p.limited) f += 'limited:true, ';
+      f += 'brand:' + jsq(p.brand) + ', name:' + jsq(p.name) + ', grade:' + jsq(p.grade) + ', img:' + jsq(p._newImg);
+      if (p.imgs && p.imgs.length) f += ', imgs:[' + p.imgs.map(jsq).join(', ') + ']';
+      f += ' },';
       out.push(f);
     });
   });
@@ -204,19 +208,30 @@ function head(opts) {
 /* ---------- static product card (matches renderProductCard markup) ---------- */
 function card(p) {
   const g = p.grade.toLowerCase();
-  return `<div class="pc" data-grade="${esc(p.grade)}">
+  const sold = p.stock === 'sold';
+  const altImg = (p.imgs && p.imgs.length)
+    ? `<img class="pc-img-alt" src="/${esc(p.imgs[0])}" alt="" aria-hidden="true" loading="lazy" decoding="async" width="600" height="600"/>` : '';
+  const badge = sold ? '<span class="pc-grade sold">Sold out</span>' : `<span class="pc-grade ${g}">${esc(p.grade)}</span>`;
+  const limited = p.limited ? '<span class="pc-limited">Limited edition</span>' : '';
+  let status = '';
+  if (sold) status = '<span class="pc-stock sold">Sold out</span>';
+  else if (p.stock === 'in') status = `<span class="pc-stock">In stock now${p.sizes ? ' · UK ' + esc(p.sizes) : ''}</span>`;
+  const cta = sold
+    ? '<button class="pc-cta" disabled aria-disabled="true">Sold out</button>'
+    : `<button class="pc-cta" data-slug="${esc(p.slug)}" data-name="${esc(p.name)}" data-grade="${esc(p.grade)}"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>`;
+  return `<div class="pc${p.limited ? ' pc--limited' : ''}${sold ? ' pc--sold' : ''}" data-grade="${esc(p.grade)}" data-search="${esc((p.brand + ' ' + p.name + ' ' + p.grade).toLowerCase())}">
   <div class="pc-img">
-    <span class="pc-grade ${g}">${esc(p.grade)}</span>
+    ${limited}
+    ${badge}
     <img src="/${esc(p.img)}" alt="${esc(altText(p))}" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    ${altImg}
   </div>
   <div class="pc-body">
     <span class="pc-brand">${esc(p.brand)}</span>
     <a class="pc-name" href="/product/${esc(p.slug)}">${esc(p.name)}</a>
-    ${p.stock === 'in' ? '<span class="pc-stock">In stock now</span>' : ''}
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="${esc(p.name)}" data-grade="${esc(p.grade)}">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    ${status}
+    <span class="pc-price">${sold ? 'Currently unavailable' : 'Price on enquiry'}</span>
+    ${cta}
   </div>
 </div>`;
 }
@@ -285,9 +300,14 @@ function productPage(p) {
   const title = p.name + ' | The Outfit House';
   const desc = describe(p);
   const url = ORIGIN + '/product/' + p.slug;
+  const sold = p.stock === 'sold';
+  const gallery = [p.img].concat(p.imgs || []);
   const sizeSet = SIZE_SETS[p.cat] || SIZE_SETS.sneakers;
+  const inStockSizes = (p.stock === 'in' && p.sizes) ? p.sizes.split(',').map(s => 'UK ' + s.trim()) : null;
+  const sizeList = inStockSizes || sizeSet.sizes;
+  const sizeLabel = inStockSizes ? 'In stock now · UK' : sizeSet.label;
   const specSet = (SPEC_SETS[p.cat] || SPEC_SETS.sneakers).concat([['Tier', p.grade]]);
-  const sizesHtml = sizeSet.sizes.map(s => `<button class="size" type="button" aria-pressed="false">${esc(s)}</button>`).join('');
+  const sizesHtml = sizeList.map(s => `<button class="size" type="button" aria-pressed="false">${esc(s)}</button>`).join('');
   const specsHtml = specSet.map(r => `<div class="spec"><div class="k">${esc(r[0])}</div><div class="v">${esc(r[1])}</div></div>`).join('');
   let related = PRODUCTS.filter(x => x.slug !== p.slug && x.cat === p.cat).slice(0, 3);
   if (related.length < 3) related = related.concat(PRODUCTS.filter(x => x.slug !== p.slug && x.cat !== p.cat).slice(0, 3 - related.length));
@@ -312,37 +332,40 @@ ${SPRITE}
 <main id="main-content" class="pdp">
   <div class="gallery">
     <div class="gal-main">
-      <span class="gal-grade ${p.grade.toLowerCase()}">${esc(p.grade)}</span>
+      ${p.limited ? '<span class="gal-limited">Limited edition</span>' : ''}
+      <span class="gal-grade ${sold ? 'sold' : p.grade.toLowerCase()}">${sold ? 'Sold out' : esc(p.grade)}</span>
       <img id="gal-img" src="/${esc(p.img)}" alt="${esc(altText(p))}" width="900" height="900" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     </div>
+    ${gallery.length > 1 ? `<div class="gal-thumbs">${gallery.map((src, i) => `<button class="gal-thumb${i === 0 ? ' sel' : ''}" type="button" data-src="/${esc(src)}" aria-label="View image ${i + 1}"><img src="/${esc(src)}" alt="" loading="lazy" decoding="async" width="120" height="120"/></button>`).join('')}</div>` : ''}
   </div>
 
   <div class="info">
     <div>
       <span class="brandtag">${esc(p.brand)}</span>
       <h1>${esc(p.name)}</h1>
+      ${p.limited ? '<p class="pdp-limited">Limited edition, special release. Not a standard colourway, secured in very small numbers.</p>' : ''}
     </div>
     <div class="price-row">
-      <span class="price">Price on enquiry</span>
-      ${p.stock === 'in' ? '<span class="pdp-stock">In stock now · ready to ship</span>' : ''}
-      <span class="price-note">Best price shared on WhatsApp · we run regular launch offers</span>
+      <span class="price">${sold ? 'Currently unavailable' : 'Price on enquiry'}</span>
+      ${sold ? '<span class="pdp-stock sold">Sold out</span>' : (p.stock === 'in' ? `<span class="pdp-stock">In stock now · ready to ship${p.sizes ? ' · UK ' + esc(p.sizes) : ''}</span>` : '')}
+      <span class="price-note">${sold ? 'This piece is sold out online right now. Ask in store for availability.' : 'Best price shared on WhatsApp · we run regular launch offers'}</span>
     </div>
 
     <p class="pdp-desc">${esc(desc)}</p>
 
-    ${sizeSet.sizes.length ? `<div class="size-block">
-      <h4>${esc(sizeSet.label)}</h4>
+    ${!sold && sizeList.length ? `<div class="size-block">
+      <h4>${esc(sizeLabel)}</h4>
       <div class="sizes" id="sizes">${sizesHtml}</div>
       <div class="size-help">
         <a href="#" onclick="wa('Hi! I need help with sizing.');return false;">Not sure? Ask on WhatsApp</a>
-        <span>${esc(sizeSet.note)}</span>
+        <span>${esc(inStockSizes ? 'Other sizes arranged on request' : sizeSet.note)}</span>
       </div>
     </div>` : ''}
 
-    <div class="cta-row">
+    ${sold ? '<div class="cta-row"><span class="sold-note">Sold out online</span></div>' : `<div class="cta-row">
       <button class="btn-wa" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
-      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of ${esc(p.name)}');return false;">Request more photos</a>
-    </div>
+      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of ${esc(p.name)}. ${url}');return false;">Request more photos</a>
+    </div>`}
 
     <div class="spec-block">
       <h4>Spec highlights</h4>
@@ -382,11 +405,18 @@ ${SPRITE}
     function enquire(){
       var parts = ['Hi! I want to enquire about ${p.name.replace(/'/g, "\\'")} (${p.grade})'];
       if (sizes.length) parts.push(sel ? 'size ' + sel : 'available sizes');
-      wa(parts.join(', ') + '. Could you share the price and real photos?');
+      wa(parts.join(', ') + '. Could you share the price and real photos? ${url}');
     }
     var eb = document.getElementById('enquire-btn'); if (eb) eb.addEventListener('click', enquire);
+    var gal = document.getElementById('gal-img');
+    document.querySelectorAll('.gal-thumb').forEach(function(t){
+      t.addEventListener('click', function(){
+        if (gal) gal.src = t.dataset.src;
+        document.querySelectorAll('.gal-thumb').forEach(function(x){ x.classList.toggle('sel', x===t); });
+      });
+    });
     document.querySelectorAll('.pc-cta').forEach(function(btn){
-      btn.addEventListener('click', function(e){ e.stopPropagation(); wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes?'); });
+      btn.addEventListener('click', function(e){ e.stopPropagation(); if (btn.disabled) return; wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + btn.dataset.slug); });
     });
   })();
 </script>
@@ -435,13 +465,14 @@ ${SPRITE}
 <div class="filter-bar">
   <div class="tabs" id="tabs">${tabs}</div>
   <div class="meta-row">
+    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg><input id="search" type="search" placeholder="Search ${esc(cat.label.toLowerCase())}" aria-label="Search ${esc(cat.label)}"/></label>
     <div class="count">Showing <b id="count">${list.length}</b> pieces</div>
   </div>
 </div>
 
 <section class="grid-wrap">
   <div class="products-grid" id="grid">${list.map(card).join('')}</div>
-  <div class="empty" id="empty" style="display:none">No pieces in this tier yet. Check back soon.</div>
+  <div class="empty" id="empty" style="display:none">No matches. Try another tier or clear the search.</div>
 </section>
 </main>
 
@@ -455,14 +486,23 @@ ${SPRITE}
     var grid = document.getElementById('grid');
     var cards = Array.prototype.slice.call(grid.querySelectorAll('.pc'));
     var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs .tab'));
-    function apply(t){
+    var search = document.getElementById('search');
+    var tier = 'all';
+    function apply(){
+      var q = ((search && search.value) || '').trim().toLowerCase();
       var n = 0;
-      cards.forEach(function(c){ var show = (t === 'all' || c.dataset.grade === t); c.style.display = show ? '' : 'none'; if (show) n++; });
+      cards.forEach(function(c){
+        var okTier = (tier === 'all' || c.dataset.grade === tier);
+        var okText = !q || (c.dataset.search || '').indexOf(q) !== -1;
+        var show = okTier && okText;
+        c.style.display = show ? '' : 'none'; if (show) n++;
+      });
       document.getElementById('count').textContent = n;
       document.getElementById('empty').style.display = n ? 'none' : 'block';
     }
-    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); apply(b.dataset.tier); }); });
-    cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes?'); }); });
+    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); tier = b.dataset.tier; apply(); }); });
+    if (search) search.addEventListener('input', apply);
+    cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); if (cta.disabled) return; wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + cta.dataset.slug); }); });
   })();
 </script>
 </body>

@@ -75,6 +75,21 @@
     color: var(--fg-muted);
   }
   .meta-row .count b { color: var(--fg); }
+  .search {
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 40px; padding: 0 12px; background: var(--bg-elev);
+    border: 1px solid var(--border-strong);
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  .search:focus-within { border-color: var(--accent); }
+  .search svg { width: 15px; height: 15px; color: var(--fg-subtle); flex-shrink: 0; }
+  .search input {
+    background: transparent; border: none; outline: none; width: 150px;
+    color: var(--fg); font-family: var(--font-body); font-size: 13px;
+    text-transform: none; letter-spacing: 0;
+  }
+  .search input::placeholder { color: var(--fg-subtle); }
+  @media (max-width: 520px) { .search input { width: 96px; } }
   .sort-drop { position: relative; }
   .sort-btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -277,377 +292,378 @@
 <div class="filter-bar">
   <div class="tabs" id="tabs"><button class="tab active" data-tier="all" aria-pressed="true">All<span class="count">26</span></button><button class="tab " data-tier="Entry" aria-pressed="false">Entry<span class="count">5</span></button><button class="tab " data-tier="Standard" aria-pressed="false">Standard<span class="count">13</span></button><button class="tab " data-tier="Vault" aria-pressed="false">Vault<span class="count">8</span></button></div>
   <div class="meta-row">
+    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg><input id="search" type="search" placeholder="Search accessories" aria-label="Search Accessories"/></label>
     <div class="count">Showing <b id="count">26</b> pieces</div>
   </div>
 </div>
 
 <section class="grid-wrap">
-  <div class="products-grid" id="grid"><div class="pc" data-grade="Entry">
+  <div class="products-grid" id="grid"><div class="pc pc--sold" data-grade="Entry" data-search="toh crown tote · cream entry">
   <div class="pc-img">
-    <span class="pc-grade entry">Entry</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/toh-crown-tote-cream.webp" alt="Crown Tote · Cream — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
     <a class="pc-name" href="/product/toh-crown-tote-cream">Crown Tote · Cream</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Crown Tote · Cream" data-grade="Entry">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="6-panel cap navy standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/6-panel-cap-navy.webp" alt="6-Panel Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">6-Panel Cap</span>
     <a class="pc-name" href="/product/6-panel-cap-navy">Navy</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Navy" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Entry">
+</div><div class="pc pc--sold" data-grade="Entry" data-search="toh crew sock 3-pack entry">
   <div class="pc-img">
-    <span class="pc-grade entry">Entry</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/toh-crew-sock-3-pack.webp" alt="Crew Sock 3-Pack — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
     <a class="pc-name" href="/product/toh-crew-sock-3-pack">Crew Sock 3-Pack</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Crew Sock 3-Pack" data-grade="Entry">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="sunglasses classic black standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/sunglasses-classic-black.webp" alt="Sunglasses, Classic Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Sunglasses</span>
     <a class="pc-name" href="/product/sunglasses-classic-black">Classic Black</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Classic Black" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="sunglasses pilot gold standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/sunglasses-pilot-gold.webp" alt="Sunglasses, Pilot Gold — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Sunglasses</span>
     <a class="pc-name" href="/product/sunglasses-pilot-gold">Pilot Gold</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Pilot Gold" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="toh double-buckle leather belt standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/toh-double-buckle-leather-belt.webp" alt="Double-Buckle Leather Belt — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
     <a class="pc-name" href="/product/toh-double-buckle-leather-belt">Double-Buckle Leather Belt</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Double-Buckle Leather Belt" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="fitted cap navy standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/fitted-cap-navy.webp" alt="Fitted Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Fitted Cap</span>
     <a class="pc-name" href="/product/fitted-cap-navy">Navy</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Navy" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="premium wallet brown print vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/premium-wallet-brown-print.webp" alt="Premium Wallet, Brown Print — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Premium Wallet</span>
     <a class="pc-name" href="/product/premium-wallet-brown-print">Brown Print</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Brown Print" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="card holder black leather vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/card-holder-black-leather.webp" alt="Card Holder, Black Leather — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Card Holder</span>
     <a class="pc-name" href="/product/card-holder-black-leather">Black Leather</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black Leather" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="premium wallet black leather standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/premium-wallet-black-leather.webp" alt="Premium Wallet, Black Leather — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Premium Wallet</span>
     <a class="pc-name" href="/product/premium-wallet-black-leather">Black Leather</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black Leather" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Entry">
+</div><div class="pc pc--sold" data-grade="Entry" data-search="toh bifold leather wallet entry">
   <div class="pc-img">
-    <span class="pc-grade entry">Entry</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/toh-bifold-leather-wallet.webp" alt="Bifold Leather Wallet — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
     <a class="pc-name" href="/product/toh-bifold-leather-wallet">Bifold Leather Wallet</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Bifold Leather Wallet" data-grade="Entry">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="sports watch chronograph black standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/sports-watch-chronograph-black.webp" alt="Sports Watch, Chronograph Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Sports Watch</span>
     <a class="pc-name" href="/product/sports-watch-chronograph-black">Chronograph Black</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Chronograph Black" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="sports watch black resin standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/sports-watch-black-resin.webp" alt="Sports Watch, Black Resin — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Sports Watch</span>
     <a class="pc-name" href="/product/sports-watch-black-resin">Black Resin</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black Resin" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch silver &amp; blue vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/luxury-watch-silver-blue.webp" alt="Luxury Watch, Silver &amp; Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Luxury Watch</span>
     <a class="pc-name" href="/product/luxury-watch-silver-blue">Silver &amp; Blue</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Silver &amp; Blue" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="crossbody bag black standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/crossbody-bag-black.webp" alt="Crossbody Bag, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Crossbody Bag</span>
     <a class="pc-name" href="/product/crossbody-bag-black">Black</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Entry">
+</div><div class="pc pc--sold" data-grade="Entry" data-search="toh ribbed beanie entry">
   <div class="pc-img">
-    <span class="pc-grade entry">Entry</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/toh-ribbed-beanie.webp" alt="Ribbed Beanie — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
     <a class="pc-name" href="/product/toh-ribbed-beanie">Ribbed Beanie</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Ribbed Beanie" data-grade="Entry">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="bucket hat black standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/bucket-hat-black.webp" alt="Bucket Hat, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Bucket Hat</span>
     <a class="pc-name" href="/product/bucket-hat-black">Black</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="knit beanie brown standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/knit-beanie-brown.webp" alt="Knit Beanie, Brown — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Knit Beanie</span>
     <a class="pc-name" href="/product/knit-beanie-brown">Brown</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Brown" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Entry">
+</div><div class="pc pc--sold" data-grade="Entry" data-search="backpack black entry">
   <div class="pc-img">
-    <span class="pc-grade entry">Entry</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/backpack-black.webp" alt="Backpack, Black — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Backpack</span>
     <a class="pc-name" href="/product/backpack-black">Black</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black" data-grade="Entry">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="duffle bag brown print vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/duffle-bag-brown-print.webp" alt="Duffle Bag, Brown Print — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Duffle Bag</span>
     <a class="pc-name" href="/product/duffle-bag-brown-print">Brown Print</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Brown Print" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch steel blue vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/luxury-watch-steel-blue.webp" alt="Luxury Watch, Steel Blue — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Luxury Watch</span>
     <a class="pc-name" href="/product/luxury-watch-steel-blue">Steel Blue</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Steel Blue" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch gold &amp; steel vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/luxury-watch-gold-steel.webp" alt="Luxury Watch, Gold &amp; Steel — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Luxury Watch</span>
     <a class="pc-name" href="/product/luxury-watch-gold-steel">Gold &amp; Steel</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Gold &amp; Steel" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="cuban link chain iced silver standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/cuban-link-chain-iced-silver.webp" alt="Cuban Link Chain, Iced Silver — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Cuban Link Chain</span>
     <a class="pc-name" href="/product/cuban-link-chain-iced-silver">Iced Silver</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Iced Silver" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="card holder tan chevron vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/card-holder-tan-chevron.webp" alt="Card Holder, Tan Chevron — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Card Holder</span>
     <a class="pc-name" href="/product/card-holder-tan-chevron">Tan Chevron</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Tan Chevron" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc pc--sold" data-grade="Vault" data-search="shoulder bag black nylon vault">
   <div class="pc-img">
-    <span class="pc-grade vault">Vault</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/shoulder-bag-black-nylon.webp" alt="Shoulder Bag, Black Nylon — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Shoulder Bag</span>
     <a class="pc-name" href="/product/shoulder-bag-black-nylon">Black Nylon</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black Nylon" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="sport sunglasses black standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/sport-sunglasses-black.webp" alt="Sport Sunglasses, Black — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Sport Sunglasses</span>
     <a class="pc-name" href="/product/sport-sunglasses-black">Black</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Black" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
-  <div class="empty" id="empty" style="display:none">No pieces in this tier yet. Check back soon.</div>
+  <div class="empty" id="empty" style="display:none">No matches. Try another tier or clear the search.</div>
 </section>
 </main>
 
@@ -696,14 +712,23 @@
     var grid = document.getElementById('grid');
     var cards = Array.prototype.slice.call(grid.querySelectorAll('.pc'));
     var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs .tab'));
-    function apply(t){
+    var search = document.getElementById('search');
+    var tier = 'all';
+    function apply(){
+      var q = ((search && search.value) || '').trim().toLowerCase();
       var n = 0;
-      cards.forEach(function(c){ var show = (t === 'all' || c.dataset.grade === t); c.style.display = show ? '' : 'none'; if (show) n++; });
+      cards.forEach(function(c){
+        var okTier = (tier === 'all' || c.dataset.grade === tier);
+        var okText = !q || (c.dataset.search || '').indexOf(q) !== -1;
+        var show = okTier && okText;
+        c.style.display = show ? '' : 'none'; if (show) n++;
+      });
       document.getElementById('count').textContent = n;
       document.getElementById('empty').style.display = n ? 'none' : 'block';
     }
-    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); apply(b.dataset.tier); }); });
-    cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes?'); }); });
+    tabs.forEach(function(b){ b.addEventListener('click', function(){ tabs.forEach(function(x){ x.classList.toggle('active', x===b); x.setAttribute('aria-pressed', String(x===b)); }); tier = b.dataset.tier; apply(); }); });
+    if (search) search.addEventListener('input', apply);
+    cards.forEach(function(c){ var cta = c.querySelector('.pc-cta'); if (cta) cta.addEventListener('click', function(e){ e.stopPropagation(); if (cta.disabled) return; wa('Hi! I want to enquire about ' + cta.dataset.name + ' (' + cta.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + cta.dataset.slug); }); });
   })();
 </script>
 </body>

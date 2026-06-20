@@ -61,6 +61,34 @@
   .gal-grade.entry    { background: var(--bg-light); color: var(--accent-on); }
   .gal-grade.standard { background: var(--accent); color: var(--accent-on); }
   .gal-grade.vault    { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
+  .gal-grade.sold     { background: var(--bg); color: var(--fg-subtle); border: 1px solid var(--border-strong); }
+  /* multi-shot thumbnails */
+  .gal-thumbs { display: flex; gap: 10px; flex-wrap: wrap; }
+  .gal-thumb {
+    width: 76px; height: 76px; padding: 0; overflow: hidden; cursor: pointer;
+    background: var(--bg-light); border: 1px solid var(--border);
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+  .gal-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .gal-thumb:hover { border-color: var(--border-strong); }
+  .gal-thumb.sel { border-color: var(--accent); }
+  /* limited edition */
+  .gal-limited {
+    position: absolute; top: 18px; right: 18px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-heading); font-size: 10px; font-weight: 700;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--accent);
+    padding: 6px 11px; background: var(--overlay-strong);
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+  .gal-limited::before {
+    content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .pdp-limited { margin-top: 12px; font-family: var(--font-body); font-size: 13px; line-height: 1.55; color: var(--fg-warm); max-width: 48ch; }
+  .pdp-stock.sold { color: var(--fg-subtle); }
+  .pdp-stock.sold::before { background: var(--fg-subtle); box-shadow: none; }
+  .sold-note { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--fg-subtle); padding: 16px 0; display: inline-block; }
   .gal-nav {
     position: absolute; inset: auto 0 50% auto;
     display: flex; justify-content: space-between; width: 100%;
@@ -365,15 +393,18 @@
 <main id="main-content" class="pdp">
   <div class="gallery">
     <div class="gal-main">
+      
       <span class="gal-grade vault">Vault</span>
       <img id="gal-img" src="/assets/Sneakers/high-top-sneaker-chicago.webp" alt="High-Top Sneaker, Chicago — Vault tier, The Outfit House" width="900" height="900" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     </div>
+    
   </div>
 
   <div class="info">
     <div>
       <span class="brandtag">High-Top Sneaker</span>
       <h1>Chicago</h1>
+      
     </div>
     <div class="price-row">
       <span class="price">Price on enquiry</span>
@@ -394,7 +425,7 @@
 
     <div class="cta-row">
       <button class="btn-wa" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
-      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of Chicago');return false;">Request more photos</a>
+      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of Chicago. https://theoutfithouse.in/product/high-top-sneaker-chicago');return false;">Request more photos</a>
     </div>
 
     <div class="spec-block">
@@ -418,47 +449,47 @@
 <section class="sec related">
   <div class="wrap">
     <div class="sec-head"><div><span class="eyebrow">You might like</span><h2>More pairs.</h2></div></div>
-    <div class="products-grid"><div class="pc" data-grade="Standard">
+    <div class="products-grid"><div class="pc" data-grade="Standard" data-search="mid-top sneaker panda standard">
   <div class="pc-img">
+    
     <span class="pc-grade standard">Standard</span>
     <img src="/assets/Sneakers/mid-top-sneaker-panda.webp" alt="Mid-Top Sneaker, Panda — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Mid-Top Sneaker</span>
     <a class="pc-name" href="/product/mid-top-sneaker-panda">Panda</a>
     
     <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Panda" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <button class="pc-cta" data-slug="mid-top-sneaker-panda" data-name="Panda" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc" data-grade="Vault" data-search="retro runner cream sea salt vault">
   <div class="pc-img">
+    
     <span class="pc-grade vault">Vault</span>
     <img src="/assets/Sneakers/retro-runner-cream-sea-salt.webp" alt="Retro Runner, Cream Sea Salt — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Retro Runner</span>
     <a class="pc-name" href="/product/retro-runner-cream-sea-salt">Cream Sea Salt</a>
     
     <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Cream Sea Salt" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <button class="pc-cta" data-slug="retro-runner-cream-sea-salt" data-name="Cream Sea Salt" data-grade="Vault"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc" data-grade="Standard" data-search="high-top sneaker bred toe standard">
   <div class="pc-img">
+    
     <span class="pc-grade standard">Standard</span>
     <img src="/assets/Sneakers/high-top-sneaker-bred-toe.webp" alt="High-Top Sneaker, Bred Toe — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">High-Top Sneaker</span>
     <a class="pc-name" href="/product/high-top-sneaker-bred-toe">Bred Toe</a>
-    <span class="pc-stock">In stock now</span>
+    
     <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Bred Toe" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <button class="pc-cta" data-slug="high-top-sneaker-bred-toe" data-name="Bred Toe" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
 </div></div>
   </div>
@@ -512,11 +543,18 @@
     function enquire(){
       var parts = ['Hi! I want to enquire about Chicago (Vault)'];
       if (sizes.length) parts.push(sel ? 'size ' + sel : 'available sizes');
-      wa(parts.join(', ') + '. Could you share the price and real photos?');
+      wa(parts.join(', ') + '. Could you share the price and real photos? https://theoutfithouse.in/product/high-top-sneaker-chicago');
     }
     var eb = document.getElementById('enquire-btn'); if (eb) eb.addEventListener('click', enquire);
+    var gal = document.getElementById('gal-img');
+    document.querySelectorAll('.gal-thumb').forEach(function(t){
+      t.addEventListener('click', function(){
+        if (gal) gal.src = t.dataset.src;
+        document.querySelectorAll('.gal-thumb').forEach(function(x){ x.classList.toggle('sel', x===t); });
+      });
+    });
     document.querySelectorAll('.pc-cta').forEach(function(btn){
-      btn.addEventListener('click', function(e){ e.stopPropagation(); wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes?'); });
+      btn.addEventListener('click', function(e){ e.stopPropagation(); if (btn.disabled) return; wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + btn.dataset.slug); });
     });
   })();
 </script>

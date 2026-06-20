@@ -98,6 +98,21 @@
     color: var(--fg-muted);
   }
   .meta-row .count b { color: var(--fg); }
+  .search {
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 40px; padding: 0 12px; background: var(--bg-elev);
+    border: 1px solid var(--border-strong);
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  .search:focus-within { border-color: var(--accent); }
+  .search svg { width: 15px; height: 15px; color: var(--fg-subtle); flex-shrink: 0; }
+  .search input {
+    background: transparent; border: none; outline: none; width: 150px;
+    color: var(--fg); font-family: var(--font-body); font-size: 13px;
+    text-transform: none; letter-spacing: 0;
+  }
+  .search input::placeholder { color: var(--fg-subtle); }
+  @media (max-width: 520px) { .search input { width: 96px; } }
   .sort-drop { position: relative; }
   .sort-btn {
     display: inline-flex; align-items: center; gap: 8px;

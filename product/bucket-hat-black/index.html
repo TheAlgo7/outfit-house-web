@@ -61,6 +61,34 @@
   .gal-grade.entry    { background: var(--bg-light); color: var(--accent-on); }
   .gal-grade.standard { background: var(--accent); color: var(--accent-on); }
   .gal-grade.vault    { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
+  .gal-grade.sold     { background: var(--bg); color: var(--fg-subtle); border: 1px solid var(--border-strong); }
+  /* multi-shot thumbnails */
+  .gal-thumbs { display: flex; gap: 10px; flex-wrap: wrap; }
+  .gal-thumb {
+    width: 76px; height: 76px; padding: 0; overflow: hidden; cursor: pointer;
+    background: var(--bg-light); border: 1px solid var(--border);
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+  .gal-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .gal-thumb:hover { border-color: var(--border-strong); }
+  .gal-thumb.sel { border-color: var(--accent); }
+  /* limited edition */
+  .gal-limited {
+    position: absolute; top: 18px; right: 18px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-heading); font-size: 10px; font-weight: 700;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--accent);
+    padding: 6px 11px; background: var(--overlay-strong);
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+  .gal-limited::before {
+    content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .pdp-limited { margin-top: 12px; font-family: var(--font-body); font-size: 13px; line-height: 1.55; color: var(--fg-warm); max-width: 48ch; }
+  .pdp-stock.sold { color: var(--fg-subtle); }
+  .pdp-stock.sold::before { background: var(--fg-subtle); box-shadow: none; }
+  .sold-note { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--fg-subtle); padding: 16px 0; display: inline-block; }
   .gal-nav {
     position: absolute; inset: auto 0 50% auto;
     display: flex; justify-content: space-between; width: 100%;
@@ -365,30 +393,30 @@
 <main id="main-content" class="pdp">
   <div class="gallery">
     <div class="gal-main">
-      <span class="gal-grade standard">Standard</span>
+      
+      <span class="gal-grade sold">Sold out</span>
       <img id="gal-img" src="/assets/Accessories/bucket-hat-black.webp" alt="Bucket Hat, Black — Standard tier, The Outfit House" width="900" height="900" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     </div>
+    
   </div>
 
   <div class="info">
     <div>
       <span class="brandtag">Bucket Hat</span>
       <h1>Black</h1>
+      
     </div>
     <div class="price-row">
-      <span class="price">Price on enquiry</span>
-      
-      <span class="price-note">Best price shared on WhatsApp · we run regular launch offers</span>
+      <span class="price">Currently unavailable</span>
+      <span class="pdp-stock sold">Sold out</span>
+      <span class="price-note">This piece is sold out online right now. Ask in store for availability.</span>
     </div>
 
     <p class="pdp-desc">Bucket Hat in Black. Genuine leather / premium materials, hand-checked, original-style packaging. Hand-checked in Chhatarpur, New Delhi, with real QC photos shared on WhatsApp before dispatch. Price on enquiry, ships PAN-India.</p>
 
     
 
-    <div class="cta-row">
-      <button class="btn-wa" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
-      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of Black');return false;">Request more photos</a>
-    </div>
+    <div class="cta-row"><span class="sold-note">Sold out online</span></div>
 
     <div class="spec-block">
       <h4>Spec highlights</h4>
@@ -411,47 +439,47 @@
 <section class="sec related">
   <div class="wrap">
     <div class="sec-head"><div><span class="eyebrow">You might like</span><h2>More pairs.</h2></div></div>
-    <div class="products-grid"><div class="pc" data-grade="Entry">
+    <div class="products-grid"><div class="pc pc--sold" data-grade="Entry" data-search="toh crown tote · cream entry">
   <div class="pc-img">
-    <span class="pc-grade entry">Entry</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/toh-crown-tote-cream.webp" alt="Crown Tote · Cream — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
     <a class="pc-name" href="/product/toh-crown-tote-cream">Crown Tote · Cream</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Crown Tote · Cream" data-grade="Entry">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc pc--sold" data-grade="Standard" data-search="6-panel cap navy standard">
   <div class="pc-img">
-    <span class="pc-grade standard">Standard</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/6-panel-cap-navy.webp" alt="6-Panel Cap, Navy — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">6-Panel Cap</span>
     <a class="pc-name" href="/product/6-panel-cap-navy">Navy</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Navy" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
-</div><div class="pc" data-grade="Entry">
+</div><div class="pc pc--sold" data-grade="Entry" data-search="toh crew sock 3-pack entry">
   <div class="pc-img">
-    <span class="pc-grade entry">Entry</span>
+    
+    <span class="pc-grade sold">Sold out</span>
     <img src="/assets/Accessories/toh-crew-sock-3-pack.webp" alt="Crew Sock 3-Pack — Entry tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">TOH</span>
     <a class="pc-name" href="/product/toh-crew-sock-3-pack">Crew Sock 3-Pack</a>
-    
-    <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Crew Sock 3-Pack" data-grade="Entry">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <span class="pc-stock sold">Sold out</span>
+    <span class="pc-price">Currently unavailable</span>
+    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </div>
@@ -505,11 +533,18 @@
     function enquire(){
       var parts = ['Hi! I want to enquire about Black (Standard)'];
       if (sizes.length) parts.push(sel ? 'size ' + sel : 'available sizes');
-      wa(parts.join(', ') + '. Could you share the price and real photos?');
+      wa(parts.join(', ') + '. Could you share the price and real photos? https://theoutfithouse.in/product/bucket-hat-black');
     }
     var eb = document.getElementById('enquire-btn'); if (eb) eb.addEventListener('click', enquire);
+    var gal = document.getElementById('gal-img');
+    document.querySelectorAll('.gal-thumb').forEach(function(t){
+      t.addEventListener('click', function(){
+        if (gal) gal.src = t.dataset.src;
+        document.querySelectorAll('.gal-thumb').forEach(function(x){ x.classList.toggle('sel', x===t); });
+      });
+    });
     document.querySelectorAll('.pc-cta').forEach(function(btn){
-      btn.addEventListener('click', function(e){ e.stopPropagation(); wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes?'); });
+      btn.addEventListener('click', function(e){ e.stopPropagation(); if (btn.disabled) return; wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + btn.dataset.slug); });
     });
   })();
 </script>

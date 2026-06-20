@@ -280,6 +280,46 @@ header.nav {
 .pc-cta:hover { background: var(--wa); color: var(--accent-on); border-color: var(--wa); }
 .pc-cta svg { width: 13px; height: 13px; }
 
+/* ---- multi-shot: soft second-image crossfade on hover ---- */
+.pc-img-alt {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; z-index: 1; pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+}
+.pc:hover .pc-img-alt { opacity: 1; transform: scale(1.04); }
+
+/* ---- limited edition: quiet but unmistakable ---- */
+.pc-limited {
+  position: absolute; top: 14px; right: 14px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-heading); font-size: 9px; font-weight: 700;
+  letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--accent);
+  padding: 5px 9px; background: var(--overlay-strong);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.pc-limited::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.pc--limited { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent); }
+.pc--limited:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+
+/* ---- sold out: visibly unavailable, CTA disabled ---- */
+.pc-grade.sold { background: var(--bg); color: var(--fg-subtle); border: 1px solid var(--border-strong); }
+.pc-stock.sold { color: var(--fg-subtle); }
+.pc-stock.sold::before { background: var(--fg-subtle); box-shadow: none; }
+.pc--sold .pc-img img { opacity: 0.45; filter: grayscale(0.35); }
+.pc--sold .pc-name { color: var(--fg-muted); }
+.pc--sold:hover { transform: none; border-color: var(--bg-elev); }
+.pc--sold:hover .pc-img img { transform: none; }
+.pc-cta:disabled, .pc-cta[aria-disabled="true"] {
+  opacity: 0.55; cursor: not-allowed;
+  background: transparent; color: var(--fg-subtle); border-color: var(--border);
+}
+.pc-cta:disabled:hover, .pc-cta[aria-disabled="true"]:hover {
+  background: transparent; color: var(--fg-subtle); border-color: var(--border);
+}
+
 /* ============ FOOTER ============ */
 footer { border-top: 1px solid var(--border); padding: 56px var(--pad-x) 32px; }
 .ft { max-width: var(--container); margin: 0 auto; display: grid;

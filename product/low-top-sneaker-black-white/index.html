@@ -61,6 +61,34 @@
   .gal-grade.entry    { background: var(--bg-light); color: var(--accent-on); }
   .gal-grade.standard { background: var(--accent); color: var(--accent-on); }
   .gal-grade.vault    { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); }
+  .gal-grade.sold     { background: var(--bg); color: var(--fg-subtle); border: 1px solid var(--border-strong); }
+  /* multi-shot thumbnails */
+  .gal-thumbs { display: flex; gap: 10px; flex-wrap: wrap; }
+  .gal-thumb {
+    width: 76px; height: 76px; padding: 0; overflow: hidden; cursor: pointer;
+    background: var(--bg-light); border: 1px solid var(--border);
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+  .gal-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .gal-thumb:hover { border-color: var(--border-strong); }
+  .gal-thumb.sel { border-color: var(--accent); }
+  /* limited edition */
+  .gal-limited {
+    position: absolute; top: 18px; right: 18px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-heading); font-size: 10px; font-weight: 700;
+    letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--accent);
+    padding: 6px 11px; background: var(--overlay-strong);
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+  .gal-limited::before {
+    content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .pdp-limited { margin-top: 12px; font-family: var(--font-body); font-size: 13px; line-height: 1.55; color: var(--fg-warm); max-width: 48ch; }
+  .pdp-stock.sold { color: var(--fg-subtle); }
+  .pdp-stock.sold::before { background: var(--fg-subtle); box-shadow: none; }
+  .sold-note { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--fg-subtle); padding: 16px 0; display: inline-block; }
   .gal-nav {
     position: absolute; inset: auto 0 50% auto;
     display: flex; justify-content: space-between; width: 100%;
@@ -365,19 +393,22 @@
 <main id="main-content" class="pdp">
   <div class="gallery">
     <div class="gal-main">
+      
       <span class="gal-grade entry">Entry</span>
       <img id="gal-img" src="/assets/Sneakers/low-top-sneaker-black-white.webp" alt="Low-Top Sneaker, Black &amp; White — Entry tier, The Outfit House" width="900" height="900" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     </div>
+    
   </div>
 
   <div class="info">
     <div>
       <span class="brandtag">Low-Top Sneaker</span>
       <h1>Black &amp; White</h1>
+      
     </div>
     <div class="price-row">
       <span class="price">Price on enquiry</span>
-      <span class="pdp-stock">In stock now · ready to ship</span>
+      
       <span class="price-note">Best price shared on WhatsApp · we run regular launch offers</span>
     </div>
 
@@ -394,7 +425,7 @@
 
     <div class="cta-row">
       <button class="btn-wa" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
-      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of Black &amp; White');return false;">Request more photos</a>
+      <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of Black &amp; White. https://theoutfithouse.in/product/low-top-sneaker-black-white');return false;">Request more photos</a>
     </div>
 
     <div class="spec-block">
@@ -418,47 +449,47 @@
 <section class="sec related">
   <div class="wrap">
     <div class="sec-head"><div><span class="eyebrow">You might like</span><h2>More pairs.</h2></div></div>
-    <div class="products-grid"><div class="pc" data-grade="Standard">
+    <div class="products-grid"><div class="pc" data-grade="Standard" data-search="mid-top sneaker panda standard">
   <div class="pc-img">
+    
     <span class="pc-grade standard">Standard</span>
     <img src="/assets/Sneakers/mid-top-sneaker-panda.webp" alt="Mid-Top Sneaker, Panda — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Mid-Top Sneaker</span>
     <a class="pc-name" href="/product/mid-top-sneaker-panda">Panda</a>
     
     <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Panda" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <button class="pc-cta" data-slug="mid-top-sneaker-panda" data-name="Panda" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
-</div><div class="pc" data-grade="Vault">
+</div><div class="pc" data-grade="Vault" data-search="retro runner cream sea salt vault">
   <div class="pc-img">
+    
     <span class="pc-grade vault">Vault</span>
     <img src="/assets/Sneakers/retro-runner-cream-sea-salt.webp" alt="Retro Runner, Cream Sea Salt — Vault tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">Retro Runner</span>
     <a class="pc-name" href="/product/retro-runner-cream-sea-salt">Cream Sea Salt</a>
     
     <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Cream Sea Salt" data-grade="Vault">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <button class="pc-cta" data-slug="retro-runner-cream-sea-salt" data-name="Cream Sea Salt" data-grade="Vault"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
-</div><div class="pc" data-grade="Standard">
+</div><div class="pc" data-grade="Standard" data-search="high-top sneaker bred toe standard">
   <div class="pc-img">
+    
     <span class="pc-grade standard">Standard</span>
     <img src="/assets/Sneakers/high-top-sneaker-bred-toe.webp" alt="High-Top Sneaker, Bred Toe — Standard tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+    
   </div>
   <div class="pc-body">
     <span class="pc-brand">High-Top Sneaker</span>
     <a class="pc-name" href="/product/high-top-sneaker-bred-toe">Bred Toe</a>
-    <span class="pc-stock">In stock now</span>
+    
     <span class="pc-price">Price on enquiry</span>
-    <button class="pc-cta" data-name="Bred Toe" data-grade="Standard">
-      <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
-    </button>
+    <button class="pc-cta" data-slug="high-top-sneaker-bred-toe" data-name="Bred Toe" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
 </div></div>
   </div>
@@ -501,7 +532,7 @@
     <svg><use href="#wa-icon"/></svg>
   </button></div>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Product","@id":"https://theoutfithouse.in/product/low-top-sneaker-black-white#product","name":"Black & White","description":"Low-Top Sneaker in Black & White. PU-blend upper, glued sole, soft-sole comfort, protective dust bag. Hand-checked in Chhatarpur, New Delhi, with real QC photos shared on WhatsApp before dispatch. Price on enquiry, ships PAN-India.","image":["https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-black-white.webp"],"sku":"low-top-sneaker-black-white","category":"Sneakers","brand":{"@type":"Brand","name":"The Outfit House"},"itemCondition":"https://schema.org/NewCondition","offers":{"@type":"Offer","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://theoutfithouse.in/product/low-top-sneaker-black-white","seller":{"@id":"https://theoutfithouse.in/#store"},"shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"INR"},"shippingDestination":{"@type":"DefinedRegion","addressCountry":"IN"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":2,"unitCode":"DAY"},"transitTime":{"@type":"QuantitativeValue","minValue":2,"maxValue":5,"unitCode":"DAY"}}},"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"IN","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":7,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/FreeReturn"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://theoutfithouse.in"},{"@type":"ListItem","position":2,"name":"Sneakers","item":"https://theoutfithouse.in/sneakers"},{"@type":"ListItem","position":3,"name":"Black & White","item":"https://theoutfithouse.in/product/low-top-sneaker-black-white"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Product","@id":"https://theoutfithouse.in/product/low-top-sneaker-black-white#product","name":"Black & White","description":"Low-Top Sneaker in Black & White. PU-blend upper, glued sole, soft-sole comfort, protective dust bag. Hand-checked in Chhatarpur, New Delhi, with real QC photos shared on WhatsApp before dispatch. Price on enquiry, ships PAN-India.","image":["https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-black-white.webp"],"sku":"low-top-sneaker-black-white","category":"Sneakers","brand":{"@type":"Brand","name":"The Outfit House"},"itemCondition":"https://schema.org/NewCondition","offers":{"@type":"Offer","priceCurrency":"INR","availability":"https://schema.org/BackOrder","url":"https://theoutfithouse.in/product/low-top-sneaker-black-white","seller":{"@id":"https://theoutfithouse.in/#store"},"shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"INR"},"shippingDestination":{"@type":"DefinedRegion","addressCountry":"IN"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":2,"unitCode":"DAY"},"transitTime":{"@type":"QuantitativeValue","minValue":2,"maxValue":5,"unitCode":"DAY"}}},"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"IN","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":7,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/FreeReturn"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://theoutfithouse.in"},{"@type":"ListItem","position":2,"name":"Sneakers","item":"https://theoutfithouse.in/sneakers"},{"@type":"ListItem","position":3,"name":"Black & White","item":"https://theoutfithouse.in/product/low-top-sneaker-black-white"}]}]}</script>
 <script src="/site.js"></script>
 <script>
   initHeader();
@@ -512,11 +543,18 @@
     function enquire(){
       var parts = ['Hi! I want to enquire about Black & White (Entry)'];
       if (sizes.length) parts.push(sel ? 'size ' + sel : 'available sizes');
-      wa(parts.join(', ') + '. Could you share the price and real photos?');
+      wa(parts.join(', ') + '. Could you share the price and real photos? https://theoutfithouse.in/product/low-top-sneaker-black-white');
     }
     var eb = document.getElementById('enquire-btn'); if (eb) eb.addEventListener('click', enquire);
+    var gal = document.getElementById('gal-img');
+    document.querySelectorAll('.gal-thumb').forEach(function(t){
+      t.addEventListener('click', function(){
+        if (gal) gal.src = t.dataset.src;
+        document.querySelectorAll('.gal-thumb').forEach(function(x){ x.classList.toggle('sel', x===t); });
+      });
+    });
     document.querySelectorAll('.pc-cta').forEach(function(btn){
-      btn.addEventListener('click', function(e){ e.stopPropagation(); wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes?'); });
+      btn.addEventListener('click', function(e){ e.stopPropagation(); if (btn.disabled) return; wa('Hi! I want to enquire about ' + btn.dataset.name + ' (' + btn.dataset.grade + '). Available sizes? ' + location.origin + '/product/' + btn.dataset.slug); });
     });
   })();
 </script>
