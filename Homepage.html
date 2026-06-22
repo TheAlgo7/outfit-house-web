@@ -387,32 +387,24 @@
   .lp-mission { padding: 112px 0; }
   .miss-list { margin-top: 20px; display: flex; flex-direction: column; }
   .miss-item {
-    display: grid; grid-template-columns: 80px 1fr 1.4fr; gap: 40px;
+    display: grid; grid-template-columns: minmax(260px, 0.82fr) minmax(320px, 1.18fr); gap: 64px;
     align-items: start; padding: 40px 0;
     border-top: 1px solid var(--border);
     transition: border-color var(--dur-base);
   }
   .miss-item:last-child { border-bottom: 1px solid var(--border); }
   .miss-item:hover { border-color: color-mix(in srgb, var(--accent) 30%, transparent); }
-  .miss-item .m-num {
-    font-family: var(--font-display); font-size: clamp(48px, 5vw, 72px);
-    color: color-mix(in srgb, var(--accent) 20%, transparent);
-    line-height: 1; letter-spacing: -0.01em; padding-top: 4px;
-  }
   .miss-item h3 {
     font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px);
     line-height: 0.95; text-transform: uppercase; margin: 0; letter-spacing: -0.005em;
-    color: var(--fg); padding-top: 6px;
+    color: var(--fg);
   }
   .miss-item p { color: var(--fg-muted); line-height: 1.7; font-size: 15px; margin: 0; max-width: 52ch; }
   @media (max-width: 900px) {
-    .miss-item { grid-template-columns: 52px 1fr; gap: 20px; }
-    .miss-item p { grid-column: 2; margin-top: -8px; }
-    .miss-item .m-num { font-size: 40px; }
+    .miss-item { grid-template-columns: 1fr; gap: 14px; padding: 32px 0; }
   }
   @media (max-width: 600px) {
-    .miss-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
-    .miss-item .m-num { font-size: 32px; }
+    .miss-item { padding: 28px 0; }
   }
 
   /* ---- FINAL CTA ---- */
@@ -761,18 +753,15 @@
     </div>
     <div class="miss-list">
       <div class="miss-item peek">
-        <span class="m-num">Tiered</span>
-        <h3>Three-tier grading</h3>
+        <h3>Three clear grades</h3>
         <p>Every piece marked Entry, Standard, or Vault. Real photos sent on WhatsApp before payment. What you see is what ships. No surprises.</p>
       </div>
       <div class="miss-item peek">
-        <span class="m-num">Human</span>
-        <h3>No checkout, no chase</h3>
+        <h3>WhatsApp-first orders</h3>
         <p>No carts, no abandoned-cart emails. Talk to a real human on WhatsApp from selection to delivery to exchange. One conversation, sorted.</p>
       </div>
       <div class="miss-item peek">
-        <span class="m-num">Fair</span>
-        <h3>Honest pricing, no markup</h3>
+        <h3>Straight pricing</h3>
         <p>We price fair and we'll always tell you straight on WhatsApp. Bargaining is welcome and launch offers come around often. No inflated tags, no surprise fees.</p>
       </div>
     </div>
