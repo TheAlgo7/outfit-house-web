@@ -529,4 +529,13 @@ window.initHeader = function() {
     document.body.classList.add('leaving');
     setTimeout(function() { location.href = href; }, 120);
   });
+
+  // When the user navigates back/forward, the browser may restore this page
+  // from the bfcache with `body.leaving` still applied — which holds the body
+  // at opacity:0 and leaves the screen pitch black. Reset the fade state every
+  // time the page is shown so a restored page is always visible and clickable.
+  window.addEventListener('pageshow', function() {
+    leaving = false;
+    document.body.classList.remove('leaving');
+  });
 }());
