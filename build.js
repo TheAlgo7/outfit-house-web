@@ -130,7 +130,7 @@ fs.writeFileSync(SITE_JS, siteSrc, 'utf8');
 PRODUCTS.forEach(p => { p.slug = p._newSlug; p.img = p._newImg; });
 
 /* ---------- load header/footer/sprite from site.js (shimmed) ---------- */
-global.window = {};
+global.window = { addEventListener() {}, removeEventListener() {} };
 global.document = {
   addEventListener() {}, removeEventListener() {},
   getElementById() { return null; }, querySelector() { return null; }, querySelectorAll() { return []; },
@@ -211,17 +211,21 @@ function card(p) {
   const sold = p.stock === 'sold';
   const altImg = (p.imgs && p.imgs.length)
     ? `<img class="pc-img-alt" src="/${esc(p.imgs[0])}" alt="" aria-hidden="true" decoding="async" width="600" height="600"/>` : '';
-  const badge = sold ? '<span class="pc-grade sold">Sold out</span>' : `<span class="pc-grade ${g}">${esc(p.grade)}</span>`;
-  const limited = p.limited ? '<span class="pc-limited">Limited edition</span>' : '';
+  // Limited cards carry a single hero badge (the limited mark) instead of the grade
+  // chip, so the small image never has two competing pills overlapping it.
+  const limited = (p.limited && !sold);
+  const badge = sold ? '<span class="pc-grade sold">Sold out</span>'
+    : (limited ? '<span class="pc-limited">Limited Edition</span>'
+    : `<span class="pc-grade ${g}">${esc(p.grade)}</span>`);
   let status = '';
   if (sold) status = '<span class="pc-stock sold">Sold out</span>';
-  else if (p.stock === 'in') status = `<span class="pc-stock">In stock now${p.sizes ? ' · UK ' + esc(p.sizes) : ''}</span>`;
+  else if (p.stock === 'in') status = '<span class="pc-stock">In stock now</span>';
+  const sizes = (!sold && p.stock === 'in' && p.sizes) ? `<span class="pc-sizes">UK ${esc(p.sizes)}</span>` : '';
   const cta = sold
     ? '<button class="pc-cta" disabled aria-disabled="true">Sold out</button>'
     : `<button class="pc-cta" data-slug="${esc(p.slug)}" data-name="${esc(p.name)}" data-grade="${esc(p.grade)}"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>`;
   return `<div class="pc${p.limited ? ' pc--limited' : ''}${sold ? ' pc--sold' : ''}" data-grade="${esc(p.grade)}" data-search="${esc((p.brand + ' ' + p.name + ' ' + p.grade).toLowerCase())}">
   <div class="pc-img">
-    ${limited}
     ${badge}
     <img src="/${esc(p.img)}" alt="${esc(altText(p))}" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
     ${altImg}
@@ -230,6 +234,7 @@ function card(p) {
     <span class="pc-brand">${esc(p.brand)}</span>
     <a class="pc-name" href="/product/${esc(p.slug)}">${esc(p.name)}</a>
     ${status}
+    ${sizes}
     ${cta}
   </div>
 </div>`;

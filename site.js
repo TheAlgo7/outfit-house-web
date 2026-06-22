@@ -212,15 +212,19 @@ window.renderProductCard = function(p) {
   card.className = 'pc' + (p.limited ? ' pc--limited' : '') + (sold ? ' pc--sold' : '');
   card.setAttribute('data-grade', p.grade);
   var altImg = (p.imgs && p.imgs.length) ? '<img class="pc-img-alt" src="/' + p.imgs[0] + '" alt="" aria-hidden="true" decoding="async" width="600" height="600"/>' : '';
-  var badge = sold ? '<span class="pc-grade sold">Sold out</span>' : '<span class="pc-grade ' + gradeClass(p.grade) + '">' + p.grade + '</span>';
-  var limited = p.limited ? '<span class="pc-limited">Limited edition</span>' : '';
+  // Limited cards carry a single hero badge (the limited mark) instead of the grade
+  // chip, so the small image never has two competing pills overlapping it.
+  var limited = (p.limited && !sold);
+  var badge = sold ? '<span class="pc-grade sold">Sold out</span>'
+    : (limited ? '<span class="pc-limited">Limited Edition</span>'
+    : '<span class="pc-grade ' + gradeClass(p.grade) + '">' + p.grade + '</span>');
   var status = sold ? '<span class="pc-stock sold">Sold out</span>'
-    : (p.stock === 'in' ? '<span class="pc-stock">In stock now' + (p.sizes ? ' · UK ' + p.sizes : '') + '</span>' : '');
+    : (p.stock === 'in' ? '<span class="pc-stock">In stock now</span>' : '');
+  var sizes = (!sold && p.stock === 'in' && p.sizes) ? '<span class="pc-sizes">UK ' + p.sizes + '</span>' : '';
   var cta = sold ? '<button class="pc-cta" disabled aria-disabled="true">Sold out</button>'
     : '<button class="pc-cta"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>';
   card.innerHTML = `
     <div class="pc-img">
-      ${limited}
       ${badge}
       <img src="/${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
       ${altImg}
@@ -229,6 +233,7 @@ window.renderProductCard = function(p) {
       <span class="pc-brand">${p.brand}</span>
       <a class="pc-name" href="/product/${p.slug}">${p.name}</a>
       ${status}
+      ${sizes}
       ${cta}
     </div>`;
   var ctaBtn = card.querySelector('.pc-cta');

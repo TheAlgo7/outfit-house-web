@@ -232,7 +232,7 @@ header.nav {
 }
 .pc:hover { border-color: var(--border-strong); transform: translateY(-3px); }
 .pc-img {
-  aspect-ratio: 4/3; background: var(--bg-elev); position: relative; overflow: hidden;
+  aspect-ratio: 1/1; background: var(--bg-elev); position: relative; overflow: hidden;
 }
 .pc-img img {
   width: 100%; height: 100%; object-fit: cover;
@@ -240,7 +240,7 @@ header.nav {
 }
 .pc:hover .pc-img img { transform: scale(1.04); }
 .pc-grade {
-  position: absolute; top: 14px; left: 14px; z-index: 2;
+  position: absolute; top: 12px; left: 12px; z-index: 2;
   background: var(--accent); color: var(--accent-on);
   font-family: var(--font-heading); font-size: 10px; font-weight: 700;
   letter-spacing: var(--tracking-wider); text-transform: uppercase;
@@ -267,6 +267,9 @@ header.nav {
   letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--stock); }
 .pc-stock::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
   background: var(--stock); box-shadow: 0 0 0 3px var(--stock-ring); flex-shrink: 0; }
+/* Sizes on their own quiet line so the stock indicator stays clean */
+.pc-sizes { margin-top: 5px; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: var(--tracking-wide); color: var(--fg-subtle); }
 .pc-cta {
   margin-top: 18px; display: inline-flex; align-items: center; justify-content: center;
   gap: 8px; background: transparent; color: var(--fg);
@@ -289,18 +292,22 @@ header.nav {
 }
 .pc:hover .pc-img-alt { opacity: 1; transform: scale(1.04); }
 
-/* ---- limited edition: quiet but unmistakable ---- */
+/* ---- limited edition: the single hero badge — quiet but unmistakable ---- */
 .pc-limited {
-  position: absolute; top: 14px; right: 14px; z-index: 3;
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: var(--font-heading); font-size: 9px; font-weight: 700;
-  letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--accent);
-  padding: 5px 9px; background: var(--overlay-strong);
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  position: absolute; top: 12px; left: 12px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-heading); font-size: 9.5px; font-weight: 700;
+  letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--accent);
+  padding: 6px 11px;
+  background: color-mix(in srgb, var(--accent) 14%, var(--overlay-strong));
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 }
+/* Diamond mark reads more "collector's piece" than a plain dot */
 .pc-limited::before {
-  content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+  content: ''; width: 6px; height: 6px; background: var(--accent);
+  transform: rotate(45deg); flex-shrink: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 .pc--limited { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent); }
 .pc--limited:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); }
@@ -517,7 +524,12 @@ body.leaving {
   .nav-toggle { width: 44px; height: 44px; }
   .pc-name { font-size: 17px; }
   .pc-body { padding: 14px 14px 16px; gap: 3px; }
-  .pc-cta { padding: 12px; font-size: 10px; }
+  .pc-cta { padding: 12px; font-size: 10px; margin-top: 14px; }
+  /* Smaller cards: tighten the on-image badges so they never crowd the product */
+  .pc-grade { top: 10px; left: 10px; font-size: 9px; padding: 4px 8px; }
+  .pc-limited { top: 10px; left: 10px; font-size: 8.5px; gap: 6px; padding: 5px 9px; }
+  .pc-limited::before { width: 5px; height: 5px; }
+  .pc-sizes { margin-top: 4px; font-size: 10px; }
   .ft { grid-template-columns: 1fr 1fr; gap: 32px; }
   /* Comfortable 44px tap targets for footer links on touch (WCAG 2.5.8) */
   .ft ul a { min-height: 44px; display: flex; align-items: center; padding: 0; }
