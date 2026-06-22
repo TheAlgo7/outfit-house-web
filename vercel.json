@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.theoutfithouse.in"
+        }
+      ],
+      "destination": "https://theoutfithouse.in/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
