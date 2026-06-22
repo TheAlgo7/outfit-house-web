@@ -62,10 +62,10 @@ window.gradeClass = function(g) {
 
 // Categories
 window.CATEGORIES = {
-  sneakers:    { key:'sneakers',    label:'Sneakers',    title:'The Sneaker Vault',   tag:'01 · Footwear',    blurb:'Hand-checked sneakers across three quality tiers. Genuine boxes, accurate stitching, real photos before dispatch.' },
-  apparel:     { key:'apparel',     label:'Apparel',     title:'Topwear',             tag:'02 · Apparel',     blurb:'Premium tees, hoodies, and overshirts. Fits drawn from the originals, no dropped shoulders, no oversized guesswork.' },
-  bottomwear:  { key:'bottomwear',  label:'Bottomwear',  title:'Streetwear Bottoms',  tag:'03 · Bottomwear',  blurb:'Cargos, sweats, and denim cut from heavyweight fabrics. Streetwear silhouettes you actually want to wear.' },
-  accessories: { key:'accessories', label:'Accessories', title:'Finishing Touches',   tag:'04 · Accessories', blurb:'Caps, bags, socks, belts. The small stuff that finishes the fit.' },
+  sneakers:    { key:'sneakers',    label:'Sneakers',    title:'The Sneaker Vault',   tag:'Footwear',    blurb:'Hand-checked sneakers across three quality tiers. Genuine boxes, accurate stitching, real photos before dispatch.' },
+  apparel:     { key:'apparel',     label:'Apparel',     title:'Topwear',             tag:'Apparel',     blurb:'Premium tees, hoodies, and overshirts. Fits drawn from the originals, no dropped shoulders, no oversized guesswork.' },
+  bottomwear:  { key:'bottomwear',  label:'Bottomwear',  title:'Streetwear Bottoms',  tag:'Bottomwear',  blurb:'Cargos, sweats, and denim cut from heavyweight fabrics. Streetwear silhouettes you actually want to wear.' },
+  accessories: { key:'accessories', label:'Accessories', title:'Finishing Touches',   tag:'Accessories', blurb:'Caps, bags, socks, belts. The small stuff that finishes the fit.' },
 };
 
 // Catalog
@@ -221,8 +221,8 @@ window.renderProductCard = function(p) {
   var status = sold ? '<span class="pc-stock sold">Sold out</span>'
     : (p.stock === 'in' ? '<span class="pc-stock">In stock now</span>' : '');
   var sizes = (!sold && p.stock === 'in' && p.sizes) ? '<span class="pc-sizes">UK ' + p.sizes + '</span>' : '';
-  var cta = sold ? '<button class="pc-cta" disabled aria-disabled="true">Sold out</button>'
-    : '<button class="pc-cta"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>';
+  var cta = sold ? '<button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>'
+    : '<button class="pc-cta" type="button"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>';
   card.innerHTML = `
     <div class="pc-img">
       ${badge}
@@ -319,7 +319,7 @@ window.renderHeader = function(active) {
   return `
   <header class="nav">
     <div class="nav-inner">
-      <button class="nav-toggle" aria-label="Open menu" onclick="openMobNav()">
+      <button class="nav-toggle" type="button" aria-label="Open menu" onclick="openMobNav()">
         <svg><use href="#menu-icon"/></svg>
       </button>
       <a class="brand" href="/">
@@ -342,7 +342,7 @@ window.renderHeader = function(active) {
         <a class="icon-link" href="${window.IG_URL}" target="_blank" rel="noopener" aria-label="Instagram">
           <svg><use href="#ig-icon"/></svg>
         </a>
-        <button class="nav-wa" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
+        <button class="nav-wa" type="button" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
           <svg><use href="#wa-icon"/></svg> <span class="lbl">Enquire</span>
         </button>
       </div>
@@ -354,7 +354,7 @@ window.renderHeader = function(active) {
   <div id="mob-nav" class="mob-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mob-nav-head">
       <span class="mob-nav-label">Navigation</span>
-      <button class="mob-close" onclick="closeMobNav()" aria-label="Close menu">
+      <button class="mob-close" type="button" onclick="closeMobNav()" aria-label="Close menu">
         <svg><use href="#x-icon"/></svg>
       </button>
     </div>
@@ -379,7 +379,7 @@ window.renderHeader = function(active) {
       </a>
     </nav>
     <div class="mob-nav-foot">
-      <button class="btn-wa" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
+      <button class="btn-wa" type="button" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
       </button>
     </div>
@@ -394,19 +394,19 @@ window.renderFooter = function() {
         <img src="/assets/logo-text.webp" alt="The Outfit House" width="360" height="261" loading="lazy"/>
         <p>Sneakers, apparel, accessories and footwear. Hand-checked and shipped from Chhatarpur, New Delhi.</p>
       </div>
-      <div><h5>Shop</h5><ul>
+      <div><div class="ft-title">Shop</div><ul>
         <li><a href="/sneakers">Sneakers</a></li>
         <li><a href="/apparel">Apparel</a></li>
         <li><a href="/bottomwear">Bottomwear</a></li>
         <li><a href="/accessories">Accessories</a></li>
       </ul></div>
-      <div><h5>Help</h5><ul>
+      <div><div class="ft-title">Help</div><ul>
         <li><a href="/spec-sheet">Spec Sheet</a></li>
         <li><a href="/guide">Buying Guide</a></li>
         <li><a href="/terms">Shipping</a></li>
         <li><a href="/terms">Exchange</a></li>
       </ul></div>
-      <div><h5>Connect</h5><ul>
+      <div><div class="ft-title">Connect</div><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
         <li><a href="${window.IG_URL}" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="${window.FB_URL}" target="_blank" rel="noopener">Facebook</a></li>
@@ -419,7 +419,7 @@ window.renderFooter = function() {
       <span><a href="/terms">Policy</a> · <a href="/terms">Terms</a></span>
     </div>
   </footer>
-  <button class="wa-fab" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
+  <button class="wa-fab" type="button" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
     <span class="pulse"></span>
     <svg><use href="#wa-icon"/></svg>
   </button>`;

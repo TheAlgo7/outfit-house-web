@@ -201,7 +201,7 @@
 <div id="header-mount">
   <header class="nav">
     <div class="nav-inner">
-      <button class="nav-toggle" aria-label="Open menu" onclick="openMobNav()">
+      <button class="nav-toggle" type="button" aria-label="Open menu" onclick="openMobNav()">
         <svg><use href="#menu-icon"/></svg>
       </button>
       <a class="brand" href="/">
@@ -224,7 +224,7 @@
         <a class="icon-link" href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener" aria-label="Instagram">
           <svg><use href="#ig-icon"/></svg>
         </a>
-        <button class="nav-wa" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
+        <button class="nav-wa" type="button" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
           <svg><use href="#wa-icon"/></svg> <span class="lbl">Enquire</span>
         </button>
       </div>
@@ -236,7 +236,7 @@
   <div id="mob-nav" class="mob-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mob-nav-head">
       <span class="mob-nav-label">Navigation</span>
-      <button class="mob-close" onclick="closeMobNav()" aria-label="Close menu">
+      <button class="mob-close" type="button" onclick="closeMobNav()" aria-label="Close menu">
         <svg><use href="#x-icon"/></svg>
       </button>
     </div>
@@ -289,7 +289,7 @@
       </a>
     </nav>
     <div class="mob-nav-foot">
-      <button class="btn-wa" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
+      <button class="btn-wa" type="button" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
       </button>
     </div>
@@ -297,13 +297,12 @@
 
 <main id="main-content">
 <section class="cat-hero">
-  <div class="eyebrow">04 · Accessories</div>
   <h1>Finishing Touches</h1>
   <p>Caps, bags, socks, belts. The small stuff that finishes the fit.</p>
 </section>
 
 <div class="filter-bar">
-  <div class="tabs" id="tabs"><button class="tab active" data-tier="all" aria-pressed="true">All<span class="count">25</span></button><button class="tab " data-tier="Watches" aria-pressed="false">Watches<span class="count">5</span></button><button class="tab " data-tier="Sunglasses" aria-pressed="false">Sunglasses<span class="count">3</span></button><button class="tab " data-tier="Bags" aria-pressed="false">Bags<span class="count">5</span></button><button class="tab " data-tier="Wallets &amp; Card Holders" aria-pressed="false">Wallets &amp; Card Holders<span class="count">5</span></button><button class="tab " data-tier="Headwear" aria-pressed="false">Headwear<span class="count">5</span></button><button class="tab " data-tier="Belts" aria-pressed="false">Belts<span class="count">1</span></button><button class="tab " data-tier="Socks" aria-pressed="false">Socks<span class="count">1</span></button></div>
+  <div class="tabs" id="tabs"><button class="tab active" type="button" data-tier="all" aria-pressed="true">All<span class="count">25</span></button><button class="tab " type="button" data-tier="Watches" aria-pressed="false">Watches<span class="count">5</span></button><button class="tab " type="button" data-tier="Sunglasses" aria-pressed="false">Sunglasses<span class="count">3</span></button><button class="tab " type="button" data-tier="Bags" aria-pressed="false">Bags<span class="count">5</span></button><button class="tab " type="button" data-tier="Wallets &amp; Card Holders" aria-pressed="false">Wallets &amp; Card Holders<span class="count">5</span></button><button class="tab " type="button" data-tier="Headwear" aria-pressed="false">Headwear<span class="count">5</span></button><button class="tab " type="button" data-tier="Belts" aria-pressed="false">Belts<span class="count">1</span></button><button class="tab " type="button" data-tier="Socks" aria-pressed="false">Socks<span class="count">1</span></button></div>
   <div class="meta-row">
     <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg><input id="search" type="search" placeholder="Search accessories" aria-label="Search Accessories"/></label>
     <div class="count">Showing <b id="count">25</b> pieces</div>
@@ -324,7 +323,7 @@
     <a class="pc-name" href="/product/sports-watch-chronograph-black">Chronograph Black</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="sports watch black resin standard">
   <div class="pc-img">
@@ -337,7 +336,7 @@
     <a class="pc-name" href="/product/sports-watch-black-resin">Black Resin</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch silver &amp; blue vault">
   <div class="pc-img">
@@ -350,7 +349,7 @@
     <a class="pc-name" href="/product/luxury-watch-silver-blue">Silver &amp; Blue</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch steel blue vault">
   <div class="pc-img">
@@ -363,7 +362,7 @@
     <a class="pc-name" href="/product/luxury-watch-steel-blue">Steel Blue</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="luxury watch gold &amp; steel vault">
   <div class="pc-img">
@@ -376,7 +375,7 @@
     <a class="pc-name" href="/product/luxury-watch-gold-steel">Gold &amp; Steel</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </section>
@@ -393,7 +392,7 @@
     <a class="pc-name" href="/product/sunglasses-classic-black">Classic Black</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="sunglasses pilot gold standard">
   <div class="pc-img">
@@ -406,7 +405,7 @@
     <a class="pc-name" href="/product/sunglasses-pilot-gold">Pilot Gold</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="sport sunglasses black standard">
   <div class="pc-img">
@@ -419,7 +418,7 @@
     <a class="pc-name" href="/product/sport-sunglasses-black">Black</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </section>
@@ -436,7 +435,7 @@
     <a class="pc-name" href="/product/toh-crown-tote-cream">Crown Tote · Cream</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="crossbody bag black standard">
   <div class="pc-img">
@@ -449,7 +448,7 @@
     <a class="pc-name" href="/product/crossbody-bag-black">Black</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Entry" data-search="backpack black entry">
   <div class="pc-img">
@@ -462,7 +461,7 @@
     <a class="pc-name" href="/product/backpack-black">Black</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="duffle bag brown print vault">
   <div class="pc-img">
@@ -475,7 +474,7 @@
     <a class="pc-name" href="/product/duffle-bag-brown-print">Brown Print</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="shoulder bag black nylon vault">
   <div class="pc-img">
@@ -488,7 +487,7 @@
     <a class="pc-name" href="/product/shoulder-bag-black-nylon">Black Nylon</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </section>
@@ -505,7 +504,7 @@
     <a class="pc-name" href="/product/premium-wallet-brown-print">Brown Print</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="card holder black leather vault">
   <div class="pc-img">
@@ -518,7 +517,7 @@
     <a class="pc-name" href="/product/card-holder-black-leather">Black Leather</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="premium wallet black leather standard">
   <div class="pc-img">
@@ -531,7 +530,7 @@
     <a class="pc-name" href="/product/premium-wallet-black-leather">Black Leather</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Entry" data-search="toh bifold leather wallet entry">
   <div class="pc-img">
@@ -544,7 +543,7 @@
     <a class="pc-name" href="/product/toh-bifold-leather-wallet">Bifold Leather Wallet</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="card holder tan chevron vault">
   <div class="pc-img">
@@ -557,7 +556,7 @@
     <a class="pc-name" href="/product/card-holder-tan-chevron">Tan Chevron</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </section>
@@ -574,7 +573,7 @@
     <a class="pc-name" href="/product/6-panel-cap-navy">Navy</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="fitted cap navy standard">
   <div class="pc-img">
@@ -587,7 +586,7 @@
     <a class="pc-name" href="/product/fitted-cap-navy">Navy</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Entry" data-search="toh ribbed beanie entry">
   <div class="pc-img">
@@ -600,7 +599,7 @@
     <a class="pc-name" href="/product/toh-ribbed-beanie">Ribbed Beanie</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="bucket hat black standard">
   <div class="pc-img">
@@ -613,7 +612,7 @@
     <a class="pc-name" href="/product/bucket-hat-black">Black</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="knit beanie brown standard">
   <div class="pc-img">
@@ -626,7 +625,7 @@
     <a class="pc-name" href="/product/knit-beanie-brown">Brown</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </section>
@@ -643,7 +642,7 @@
     <a class="pc-name" href="/product/toh-double-buckle-leather-belt">Double-Buckle Leather Belt</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </section>
@@ -660,7 +659,7 @@
     <a class="pc-name" href="/product/toh-crew-sock-3-pack">Crew Sock 3-Pack</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </section>
@@ -675,19 +674,19 @@
         <img src="/assets/logo-text.webp" alt="The Outfit House" width="360" height="261" loading="lazy"/>
         <p>Sneakers, apparel, accessories and footwear. Hand-checked and shipped from Chhatarpur, New Delhi.</p>
       </div>
-      <div><h5>Shop</h5><ul>
+      <div><div class="ft-title">Shop</div><ul>
         <li><a href="/sneakers">Sneakers</a></li>
         <li><a href="/apparel">Apparel</a></li>
         <li><a href="/bottomwear">Bottomwear</a></li>
         <li><a href="/accessories">Accessories</a></li>
       </ul></div>
-      <div><h5>Help</h5><ul>
+      <div><div class="ft-title">Help</div><ul>
         <li><a href="/spec-sheet">Spec Sheet</a></li>
         <li><a href="/guide">Buying Guide</a></li>
         <li><a href="/terms">Shipping</a></li>
         <li><a href="/terms">Exchange</a></li>
       </ul></div>
-      <div><h5>Connect</h5><ul>
+      <div><div class="ft-title">Connect</div><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
         <li><a href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.facebook.com/profile.php?id=61589373328357" target="_blank" rel="noopener">Facebook</a></li>
@@ -700,7 +699,7 @@
       <span><a href="/terms">Policy</a> · <a href="/terms">Terms</a></span>
     </div>
   </footer>
-  <button class="wa-fab" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
+  <button class="wa-fab" type="button" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
     <span class="pulse"></span>
     <svg><use href="#wa-icon"/></svg>
   </button></div>

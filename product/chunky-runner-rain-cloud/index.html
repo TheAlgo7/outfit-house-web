@@ -143,7 +143,7 @@
   }
 
   /* Size */
-  .size-block h4, .spec-block h4, .policy-block h4 {
+  .pdp-section-title {
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-muted); margin: 0 0 14px;
@@ -290,7 +290,7 @@
 <div id="header-mount">
   <header class="nav">
     <div class="nav-inner">
-      <button class="nav-toggle" aria-label="Open menu" onclick="openMobNav()">
+      <button class="nav-toggle" type="button" aria-label="Open menu" onclick="openMobNav()">
         <svg><use href="#menu-icon"/></svg>
       </button>
       <a class="brand" href="/">
@@ -313,7 +313,7 @@
         <a class="icon-link" href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener" aria-label="Instagram">
           <svg><use href="#ig-icon"/></svg>
         </a>
-        <button class="nav-wa" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
+        <button class="nav-wa" type="button" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
           <svg><use href="#wa-icon"/></svg> <span class="lbl">Enquire</span>
         </button>
       </div>
@@ -325,7 +325,7 @@
   <div id="mob-nav" class="mob-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mob-nav-head">
       <span class="mob-nav-label">Navigation</span>
-      <button class="mob-close" onclick="closeMobNav()" aria-label="Close menu">
+      <button class="mob-close" type="button" onclick="closeMobNav()" aria-label="Close menu">
         <svg><use href="#x-icon"/></svg>
       </button>
     </div>
@@ -378,7 +378,7 @@
       </a>
     </nav>
     <div class="mob-nav-foot">
-      <button class="btn-wa" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
+      <button class="btn-wa" type="button" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
       </button>
     </div>
@@ -415,7 +415,7 @@
     <p class="pdp-desc">Chunky Runner in Rain Cloud. Premium full-grain leather, precision stitching, full retail packaging and accessories. Hand-checked in Chhatarpur, New Delhi, with real QC photos shared on WhatsApp before dispatch. Price on enquiry, ships PAN-India.</p>
 
     <div class="size-block">
-      <h4>Select size · UK</h4>
+      <h2 class="pdp-section-title">Select size · UK</h2>
       <div class="sizes" id="sizes"><button class="size" type="button" aria-pressed="false">UK 6</button><button class="size" type="button" aria-pressed="false">UK 7</button><button class="size" type="button" aria-pressed="false">UK 8</button><button class="size" type="button" aria-pressed="false">UK 9</button><button class="size" type="button" aria-pressed="false">UK 10</button><button class="size" type="button" aria-pressed="false">UK 11</button></div>
       <div class="size-help">
         <a href="#" onclick="wa('Hi! I need help with sizing.');return false;">Not sure? Ask on WhatsApp</a>
@@ -424,17 +424,17 @@
     </div>
 
     <div class="cta-row">
-      <button class="btn-wa" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
+      <button class="btn-wa" type="button" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
       <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of Rain Cloud. https://theoutfithouse.in/product/chunky-runner-rain-cloud');return false;">Request more photos</a>
     </div>
 
     <div class="spec-block">
-      <h4>Spec highlights</h4>
+      <h2 class="pdp-section-title">Spec highlights</h2>
       <div class="specs"><div class="spec"><div class="k">Upper</div><div class="v">Premium leather</div></div><div class="spec"><div class="k">Sole</div><div class="v">Cushioned rubber</div></div><div class="spec"><div class="k">Box</div><div class="v">Original tooling</div></div><div class="spec"><div class="k">Tier</div><div class="v">Vault</div></div></div>
     </div>
 
     <div class="policy-block">
-      <h4>Shipping &amp; policy</h4>
+      <h2 class="pdp-section-title">Shipping &amp; policy</h2>
       <div class="policy">
         <div class="policy-item"><svg aria-hidden="true"><use href="#truck"/></svg><div><div class="lab">Shipping</div><div class="val">PAN-India 2–5 days · cost shared on WhatsApp · discreet packing</div></div></div>
         <div class="policy-item"><svg aria-hidden="true"><use href="#shield"/></svg><div><div class="lab">QC photos</div><div class="val">Real photos of your piece before dispatch · you confirm first</div></div></div>
@@ -460,7 +460,7 @@
     <a class="pc-name" href="/product/mid-top-sneaker-panda">Panda</a>
     
     
-    <button class="pc-cta" data-slug="mid-top-sneaker-panda" data-name="Panda" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
+    <button class="pc-cta" type="button" data-slug="mid-top-sneaker-panda" data-name="Panda" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
 </div><div class="pc" data-grade="Vault" data-search="retro runner cream sea salt vault">
   <div class="pc-img">
@@ -473,7 +473,7 @@
     <a class="pc-name" href="/product/retro-runner-cream-sea-salt">Cream Sea Salt</a>
     
     
-    <button class="pc-cta" data-slug="retro-runner-cream-sea-salt" data-name="Cream Sea Salt" data-grade="Vault"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
+    <button class="pc-cta" type="button" data-slug="retro-runner-cream-sea-salt" data-name="Cream Sea Salt" data-grade="Vault"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
 </div><div class="pc" data-grade="Standard" data-search="court sneaker white green standard">
   <div class="pc-img">
@@ -486,7 +486,7 @@
     <a class="pc-name" href="/product/court-sneaker-white-green">White Green</a>
     
     
-    <button class="pc-cta" data-slug="court-sneaker-white-green" data-name="White Green" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
+    <button class="pc-cta" type="button" data-slug="court-sneaker-white-green" data-name="White Green" data-grade="Standard"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
   </div>
 </div></div>
   </div>
@@ -499,19 +499,19 @@
         <img src="/assets/logo-text.webp" alt="The Outfit House" width="360" height="261" loading="lazy"/>
         <p>Sneakers, apparel, accessories and footwear. Hand-checked and shipped from Chhatarpur, New Delhi.</p>
       </div>
-      <div><h5>Shop</h5><ul>
+      <div><div class="ft-title">Shop</div><ul>
         <li><a href="/sneakers">Sneakers</a></li>
         <li><a href="/apparel">Apparel</a></li>
         <li><a href="/bottomwear">Bottomwear</a></li>
         <li><a href="/accessories">Accessories</a></li>
       </ul></div>
-      <div><h5>Help</h5><ul>
+      <div><div class="ft-title">Help</div><ul>
         <li><a href="/spec-sheet">Spec Sheet</a></li>
         <li><a href="/guide">Buying Guide</a></li>
         <li><a href="/terms">Shipping</a></li>
         <li><a href="/terms">Exchange</a></li>
       </ul></div>
-      <div><h5>Connect</h5><ul>
+      <div><div class="ft-title">Connect</div><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
         <li><a href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.facebook.com/profile.php?id=61589373328357" target="_blank" rel="noopener">Facebook</a></li>
@@ -524,7 +524,7 @@
       <span><a href="/terms">Policy</a> · <a href="/terms">Terms</a></span>
     </div>
   </footer>
-  <button class="wa-fab" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
+  <button class="wa-fab" type="button" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
     <span class="pulse"></span>
     <svg><use href="#wa-icon"/></svg>
   </button></div>

@@ -179,7 +179,6 @@
 
 <main id="main-content">
 <section class="cat-hero">
-  <div class="eyebrow" id="cat-eyebrow">01 · Category</div>
   <h1 id="cat-title">Category</h1>
   <p id="cat-blurb">Loading…</p>
 </section>
@@ -233,7 +232,6 @@
   document.querySelector('meta[name="description"]').content = cat.title + ': shop premium ' + cat.label.toLowerCase() + ' at The Outfit House. Filter by Entry, Standard or Vault tier. Real photos before dispatch.';
   document.querySelector('meta[property="og:title"]').content = cat.title + ' | The Outfit House';
   document.querySelector('meta[property="og:description"]').content = cat.title + ': premium ' + cat.label.toLowerCase() + ' across three quality tiers.';
-  document.getElementById('cat-eyebrow').textContent = cat.tag;
   document.getElementById('cat-title').textContent = cat.title;
   document.getElementById('cat-blurb').textContent = cat.blurb;
 
@@ -266,7 +264,7 @@
 
   function renderTabs() {
     document.getElementById('tabs').innerHTML = tabs.map(t =>
-      `<button class="tab ${activeTier===t.k?'active':''}" onclick="setTier('${t.k}')" aria-pressed="${activeTier===t.k}">${t.label}<span class="count">${TIER_COUNTS[t.k]}</span></button>`
+      `<button class="tab ${activeTier===t.k?'active':''}" type="button" onclick="setTier('${t.k}')" aria-pressed="${activeTier===t.k}">${t.label}<span class="count">${TIER_COUNTS[t.k]}</span></button>`
     ).join('');
   }
   window.setTier = function(k) { activeTier = k; renderTabs(); render(); };

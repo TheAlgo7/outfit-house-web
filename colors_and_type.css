@@ -38,8 +38,8 @@
   --surface-spec:     rgba(26, 26, 26, 0.70);    /* spec grid cells */
 
   --fg:               var(--toh-eggshell);       /* primary text on dark */
-  --fg-muted:         rgba(242, 236, 221, 0.65); /* secondary text on dark */
-  --fg-subtle:        rgba(242, 236, 221, 0.60); /* tertiary / labels — ~4.9:1 on #060403, clears WCAG AA */
+  --fg-muted:         rgba(242, 236, 221, 0.78); /* secondary text on dark */
+  --fg-subtle:        rgba(242, 236, 221, 0.72); /* tertiary / labels */
   --fg-warm:          var(--toh-hampton);        /* warm accent text */
 
   --border:           rgba(242, 236, 221, 0.10);

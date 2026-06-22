@@ -156,7 +156,7 @@
   }
 
   /* Size */
-  .size-block h4, .spec-block h4, .policy-block h4 {
+  .pdp-section-title {
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-muted); margin: 0 0 14px;
@@ -269,8 +269,8 @@
       <span class="gal-grade standard" id="gal-grade">Standard</span>
       <img id="gal-img" src="data:," alt="" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
       <div class="gal-nav">
-        <button onclick="gal(-1)" aria-label="Previous"><svg><use href="#arrow-left"/></svg></button>
-        <button onclick="gal(1)" aria-label="Next"><svg><use href="#arrow-right"/></svg></button>
+        <button type="button" onclick="gal(-1)" aria-label="Previous"><svg><use href="#arrow-left"/></svg></button>
+        <button type="button" onclick="gal(1)" aria-label="Next"><svg><use href="#arrow-right"/></svg></button>
       </div>
     </div>
     <div class="thumbs" id="thumbs"></div>
@@ -290,7 +290,7 @@
     </div>
 
     <div class="size-block" id="size-block">
-      <h4 id="size-label">Select size · UK</h4>
+      <h2 class="pdp-section-title" id="size-label">Select size · UK</h2>
       <div class="sizes" id="sizes"></div>
       <div class="size-help">
         <a href="#" onclick="wa('Hi! I need help with sizing.');return false;">Not sure? Ask on WhatsApp</a>
@@ -299,19 +299,19 @@
     </div>
 
     <div class="cta-row">
-      <button class="btn-wa" onclick="enquire()">
+      <button class="btn-wa" type="button" onclick="enquire()">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
       </button>
       <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of ' + document.getElementById('p-name').innerText);return false;">Request more photos</a>
     </div>
 
     <div class="spec-block">
-      <h4>Spec highlights</h4>
+      <h2 class="pdp-section-title">Spec highlights</h2>
       <div class="specs" id="specs"></div>
     </div>
 
     <div class="policy-block">
-      <h4>Shipping & policy</h4>
+      <h2 class="pdp-section-title">Shipping & policy</h2>
       <div class="policy">
         <div class="policy-item">
           <svg aria-hidden="true"><use href="#truck"/></svg>
@@ -488,9 +488,9 @@
 
   // Build thumbs + dots once; only swap active class on change
   thumbsEl.innerHTML = images.map((src, i) =>
-    `<button class="thumb${i===0?' active':''}" aria-label="Image ${i+1}"><img src="${src}" alt="${p.name}${i > 0 ? ', view ' + (i+1) : ''}" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/></button>`).join('');
+    `<button class="thumb${i===0?' active':''}" type="button" aria-label="Image ${i+1}"><img src="${src}" alt="${p.name}${i > 0 ? ', view ' + (i+1) : ''}" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/></button>`).join('');
   dotsEl.innerHTML = images.map((_, i) =>
-    `<button class="gal-dot${i===0?' active':''}" aria-label="Image ${i+1}"></button>`).join('');
+    `<button class="gal-dot${i===0?' active':''}" type="button" aria-label="Image ${i+1}"></button>`).join('');
 
   const thumbBtns = Array.from(thumbsEl.querySelectorAll('.thumb'));
   const dotBtns   = Array.from(dotsEl.querySelectorAll('.gal-dot'));
@@ -525,7 +525,7 @@
     document.getElementById('size-help-note').textContent = sizeSet.note;
     function renderSizes() {
       sizesEl.innerHTML = sizeSet.sizes.map(s =>
-        `<button class="size ${selSize===s?'sel':''}" aria-pressed="${selSize===s}" onclick="selectSize('${s}')">${s}</button>`
+        `<button class="size ${selSize===s?'sel':''}" type="button" aria-pressed="${selSize===s}" onclick="selectSize('${s}')">${s}</button>`
       ).join('');
     }
     window.selectSize = function(s) { selSize = s; renderSizes(); };

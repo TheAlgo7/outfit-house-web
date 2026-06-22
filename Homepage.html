@@ -151,7 +151,7 @@
   }
   .lp-strip-set i { font-style: normal; opacity: 0.35; font-size: 16px; }
   @keyframes lp-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .lp-strip-inner { animation-duration: 120s; } }
+  @media (prefers-reduced-motion: reduce) { .lp-strip-inner { animation: none; } }
 
   /* ---- CATALOG TILES ---- */
   .lp-catalog { padding: 112px 0; background: var(--bg-elev); border-bottom: 1px solid var(--border); }
@@ -527,9 +527,8 @@
 
     <!-- LEFT: copy -->
     <div class="lp-hero-text">
-      <span class="lp-eyebrow">Opens 28 June 2026 · Sneakers, Apparel &amp; More</span>
       <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
-      <p class="lede">From Panda low-tops and retro runners to graphic hoodies, cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
+      <p class="lede">Doors open 28 June 2026. From Panda low-tops and retro runners to graphic hoodies, cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
       <nav class="lp-cat-chips" aria-label="Product categories">
         <a href="/sneakers">Sneakers</a>
         <a href="/apparel">Apparel</a>
@@ -539,7 +538,7 @@
         <a href="/sneakers">Footwear</a>
       </nav>
       <div class="ctas">
-        <button class="btn-wa" onclick="wa('Hi! I want to browse the collection.')">
+        <button class="btn-wa" type="button" onclick="wa('Hi! I want to browse the collection.')">
           <svg aria-hidden="true"><use href="#wa-icon"/></svg>
           <span class="lbl">Browse on WhatsApp</span>
         </button>
@@ -604,7 +603,6 @@
   <div class="wrap">
     <div class="sec-head peek">
       <div>
-        <span class="eyebrow">02 · The full catalog</span>
         <h2 id="catalog-heading">Sneakers<br/>to sunglasses.</h2>
       </div>
       <p class="right">Four categories, 100+ hand-checked styles. Totes, sneakers, hoodies, sunglasses and more. One WhatsApp gets you the lot, with pricing and real photos.</p>
@@ -615,11 +613,11 @@
       <a class="ct ct-1 peek" href="/sneakers" aria-label="Browse footwear">
         <img src="assets/Homepage/tile-footwear.webp" alt="" loading="lazy"/>
         <div class="body">
-          <span class="cat-num">01 · Footwear</span>
+          <span class="cat-num">Footwear</span>
           <div class="ct-bottom">
             <h3>Sneakers<br/>& loafers</h3>
             <div class="ct-row">
-              <span class="ct-meta">High-tops · Runners · Court · Loafers<br/>Clogs · Slides · 30+ styles</span>
+              <span class="ct-meta">High-tops · Runners · Court · Loafers<br/>Crocs · Slides · 30+ styles</span>
               <span class="ct-arr">Browse →</span>
             </div>
           </div>
@@ -630,7 +628,7 @@
       <a class="ct ct-2 peek" href="/apparel" aria-label="Browse apparel" style="transition-delay:0.08s">
         <img src="assets/Homepage/tile-tops.webp" alt="" loading="lazy"/>
         <div class="body">
-          <span class="cat-num">02 · Apparel</span>
+          <span class="cat-num">Apparel</span>
           <div class="ct-bottom">
             <h3>Tops</h3>
             <div class="ct-row">
@@ -645,7 +643,7 @@
       <a class="ct ct-3 peek" href="/bottomwear" aria-label="Browse bottomwear" style="transition-delay:0.14s">
         <img src="assets/Homepage/tile-bottoms.webp" alt="" loading="lazy"/>
         <div class="body">
-          <span class="cat-num">03 · Bottomwear</span>
+          <span class="cat-num">Bottomwear</span>
           <div class="ct-bottom">
             <h3>Bottoms</h3>
             <div class="ct-row">
@@ -660,7 +658,7 @@
       <a class="ct ct-4 peek" href="/accessories" aria-label="Browse accessories" style="transition-delay:0.2s">
         <img src="assets/Homepage/tile-accessories.webp" alt="" loading="lazy"/>
         <div class="body">
-          <span class="cat-num">04 · Accessories</span>
+          <span class="cat-num">Accessories</span>
           <div class="ct-bottom">
             <h3>Finishing<br/>touches.</h3>
             <div class="ct-row">
@@ -680,7 +678,6 @@
   <div class="wrap">
     <div class="sec-head peek">
       <div>
-        <span class="eyebrow">03 · This week's floor</span>
         <h2 id="featured-heading">Hand-picked<br/>from the drop.</h2>
       </div>
       <p class="right">A rotating set across the full catalog. Every piece QC'd and photographed before dispatch. WhatsApp to lock yours.</p>
@@ -696,7 +693,7 @@
       <span class="ti">Grand opening · Chhatarpur</span>
       <h2>Doors open<br/><span class="acc">28 June.</span></h2>
       <p>The Chhatarpur studio opens Sunday 28 June 2026, 12 PM. Sneakers, apparel and accessories, hand-checked, all under one roof. Message us on WhatsApp to reserve a piece for opening day or to get directions.</p>
-      <button class="btn-wa" onclick="wa('Hi! I want to reserve a piece for opening day, 28 June.')">
+      <button class="btn-wa" type="button" onclick="wa('Hi! I want to reserve a piece for opening day, 28 June.')">
         <svg aria-hidden="true"><use href="#wa-icon"/></svg> Notify me
       </button>
     </div>
@@ -723,7 +720,7 @@
         <li><b>Booking</b><span>WhatsApp first<br/>Walk-ins welcome</span></li>
         <li><b>Parking</b><span>Free · Behind the unit</span></li>
       </ul>
-      <button class="btn-wa" onclick="wa('Hi! I want to visit the Chhatarpur store.')">
+      <button class="btn-wa" type="button" onclick="wa('Hi! I want to visit the Chhatarpur store.')">
         <svg aria-hidden="true"><use href="#wa-icon"/></svg> Book a slot
       </button>
     </div>
@@ -758,24 +755,23 @@
   <div class="wrap">
     <div class="sec-head peek">
       <div>
-        <span class="eyebrow">04 · Why TOH</span>
         <h2 id="mission-heading">Quiet promises.<br/>Loud quality.</h2>
       </div>
       <p class="right">No exclusive drops, no hype. Hand-checked premium articles at honest prices, delivered or handed over in person. Whatever suits you.</p>
     </div>
     <div class="miss-list">
       <div class="miss-item peek">
-        <span class="m-num">01</span>
+        <span class="m-num">Tiered</span>
         <h3>Three-tier grading</h3>
         <p>Every piece marked Entry, Standard, or Vault. Real photos sent on WhatsApp before payment. What you see is what ships. No surprises.</p>
       </div>
       <div class="miss-item peek">
-        <span class="m-num">02</span>
+        <span class="m-num">Human</span>
         <h3>No checkout, no chase</h3>
         <p>No carts, no abandoned-cart emails. Talk to a real human on WhatsApp from selection to delivery to exchange. One conversation, sorted.</p>
       </div>
       <div class="miss-item peek">
-        <span class="m-num">03</span>
+        <span class="m-num">Fair</span>
         <h3>Honest pricing, no markup</h3>
         <p>We price fair and we'll always tell you straight on WhatsApp. Bargaining is welcome and launch offers come around often. No inflated tags, no surprise fees.</p>
       </div>

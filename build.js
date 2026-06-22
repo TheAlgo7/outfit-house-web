@@ -222,8 +222,8 @@ function card(p) {
   else if (p.stock === 'in') status = '<span class="pc-stock">In stock now</span>';
   const sizes = (!sold && p.stock === 'in' && p.sizes) ? `<span class="pc-sizes">UK ${esc(p.sizes)}</span>` : '';
   const cta = sold
-    ? '<button class="pc-cta" disabled aria-disabled="true">Sold out</button>'
-    : `<button class="pc-cta" data-slug="${esc(p.slug)}" data-name="${esc(p.name)}" data-grade="${esc(p.grade)}"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>`;
+    ? '<button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>'
+    : `<button class="pc-cta" type="button" data-slug="${esc(p.slug)}" data-name="${esc(p.name)}" data-grade="${esc(p.grade)}"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>`;
   return `<div class="pc${p.limited ? ' pc--limited' : ''}${sold ? ' pc--sold' : ''}" data-grade="${esc(p.grade)}" data-search="${esc((p.brand + ' ' + p.name + ' ' + p.grade).toLowerCase())}">
   <div class="pc-img">
     ${badge}
@@ -357,7 +357,7 @@ ${SPRITE}
     <p class="pdp-desc">${esc(desc)}</p>
 
     ${!sold && sizeList.length ? `<div class="size-block">
-      <h4>${esc(sizeLabel)}</h4>
+      <h2 class="pdp-section-title">${esc(sizeLabel)}</h2>
       <div class="sizes" id="sizes">${sizesHtml}</div>
       <div class="size-help">
         <a href="#" onclick="wa('Hi! I need help with sizing.');return false;">Not sure? Ask on WhatsApp</a>
@@ -366,17 +366,17 @@ ${SPRITE}
     </div>` : ''}
 
     ${sold ? '<div class="cta-row"><span class="sold-note">Sold out online</span></div>' : `<div class="cta-row">
-      <button class="btn-wa" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
+      <button class="btn-wa" type="button" id="enquire-btn"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>
       <a class="btn-ghost" href="#" onclick="wa('Hi! Share more photos of ${esc(p.name)}. ${url}');return false;">Request more photos</a>
     </div>`}
 
     <div class="spec-block">
-      <h4>Spec highlights</h4>
+      <h2 class="pdp-section-title">Spec highlights</h2>
       <div class="specs">${specsHtml}</div>
     </div>
 
     <div class="policy-block">
-      <h4>Shipping &amp; policy</h4>
+      <h2 class="pdp-section-title">Shipping &amp; policy</h2>
       <div class="policy">
         <div class="policy-item"><svg aria-hidden="true"><use href="#truck"/></svg><div><div class="lab">Shipping</div><div class="val">PAN-India 2–5 days · cost shared on WhatsApp · discreet packing</div></div></div>
         <div class="policy-item"><svg aria-hidden="true"><use href="#shield"/></svg><div><div class="lab">QC photos</div><div class="val">Real photos of your piece before dispatch · you confirm first</div></div></div>
@@ -458,7 +458,7 @@ function categoryPage(catKey) {
     list.forEach(p => { const g = accGroup(p); (byType[g] || (byType[g] = [])).push(p); });
     const active = order.filter(g => byType[g] && byType[g].length);
     tabs = [['all', 'All', list.length]].concat(active.map(g => [g, g, byType[g].length]))
-      .map(([k, l, n], i) => `<button class="tab ${i === 0 ? 'active' : ''}" data-tier="${esc(k)}" aria-pressed="${i === 0}">${esc(l)}<span class="count">${n}</span></button>`).join('');
+    .map(([k, l, n], i) => `<button class="tab ${i === 0 ? 'active' : ''}" type="button" data-tier="${esc(k)}" aria-pressed="${i === 0}">${esc(l)}<span class="count">${n}</span></button>`).join('');
     gridHtml = active.map(g => `<section class="acc-section" data-type="${esc(g)}">
     <div class="acc-head"><h2>${esc(g)}</h2><span class="acc-n">${byType[g].length}</span></div>
     <div class="products-grid">${byType[g].map(card).join('')}</div>
@@ -469,7 +469,7 @@ function categoryPage(catKey) {
     const counts = { all: list.length, Entry: 0, Standard: 0, Vault: 0 };
     list.forEach(p => { counts[p.grade]++; });
     tabs = [['all', 'All'], ['Entry', 'Entry'], ['Standard', 'Standard'], ['Vault', 'Vault']]
-      .map(([k, l], i) => `<button class="tab ${i === 0 ? 'active' : ''}" data-tier="${k}" aria-pressed="${i === 0}">${l}<span class="count">${counts[k]}</span></button>`).join('');
+      .map(([k, l], i) => `<button class="tab ${i === 0 ? 'active' : ''}" type="button" data-tier="${k}" aria-pressed="${i === 0}">${l}<span class="count">${counts[k]}</span></button>`).join('');
     gridHtml = `<div class="products-grid" id="grid">${list.map(card).join('')}</div>`;
     emptyMsg = 'No matches. Try another tier or clear the search.';
   }
@@ -495,7 +495,6 @@ ${SPRITE}
 
 <main id="main-content">
 <section class="cat-hero">
-  <div class="eyebrow">${esc(cat.tag)}</div>
   <h1>${esc(cat.title)}</h1>
   <p>${esc(cat.blurb)}</p>
 </section>

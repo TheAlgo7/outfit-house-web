@@ -143,7 +143,7 @@
   }
 
   /* Size */
-  .size-block h4, .spec-block h4, .policy-block h4 {
+  .pdp-section-title {
     font-family: var(--font-heading); font-size: 11px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-muted); margin: 0 0 14px;
@@ -290,7 +290,7 @@
 <div id="header-mount">
   <header class="nav">
     <div class="nav-inner">
-      <button class="nav-toggle" aria-label="Open menu" onclick="openMobNav()">
+      <button class="nav-toggle" type="button" aria-label="Open menu" onclick="openMobNav()">
         <svg><use href="#menu-icon"/></svg>
       </button>
       <a class="brand" href="/">
@@ -313,7 +313,7 @@
         <a class="icon-link" href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener" aria-label="Instagram">
           <svg><use href="#ig-icon"/></svg>
         </a>
-        <button class="nav-wa" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
+        <button class="nav-wa" type="button" aria-label="Enquire on WhatsApp" onclick="wa('Hi! I want to enquire.')">
           <svg><use href="#wa-icon"/></svg> <span class="lbl">Enquire</span>
         </button>
       </div>
@@ -325,7 +325,7 @@
   <div id="mob-nav" class="mob-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mob-nav-head">
       <span class="mob-nav-label">Navigation</span>
-      <button class="mob-close" onclick="closeMobNav()" aria-label="Close menu">
+      <button class="mob-close" type="button" onclick="closeMobNav()" aria-label="Close menu">
         <svg><use href="#x-icon"/></svg>
       </button>
     </div>
@@ -378,7 +378,7 @@
       </a>
     </nav>
     <div class="mob-nav-foot">
-      <button class="btn-wa" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
+      <button class="btn-wa" type="button" onclick="closeMobNav(); wa('Hi! I want to enquire.')">
         <svg><use href="#wa-icon"/></svg> Enquire on WhatsApp
       </button>
     </div>
@@ -419,12 +419,12 @@
     <div class="cta-row"><span class="sold-note">Sold out online</span></div>
 
     <div class="spec-block">
-      <h4>Spec highlights</h4>
+      <h2 class="pdp-section-title">Spec highlights</h2>
       <div class="specs"><div class="spec"><div class="k">Fabric</div><div class="v">Heavyweight cotton</div></div><div class="spec"><div class="k">Fit</div><div class="v">True to original</div></div><div class="spec"><div class="k">Tags</div><div class="v">Original tags</div></div><div class="spec"><div class="k">Tier</div><div class="v">Standard</div></div></div>
     </div>
 
     <div class="policy-block">
-      <h4>Shipping &amp; policy</h4>
+      <h2 class="pdp-section-title">Shipping &amp; policy</h2>
       <div class="policy">
         <div class="policy-item"><svg aria-hidden="true"><use href="#truck"/></svg><div><div class="lab">Shipping</div><div class="val">PAN-India 2–5 days · cost shared on WhatsApp · discreet packing</div></div></div>
         <div class="policy-item"><svg aria-hidden="true"><use href="#shield"/></svg><div><div class="lab">QC photos</div><div class="val">Real photos of your piece before dispatch · you confirm first</div></div></div>
@@ -450,7 +450,7 @@
     <a class="pc-name" href="/product/toh-crest-tee">Crest Tee</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Vault" data-search="graphic hoodie pink web vault">
   <div class="pc-img">
@@ -463,7 +463,7 @@
     <a class="pc-name" href="/product/graphic-hoodie-pink-web">Pink Web</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div><div class="pc pc--sold" data-grade="Standard" data-search="overshirt washed black standard">
   <div class="pc-img">
@@ -476,7 +476,7 @@
     <a class="pc-name" href="/product/overshirt-washed-black">Washed Black</a>
     <span class="pc-stock sold">Sold out</span>
     
-    <button class="pc-cta" disabled aria-disabled="true">Sold out</button>
+    <button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>
   </div>
 </div></div>
   </div>
@@ -489,19 +489,19 @@
         <img src="/assets/logo-text.webp" alt="The Outfit House" width="360" height="261" loading="lazy"/>
         <p>Sneakers, apparel, accessories and footwear. Hand-checked and shipped from Chhatarpur, New Delhi.</p>
       </div>
-      <div><h5>Shop</h5><ul>
+      <div><div class="ft-title">Shop</div><ul>
         <li><a href="/sneakers">Sneakers</a></li>
         <li><a href="/apparel">Apparel</a></li>
         <li><a href="/bottomwear">Bottomwear</a></li>
         <li><a href="/accessories">Accessories</a></li>
       </ul></div>
-      <div><h5>Help</h5><ul>
+      <div><div class="ft-title">Help</div><ul>
         <li><a href="/spec-sheet">Spec Sheet</a></li>
         <li><a href="/guide">Buying Guide</a></li>
         <li><a href="/terms">Shipping</a></li>
         <li><a href="/terms">Exchange</a></li>
       </ul></div>
-      <div><h5>Connect</h5><ul>
+      <div><div class="ft-title">Connect</div><ul>
         <li><a href="#" onclick="wa('Hi!');return false;">WhatsApp</a></li>
         <li><a href="https://www.instagram.com/theoutfithouse.in" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.facebook.com/profile.php?id=61589373328357" target="_blank" rel="noopener">Facebook</a></li>
@@ -514,7 +514,7 @@
       <span><a href="/terms">Policy</a> · <a href="/terms">Terms</a></span>
     </div>
   </footer>
-  <button class="wa-fab" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
+  <button class="wa-fab" type="button" onclick="wa('Hi! I want to enquire.')" aria-label="Chat on WhatsApp">
     <span class="pulse"></span>
     <svg><use href="#wa-icon"/></svg>
   </button></div>

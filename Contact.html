@@ -51,7 +51,7 @@
     line-height: 0.9; margin: 0; text-transform: uppercase; letter-spacing: -0.005em;
   }
   .contact-hero h1 .accent { color: var(--accent); }
-  .contact-hero p { font-size: 16px; color: var(--fg-muted); line-height: 1.6; max-width: 420px; margin: 0; }
+  .contact-hero p { font-size: 16px; color: var(--fg); line-height: 1.6; max-width: 420px; margin: 0; }
 
   .channels {
     padding: 96px 32px; max-width: 1280px; margin: 0 auto;
@@ -68,23 +68,23 @@
   button.channel { font: inherit; text-align: left; cursor: pointer; }
   .channel:hover { border-color: var(--border-strong); transform: translateY(-3px); }
   .channel.primary { background: var(--accent); color: var(--accent-on); border-color: var(--accent); }
-  .channel.primary:hover { border-color: #000; }
+  .channel.primary:hover { border-color: var(--accent-on); }
   .channel svg { width: 28px; height: 28px; color: var(--accent); }
   .channel.primary svg { color: var(--accent-on); }
   .channel .label {
     font-family: var(--font-heading); font-size: 10px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted);
+    color: var(--fg-warm);
   }
-  .channel.primary .label { color: rgba(6,4,3,0.6); }
-  .channel h3 {
+  .channel.primary .label { color: rgba(6,4,3,0.78); }
+  .channel h2 {
     font-family: var(--font-display); font-size: 36px; line-height: 1;
     text-transform: uppercase; margin: 0;
   }
   .channel p {
-    font-size: 13px; color: var(--fg-muted); line-height: 1.55; margin: 0;
+    font-size: 13px; color: var(--fg); line-height: 1.55; margin: 0; max-width: 70ch;
   }
-  .channel.primary p { color: rgba(6,4,3,0.7); }
+  .channel.primary p { color: rgba(6,4,3,0.82); }
   .channel .arrow {
     margin-top: auto; font-family: var(--font-heading); font-size: 11px;
     font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase;
@@ -103,7 +103,7 @@
   .info-cell .k {
     font-family: var(--font-heading); font-size: 10px; font-weight: 600;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted); margin-bottom: 12px;
+    color: var(--fg-warm); margin-bottom: 12px;
   }
   .info-cell .v {
     font-family: var(--font-body); font-size: 14px; color: var(--fg); line-height: 1.6;
@@ -127,10 +127,10 @@
     font-family: var(--font-display); font-size: 22px;
     text-transform: uppercase; line-height: 1.1;
   }
-  .q dd { margin: 0; font-size: 14px; color: var(--fg-muted); line-height: 1.6; }
+  .q dd { margin: 0; font-size: 14px; color: var(--fg); line-height: 1.6; max-width: 70ch; }
 
   .info-note {
-    color: var(--fg-muted); font-size: 12px;
+    color: var(--fg); font-size: 12px;
   }
 
   @media (max-width: 900px) {
@@ -152,7 +152,6 @@
 <main id="main-content">
 <section class="contact-hero">
   <div>
-    <div class="eyebrow">Get in touch</div>
     <h1>Slide into<br/><span class="accent">our DMs.</span></h1>
     <span class="brush-tag" style="margin-top:-4px;font-size:clamp(22px,2.8vw,36px);transform:none;">we don't ghost.</span>
   </div>
@@ -160,31 +159,31 @@
 </section>
 
 <section class="channels">
-  <button class="channel primary" onclick="wa('Hi! I want to enquire.')">
+  <button class="channel primary" type="button" onclick="wa('Hi! I want to enquire.')">
     <svg><use href="#wa-icon"/></svg>
     <div class="label">Primary · 9am–11pm</div>
-    <h3>WhatsApp</h3>
+    <h2>WhatsApp</h2>
     <p>Sizes, photos, prices, orders. Average reply time: 7 minutes.</p>
     <span class="arrow">Chat now →</span>
   </button>
   <a class="channel" href="https://www.instagram.com/theoutfithouse.in/" target="_blank" rel="noopener">
     <svg><use href="#ig-icon"/></svg>
     <div class="label">Drops · DMs</div>
-    <h3>Instagram</h3>
+    <h2>Instagram</h2>
     <p>New stock first, BTS, restocks, occasional auctions on stories.</p>
     <span class="arrow">@theoutfithouse.in →</span>
   </a>
   <a class="channel" href="https://www.facebook.com/profile.php?id=61589373328357" target="_blank" rel="noopener">
     <svg><use href="#fb-icon"/></svg>
     <div class="label">Updates · Community</div>
-    <h3>Facebook</h3>
+    <h2>Facebook</h2>
     <p>Drops, store updates and grand-opening news. Follow the page.</p>
     <span class="arrow">The Outfit House →</span>
   </a>
   <a class="channel" href="mailto:theoutfithouse@outlook.com">
     <svg><use href="#mail"/></svg>
     <div class="label">Wholesale · Press</div>
-    <h3>Email</h3>
+    <h2>Email</h2>
     <p>Bulk orders, partnerships, paperwork. 1–2 day reply.</p>
     <span class="arrow">theoutfithouse@outlook.com →</span>
   </a>
