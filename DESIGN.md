@@ -28,7 +28,8 @@ Industrial, minimal, and premium. The site uses matte near-black surfaces, warm 
 
 - Maintain visible focus rings.
 - Preserve semantic heading order.
-- Respect `prefers-reduced-motion`, especially for perpetual animations.
+- Animations always play; `prefers-reduced-motion` is intentionally NOT honored
+  (it was disabling motion on machines with Windows "Animation effects" off).
 - Muted text on dark surfaces must still meet WCAG AA contrast.
 
 ## Components

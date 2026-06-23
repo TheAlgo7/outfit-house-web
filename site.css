@@ -372,21 +372,6 @@ footer { border-top: 1px solid var(--border); padding: 56px var(--pad-x) 32px; }
   0%   { transform: scale(1);    opacity: 0.5; }
   100% { transform: scale(1.85); opacity: 0; }
 }
-/* Stop only the perpetual decorative halo for motion-sensitive users —
-   the FAB itself and all one-shot transitions stay live. (WCAG 2.2.2) */
-@media (prefers-reduced-motion: reduce) {
-  .wa-fab .pulse { animation: none; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-  .peek {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
 
 /* ============ PAGE TRANSITIONS ============ */
 @keyframes page-in {
