@@ -40,12 +40,8 @@
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2"/>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2"/>
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&display=swap"/></noscript>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bebas-neue-400.woff2"/>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/archivo-variable.woff2"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -156,6 +152,8 @@
   }
   .sort-opt:last-child { border-bottom: none; }
   .sort-opt:hover { color: var(--fg); background: var(--surface-hover); }
+  /* Keyboard focus mirrors hover, with an inset ring so the arrow-key position reads clearly */
+  .sort-opt:focus-visible { color: var(--fg); background: var(--surface-hover); outline: 2px solid var(--accent); outline-offset: -2px; }
   .sort-opt.active { color: var(--accent); }
 
   .grid-wrap { padding: 56px 0 96px; max-width: 1280px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
@@ -193,9 +191,9 @@
         <svg><use href="#chevron-down"/></svg>
       </button>
       <ul class="sort-menu" id="sort-menu" role="listbox" aria-label="Sort options">
-        <li class="sort-opt active" role="option" aria-selected="true"  data-val="feat">Featured</li>
-        <li class="sort-opt"        role="option" aria-selected="false" data-val="az">Name: A → Z</li>
-        <li class="sort-opt"        role="option" aria-selected="false" data-val="za">Name: Z → A</li>
+        <li class="sort-opt active" role="option" tabindex="-1" aria-selected="true"  data-val="feat">Featured</li>
+        <li class="sort-opt"        role="option" tabindex="-1" aria-selected="false" data-val="az">Name: A → Z</li>
+        <li class="sort-opt"        role="option" tabindex="-1" aria-selected="false" data-val="za">Name: Z → A</li>
       </ul>
     </div>
   </div>
@@ -288,29 +286,57 @@
     var btn  = document.getElementById('sort-btn');
     var menu = document.getElementById('sort-menu');
     var lbl  = document.getElementById('sort-label');
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var open = wrap.classList.toggle('open');
+    var opts = Array.prototype.slice.call(menu.querySelectorAll('[role="option"]'));
+
+    function setOpen(open) {
+      wrap.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', String(open));
-    });
-    menu.addEventListener('click', function(e) {
-      var opt = e.target.closest('[data-val]');
-      if (!opt) return;
+      if (open) { (menu.querySelector('.sort-opt.active') || opts[0]).focus(); }
+    }
+    function selectOpt(opt) {
       sortMode = opt.getAttribute('data-val');
       lbl.textContent = opt.textContent;
-      Array.from(menu.children).forEach(function(o) {
+      opts.forEach(function(o) {
         var sel = o === opt;
         o.classList.toggle('active', sel);
         o.setAttribute('aria-selected', String(sel));
       });
-      wrap.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
       render();
+    }
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      setOpen(!wrap.classList.contains('open'));
     });
-    document.addEventListener('click', function() {
-      wrap.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+    // Open on Enter / Space / ArrowDown from the trigger (ARIA listbox pattern)
+    btn.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault(); setOpen(true);
+      }
     });
+    menu.addEventListener('click', function(e) {
+      var opt = e.target.closest('[data-val]');
+      if (!opt) return;
+      selectOpt(opt); setOpen(false); btn.focus();
+    });
+    // Arrow-key navigation, Enter/Space to select, Escape to close (WCAG 2.1.1)
+    menu.addEventListener('keydown', function(e) {
+      var idx = opts.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') {
+        e.preventDefault(); opts[idx < opts.length - 1 ? idx + 1 : 0].focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault(); opts[idx > 0 ? idx - 1 : opts.length - 1].focus();
+      } else if (e.key === 'Home') {
+        e.preventDefault(); opts[0].focus();
+      } else if (e.key === 'End') {
+        e.preventDefault(); opts[opts.length - 1].focus();
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (idx !== -1) { selectOpt(opts[idx]); setOpen(false); btn.focus(); }
+      } else if (e.key === 'Escape') {
+        e.preventDefault(); setOpen(false); btn.focus();
+      }
+    });
+    document.addEventListener('click', function() { setOpen(false); });
   }());
 
   renderTabs(); render();

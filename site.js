@@ -226,7 +226,7 @@ window.renderProductCard = function(p) {
   card.innerHTML = `
     <div class="pc-img">
       ${badge}
-      <img src="/${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
+      <img src="/${p.img}" alt="${(p.brand === 'TOH' ? p.name : (p.brand + ', ' + p.name))} — ${p.grade} tier, The Outfit House" loading="lazy" decoding="async" width="600" height="600" onerror="this.onerror=null;this.src='/assets/placeholder.svg'"/>
       ${altImg}
     </div>
     <div class="pc-body">
