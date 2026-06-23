@@ -129,6 +129,8 @@
   }
   .sort-opt:last-child { border-bottom: none; }
   .sort-opt:hover { color: var(--fg); background: var(--surface-hover); }
+  /* Keyboard focus mirrors hover, with an inset ring so the arrow-key position reads clearly */
+  .sort-opt:focus-visible { color: var(--fg); background: var(--surface-hover); outline: 2px solid var(--accent); outline-offset: -2px; }
   .sort-opt.active { color: var(--accent); }
 
   .grid-wrap { padding: 56px 0 96px; max-width: 1280px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
@@ -211,7 +213,7 @@
             Shop <svg><use href="#chevron-down"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
-            <a href="/sneakers" role="menuitem" class=""><span>Sneakers</span><span class="num">01</span></a><a href="/apparel" role="menuitem" class=""><span>Apparel</span><span class="num">02</span></a><a href="/bottomwear" role="menuitem" class="active" aria-current="page"><span>Bottomwear</span><span class="num">03</span></a><a href="/accessories" role="menuitem" class=""><span>Accessories</span><span class="num">04</span></a>
+            <a href="/sneakers" role="menuitem" class=""><span>Sneakers</span></a><a href="/apparel" role="menuitem" class=""><span>Apparel</span></a><a href="/bottomwear" role="menuitem" class="active" aria-current="page"><span>Bottomwear</span></a><a href="/accessories" role="menuitem" class=""><span>Accessories</span></a>
           </div>
         </div>
         <a href="/" class="">Home</a><a href="/about" class="">About</a><a href="/spec-sheet" class="">Spec Sheet</a><a href="/guide" class="">Guide</a><a href="/contact" class="">Contact</a>

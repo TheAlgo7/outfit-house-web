@@ -59,22 +59,6 @@
     max-width: 500px; font-size: 16px; line-height: 1.65; color: var(--fg-muted);
     margin: 0 0 32px;
   }
-  /* category chips row */
-  .lp-cat-chips {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;
-  }
-  .lp-cat-chips a {
-    display: inline-flex; align-items: center; min-height: 44px;
-    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-    letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    color: var(--fg-muted); padding: 0 16px;
-    border: 1px solid var(--border);
-    transition: color var(--dur-base), border-color var(--dur-base), background var(--dur-base);
-  }
-  .lp-cat-chips a:hover {
-    color: var(--accent-on); background: var(--accent);
-    border-color: var(--accent);
-  }
   .lp-hero .ctas {
     display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px;
   }
@@ -285,13 +269,10 @@
   .lp-store-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
 
   .lp-store .store-eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
+    display: inline-block;
     font-family: var(--font-mono); font-size: 11px;
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-subtle); margin-bottom: 16px;
-  }
-  .lp-store .store-eyebrow::before {
-    content: ''; width: 28px; height: 1px; background: var(--border-strong);
   }
   .lp-store h2 {
     font-family: var(--font-display); font-size: clamp(52px, 7vw, 108px);
@@ -547,14 +528,6 @@
     <div class="lp-hero-text">
       <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
       <p class="lede">Doors open 28 June 2026. From Panda low-tops and retro runners to graphic hoodies, cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
-      <nav class="lp-cat-chips" aria-label="Product categories">
-        <a href="/sneakers">Sneakers</a>
-        <a href="/apparel">Apparel</a>
-        <a href="/bottomwear">Bottomwear</a>
-        <a href="/accessories">Accessories</a>
-        <a href="/accessories">Sunglasses</a>
-        <a href="/sneakers">Footwear</a>
-      </nav>
       <div class="ctas">
         <button class="btn-wa" type="button" onclick="wa('Hi! I want to browse the collection.')">
           <svg aria-hidden="true"><use href="#wa-icon"/></svg>
@@ -564,7 +537,7 @@
       </div>
       <div class="meta">
         <div class="meta-item"><span>Shipping</span><b>PAN-India · COD</b></div>
-        <div class="meta-item"><span>Store</span><b>Chattarpur, Delhi</b></div>
+        <div class="meta-item"><span>Store</span><b>Chhatarpur, Delhi</b></div>
         <div class="meta-item"><span>Pricing</span><b>DM for best price</b></div>
       </div>
     </div>
@@ -598,7 +571,7 @@
       <span>Jeans</span><i>✦</i>
       <span>Track pants</span><i>✦</i>
       <span>Crocs</span><i>✦</i>
-      <span>Chattarpur · New Delhi</span><i>✦</i>
+      <span>Chhatarpur · New Delhi</span><i>✦</i>
     </div>
     <div class="lp-strip-set">
       <span>Sneakers</span><i>✦</i>
@@ -611,7 +584,7 @@
       <span>Jeans</span><i>✦</i>
       <span>Track pants</span><i>✦</i>
       <span>Crocs</span><i>✦</i>
-      <span>Chattarpur · New Delhi</span><i>✦</i>
+      <span>Chhatarpur · New Delhi</span><i>✦</i>
     </div>
   </div>
 </div>

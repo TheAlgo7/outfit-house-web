@@ -304,10 +304,10 @@ window.renderHeader = function(active) {
   var SHOP_ITEMS = ['Sneakers', 'Apparel', 'Bottomwear', 'Accessories'];
   var isShop = SHOP_ITEMS.indexOf(active) !== -1;
   var shopLinks = [
-    { h:'Sneakers',    href:'/sneakers',    num:'01' },
-    { h:'Apparel',     href:'/apparel',     num:'02' },
-    { h:'Bottomwear',  href:'/bottomwear',  num:'03' },
-    { h:'Accessories', href:'/accessories', num:'04' },
+    { h:'Sneakers',    href:'/sneakers' },
+    { h:'Apparel',     href:'/apparel' },
+    { h:'Bottomwear',  href:'/bottomwear' },
+    { h:'Accessories', href:'/accessories' },
   ];
   var topLinks = [
     { h:'Home',       href:'/' },
@@ -333,7 +333,7 @@ window.renderHeader = function(active) {
             Shop <svg><use href="#chevron-down"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
-            ${shopLinks.map(i => `<a href="${i.href}" role="menuitem" class="${active===i.h?'active':''}"${active===i.h?' aria-current="page"':''}><span>${i.h}</span><span class="num">${i.num}</span></a>`).join('')}
+            ${shopLinks.map(i => `<a href="${i.href}" role="menuitem" class="${active===i.h?'active':''}"${active===i.h?' aria-current="page"':''}><span>${i.h}</span></a>`).join('')}
           </div>
         </div>
         ${topLinks.map(i => `<a href="${i.href}" class="${active===i.h?'active':''}"${active===i.h?' aria-current="page"':''}>${i.h}</a>`).join('')}

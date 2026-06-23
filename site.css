@@ -180,7 +180,6 @@ header.nav {
 .nav-dropdown-menu a:last-child { border-bottom: none; }
 .nav-dropdown-menu a:hover { color: var(--fg); background: var(--surface-hover); border-color: var(--border); }
 .nav-dropdown-menu a.active { color: var(--accent); }
-.nav-dropdown-menu .num { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
 
 /* ============ BUTTONS ============ */
 .btn-wa {
