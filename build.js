@@ -55,6 +55,8 @@ function slugify(s) {
 }
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 function jsq(s) { return "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'"; }
+// Size unit by category: sneakers use UK, bottomwear uses waist (W), tops/accessories none.
+function sizeUnit(cat) { return cat === 'sneakers' ? 'UK ' : cat === 'bottomwear' ? 'W ' : ''; }
 
 /* ---------- load site.js + catalog ---------- */
 let siteSrc = fs.readFileSync(SITE_JS, 'utf8');
@@ -216,7 +218,7 @@ function card(p) {
   let status = '';
   if (sold) status = '<span class="pc-stock sold">Sold out</span>';
   else if (p.stock === 'in') status = '<span class="pc-stock">In stock now</span>';
-  const sizes = (!sold && p.stock === 'in' && p.sizes) ? `<span class="pc-sizes">UK ${esc(p.sizes)}</span>` : '';
+  const sizes = (!sold && p.stock === 'in' && p.sizes) ? `<span class="pc-sizes">${sizeUnit(p.cat)}${esc(p.sizes)}</span>` : '';
   const cta = sold
     ? '<button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>'
     : `<button class="pc-cta" type="button" data-slug="${esc(p.slug)}" data-name="${esc(p.name)}" data-grade="${esc(p.grade)}"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>`;
@@ -302,9 +304,9 @@ function productPage(p) {
   const sold = p.stock === 'sold';
   const gallery = [p.img].concat(p.imgs || []);
   const sizeSet = SIZE_SETS[p.cat] || SIZE_SETS.sneakers;
-  const inStockSizes = (p.stock === 'in' && p.sizes) ? p.sizes.split(',').map(s => 'UK ' + s.trim()) : null;
+  const inStockSizes = (p.stock === 'in' && p.sizes) ? p.sizes.split(',').map(s => sizeUnit(p.cat) + s.trim()) : null;
   const sizeList = inStockSizes || sizeSet.sizes;
-  const sizeLabel = inStockSizes ? 'In stock now · UK' : sizeSet.label;
+  const sizeLabel = inStockSizes ? ('In stock now · ' + (p.cat === 'bottomwear' ? 'Waist' : p.cat === 'sneakers' ? 'UK' : 'Size')) : sizeSet.label;
   const specSet = (SPEC_SETS[p.cat] || SPEC_SETS.sneakers).concat([['Tier', p.grade]]);
   const sizesHtml = sizeList.map(s => `<button class="size" type="button" aria-pressed="false">${esc(s)}</button>`).join('');
   const specsHtml = specSet.map(r => `<div class="spec"><div class="k">${esc(r[0])}</div><div class="v">${esc(r[1])}</div></div>`).join('');
@@ -346,7 +348,7 @@ ${SPRITE}
     </div>
     <div class="price-row">
       <span class="price">${sold ? 'Currently unavailable' : 'Price on enquiry'}</span>
-      ${sold ? '<span class="pdp-stock sold">Sold out</span>' : (p.stock === 'in' ? `<span class="pdp-stock">In stock now · ready to ship${p.sizes ? ' · UK ' + esc(p.sizes) : ''}</span>` : '')}
+      ${sold ? '<span class="pdp-stock sold">Sold out</span>' : (p.stock === 'in' ? `<span class="pdp-stock">In stock now · ready to ship${p.sizes ? ' · ' + sizeUnit(p.cat) + esc(p.sizes) : ''}</span>` : '')}
       <span class="price-note">${sold ? 'This piece is sold out online right now. Ask in store for availability.' : 'Best price shared on WhatsApp · we run regular launch offers'}</span>
     </div>
 

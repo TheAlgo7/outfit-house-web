@@ -60,6 +60,13 @@ window.gradeClass = function(g) {
   return 'entry';
 };
 
+// Size unit by category: sneakers use UK, bottomwear uses waist (W), tops/accessories none.
+window.sizeUnit = function(cat) {
+  if (cat === 'sneakers')   return 'UK ';
+  if (cat === 'bottomwear') return 'W ';
+  return '';
+};
+
 // Categories
 window.CATEGORIES = {
   sneakers:    { key:'sneakers',    label:'Sneakers',    title:'The Sneaker Vault',   tag:'Footwear',    blurb:'Hand-checked sneakers across three quality tiers. Genuine boxes, accurate stitching, real photos before dispatch.' },
@@ -176,6 +183,18 @@ window.PRODUCTS = [
   { slug:'track-pants-navy', cat:'bottomwear', stock:'sold', brand:'Track Pants', name:'Navy', grade:'Standard', img:'assets/Bottomwear/track-pants-navy.webp' },
   { slug:'fleece-joggers-grey', cat:'bottomwear', stock:'sold', brand:'Fleece Joggers', name:'Grey', grade:'Entry', img:'assets/Bottomwear/fleece-joggers-grey.webp' },
   { slug:'work-pants-black', cat:'bottomwear', stock:'sold', brand:'Work Pants', name:'Black', grade:'Entry', img:'assets/Bottomwear/work-pants-black.webp' },
+  { slug:'straight-denim-dark-indigo', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Straight Denim', name:'Dark Indigo', grade:'Standard', img:'assets/Bottomwear/straight-denim-dark-indigo.webp', imgs:['assets/Bottomwear/straight-denim-dark-indigo-2.webp'] },
+  { slug:'bootcut-trouser-black', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Bootcut Trouser', name:'Black', grade:'Vault', img:'assets/Bottomwear/bootcut-trouser-black.webp', imgs:['assets/Bottomwear/bootcut-trouser-black-2.webp'] },
+  { slug:'straight-denim-black', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Straight Denim', name:'Black', grade:'Standard', img:'assets/Bottomwear/straight-denim-black.webp', imgs:['assets/Bottomwear/straight-denim-black-2.webp'] },
+  { slug:'bootcut-trouser-brown', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Bootcut Trouser', name:'Brown', grade:'Standard', img:'assets/Bottomwear/bootcut-trouser-brown.webp', imgs:['assets/Bottomwear/bootcut-trouser-brown-2.webp'] },
+  { slug:'straight-denim-jet-black', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Straight Denim', name:'Jet Black', grade:'Standard', img:'assets/Bottomwear/straight-denim-jet-black.webp', imgs:['assets/Bottomwear/straight-denim-jet-black-2.webp'] },
+  { slug:'straight-denim-ice-blue', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Straight Denim', name:'Ice Blue', grade:'Standard', img:'assets/Bottomwear/straight-denim-ice-blue.webp', imgs:['assets/Bottomwear/straight-denim-ice-blue-2.webp'] },
+  { slug:'straight-denim-faded-black', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Straight Denim', name:'Faded Black', grade:'Standard', img:'assets/Bottomwear/straight-denim-faded-black.webp', imgs:['assets/Bottomwear/straight-denim-faded-black-2.webp'] },
+  { slug:'distressed-denim-dark-indigo', cat:'bottomwear', stock:'in', sizes:'28, 30, 32, 34', brand:'Distressed Denim', name:'Dark Indigo', grade:'Vault', img:'assets/Bottomwear/distressed-denim-dark-indigo.webp', imgs:['assets/Bottomwear/distressed-denim-dark-indigo-2.webp'] },
+  { slug:'straight-denim-charcoal-grey', cat:'bottomwear', stock:'in', sizes:'34', brand:'Straight Denim', name:'Charcoal Grey', grade:'Standard', img:'assets/Bottomwear/straight-denim-charcoal-grey.webp', imgs:['assets/Bottomwear/straight-denim-charcoal-grey-2.webp'] },
+  { slug:'slim-denim-dark-charcoal', cat:'bottomwear', stock:'in', sizes:'34', brand:'Slim Denim', name:'Dark Charcoal', grade:'Vault', img:'assets/Bottomwear/slim-denim-dark-charcoal.webp', imgs:['assets/Bottomwear/slim-denim-dark-charcoal-2.webp'] },
+  { slug:'slim-denim-grey', cat:'bottomwear', stock:'in', sizes:'30', brand:'Slim Denim', name:'Grey', grade:'Entry', img:'assets/Bottomwear/slim-denim-grey.webp', imgs:['assets/Bottomwear/slim-denim-grey-2.webp'] },
+  { slug:'slim-denim-charcoal', cat:'bottomwear', stock:'in', sizes:'28, 32', brand:'Slim Denim', name:'Charcoal', grade:'Entry', img:'assets/Bottomwear/slim-denim-charcoal.webp', imgs:['assets/Bottomwear/slim-denim-charcoal-2.webp'] },
   // ---------- Accessories ----------
   { slug:'toh-crown-tote-cream', cat:'accessories', stock:'sold', brand:'TOH', name:'Crown Tote · Cream', grade:'Entry', img:'assets/Accessories/toh-crown-tote-cream.webp' },
   { slug:'6-panel-cap-navy', cat:'accessories', stock:'sold', brand:'6-Panel Cap', name:'Navy', grade:'Standard', img:'assets/Accessories/6-panel-cap-navy.webp' },
@@ -235,7 +254,7 @@ window.renderProductCard = function(p) {
     : '<span class="pc-grade ' + gradeClass(p.grade) + '">' + p.grade + '</span>');
   var status = sold ? '<span class="pc-stock sold">Sold out</span>'
     : (p.stock === 'in' ? '<span class="pc-stock">In stock now</span>' : '');
-  var sizes = (!sold && p.stock === 'in' && p.sizes) ? '<span class="pc-sizes">UK ' + p.sizes + '</span>' : '';
+  var sizes = (!sold && p.stock === 'in' && p.sizes) ? '<span class="pc-sizes">' + sizeUnit(p.cat) + p.sizes + '</span>' : '';
   var cta = sold ? '<button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>'
     : '<button class="pc-cta" type="button"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>';
   card.innerHTML = `
