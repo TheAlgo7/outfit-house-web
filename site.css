@@ -316,6 +316,9 @@ header.nav {
 .pc-stock.sold { color: var(--fg-subtle); }
 .pc-stock.sold::before { background: var(--fg-subtle); box-shadow: none; }
 .pc--sold .pc-img img { opacity: 0.45; filter: grayscale(0.35); }
+/* Sold cards drop the hover-swap alt image so the buckle detail can't ghost
+   through the greyed hero (the sold rule above otherwise out-specifies its opacity:0). */
+.pc--sold .pc-img-alt { display: none; }
 .pc--sold .pc-name { color: var(--fg-muted); }
 .pc--sold:hover { transform: none; border-color: var(--bg-elev); }
 .pc--sold:hover .pc-img img { transform: none; }
