@@ -67,6 +67,9 @@ window.sizeUnit = function(cat) {
   return '';
 };
 
+// Sort priority so in-stock surfaces first and sold-out sinks last (order-on-request between).
+window.stockRank = function(p) { return p.stock === 'in' ? 0 : p.stock === 'sold' ? 2 : 1; };
+
 // Categories
 window.CATEGORIES = {
   sneakers:    { key:'sneakers',    label:'Sneakers',    title:'The Sneaker Vault',   tag:'Footwear',    blurb:'Hand-checked sneakers across three quality tiers. Genuine boxes, accurate stitching, real photos before dispatch.' },

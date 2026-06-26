@@ -238,7 +238,7 @@
   initHeader();
 
   // Filter products by category
-  const ALL = PRODUCTS.filter(p => p.cat === catKey);
+  const ALL = PRODUCTS.filter(p => p.cat === catKey).sort((a,b) => stockRank(a) - stockRank(b));
   const TIER_COUNTS = {
     'all':      ALL.length,
     'Entry':    ALL.filter(p => p.grade === 'Entry').length,
@@ -271,8 +271,8 @@
 
   function render() {
     let list = (activeTier === 'all') ? ALL : ALL.filter(p => p.grade === activeTier);
-    if (sortMode === 'az') list = [...list].sort((a,b) => a.name.localeCompare(b.name));
-    if (sortMode === 'za') list = [...list].sort((a,b) => b.name.localeCompare(a.name));
+    if (sortMode === 'az') list = [...list].sort((a,b) => stockRank(a) - stockRank(b) || a.name.localeCompare(b.name));
+    if (sortMode === 'za') list = [...list].sort((a,b) => stockRank(a) - stockRank(b) || b.name.localeCompare(a.name));
     document.getElementById('count').textContent = list.length;
     var gridEl = document.getElementById('grid');
     gridEl.innerHTML = '';

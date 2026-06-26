@@ -57,6 +57,8 @@ function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').
 function jsq(s) { return "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'"; }
 // Size unit by category: sneakers use UK, bottomwear uses waist (W), tops/accessories none.
 function sizeUnit(cat) { return cat === 'sneakers' ? 'UK ' : cat === 'bottomwear' ? 'W ' : ''; }
+// Sort priority so in-stock surfaces first and sold-out sinks last (order-on-request between).
+function stockRank(p) { return p.stock === 'in' ? 0 : p.stock === 'sold' ? 2 : 1; }
 
 /* ---------- load site.js + catalog ---------- */
 let siteSrc = fs.readFileSync(SITE_JS, 'utf8');
@@ -444,7 +446,7 @@ function accGroup(p) {
 /* ---------- render a category page ---------- */
 function categoryPage(catKey) {
   const cat = CATEGORIES[catKey];
-  const list = PRODUCTS.filter(p => p.cat === catKey);
+  const list = PRODUCTS.filter(p => p.cat === catKey).sort((a, b) => stockRank(a) - stockRank(b));
   const title = cat.title + ' | The Outfit House';
   const url = ORIGIN + '/' + catKey;
   const grouped = catKey === 'accessories';
