@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Core pages -->
-  <url><loc>https://theoutfithouse.in/</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/about</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/spec-sheet</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/contact</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/terms</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/guide</loc><lastmod>2026-06-26</lastmod></url>
+  <url><loc>https://theoutfithouse.in/</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/about</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/spec-sheet</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/contact</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/terms</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/guide</loc><lastmod>2026-06-27</lastmod></url>
 
   <!-- Category pages -->
-  <url><loc>https://theoutfithouse.in/sneakers</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/apparel</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/bottomwear</loc><lastmod>2026-06-26</lastmod></url>
-  <url><loc>https://theoutfithouse.in/accessories</loc><lastmod>2026-06-26</lastmod></url>
+  <url><loc>https://theoutfithouse.in/sneakers</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/apparel</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/bottomwear</loc><lastmod>2026-06-27</lastmod></url>
+  <url><loc>https://theoutfithouse.in/accessories</loc><lastmod>2026-06-27</lastmod></url>
 
   <!-- Sneakers -->
   <url>
     <loc>https://theoutfithouse.in/product/mid-top-sneaker-panda</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-panda.webp</image:loc>
       <image:title>Mid-Top Sneaker Panda</image:title>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-cream-sea-salt</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-cream-sea-salt.webp</image:loc>
       <image:title>Retro Runner Cream Sea Salt</image:title>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/court-sneaker-white-green</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/court-sneaker-white-green.webp</image:loc>
       <image:title>Court Sneaker White Green</image:title>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-stone-pink</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-stone-pink.webp</image:loc>
       <image:title>Retro Runner Stone Pink</image:title>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/mid-top-sneaker-shadow-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-shadow-grey.webp</image:loc>
       <image:title>Mid-Top Sneaker Shadow Grey</image:title>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-protection-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-protection-grey.webp</image:loc>
       <image:title>Chunky Runner Protection Grey</image:title>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/knit-runner-zebra</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/knit-runner-zebra.webp</image:loc>
       <image:title>Knit Runner Zebra</image:title>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/slide-bone</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/slide-bone.webp</image:loc>
       <image:title>Slide Bone</image:title>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/mid-top-sneaker-bred-reimagined</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-bred-reimagined.webp</image:loc>
       <image:title>Mid-Top Sneaker Bred Reimagined</image:title>
@@ -90,7 +90,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/skate-low-university-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/skate-low-university-blue.webp</image:loc>
       <image:title>Skate Low University Blue</image:title>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-rain-cloud</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-rain-cloud.webp</image:loc>
       <image:title>Chunky Runner Rain Cloud</image:title>
@@ -106,7 +106,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-infrared</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-infrared.webp</image:loc>
       <image:title>Retro Runner Infrared</image:title>
@@ -114,7 +114,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/suede-low-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/suede-low-grey.webp</image:loc>
       <image:title>Suede Low Grey</image:title>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-cream</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-cream.webp</image:loc>
       <image:title>Chunky Runner Cream</image:title>
@@ -130,7 +130,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-trainer-white-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-trainer-white-blue.webp</image:loc>
       <image:title>Retro Trainer White Blue</image:title>
@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/clog-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/clog-black.webp</image:loc>
       <image:title>Clog Black</image:title>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/high-top-sneaker-chicago</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/high-top-sneaker-chicago.webp</image:loc>
       <image:title>High-Top Sneaker Chicago</image:title>
@@ -154,7 +154,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/patent-high-top-concord</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/patent-high-top-concord.webp</image:loc>
       <image:title>Patent High-Top Concord</image:title>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/skate-low-grey-fog</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/skate-low-grey-fog.webp</image:loc>
       <image:title>Skate Low Grey Fog</image:title>
@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-silver-metallic</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-silver-metallic.webp</image:loc>
       <image:title>Chunky Runner Silver Metallic</image:title>
@@ -178,7 +178,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-wave-runner</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-wave-runner.webp</image:loc>
       <image:title>Chunky Runner Wave Runner</image:title>
@@ -186,7 +186,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-silver-bullet</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-silver-bullet.webp</image:loc>
       <image:title>Retro Runner Silver Bullet</image:title>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/trail-runner-phantom</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/trail-runner-phantom.webp</image:loc>
       <image:title>Trail Runner Phantom</image:title>
@@ -202,7 +202,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/racing-flat-og-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/racing-flat-og-black.webp</image:loc>
       <image:title>Racing Flat OG Black</image:title>
@@ -210,7 +210,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/high-top-sneaker-white-cement</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/high-top-sneaker-white-cement.webp</image:loc>
       <image:title>High-Top Sneaker White Cement</image:title>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/mid-top-sneaker-military-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/mid-top-sneaker-military-black.webp</image:loc>
       <image:title>Mid-Top Sneaker Military Black</image:title>
@@ -226,7 +226,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-sneaker-reverse-olive</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-reverse-olive.webp</image:loc>
       <image:title>Low-Top Sneaker Reverse Olive</image:title>
@@ -234,7 +234,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-grey-suede</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-grey-suede.webp</image:loc>
       <image:title>Chunky Runner Grey Suede</image:title>
@@ -242,7 +242,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-big-bubble</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-big-bubble.webp</image:loc>
       <image:title>Retro Runner Big Bubble</image:title>
@@ -250,7 +250,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-white-silver</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-white-silver.webp</image:loc>
       <image:title>Chunky Runner White Silver</image:title>
@@ -258,7 +258,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/skate-low-black-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/skate-low-black-white.webp</image:loc>
       <image:title>Skate Low Black &amp; White</image:title>
@@ -266,7 +266,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/canvas-high-top-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/canvas-high-top-black.webp</image:loc>
       <image:title>Canvas High-Top Black</image:title>
@@ -274,7 +274,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/track-runner-classic-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/track-runner-classic-white.webp</image:loc>
       <image:title>Track Runner Classic White</image:title>
@@ -282,7 +282,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-gum-sole-sneaker-green-cream</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-gum-sole-sneaker-green-cream.webp</image:loc>
       <image:title>Low-Top Gum-Sole Sneaker Green &amp; Cream</image:title>
@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-gum-sole-sneaker-night-navy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-gum-sole-sneaker-night-navy.webp</image:loc>
       <image:title>Low-Top Gum-Sole Sneaker Night Navy</image:title>
@@ -298,7 +298,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-gum-sole-sneaker-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-gum-sole-sneaker-white.webp</image:loc>
       <image:title>Low-Top Gum-Sole Sneaker White</image:title>
@@ -306,7 +306,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/lightweight-runner-sport-mesh</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/lightweight-runner-sport-mesh.webp</image:loc>
       <image:title>Lightweight Runner Sport Mesh</image:title>
@@ -314,7 +314,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-navy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-navy.webp</image:loc>
       <image:title>Retro Runner Navy</image:title>
@@ -322,7 +322,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-maroon</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-maroon.webp</image:loc>
       <image:title>Retro Runner Maroon</image:title>
@@ -330,7 +330,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/retro-runner-black-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/retro-runner-black-grey.webp</image:loc>
       <image:title>Retro Runner Black &amp; Grey</image:title>
@@ -338,7 +338,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-profile-retro-runner-cream</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-profile-retro-runner-cream.webp</image:loc>
       <image:title>Low-Profile Retro Runner Cream</image:title>
@@ -346,7 +346,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-profile-retro-runner-black-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-profile-retro-runner-black-white.webp</image:loc>
       <image:title>Low-Profile Retro Runner Black &amp; White</image:title>
@@ -354,7 +354,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-profile-retro-runner-horse-edition</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-profile-retro-runner-horse-edition.webp</image:loc>
       <image:title>Low-Profile Retro Runner Horse Edition</image:title>
@@ -362,7 +362,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-black.webp</image:loc>
       <image:title>Chunky Runner Black</image:title>
@@ -370,7 +370,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/chunky-runner-white-silver-navy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/chunky-runner-white-silver-navy.webp</image:loc>
       <image:title>Chunky Runner White, Silver &amp; Navy</image:title>
@@ -378,7 +378,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-court-sneaker-phantom-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-court-sneaker-phantom-black.webp</image:loc>
       <image:title>Low-Top Court Sneaker Phantom Black</image:title>
@@ -386,7 +386,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-court-sneaker-all-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-court-sneaker-all-white.webp</image:loc>
       <image:title>Low-Top Court Sneaker All White</image:title>
@@ -394,7 +394,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-court-sneaker-wolf-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-court-sneaker-wolf-grey.webp</image:loc>
       <image:title>Low-Top Court Sneaker Wolf Grey</image:title>
@@ -402,7 +402,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/vintage-low-top-court-sneaker-sail</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/vintage-low-top-court-sneaker-sail.webp</image:loc>
       <image:title>Vintage Low-Top Court Sneaker Sail</image:title>
@@ -410,7 +410,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/performance-runner-orange-burst</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/performance-runner-orange-burst.webp</image:loc>
       <image:title>Performance Runner Orange Burst</image:title>
@@ -418,7 +418,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-court-sneaker-reverse-mocha</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-court-sneaker-reverse-mocha.webp</image:loc>
       <image:title>Low-Top Court Sneaker Reverse Mocha</image:title>
@@ -426,7 +426,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/low-top-sneaker-panda</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/low-top-sneaker-panda.webp</image:loc>
       <image:title>Low-Top Sneaker Panda</image:title>
@@ -434,7 +434,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/high-top-court-sneaker-mocha</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Sneakers/high-top-court-sneaker-mocha.webp</image:loc>
       <image:title>High-Top Court Sneaker Mocha</image:title>
@@ -444,7 +444,7 @@
   <!-- Apparel -->
   <url>
     <loc>https://theoutfithouse.in/product/toh-crest-tee</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/toh-crest-tee.webp</image:loc>
       <image:title>Crest Tee</image:title>
@@ -452,7 +452,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/heavyweight-hoodie-oatmeal</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/heavyweight-hoodie-oatmeal.webp</image:loc>
       <image:title>Heavyweight Hoodie Oatmeal</image:title>
@@ -460,7 +460,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-hoodie-pink-web</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-hoodie-pink-web.webp</image:loc>
       <image:title>Graphic Hoodie Pink Web</image:title>
@@ -468,7 +468,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/overshirt-washed-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/overshirt-washed-black.webp</image:loc>
       <image:title>Overshirt Washed Black</image:title>
@@ -476,7 +476,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cotton-tee-basic-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-basic-white.webp</image:loc>
       <image:title>Cotton Tee Basic White</image:title>
@@ -484,7 +484,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/tech-hoodie-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/tech-hoodie-black.webp</image:loc>
       <image:title>Tech Hoodie Black</image:title>
@@ -492,7 +492,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-hoodie-black-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-hoodie-black-white.webp</image:loc>
       <image:title>Graphic Hoodie Black &amp; White</image:title>
@@ -500,7 +500,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/full-zip-hoodie-camo</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/full-zip-hoodie-camo.webp</image:loc>
       <image:title>Full-Zip Hoodie Camo</image:title>
@@ -508,7 +508,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/hooded-sweatshirt-brown</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/hooded-sweatshirt-brown.webp</image:loc>
       <image:title>Hooded Sweatshirt Brown</image:title>
@@ -516,7 +516,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-tee-bear-print</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-bear-print.webp</image:loc>
       <image:title>Graphic Tee Bear Print</image:title>
@@ -524,7 +524,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/down-puffer-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/down-puffer-black.webp</image:loc>
       <image:title>Down Puffer Black</image:title>
@@ -532,7 +532,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/crewneck-slate-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/crewneck-slate-grey.webp</image:loc>
       <image:title>Crewneck Slate Grey</image:title>
@@ -540,7 +540,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/logo-hoodie-red</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/logo-hoodie-red.webp</image:loc>
       <image:title>Logo Hoodie Red</image:title>
@@ -548,7 +548,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-tee-8-ball</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-8-ball.webp</image:loc>
       <image:title>Graphic Tee 8-Ball</image:title>
@@ -556,7 +556,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-tee-4-star</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-4-star.webp</image:loc>
       <image:title>Graphic Tee 4-Star</image:title>
@@ -564,7 +564,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cotton-tee-cream</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-cream.webp</image:loc>
       <image:title>Cotton Tee Cream</image:title>
@@ -572,7 +572,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cotton-tee-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-black.webp</image:loc>
       <image:title>Cotton Tee Black</image:title>
@@ -580,7 +580,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/track-top-black-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/track-top-black-white.webp</image:loc>
       <image:title>Track Top Black &amp; White</image:title>
@@ -588,7 +588,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/crewneck-wreath-print</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/crewneck-wreath-print.webp</image:loc>
       <image:title>Crewneck Wreath Print</image:title>
@@ -596,7 +596,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-tee-tri-logo</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-tri-logo.webp</image:loc>
       <image:title>Graphic Tee Tri-Logo</image:title>
@@ -604,7 +604,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-hoodie-black-web</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-hoodie-black-web.webp</image:loc>
       <image:title>Graphic Hoodie Black Web</image:title>
@@ -612,7 +612,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-tee-black-cross</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-black-cross.webp</image:loc>
       <image:title>Graphic Tee Black Cross</image:title>
@@ -620,7 +620,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-tee-vintage-white</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-vintage-white.webp</image:loc>
       <image:title>Graphic Tee Vintage White</image:title>
@@ -628,7 +628,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/graphic-tee-grey-print</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/graphic-tee-grey-print.webp</image:loc>
       <image:title>Graphic Tee Grey Print</image:title>
@@ -636,7 +636,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/tech-hoodie-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/tech-hoodie-grey.webp</image:loc>
       <image:title>Tech Hoodie Grey</image:title>
@@ -644,7 +644,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/tech-shell-jacket-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/tech-shell-jacket-black.webp</image:loc>
       <image:title>Tech Shell Jacket Black</image:title>
@@ -652,7 +652,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/crewneck-heather-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/crewneck-heather-grey.webp</image:loc>
       <image:title>Crewneck Heather Grey</image:title>
@@ -660,7 +660,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cotton-tee-white-logo</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Apparel/cotton-tee-white-logo.webp</image:loc>
       <image:title>Cotton Tee White Logo</image:title>
@@ -670,7 +670,7 @@
   <!-- Bottomwear -->
   <url>
     <loc>https://theoutfithouse.in/product/sweatpants-oatmeal</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/sweatpants-oatmeal.webp</image:loc>
       <image:title>Sweatpants Oatmeal</image:title>
@@ -678,7 +678,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cargo-pants-olive</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-pants-olive.webp</image:loc>
       <image:title>Cargo Pants Olive</image:title>
@@ -686,7 +686,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/toh-baggy-denim-indigo</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/toh-baggy-denim-indigo.webp</image:loc>
       <image:title>Baggy Denim · Indigo</image:title>
@@ -694,7 +694,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/tech-joggers-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/tech-joggers-black.webp</image:loc>
       <image:title>Tech Joggers Black</image:title>
@@ -702,7 +702,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/track-pants-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/track-pants-black.webp</image:loc>
       <image:title>Track Pants Black</image:title>
@@ -710,7 +710,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cargo-pants-beige</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-pants-beige.webp</image:loc>
       <image:title>Cargo Pants Beige</image:title>
@@ -718,7 +718,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/straight-denim-mid-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-mid-blue.webp</image:loc>
       <image:title>Straight Denim Mid Blue</image:title>
@@ -726,7 +726,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/baggy-denim-washed-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/baggy-denim-washed-blue.webp</image:loc>
       <image:title>Baggy Denim Washed Blue</image:title>
@@ -734,7 +734,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/fleece-shorts-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/fleece-shorts-black.webp</image:loc>
       <image:title>Fleece Shorts Black</image:title>
@@ -742,7 +742,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sweat-shorts-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/sweat-shorts-grey.webp</image:loc>
       <image:title>Sweat Shorts Grey</image:title>
@@ -750,7 +750,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/work-pants-brown</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/work-pants-brown.webp</image:loc>
       <image:title>Work Pants Brown</image:title>
@@ -758,7 +758,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sport-shorts-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/sport-shorts-black.webp</image:loc>
       <image:title>Sport Shorts Black</image:title>
@@ -766,7 +766,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/bootcut-denim-mid-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/bootcut-denim-mid-blue.webp</image:loc>
       <image:title>Bootcut Denim Mid Blue</image:title>
@@ -774,7 +774,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cargo-shorts-khaki</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-shorts-khaki.webp</image:loc>
       <image:title>Cargo Shorts Khaki</image:title>
@@ -782,7 +782,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/distressed-denim-indigo</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/distressed-denim-indigo.webp</image:loc>
       <image:title>Distressed Denim Indigo</image:title>
@@ -790,7 +790,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sweatpants-pink</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/sweatpants-pink.webp</image:loc>
       <image:title>Sweatpants Pink</image:title>
@@ -798,7 +798,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/cargo-pants-slate</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/cargo-pants-slate.webp</image:loc>
       <image:title>Cargo Pants Slate</image:title>
@@ -806,7 +806,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/track-pants-navy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/track-pants-navy.webp</image:loc>
       <image:title>Track Pants Navy</image:title>
@@ -814,7 +814,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/fleece-joggers-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/fleece-joggers-grey.webp</image:loc>
       <image:title>Fleece Joggers Grey</image:title>
@@ -822,7 +822,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/work-pants-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/work-pants-black.webp</image:loc>
       <image:title>Work Pants Black</image:title>
@@ -830,7 +830,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/straight-denim-dark-indigo</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-dark-indigo.webp</image:loc>
       <image:title>Straight Denim Dark Indigo</image:title>
@@ -838,15 +838,23 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/bootcut-trouser-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/bootcut-trouser-black.webp</image:loc>
       <image:title>Bootcut Trouser Black</image:title>
     </image:image>
   </url>
   <url>
+    <loc>https://theoutfithouse.in/product/bootcut-trouser-pure-white</loc>
+    <lastmod>2026-06-27</lastmod>
+    <image:image>
+      <image:loc>https://theoutfithouse.in/assets/Bottomwear/bootcut-trouser-pure-white.webp</image:loc>
+      <image:title>Bootcut Trouser Pure White</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://theoutfithouse.in/product/straight-denim-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-black.webp</image:loc>
       <image:title>Straight Denim Black</image:title>
@@ -854,7 +862,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/bootcut-trouser-brown</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/bootcut-trouser-brown.webp</image:loc>
       <image:title>Bootcut Trouser Brown</image:title>
@@ -862,7 +870,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/straight-denim-jet-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-jet-black.webp</image:loc>
       <image:title>Straight Denim Jet Black</image:title>
@@ -870,7 +878,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/straight-denim-ice-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-ice-blue.webp</image:loc>
       <image:title>Straight Denim Ice Blue</image:title>
@@ -878,7 +886,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/straight-denim-faded-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-faded-black.webp</image:loc>
       <image:title>Straight Denim Faded Black</image:title>
@@ -886,7 +894,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/distressed-denim-dark-indigo</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/distressed-denim-dark-indigo.webp</image:loc>
       <image:title>Distressed Denim Dark Indigo</image:title>
@@ -894,7 +902,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/straight-denim-charcoal-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/straight-denim-charcoal-grey.webp</image:loc>
       <image:title>Straight Denim Charcoal Grey</image:title>
@@ -902,7 +910,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/slim-denim-dark-charcoal</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/slim-denim-dark-charcoal.webp</image:loc>
       <image:title>Slim Denim Dark Charcoal</image:title>
@@ -910,7 +918,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/slim-denim-grey</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/slim-denim-grey.webp</image:loc>
       <image:title>Slim Denim Grey</image:title>
@@ -918,7 +926,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/slim-denim-charcoal</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Bottomwear/slim-denim-charcoal.webp</image:loc>
       <image:title>Slim Denim Charcoal</image:title>
@@ -928,7 +936,7 @@
   <!-- Accessories -->
   <url>
     <loc>https://theoutfithouse.in/product/toh-crown-tote-cream</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/toh-crown-tote-cream.webp</image:loc>
       <image:title>Crown Tote · Cream</image:title>
@@ -936,7 +944,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/6-panel-cap-navy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/6-panel-cap-navy.webp</image:loc>
       <image:title>6-Panel Cap Navy</image:title>
@@ -944,7 +952,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/toh-crew-sock-3-pack</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/toh-crew-sock-3-pack.webp</image:loc>
       <image:title>Crew Sock 3-Pack</image:title>
@@ -952,7 +960,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sunglasses-classic-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/sunglasses-classic-black.webp</image:loc>
       <image:title>Sunglasses Classic Black</image:title>
@@ -960,7 +968,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sunglasses-pilot-gold</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/sunglasses-pilot-gold.webp</image:loc>
       <image:title>Sunglasses Pilot Gold</image:title>
@@ -968,7 +976,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/toh-double-buckle-leather-belt</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/toh-double-buckle-leather-belt.webp</image:loc>
       <image:title>Double-Buckle Leather Belt</image:title>
@@ -976,7 +984,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/fitted-cap-navy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/fitted-cap-navy.webp</image:loc>
       <image:title>Fitted Cap Navy</image:title>
@@ -984,7 +992,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/premium-wallet-brown-print</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/premium-wallet-brown-print.webp</image:loc>
       <image:title>Premium Wallet Brown Print</image:title>
@@ -992,7 +1000,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/card-holder-black-leather</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/card-holder-black-leather.webp</image:loc>
       <image:title>Card Holder Black Leather</image:title>
@@ -1000,7 +1008,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/premium-wallet-black-leather</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/premium-wallet-black-leather.webp</image:loc>
       <image:title>Premium Wallet Black Leather</image:title>
@@ -1008,7 +1016,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/toh-bifold-leather-wallet</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/toh-bifold-leather-wallet.webp</image:loc>
       <image:title>Bifold Leather Wallet</image:title>
@@ -1016,7 +1024,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sports-watch-chronograph-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/sports-watch-chronograph-black.webp</image:loc>
       <image:title>Sports Watch Chronograph Black</image:title>
@@ -1024,7 +1032,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sports-watch-black-resin</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/sports-watch-black-resin.webp</image:loc>
       <image:title>Sports Watch Black Resin</image:title>
@@ -1032,7 +1040,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/luxury-watch-silver-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/luxury-watch-silver-blue.webp</image:loc>
       <image:title>Luxury Watch Silver &amp; Blue</image:title>
@@ -1040,7 +1048,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/crossbody-bag-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/crossbody-bag-black.webp</image:loc>
       <image:title>Crossbody Bag Black</image:title>
@@ -1048,7 +1056,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/toh-ribbed-beanie</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/toh-ribbed-beanie.webp</image:loc>
       <image:title>Ribbed Beanie</image:title>
@@ -1056,7 +1064,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/bucket-hat-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/bucket-hat-black.webp</image:loc>
       <image:title>Bucket Hat Black</image:title>
@@ -1064,7 +1072,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/knit-beanie-brown</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/knit-beanie-brown.webp</image:loc>
       <image:title>Knit Beanie Brown</image:title>
@@ -1072,7 +1080,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/backpack-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/backpack-black.webp</image:loc>
       <image:title>Backpack Black</image:title>
@@ -1080,7 +1088,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/duffle-bag-brown-print</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/duffle-bag-brown-print.webp</image:loc>
       <image:title>Duffle Bag Brown Print</image:title>
@@ -1088,7 +1096,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/luxury-watch-steel-blue</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/luxury-watch-steel-blue.webp</image:loc>
       <image:title>Luxury Watch Steel Blue</image:title>
@@ -1096,7 +1104,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/luxury-watch-gold-steel</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/luxury-watch-gold-steel.webp</image:loc>
       <image:title>Luxury Watch Gold &amp; Steel</image:title>
@@ -1104,7 +1112,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/card-holder-tan-chevron</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/card-holder-tan-chevron.webp</image:loc>
       <image:title>Card Holder Tan Chevron</image:title>
@@ -1112,7 +1120,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/shoulder-bag-black-nylon</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/shoulder-bag-black-nylon.webp</image:loc>
       <image:title>Shoulder Bag Black Nylon</image:title>
@@ -1120,7 +1128,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/sport-sunglasses-black</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/sport-sunglasses-black.webp</image:loc>
       <image:title>Sport Sunglasses Black</image:title>
@@ -1128,7 +1136,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-matte-black-plaque</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-matte-black-plaque.webp</image:loc>
       <image:title>Leather Belt Matte Black Plaque</image:title>
@@ -1136,7 +1144,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-check-plaque-gold</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-check-plaque-gold.webp</image:loc>
       <image:title>Leather Belt Check Plaque Gold</image:title>
@@ -1144,7 +1152,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-gunmetal-monogram</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-gunmetal-monogram.webp</image:loc>
       <image:title>Leather Belt Gunmetal Monogram</image:title>
@@ -1152,7 +1160,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-gold-frame-plaque</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-gold-frame-plaque.webp</image:loc>
       <image:title>Leather Belt Gold Frame Plaque</image:title>
@@ -1160,7 +1168,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-ribbed-plaque</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-ribbed-plaque.webp</image:loc>
       <image:title>Leather Belt Ribbed Plaque</image:title>
@@ -1168,7 +1176,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-brushed-gunmetal</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-brushed-gunmetal.webp</image:loc>
       <image:title>Leather Belt Brushed Gunmetal</image:title>
@@ -1176,7 +1184,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-gold-cat-medallion</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-gold-cat-medallion.webp</image:loc>
       <image:title>Leather Belt Gold Cat Medallion</image:title>
@@ -1184,7 +1192,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-oval-cut-out</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-oval-cut-out.webp</image:loc>
       <image:title>Leather Belt Oval Cut-Out</image:title>
@@ -1192,7 +1200,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-eagle-medallion</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-eagle-medallion.webp</image:loc>
       <image:title>Leather Belt Eagle Medallion</image:title>
@@ -1200,7 +1208,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-silver-h-frame</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-silver-h-frame.webp</image:loc>
       <image:title>Leather Belt Silver H-Frame</image:title>
@@ -1208,7 +1216,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-gunmetal-h-frame</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-gunmetal-h-frame.webp</image:loc>
       <image:title>Leather Belt Gunmetal H-Frame</image:title>
@@ -1216,7 +1224,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-gunmetal-frame</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-gunmetal-frame.webp</image:loc>
       <image:title>Leather Belt Gunmetal Frame</image:title>
@@ -1224,7 +1232,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-leaping-cat-plaque</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-leaping-cat-plaque.webp</image:loc>
       <image:title>Leather Belt Leaping Cat Plaque</image:title>
@@ -1232,7 +1240,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-black-monogram-plaque</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-black-monogram-plaque.webp</image:loc>
       <image:title>Leather Belt Black Monogram Plaque</image:title>
@@ -1240,7 +1248,7 @@
   </url>
   <url>
     <loc>https://theoutfithouse.in/product/leather-belt-gold-flag-plaque</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <image:image>
       <image:loc>https://theoutfithouse.in/assets/Accessories/leather-belt-gold-flag-plaque.webp</image:loc>
       <image:title>Leather Belt Gold Flag Plaque</image:title>
