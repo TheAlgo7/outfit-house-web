@@ -282,7 +282,7 @@
     <div class="price-row">
       <span class="price" id="p-price">Price on enquiry</span>
       <span class="pdp-stock" id="p-stock" hidden>In stock now · ready to ship</span>
-      <span class="price-note">Best price shared on WhatsApp · we run regular launch offers</span>
+      <span class="price-note">Best price shared on WhatsApp · we run regular seasonal offers</span>
     </div>
 
     <div class="size-block" id="size-block">
@@ -411,6 +411,9 @@
   canonicalProd.href = 'https://theoutfithouse.in/product/' + p.slug;
   document.head.appendChild(canonicalProd);
   document.getElementById('gal-img').alt = p.name;
+  var schemaAvailability = p.stock === 'sold'
+    ? 'https://schema.org/OutOfStock'
+    : (p.stock === 'in' ? 'https://schema.org/InStock' : 'https://schema.org/BackOrder');
   var ldScript = document.createElement('script');
   ldScript.type = 'application/ld+json';
   ldScript.text = JSON.stringify({
@@ -428,8 +431,7 @@
         "offers": {
           "@type": "Offer",
           "priceCurrency": "INR",
-          "availability": "https://schema.org/InStock",
-          "availabilityStarts": "2026",
+          "availability": schemaAvailability,
           "url": 'https://theoutfithouse.in/product/' + p.slug,
           "seller": { "@id": "https://theoutfithouse.in/#store" },
           "shippingDetails": {

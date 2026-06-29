@@ -306,14 +306,16 @@
 
   /* store visual card */
   .lp-store .store-visual {
-    aspect-ratio: 4/5; background: var(--bg); position: relative;
+    aspect-ratio: 4/3; min-height: 420px; background: var(--bg); position: relative;
     overflow: hidden; border: 1px solid var(--border-strong);
+    isolation: isolate;
   }
   .lp-store .store-visual::before {
     content: ''; position: absolute; inset: 0;
     background:
       radial-gradient(ellipse at 25% 25%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 60%),
       linear-gradient(180deg, var(--toh-black-warm) 0%, var(--toh-black) 75%);
+    z-index: 0;
   }
   .lp-store .store-visual::after {
     content: ''; position: absolute; inset: 0;
@@ -322,11 +324,12 @@
       linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: 40px 40px;
     mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
+    z-index: 0;
   }
   .store-card-inner {
     position: absolute; inset: 0; padding: 32px;
     display: flex; flex-direction: column; justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
   }
   .store-card-inner .top-row {
     display: flex; justify-content: space-between; align-items: flex-start;
@@ -353,10 +356,22 @@
   }
   .store-card-inner .store-meta span:nth-child(2) { color: var(--accent); }
   /* real studio photo behind the data overlay */
-  .store-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+  .store-photo {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center; z-index: 0;
+  }
+  .lp-store .store-visual.has-photo { background: var(--toh-black); }
   .lp-store .store-visual.has-photo::after { display: none; }
   .lp-store .store-visual.has-photo::before {
-    background: linear-gradient(180deg, transparent 22%, var(--scrim-tile) 100%);
+    background:
+      linear-gradient(180deg, rgb(5 4 3 / 0.24) 0%, rgb(5 4 3 / 0.08) 36%, rgb(5 4 3 / 0.86) 100%);
+    z-index: 1;
+  }
+  .lp-store .store-visual.has-photo .crown,
+  .lp-store .store-visual.has-photo .addr,
+  .lp-store .store-visual.has-photo .coords,
+  .lp-store .store-visual.has-photo .store-meta {
+    text-shadow: 0 2px 16px rgb(5 4 3 / 0.72);
   }
 
   /* ---- WHY TOH ---- */
@@ -527,7 +542,7 @@
     <!-- LEFT: copy -->
     <div class="lp-hero-text">
       <h1>One<br/>house.<br/><span class="out">Every</span><br/><span class="acc">fit.</span></h1>
-      <p class="lede">Doors open 28 June 2026. From Panda low-tops and retro runners to graphic hoodies, cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
+      <p class="lede">Open now in Chhatarpur. From Panda low-tops and retro runners to graphic hoodies, cargos, leather loafers, double-buckle belts and luxury sunglasses. The full catalog, hand-checked in Delhi and shipped pan-India.</p>
       <div class="ctas">
         <button class="btn-wa" type="button" onclick="wa('Hi! I want to browse the collection.')">
           <svg aria-hidden="true"><use href="#wa-icon"/></svg>
@@ -602,7 +617,7 @@
 
       <!-- FOOTWEAR — tall primary -->
       <a class="ct ct-1 peek" href="/sneakers" aria-label="Browse footwear">
-        <img src="assets/Homepage/tile-footwear.webp" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-footwear.webp?v=20260629" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Footwear</span>
           <div class="ct-bottom">
@@ -617,7 +632,7 @@
 
       <!-- APPAREL -->
       <a class="ct ct-2 peek" href="/apparel" aria-label="Browse apparel" style="transition-delay:0.08s">
-        <img src="assets/Homepage/tile-tops.webp" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-tops.webp?v=20260629" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Apparel</span>
           <div class="ct-bottom">
@@ -632,7 +647,7 @@
 
       <!-- BOTTOMWEAR -->
       <a class="ct ct-3 peek" href="/bottomwear" aria-label="Browse bottomwear" style="transition-delay:0.14s">
-        <img src="assets/Homepage/tile-bottoms.webp" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-bottoms.webp?v=20260629" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Bottomwear</span>
           <div class="ct-bottom">
@@ -647,7 +662,7 @@
 
       <!-- ACCESSORIES — wide bottom tile -->
       <a class="ct ct-4 peek" href="/accessories" aria-label="Browse accessories" style="transition-delay:0.2s">
-        <img src="assets/Homepage/tile-accessories.webp" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-accessories.webp?v=20260629" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Accessories</span>
           <div class="ct-bottom">
@@ -677,24 +692,23 @@
   </div>
 </section>
 
-<!-- LIMITED SALE -->
-<section class="lp-sale" aria-label="Limited-time sale">
+<!-- OPEN NOW -->
+<section class="lp-sale" aria-label="Store open now">
   <div class="wrap lp-sale-grid">
     <div class="peek">
-      <span class="ti">Grand opening · Chhatarpur</span>
-      <h2>Doors open<br/><span class="acc">28 June.</span></h2>
-      <p>The Chhatarpur studio opens Sunday 28 June 2026, 12 PM. Sneakers, apparel and accessories, hand-checked, all under one roof. Message us on WhatsApp to reserve a piece for opening day or to get directions.</p>
-      <button class="btn-wa" type="button" onclick="wa('Hi! I want to reserve a piece for opening day, 28 June.')">
-        <svg aria-hidden="true"><use href="#wa-icon"/></svg> Notify me
+      <span class="ti">Open now · Chhatarpur</span>
+      <h2>The studio<br/><span class="acc">is open.</span></h2>
+      <p>Walk in, try on, talk to the team. Sneakers, apparel and accessories are hand-checked under one roof. Message us on WhatsApp for directions, current stock, or a visit slot.</p>
+      <button class="btn-wa" type="button" onclick="wa('Hi! I want to visit The Outfit House studio in Chhatarpur.')">
+        <svg aria-hidden="true"><use href="#wa-icon"/></svg> Plan a visit
       </button>
     </div>
-    <div class="countdown peek" id="cd" aria-label="Countdown to grand opening" style="transition-delay:0.1s">
-      <div class="cd"><b>--</b><span>Days</span></div>
-      <div class="cd"><b>--</b><span>Hours</span></div>
-      <div class="cd"><b>--</b><span>Min</span></div>
-      <div class="cd"><b>--</b><span>Sec</span></div>
+    <div class="countdown peek" aria-label="Current store hours" style="transition-delay:0.1s">
+      <div class="cd"><b>9-11</b><span>WhatsApp</span></div>
+      <div class="cd"><b>12-8</b><span>Studio visits</span></div>
+      <div class="cd"><b>7</b><span>Days open</span></div>
+      <div class="cd"><b>A1</b><span>Chhatarpur</span></div>
     </div>
-    <span id="cd-sr" class="sr-only" aria-live="polite" aria-atomic="true"></span>
   </div>
 </section>
 
@@ -702,12 +716,12 @@
 <section class="lp-store" aria-labelledby="store-heading">
   <div class="wrap lp-store-grid">
     <div class="peek">
-      <span class="store-eyebrow">Opening 28 June 2026 · Delhi</span>
+      <span class="store-eyebrow">Open now · Delhi</span>
       <h2 id="store-heading">The Chhatarpur<br/><span class="out">studio.</span></h2>
-      <p>Doors open Sunday 28 June 2026. Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first or just walk in.</p>
+      <p>The Chhatarpur studio is open. Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first or just walk in.</p>
       <ul class="store-info">
         <li><b>Address</b><span>Block A1, Chhatarpur,<br/>New Delhi 110074</span></li>
-        <li><b>Opens</b><span>28 June · 12 PM<br/>then 12–9 PM daily</span></li>
+        <li><b>Hours</b><span>9 AM-11 PM daily<br/>studio visits 12-8 PM</span></li>
         <li><b>Booking</b><span>WhatsApp first<br/>Walk-ins welcome</span></li>
         <li><b>Parking</b><span>Free · Behind the unit</span></li>
       </ul>
@@ -719,7 +733,7 @@
     <!-- decorative store card -->
     <div class="peek" style="transition-delay:0.12s" aria-hidden="true">
       <div class="store-visual has-photo">
-        <img class="store-photo" src="assets/Homepage/store-studio.webp" alt="" loading="lazy" decoding="async"/>
+        <img class="store-photo" src="assets/Homepage/store-studio.webp?v=20260629" alt="" loading="lazy" decoding="async"/>
         <div class="store-card-inner">
           <div class="top-row">
             <img class="crown" src="assets/logo-crown.webp" alt=""/>
@@ -732,7 +746,7 @@
             <div class="addr">Block <span class="acc">A1</span><br/>Chhatarpur</div>
             <div class="store-meta">
               <span>⏐ The Outfit House Studio</span>
-              <span>Opens 28 June · 12pm</span>
+              <span>Open daily · 9am-11pm</span>
             </div>
           </div>
         </div>
@@ -761,7 +775,7 @@
       </div>
       <div class="miss-item peek">
         <h3>Straight pricing</h3>
-        <p>We price fair and we'll always tell you straight on WhatsApp. Bargaining is welcome and launch offers come around often. No inflated tags, no surprise fees.</p>
+        <p>We price fair and we'll always tell you straight on WhatsApp. Bargaining is welcome and seasonal offers come around often. No inflated tags, no surprise fees.</p>
       </div>
     </div>
   </div>
@@ -769,7 +783,7 @@
 
 <!-- FINAL CTA -->
 <section class="cta-final" id="contact" aria-label="Contact call to action">
-  <span class="cta-tag">Direct line · 12pm to 9pm IST</span>
+  <span class="cta-tag">Direct line · 9am to 11pm IST</span>
   <span class="cta-brush">Just WhatsApp us.</span>
   <h2>Tell us what<br/>you're after.</h2>
   <p>Sneaker, tee, belt, sunglasses. Doesn't matter. We'll send real photos, sizing notes and a quote. No checkout. No waiting. Just a conversation.</p>
@@ -867,6 +881,22 @@
       },
       "priceRange": "$$",
       "openingDate": "2026-06-28",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "23:00"
+        }
+      ],
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, UPI, Bank Transfer, COD",
       "image": "https://theoutfithouse.in/assets/social-preview-tho.jpg",
@@ -934,40 +964,6 @@
     });
   })();
 
-  /* Grand-opening countdown — to Sun 28 June 2026, 12:00 PM (noon, store-local time) */
-  (function() {
-    var el = document.getElementById('cd');
-    var sr = document.getElementById('cd-sr');
-    if (!el) return;
-    var bs = el.querySelectorAll('.cd b');
-    if (bs.length !== 4) return;
-    var pad = function(n) { return String(n).padStart(2, '0'); };
-    var lastSrMin = -1;
-    /* month is 0-indexed: 5 = June */
-    var target = new Date(2026, 5, 28, 12, 0, 0);
-    function tick() {
-      var now  = new Date();
-      var diff = Math.max(0, target - now);
-      var s = Math.floor(diff / 1000);
-      var d = Math.floor(s / 86400); s %= 86400;
-      var h = Math.floor(s / 3600);  s %= 3600;
-      var m = Math.floor(s / 60);    s %= 60;
-      bs[0].textContent = pad(d);
-      bs[1].textContent = pad(h);
-      bs[2].textContent = pad(m);
-      bs[3].textContent = pad(s);
-      /* Update screen-reader summary once per minute */
-      if (sr && m !== lastSrMin) {
-        lastSrMin = m;
-        sr.textContent = d + ' days, ' + h + ' hours, ' + m + ' minutes remaining';
-      }
-    }
-    tick();
-    var cdTimer = setInterval(tick, 1000);
-    document.addEventListener('visibilitychange', function() {
-      if (document.hidden) { clearInterval(cdTimer); } else { cdTimer = setInterval(tick, 1000); tick(); }
-    });
-  })();
 </script>
 </body>
 </html>

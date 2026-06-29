@@ -246,7 +246,7 @@ small, .caption {
   color: var(--fg-subtle);
 }
 
-/* Eyebrow / Spec label — used for "UA SPEC", "7A QUALITY", category labels */
+/* Eyebrow / spec label — used for public tier and category labels */
 .eyebrow, .spec-label {
   font-family: var(--font-heading);
   font-size: var(--fs-eyebrow);

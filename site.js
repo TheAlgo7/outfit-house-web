@@ -80,7 +80,7 @@ window.CATEGORIES = {
 
 // Catalog
 // Prices are intentionally NOT stored or shown — quoted on WhatsApp after enquiry
-// (we bargain and run launch offers). See SpecSheet for the tier system.
+// (we bargain and run seasonal offers). See SpecSheet for the tier system.
 window.PRODUCTS = [
   // ---------- Sneakers ----------
   { slug:'mid-top-sneaker-panda', cat:'sneakers', brand:'Mid-Top Sneaker', name:'Panda', grade:'Standard', img:'assets/Sneakers/mid-top-sneaker-panda.webp' },

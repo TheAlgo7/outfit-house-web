@@ -243,7 +243,11 @@ function card(p) {
 /* ---------- product schema ---------- */
 function productSchema(p, cat) {
   const url = ORIGIN + '/product/' + p.slug;
-  const avail = p.stock === 'in' ? 'https://schema.org/InStock' : 'https://schema.org/BackOrder';
+  const avail = p.stock === 'sold'
+    ? 'https://schema.org/OutOfStock'
+    : p.stock === 'in'
+      ? 'https://schema.org/InStock'
+      : 'https://schema.org/BackOrder';
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -351,7 +355,7 @@ ${SPRITE}
     <div class="price-row">
       <span class="price">${sold ? 'Currently unavailable' : 'Price on enquiry'}</span>
       ${sold ? '<span class="pdp-stock sold">Sold out</span>' : (p.stock === 'in' ? `<span class="pdp-stock">In stock now · ready to ship${p.sizes ? ' · ' + sizeUnit(p.cat) + esc(p.sizes) : ''}</span>` : '')}
-      <span class="price-note">${sold ? 'This piece is sold out online right now. Ask in store for availability.' : 'Best price shared on WhatsApp · we run regular launch offers'}</span>
+      <span class="price-note">${sold ? 'This piece is sold out online right now. Ask in store for availability.' : 'Best price shared on WhatsApp · we run regular seasonal offers'}</span>
     </div>
 
     <p class="pdp-desc">${esc(desc)}</p>

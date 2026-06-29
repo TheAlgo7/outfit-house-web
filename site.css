@@ -255,7 +255,7 @@ header.nav {
   color: var(--fg-muted); font-weight: 600; }
 .pc-name { font-family: var(--font-display); font-size: 22px;
   text-transform: uppercase; color: var(--fg); line-height: 1.05; margin-top: 2px;
-  display: block; border-bottom: none; }
+  display: flex; align-items: center; min-height: 44px; border-bottom: none; }
 .pc-name:hover { color: var(--accent); border-bottom: none; }
 .pc-name::after { content: ''; position: absolute; inset: 0; z-index: 1; }
 .pc-price { font-family: var(--font-heading); font-weight: 700;
