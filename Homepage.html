@@ -342,10 +342,14 @@
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
     color: var(--fg-subtle); font-weight: 500;
   }
-  .lp-store .store-info span {
+  .lp-store .store-info span,
+  .lp-store .store-info a {
     font-family: var(--font-heading); font-weight: 600; font-size: 14px;
     color: var(--fg); line-height: 1.45;
   }
+  .lp-store .store-info a { border-bottom: none; transition: color var(--dur-fast) var(--ease-out); }
+  .lp-store .store-info a:hover { color: var(--accent); }
+  .lp-store .store-info a .map-arrow { color: var(--accent); font-weight: 700; margin-left: 2px; }
 
   /* store visual card */
   .lp-store .store-visual {
@@ -784,14 +788,19 @@
       <h2 id="store-heading">The Chhatarpur<br/><span class="out">studio.</span></h2>
       <p>The Chhatarpur studio is open. Walk in, try on, talk to the team. The full vault: sneakers, apparel, accessories, all under one roof. QC checks happen live in the back. WhatsApp first or just walk in.</p>
       <ul class="store-info">
-        <li><b>Address</b><span>Block A1, Chhatarpur,<br/>New Delhi 110074</span></li>
+        <li><b>Address</b><a href="https://maps.app.goo.gl/QpYAP5x3sH6MJZgN9" target="_blank" rel="noopener" aria-label="Open The Outfit House location in Google Maps">Block A1, Chhatarpur,<br/>New Delhi 110074 <span class="map-arrow" aria-hidden="true">↗</span></a></li>
         <li><b>Hours</b><span>9 AM-11 PM daily<br/>studio visits 12-8 PM</span></li>
         <li><b>Booking</b><span>WhatsApp first<br/>Walk-ins welcome</span></li>
         <li><b>Parking</b><span>Free · Behind the unit</span></li>
       </ul>
-      <button class="btn-wa" type="button" onclick="wa('Hi! I want to visit the Chhatarpur store.')">
-        <svg aria-hidden="true"><use href="#wa-icon"/></svg> Book a slot
-      </button>
+      <div class="store-ctas" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <button class="btn-wa" type="button" onclick="wa('Hi! I want to visit the Chhatarpur store.')">
+          <svg aria-hidden="true"><use href="#wa-icon"/></svg> Book a slot
+        </button>
+        <a class="btn-ghost" href="https://maps.app.goo.gl/QpYAP5x3sH6MJZgN9" target="_blank" rel="noopener">
+          Get directions <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </div>
 
     <!-- decorative store card -->
