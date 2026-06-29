@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" href="https://theoutfithouse.in/assets/logo-black.png"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bebas-neue-400.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/archivo-variable.woff2"/>
-<link rel="preload" as="image" type="image/webp" href="assets/Sneakers/low-top-court-sneaker-reverse-mocha.webp" fetchpriority="high"/>
+<link rel="preload" as="image" type="image/webp" href="assets/Bottomwear/straight-denim-dark-indigo.webp" fetchpriority="high"/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -95,7 +95,7 @@
     transition: transform var(--dur-slow) var(--ease-out);
   }
   .hi:hover { transform: translateY(-5px); }
-  /* contain (not cover): the shoes sit on pure black, so they float full, never cropped */
+  /* contain keeps every category image legible, from sneakers to belts and denim */
   .hi img   { width: 100%; height: 100%; object-fit: contain; display: block; }
   .hi-1 { left: 0; top: 0; width: 72%; aspect-ratio: 4/5; z-index: 1; }
   .hi-2 {
@@ -213,18 +213,22 @@
   .lp-featured { padding: 112px 0; }
   .products-grid--4 { grid-template-columns: repeat(4, 1fr); }
 
-  /* ---- SALE BANNER ---- */
+  /* ---- STUDIO STATUS ---- */
   .lp-sale {
-    position: relative; overflow: hidden; padding: 108px 0;
+    position: relative; overflow: hidden; padding: clamp(78px, 8vw, 118px) 0;
     background: var(--toh-black); border-block: 1px solid var(--border-strong);
   }
   .lp-sale::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(ellipse at 20% 50%, color-mix(in srgb, var(--accent) 6%, transparent) 0%, transparent 55%);
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--accent) 6%, transparent) 0 1px, transparent 1px 100%),
+      linear-gradient(180deg, color-mix(in srgb, var(--accent) 4%, transparent) 0 1px, transparent 1px 100%);
+    background-size: 92px 92px;
+    opacity: 0.22;
   }
   .lp-sale-grid {
-    display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px;
-    align-items: center; position: relative;
+    display: grid; grid-template-columns: minmax(0, 0.88fr) minmax(460px, 1.12fr);
+    gap: clamp(42px, 6vw, 92px); align-items: center; position: relative;
   }
   .lp-sale .ti {
     display: inline-block;
@@ -241,25 +245,64 @@
     color: var(--fg-muted); max-width: 460px; line-height: 1.65;
     margin: 0 0 32px; font-size: 15px;
   }
-  /* countdown tiles */
-  .countdown { display: flex; gap: 10px; flex-wrap: wrap; }
-  .cd {
-    display: flex; flex-direction: column; align-items: center;
-    padding: 24px 16px; flex: 1; min-width: 80px;
-    background: var(--surface-hover);
-    border: 1px solid var(--border-strong);
-    position: relative; overflow: hidden;
+  .studio-board {
+    position: relative; padding: clamp(24px, 3vw, 36px);
+    background: color-mix(in srgb, var(--surface) 84%, var(--accent) 16%);
+    border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--border-strong));
+    color: var(--fg); overflow: hidden;
   }
-  .cd::before { content: none; }
-  .cd b {
-    font-family: var(--font-display); font-size: 52px; line-height: 1;
-    color: var(--accent); letter-spacing: -0.01em; position: relative;
+  .studio-board::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 5%, transparent), transparent 46%);
   }
-  .cd span {
-    font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle);
+  .board-head,
+  .board-grid,
+  .board-foot { position: relative; z-index: 1; }
+  .board-head {
+    display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: end;
+    padding-bottom: 22px; border-bottom: 1px solid var(--border);
+  }
+  .board-kicker {
+    display: block; font-family: var(--font-mono); font-size: 10px; color: var(--accent);
+    letter-spacing: var(--tracking-wider); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .board-title {
+    font-family: var(--font-display); font-size: clamp(64px, 8vw, 118px);
+    line-height: 0.82; color: var(--accent); text-transform: uppercase;
+  }
+  .board-chip {
+    justify-self: end; display: inline-flex; align-items: center; gap: 8px;
+    min-height: 40px; padding: 0 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    font-family: var(--font-mono); font-size: 10px; color: var(--fg);
     letter-spacing: var(--tracking-wider); text-transform: uppercase;
-    margin-top: 6px; position: relative;
+    background: color-mix(in srgb, var(--toh-black) 44%, transparent);
   }
+  .board-chip::before {
+    content: ''; width: 8px; height: 8px; border-radius: 999px; background: var(--accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+  .board-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    margin-top: 1px; background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .board-item {
+    min-height: 104px; padding: 18px; background: color-mix(in srgb, var(--toh-black) 82%, var(--surface) 18%);
+  }
+  .board-item b {
+    display: block; font-family: var(--font-mono); font-size: 9px; color: var(--fg-subtle);
+    letter-spacing: var(--tracking-wider); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .board-item span {
+    display: block; font-family: var(--font-heading); font-size: 16px;
+    line-height: 1.35; font-weight: 700; color: var(--fg);
+  }
+  .board-foot {
+    display: flex; justify-content: space-between; gap: 18px; align-items: center;
+    margin-top: 18px; color: var(--fg-muted);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+  }
+  .board-foot strong { color: var(--accent); font-weight: 600; }
 
   /* ---- STORE SECTION ---- */
   .lp-store {
@@ -499,6 +542,7 @@
     .ct-4 { grid-column: 1 / 3; aspect-ratio: 16/9; }
     .ct { aspect-ratio: 4/3; }
     .lp-sale-grid { grid-template-columns: 1fr; gap: 40px; }
+    .studio-board { min-height: 0; }
     .lp-store-grid { grid-template-columns: 1fr; gap: 40px; }
     .lp-store .store-visual { aspect-ratio: 4/3; }
     .lp-miss-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -515,8 +559,13 @@
     .cat-grid { grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; height: auto; }
     .ct-1 { grid-column: auto; grid-row: auto; aspect-ratio: 3/4; }
     .ct-4 { grid-column: auto; grid-row: auto; aspect-ratio: 4/3; }
-    .cd { min-width: 0; padding: 18px 12px; }
-    .cd b { font-size: 40px; }
+    .studio-board { padding: 22px; }
+    .board-head { grid-template-columns: 1fr; align-items: start; padding-bottom: 18px; }
+    .board-title { font-size: clamp(62px, 22vw, 96px); }
+    .board-chip { justify-self: start; }
+    .board-grid { grid-template-columns: 1fr; }
+    .board-item { min-height: 0; padding: 15px 16px; }
+    .board-foot { flex-direction: column; align-items: flex-start; gap: 8px; }
     .lp-store .store-card-inner { padding: 22px; }
     .cta-final { padding: 80px 20px; }
     .cta-final h2 { font-size: clamp(44px, 14vw, 72px); }
@@ -560,12 +609,12 @@
     <!-- RIGHT: editorial image stack -->
     <div class="lp-hero-imgs">
       <div class="hi hi-1">
-        <span class="hi-stamp">Low-Top Court Sneaker · Reverse Mocha · Vault</span>
-        <img src="assets/Sneakers/low-top-court-sneaker-reverse-mocha.webp" alt="Low-top court sneaker in reverse mocha brown" loading="eager" decoding="async"/>
+        <span class="hi-stamp" id="hero-stamp-1">Straight Denim · Dark Indigo</span>
+        <img id="hero-img-1" src="assets/Bottomwear/straight-denim-dark-indigo.webp" alt="Straight denim in dark indigo" loading="eager" decoding="async"/>
       </div>
       <div class="hi hi-2">
-        <span class="hi-stamp">Low-Top Gum-Sole Sneaker · Green &amp; Cream · Standard</span>
-        <img src="assets/Sneakers/low-top-gum-sole-sneaker-green-cream.webp" alt="Low-top gum-sole sneaker in collegiate green and cream" loading="eager" decoding="async"/>
+        <span class="hi-stamp" id="hero-stamp-2">Leather Belt · Matte Black Plaque</span>
+        <img id="hero-img-2" src="assets/Accessories/leather-belt-matte-black-plaque.webp" alt="Leather belt with matte black plaque" loading="eager" decoding="async"/>
       </div>
     </div>
 
@@ -617,7 +666,7 @@
 
       <!-- FOOTWEAR — tall primary -->
       <a class="ct ct-1 peek" href="/sneakers" aria-label="Browse footwear">
-        <img src="assets/Homepage/tile-footwear.webp?v=20260629" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-footwear.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Footwear</span>
           <div class="ct-bottom">
@@ -632,7 +681,7 @@
 
       <!-- APPAREL -->
       <a class="ct ct-2 peek" href="/apparel" aria-label="Browse apparel" style="transition-delay:0.08s">
-        <img src="assets/Homepage/tile-tops.webp?v=20260629" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-tops.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Apparel</span>
           <div class="ct-bottom">
@@ -647,7 +696,7 @@
 
       <!-- BOTTOMWEAR -->
       <a class="ct ct-3 peek" href="/bottomwear" aria-label="Browse bottomwear" style="transition-delay:0.14s">
-        <img src="assets/Homepage/tile-bottoms.webp?v=20260629" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-bottoms.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Bottomwear</span>
           <div class="ct-bottom">
@@ -662,7 +711,7 @@
 
       <!-- ACCESSORIES — wide bottom tile -->
       <a class="ct ct-4 peek" href="/accessories" aria-label="Browse accessories" style="transition-delay:0.2s">
-        <img src="assets/Homepage/tile-accessories.webp?v=20260629" alt="" loading="lazy"/>
+        <img src="assets/Homepage/tile-accessories.webp" alt="" loading="lazy"/>
         <div class="body">
           <span class="cat-num">Accessories</span>
           <div class="ct-bottom">
@@ -686,7 +735,7 @@
       <div>
         <h2 id="featured-heading">Hand-picked<br/>from the drop.</h2>
       </div>
-      <p class="right">A rotating set across the full catalog. Every piece QC'd and photographed before dispatch. WhatsApp to lock yours.</p>
+      <p class="right">A daily mix across live inventory. Sneakers, denim and accessories rotate here so the homepage does not feel locked to one shelf.</p>
     </div>
     <div class="products-grid products-grid--4" id="featured-grid"></div>
   </div>
@@ -703,11 +752,24 @@
         <svg aria-hidden="true"><use href="#wa-icon"/></svg> Plan a visit
       </button>
     </div>
-    <div class="countdown peek" aria-label="Current store hours" style="transition-delay:0.1s">
-      <div class="cd"><b>9-11</b><span>WhatsApp</span></div>
-      <div class="cd"><b>12-8</b><span>Studio visits</span></div>
-      <div class="cd"><b>7</b><span>Days open</span></div>
-      <div class="cd"><b>A1</b><span>Chhatarpur</span></div>
+    <div class="studio-board peek" aria-label="Studio visit details" style="transition-delay:0.1s">
+      <div class="board-head">
+        <div>
+          <span class="board-kicker">Studio status</span>
+          <div class="board-title">Open now</div>
+        </div>
+        <span class="board-chip">Block A1</span>
+      </div>
+      <div class="board-grid">
+        <div class="board-item"><b>WhatsApp desk</b><span>9 AM-11 PM daily</span></div>
+        <div class="board-item"><b>Studio visits</b><span>12 PM-8 PM</span></div>
+        <div class="board-item"><b>Location</b><span>Chhatarpur, New Delhi</span></div>
+        <div class="board-item"><b>What to expect</b><span>Try on, QC check, pickup support</span></div>
+      </div>
+      <div class="board-foot">
+        <span>Walk-ins welcome</span>
+        <strong>Message first for live stock</strong>
+      </div>
     </div>
   </div>
 </section>
@@ -933,11 +995,76 @@
   document.getElementById('footer-mount').innerHTML = renderFooter();
   initHeader();
 
-  /* Featured products — one from each category for breadth */
-  var FEATURED_SLUGS = ['low-top-court-sneaker-reverse-mocha', 'low-profile-retro-runner-horse-edition', 'low-top-gum-sole-sneaker-green-cream', 'chunky-runner-white-silver-navy'];
-  var featured = FEATURED_SLUGS
-    .map(function(s) { return PRODUCTS.find(function(p) { return p.slug === s; }); })
+  /* Daily homepage mix, stable through refreshes. */
+  function tohDaySeed() {
+    var ist = new Date(Date.now() + 19800000);
+    return ist.getUTCFullYear() * 10000 + (ist.getUTCMonth() + 1) * 100 + ist.getUTCDate();
+  }
+  function hashText(text) {
+    var h = 2166136261;
+    for (var i = 0; i < text.length; i++) {
+      h ^= text.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+  function dailyOrder(list, seed, salt) {
+    return list.slice().sort(function(a, b) {
+      return hashText(seed + ':' + salt + ':' + a.slug) - hashText(seed + ':' + salt + ':' + b.slug);
+    });
+  }
+  function productStamp(p) {
+    return [p.brand, p.name, p.grade].filter(Boolean).join(' · ');
+  }
+  function productAlt(p) {
+    return [p.brand, p.name].filter(Boolean).join(' ');
+  }
+  function liveByCategory(cat) {
+    var live = PRODUCTS.filter(function(p) { return p.cat === cat && p.stock !== 'sold'; });
+    var inStock = live.filter(function(p) { return p.stock === 'in'; });
+    return inStock.length ? inStock : live;
+  }
+  function pickOne(cat, seed, salt, used) {
+    var list = dailyOrder(liveByCategory(cat), seed, salt);
+    for (var i = 0; i < list.length; i++) {
+      if (!used[list[i].slug]) {
+        used[list[i].slug] = true;
+        return list[i];
+      }
+    }
+    return null;
+  }
+  function setHero(slot, p) {
+    if (!p) return;
+    var img = document.getElementById('hero-img-' + slot);
+    var stamp = document.getElementById('hero-stamp-' + slot);
+    if (!img || !stamp) return;
+    img.src = p.img;
+    img.alt = productAlt(p);
+    stamp.textContent = productStamp(p);
+  }
+  var daySeed = tohDaySeed();
+  var usedDaily = {};
+  var categoryPairs = [
+    ['bottomwear', 'accessories'],
+    ['accessories', 'sneakers'],
+    ['bottomwear', 'sneakers']
+  ];
+  var pair = categoryPairs[daySeed % categoryPairs.length];
+  setHero(1, pickOne(pair[0], daySeed, 'hero-1', usedDaily));
+  setHero(2, pickOne(pair[1], daySeed, 'hero-2', usedDaily));
+
+  var featured = ['bottomwear', 'accessories', 'sneakers']
+    .map(function(cat) { return pickOne(cat, daySeed, 'featured-' + cat, usedDaily); })
     .filter(Boolean);
+  dailyOrder(PRODUCTS.filter(function(p) { return p.stock === 'in' && !usedDaily[p.slug]; }), daySeed, 'featured-fill-in')
+    .concat(dailyOrder(PRODUCTS.filter(function(p) { return p.stock !== 'sold' && !usedDaily[p.slug]; }), daySeed, 'featured-fill-live'))
+    .some(function(p) {
+      if (usedDaily[p.slug]) return false;
+      featured.push(p);
+      usedDaily[p.slug] = true;
+      return featured.length >= 4;
+    });
   var featuredGrid = document.getElementById('featured-grid');
   featuredGrid.innerHTML = '';
   featured.forEach(function(p) { featuredGrid.appendChild(renderProductCard(p)); });
