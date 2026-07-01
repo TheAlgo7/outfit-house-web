@@ -98,7 +98,7 @@ window.PRODUCTS = [
   { slug:'retro-runner-infrared', cat:'sneakers', brand:'Retro Runner', name:'Infrared', grade:'Standard', img:'assets/Sneakers/retro-runner-infrared.webp' },
   { slug:'suede-low-grey', cat:'sneakers', brand:'Suede Low', name:'Grey', grade:'Standard', img:'assets/Sneakers/suede-low-grey.webp' },
   { slug:'chunky-runner-cream', cat:'sneakers', brand:'Chunky Runner', name:'Cream', grade:'Standard', img:'assets/Sneakers/chunky-runner-cream.webp' },
-  { slug:'retro-trainer-white-blue', cat:'sneakers', brand:'Retro Trainer', name:'White Blue', grade:'Entry', img:'assets/Sneakers/retro-trainer-white-blue.webp' },
+  { slug:'retro-trainer-white-blue', cat:'sneakers', stock:'in', brand:'Retro Trainer', name:'White Blue', grade:'Standard', img:'assets/Sneakers/retro-trainer-white-blue.webp', imgs:['assets/Sneakers/retro-trainer-white-blue-2.webp', 'assets/Sneakers/retro-trainer-white-blue-3.webp', 'assets/Sneakers/retro-trainer-white-blue-4.webp'] },
   { slug:'clog-black', cat:'sneakers', brand:'Clog', name:'Black', grade:'Entry', img:'assets/Sneakers/clog-black.webp' },
   { slug:'high-top-sneaker-chicago', cat:'sneakers', brand:'High-Top Sneaker', name:'Chicago', grade:'Vault', img:'assets/Sneakers/high-top-sneaker-chicago.webp' },
   { slug:'patent-high-top-concord', cat:'sneakers', brand:'Patent High-Top', name:'Concord', grade:'Vault', img:'assets/Sneakers/patent-high-top-concord.webp' },
