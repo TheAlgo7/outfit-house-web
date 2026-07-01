@@ -55,8 +55,13 @@ function slugify(s) {
 }
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 function jsq(s) { return "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'"; }
-// Size unit by category: sneakers use UK, bottomwear uses waist (W), tops/accessories none.
-function sizeUnit(cat) { return cat === 'sneakers' ? 'UK ' : cat === 'bottomwear' ? 'W ' : ''; }
+// Size unit: sneakers use UK, fitted bottomwear (numeric waist) uses W, everything else
+// (letter sizes like S/M/L/XL, elastic-waist track pants/shorts) gets no prefix.
+function sizeUnit(cat, sizes) {
+  if (cat === 'sneakers') return 'UK ';
+  if (cat === 'bottomwear' && sizes && /^\d/.test(String(sizes).trim())) return 'W ';
+  return '';
+}
 // Sort priority so in-stock surfaces first and sold-out sinks last (order-on-request between).
 function stockRank(p) { return p.stock === 'in' ? 0 : p.stock === 'sold' ? 2 : 1; }
 
@@ -220,7 +225,7 @@ function card(p) {
   let status = '';
   if (sold) status = '<span class="pc-stock sold">Sold out</span>';
   else if (p.stock === 'in') status = '<span class="pc-stock">In stock now</span>';
-  const sizes = (!sold && p.stock === 'in' && p.sizes) ? `<span class="pc-sizes">${sizeUnit(p.cat)}${esc(p.sizes)}</span>` : '';
+  const sizes = (!sold && p.stock === 'in' && p.sizes) ? `<span class="pc-sizes">${sizeUnit(p.cat, p.sizes)}${esc(p.sizes)}</span>` : '';
   const cta = sold
     ? '<button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>'
     : `<button class="pc-cta" type="button" data-slug="${esc(p.slug)}" data-name="${esc(p.name)}" data-grade="${esc(p.grade)}"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>`;
@@ -310,7 +315,7 @@ function productPage(p) {
   const sold = p.stock === 'sold';
   const gallery = [p.img].concat(p.imgs || []);
   const sizeSet = SIZE_SETS[p.cat] || SIZE_SETS.sneakers;
-  const inStockSizes = (p.stock === 'in' && p.sizes) ? p.sizes.split(',').map(s => sizeUnit(p.cat) + s.trim()) : null;
+  const inStockSizes = (p.stock === 'in' && p.sizes) ? p.sizes.split(',').map(s => sizeUnit(p.cat, p.sizes) + s.trim()) : null;
   const sizeList = inStockSizes || sizeSet.sizes;
   const sizeLabel = inStockSizes ? ('In stock now · ' + (p.cat === 'bottomwear' ? 'Waist' : p.cat === 'sneakers' ? 'UK' : 'Size')) : sizeSet.label;
   const specSet = (SPEC_SETS[p.cat] || SPEC_SETS.sneakers).concat([['Tier', p.grade]]);
@@ -354,7 +359,7 @@ ${SPRITE}
     </div>
     <div class="price-row">
       <span class="price">${sold ? 'Currently unavailable' : 'Price on enquiry'}</span>
-      ${sold ? '<span class="pdp-stock sold">Sold out</span>' : (p.stock === 'in' ? `<span class="pdp-stock">In stock now · ready to ship${p.sizes ? ' · ' + sizeUnit(p.cat) + esc(p.sizes) : ''}</span>` : '')}
+      ${sold ? '<span class="pdp-stock sold">Sold out</span>' : (p.stock === 'in' ? `<span class="pdp-stock">In stock now · ready to ship${p.sizes ? ' · ' + sizeUnit(p.cat, p.sizes) + esc(p.sizes) : ''}</span>` : '')}
       <span class="price-note">${sold ? 'This piece is sold out online right now. Ask in store for availability.' : 'Best price shared on WhatsApp · we run regular seasonal offers'}</span>
     </div>
 

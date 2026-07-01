@@ -60,10 +60,11 @@ window.gradeClass = function(g) {
   return 'entry';
 };
 
-// Size unit by category: sneakers use UK, bottomwear uses waist (W), tops/accessories none.
-window.sizeUnit = function(cat) {
-  if (cat === 'sneakers')   return 'UK ';
-  if (cat === 'bottomwear') return 'W ';
+// Size unit: sneakers use UK, fitted bottomwear (numeric waist) uses W, everything else
+// (letter sizes like S/M/L/XL, elastic-waist track pants/shorts) gets no prefix.
+window.sizeUnit = function(cat, sizes) {
+  if (cat === 'sneakers') return 'UK ';
+  if (cat === 'bottomwear' && sizes && /^\d/.test(String(sizes).trim())) return 'W ';
   return '';
 };
 
@@ -196,7 +197,20 @@ window.PRODUCTS = [
   { slug:'cotton-tee-dark-plain', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Cotton Tee', name:'Dark Plain', grade:'Entry', img:'assets/Apparel/cotton-tee-dark-plain.webp' },
   { slug:'graphic-tee-cream-oval-chest-print', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Graphic Tee', name:'Cream Oval Chest Print', grade:'Standard', img:'assets/Apparel/graphic-tee-cream-oval-chest-print.webp' },
   { slug:'graphic-tee-tan-splatter-chest-print', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Graphic Tee', name:'Tan Splatter Chest Print', grade:'Standard', img:'assets/Apparel/graphic-tee-tan-splatter-chest-print.webp' },
+  { slug:'graphic-tee-brown-wave-logo-chest-print', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Graphic Tee', name:'Brown Wave Logo Chest Print', grade:'Standard', img:'assets/Apparel/graphic-tee-brown-wave-logo-chest-print.webp' },
+  { slug:'graphic-tee-white-wave-logo-chest-print', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Graphic Tee', name:'White Wave Logo Chest Print', grade:'Standard', img:'assets/Apparel/graphic-tee-white-wave-logo-chest-print.webp' },
+  { slug:'graphic-tee-black-wave-logo-chest-print', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Graphic Tee', name:'Black Wave Logo Chest Print', grade:'Standard', img:'assets/Apparel/graphic-tee-black-wave-logo-chest-print.webp' },
+  { slug:'graphic-tee-red-wave-logo-chest-print', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Graphic Tee', name:'Red Wave Logo Chest Print', grade:'Standard', img:'assets/Apparel/graphic-tee-red-wave-logo-chest-print.webp', imgs:['assets/Apparel/graphic-tee-red-wave-logo-chest-print-2.webp'] },
+  { slug:'graphic-tee-tan-wave-logo-chest-print', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Graphic Tee', name:'Tan Wave Logo Chest Print', grade:'Standard', img:'assets/Apparel/graphic-tee-tan-wave-logo-chest-print.webp' },
+  { slug:'cotton-tee-black-full-sleeve', cat:'apparel', stock:'in', sizes:'S, M, L, XL', brand:'Cotton Tee', name:'Black Full Sleeve', grade:'Entry', img:'assets/Apparel/cotton-tee-black-full-sleeve.webp' },
   // ---------- Bottomwear ----------
+  { slug:'track-pants-black-reflective-panel', cat:'bottomwear', stock:'in', sizes:'S, M, L, XL', brand:'Track Pants', name:'Black Reflective Panel', grade:'Entry', img:'assets/Bottomwear/track-pants-black-reflective-panel.webp' },
+  { slug:'track-pants-olive-green-side-stripe', cat:'bottomwear', stock:'in', sizes:'S, M, L, XL', brand:'Track Pants', name:'Olive Green Side Stripe', grade:'Standard', img:'assets/Bottomwear/track-pants-olive-green-side-stripe.webp' },
+  { slug:'track-pants-white-side-stripe', cat:'bottomwear', stock:'in', sizes:'S, M, L, XL', brand:'Track Pants', name:'White Side Stripe', grade:'Standard', img:'assets/Bottomwear/track-pants-white-side-stripe.webp' },
+  { slug:'logo-shorts-charcoal-blue-monogram', cat:'bottomwear', stock:'in', sizes:'S, M, L, XL', brand:'Logo Shorts', name:'Charcoal Blue Monogram', grade:'Standard', img:'assets/Bottomwear/logo-shorts-charcoal-blue-monogram.webp' },
+  { slug:'logo-shorts-beige-wordmark', cat:'bottomwear', stock:'in', sizes:'S, M, L, XL', brand:'Logo Shorts', name:'Beige Wordmark', grade:'Standard', img:'assets/Bottomwear/logo-shorts-beige-wordmark.webp' },
+  { slug:'logo-shorts-charcoal-grey-wordmark', cat:'bottomwear', stock:'in', sizes:'S, M, L, XL', brand:'Logo Shorts', name:'Charcoal Grey Wordmark', grade:'Standard', img:'assets/Bottomwear/logo-shorts-charcoal-grey-wordmark.webp' },
+  { slug:'logo-shorts-black-olive-gold-print', cat:'bottomwear', stock:'in', sizes:'S, M, L, XL', brand:'Logo Shorts', name:'Black Olive Gold Print', grade:'Standard', img:'assets/Bottomwear/logo-shorts-black-olive-gold-print.webp' },
   { slug:'sweatpants-oatmeal', cat:'bottomwear', stock:'sold', brand:'Sweatpants', name:'Oatmeal', grade:'Standard', img:'assets/Bottomwear/sweatpants-oatmeal.webp' },
   { slug:'cargo-pants-olive', cat:'bottomwear', stock:'sold', brand:'Cargo Pants', name:'Olive', grade:'Vault', img:'assets/Bottomwear/cargo-pants-olive.webp' },
   { slug:'toh-baggy-denim-indigo', cat:'bottomwear', stock:'sold', brand:'TOH', name:'Baggy Denim · Indigo', grade:'Entry', img:'assets/Bottomwear/toh-baggy-denim-indigo.webp' },
@@ -289,7 +303,7 @@ window.renderProductCard = function(p) {
     : '<span class="pc-grade ' + gradeClass(p.grade) + '">' + p.grade + '</span>');
   var status = sold ? '<span class="pc-stock sold">Sold out</span>'
     : (p.stock === 'in' ? '<span class="pc-stock">In stock now</span>' : '');
-  var sizes = (!sold && p.stock === 'in' && p.sizes) ? '<span class="pc-sizes">' + sizeUnit(p.cat) + p.sizes + '</span>' : '';
+  var sizes = (!sold && p.stock === 'in' && p.sizes) ? '<span class="pc-sizes">' + sizeUnit(p.cat, p.sizes) + p.sizes + '</span>' : '';
   var cta = sold ? '<button class="pc-cta" type="button" disabled aria-disabled="true">Sold out</button>'
     : '<button class="pc-cta" type="button"><svg><use href="#wa-icon"/></svg> Enquire on WhatsApp</button>';
   card.innerHTML = `
