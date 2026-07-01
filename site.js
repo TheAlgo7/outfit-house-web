@@ -73,7 +73,7 @@ window.stockRank = function(p) { return p.stock === 'in' ? 0 : p.stock === 'sold
 // Categories
 window.CATEGORIES = {
   sneakers:    { key:'sneakers',    label:'Sneakers',    title:'The Sneaker Vault',   tag:'Footwear',    blurb:'Hand-checked sneakers across three quality tiers. Genuine boxes, accurate stitching, real photos before dispatch.' },
-  apparel:     { key:'apparel',     label:'Apparel',     title:'Topwear',             tag:'Apparel',     blurb:'Premium tees, hoodies, and overshirts. Fits drawn from the originals, no dropped shoulders, no oversized guesswork. More tee designs are in-store than online. Ask on WhatsApp for the full range.' },
+  apparel:     { key:'apparel',     label:'Apparel',     title:'Topwear',             tag:'Apparel',     blurb:'Premium tees, hoodies, and overshirts. Fits drawn from the originals, no dropped shoulders, no oversized guesswork. Most tees also come in more colorways than shown online, plus more designs in-store. Ask on WhatsApp for the full range.' },
   bottomwear:  { key:'bottomwear',  label:'Bottomwear',  title:'Streetwear Bottoms',  tag:'Bottomwear',  blurb:'Cargos, sweats, and denim cut from heavyweight fabrics. Streetwear silhouettes you actually want to wear.' },
   accessories: { key:'accessories', label:'Accessories', title:'Finishing Touches',   tag:'Accessories', blurb:'Caps, bags, socks, belts. The small stuff that finishes the fit.' },
 };
